@@ -50,10 +50,35 @@
 // UNION TYPE
 // let union: number | string
 // union = 10
-function combine(param1, param2) {
-    if (typeof param1 === "string" || typeof param2 === "string") {
-        return param1.toString() + param2.toString();
-    }
-    return param1 + param2;
+// function combine(param1: string | number, param2: string | number) {
+//   if (typeof param1 === "string" || typeof param2 === "string") {
+//     return param1.toString() + param2.toString();
+//   }
+//   return param1 + param2;
+// }
+// console.log(combine("str1", "str2"));
+// let active: "start" | "and";
+// active = "start";
+// const fruit: string[] = [];
+// function workWithArr(arr: string[], value: string, action: "add" | "delete") {
+//   if (action === "add") {
+//     arr.push(value);
+//   } else {
+//     const index = arr.indexOf(value);
+//     arr.splice(index, 1);
+//   }
+//   return arr;
+// }
+// workWithArr(fruit, "Banana", "add");
+// workWithArr(fruit, "Melon", "add");
+// workWithArr(fruit, "Pear", "add");
+// workWithArr(fruit, "Bear", "add");
+// console.log(fruit);
+function calc(num1, num2, callback) {
+    return callback(num1, num2);
 }
-console.log(combine("str1", "str2"));
+function foo(num1, num2) {
+    return num1 + num2;
+}
+var result = calc(1, 3, foo);
+console.log("result:", result);

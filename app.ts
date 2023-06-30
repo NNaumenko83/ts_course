@@ -82,12 +82,60 @@
 
 // union = 10
 
-function combine(param1: string | number, param2: string | number) {
-  if (typeof param1 === "string" || typeof param2 === "string") {
-    return param1.toString() + param2.toString();
-  }
+// function combine(param1: string | number, param2: string | number) {
+//   if (typeof param1 === "string" || typeof param2 === "string") {
+//     return param1.toString() + param2.toString();
+//   }
 
-  return param1 + param2;
-}
+//   return param1 + param2;
+// }
 
-console.log(combine("str1", "str2"));
+// console.log(combine("str1", "str2"));
+
+// let active: "start" | "and";
+
+// active = "start";
+
+// const fruit: string[] = [];
+
+// function workWithArr(arr: string[], value: string, action: "add" | "delete") {
+//   if (action === "add") {
+//     arr.push(value);
+//   } else {
+//     const index = arr.indexOf(value);
+//     arr.splice(index, 1);
+//   }
+//   return arr;
+// }
+
+// workWithArr(fruit, "Banana", "add");
+// workWithArr(fruit, "Melon", "add");
+// workWithArr(fruit, "Pear", "add");
+// workWithArr(fruit, "Bear", "add");
+
+// console.log(fruit);
+
+// function calc(
+//   num1: number,
+//   num2: number,
+//   callback: (arg1: number, arg2: number) => number
+// ) {
+//   return callback(num1, num2);
+// }
+// function foo(num1: number, num2: number) {
+//   return num1 + num2;
+// }
+
+// const result = calc(1, 3, foo);
+// console.log("result:", result);
+
+// ПРАКТИКА
+let age: number;
+let name: string;
+let toggle: boolean;
+let empty: null;
+let notInitialize: undefined;
+let callback: (a: number) => number;
+callback = (a) => {
+  return 100 + a;
+};

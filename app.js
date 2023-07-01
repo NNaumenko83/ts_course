@@ -74,11 +74,81 @@
 // workWithArr(fruit, "Pear", "add");
 // workWithArr(fruit, "Bear", "add");
 // console.log(fruit);
-function calc(num1, num2, callback) {
-    return callback(num1, num2);
+// function calc(
+//   num1: number,
+//   num2: number,
+//   callback: (arg1: number, arg2: number) => number
+// ) {
+//   return callback(num1, num2);
+// }
+// function foo(num1: number, num2: number) {
+//   return num1 + num2;
+// }
+// const result = calc(1, 3, foo);
+// console.log("result:", result);
+// ПРАКТИКА
+// 1
+var age;
+// let name: string;
+var toggle;
+var empty;
+var notInitialize;
+var callback;
+callback = function (a) {
+    return 100 + a;
+};
+// 2
+var anything;
+anything = "Text";
+anything = {};
+// 3
+var some;
+some = "Text";
+var str;
+str = some;
+// 4
+var person;
+person = ["Max", 21];
+// 5
+var Load;
+(function (Load) {
+    Load[Load["LOADING"] = 0] = "LOADING";
+    Load[Load["READY"] = 1] = "READY";
+})(Load || (Load = {}));
+var page = { load: Load.READY };
+if (page.load === Load.LOADING) {
+    console.log("Loading");
 }
-function foo(num1, num2) {
+if (page.load === Load.READY) {
+    console.log("Ready");
+}
+// 6
+var strOrNumber;
+// 7
+var strNew;
+// 8
+function showMessage(message) {
+    console.log(message);
+}
+function calc(num1, num2) {
     return num1 + num2;
 }
-var result = calc(1, 3, foo);
-console.log("result:", result);
+function customError() {
+    throw new Error("Error");
+}
+var page1 = {
+    title: "The awesome page",
+    likes: 100,
+    accounts: ["Max", "Anton", "Nikita"],
+    status: "open",
+    details: {
+        createAt: new Date("2021-01-01"),
+        updateAt: new Date("2021-05-01"),
+    },
+};
+var page2 = {
+    title: "Python or Js",
+    likes: 5,
+    accounts: ["Alex"],
+    status: "close",
+};

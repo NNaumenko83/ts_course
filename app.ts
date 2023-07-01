@@ -130,12 +130,94 @@
 // console.log("result:", result);
 
 // ПРАКТИКА
+// 1
 let age: number;
-let name: string;
+// let name: string;
 let toggle: boolean;
 let empty: null;
 let notInitialize: undefined;
 let callback: (a: number) => number;
 callback = (a) => {
   return 100 + a;
+};
+
+// 2
+let anything: any;
+anything = "Text";
+anything = {};
+
+// 3
+let some: any;
+some = "Text";
+
+let str: string;
+str = some;
+
+// 4
+let person: [string, number];
+person = ["Max", 21];
+
+// 5
+enum Load {
+  LOADING,
+  READY,
+}
+
+const page = { load: Load.READY };
+
+if (page.load === Load.LOADING) {
+  console.log("Loading");
+}
+
+if (page.load === Load.READY) {
+  console.log("Ready");
+}
+
+// 6
+
+let strOrNumber: string | number;
+
+// 7
+let strNew: "enable" | "Disable";
+
+// 8
+function showMessage(message: string): void {
+  console.log(message);
+}
+
+function calc(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+function customError(): never {
+  throw new Error("Error");
+}
+
+type PageData = {
+  title: string;
+  likes: number;
+  accounts: string[];
+  status: string;
+  details?: {
+    createAt: Date;
+    updateAt: Date;
+  };
+};
+
+const page1: PageData = {
+  title: "The awesome page",
+  likes: 100,
+  accounts: ["Max", "Anton", "Nikita"],
+  status: "open",
+  details: {
+    createAt: new Date("2021-01-01"),
+    updateAt: new Date("2021-05-01"),
+  },
+};
+
+const page2: PageData = {
+  title: "Python or Js",
+  likes: 5,
+  accounts: ["Alex"],
+  status: "close",
 };

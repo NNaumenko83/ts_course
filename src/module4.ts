@@ -125,35 +125,107 @@
 
 // ===== Abstract clases =====
 
-abstract class Plane {
-  protected pilotInCabin = false;
+// abstract class Plane {
+//   protected pilotInCabin = false;
 
-  public sitInPlane() {
-    this.pilotInCabin = true;
-  }
+//   public sitInPlane() {
+//     this.pilotInCabin = true;
+//   }
 
-  public abstract startEngine(): string;
+//   public abstract startEngine(): string;
+// }
+
+// class Meize extends Plane {
+//   public startEngine(): string {
+//     {
+//       return "ta-ta-ta";
+//     }
+//   }
+// }
+
+// class Boeing extends Plane {
+//   public startEngine(): string {
+//     return "Buuuuuuu";
+//   }
+// }
+
+// const maize = new Meize();
+// const boeing = new Boeing();
+
+// maize.sitInPlane();
+// boeing.sitInPlane();
+
+// console.log(maize.startEngine());
+// console.log(boeing.startEngine());
+
+// =====Інтерфейси обєктів======
+// interface IPerson {
+//   readonly name: string;
+//   age: number;
+
+//   greet(phrase: string): void;
+// }
+
+// interface IPilot {
+//   flyMesage(): void;
+// }
+
+// class Pilot implements IPerson, IPilot {
+//   constructor(public readonly name: string, public age: number) {
+//     this.checkAge();
+//   }
+
+//   private checkAge() {
+//     if (this.age < 28) {
+//       throw new Error("Pilot too young");
+//     }
+//   }
+
+//   public greet(phrase: string): void {
+//     console.log(phrase + " " + this.name);
+//   }
+
+//   public flyMesage(): void {
+//     console.log("Літак набрав висоту приємного польоту");
+//   }
+// }
+
+// abstract class Plane {
+//   protected pilot?: IPilot;
+
+//   public sitInPlane(pilot: IPilot) {
+//     this.pilot = pilot;
+//   }
+
+//   public abstract startEngine(): boolean;
+// }
+
+// class Boeing extends Plane {
+//   public startEngine(): boolean {
+//     if (!this.pilot) {
+//       throw new Error("No pilot in cabin");
+//     }
+//     console.log("Запуск турбін");
+//     this.pilot.flyMesage();
+//     return true;
+//   }
+// }
+
+// const pilot = new Pilot("Max", 32);
+// const boeing = new Boeing();
+
+// pilot.greet("Вас вітає капітан корабля");
+// boeing.sitInPlane(pilot);
+// boeing.startEngine();
+
+// ======== Інтерфейси як тип функції ========
+
+// type AddFunc = (n1: number, n2: number) => number;
+
+interface AddFunc {
+  (n1: number, n2: number): number;
 }
 
-class Meize extends Plane {
-  public startEngine(): string {
-    {
-      return "ta-ta-ta";
-    }
-  }
-}
-
-class Boeing extends Plane {
-  public startEngine(): string {
-    return "Buuuuuuu";
-  }
-}
-
-const maize = new Meize();
-const boeing = new Boeing();
-
-maize.sitInPlane();
-boeing.sitInPlane();
-
-console.log(maize.startEngine());
-console.log(boeing.startEngine());
+const foo: AddFunc = (n1: number, n2: number) => {
+  return n1 + n2;
+};

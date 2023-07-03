@@ -222,10 +222,37 @@
 
 // type AddFunc = (n1: number, n2: number) => number;
 
-interface AddFunc {
-  (n1: number, n2: number): number;
+// interface AddFunc {
+//   (n1: number, n2: number): number;
+// }
+
+// const foo: AddFunc = (n1: number, n2: number) => {
+//   return n1 + n2;
+// };
+
+// ======ПРАКТИКА=======
+
+abstract class House {
+  public door: "open" | "close";
+
+  public key=key;
 }
 
-const foo: AddFunc = (n1: number, n2: number) => {
-  return n1 + n2;
-};
+class Key {
+  private signature: number;
+
+  constructor() {
+    this.signature = Math.random();
+  }
+
+  public getSignature(): number {
+    return this.signature;
+  }
+}
+
+const key = new Key();
+
+class MyHouse extends House {
+    this.door = "open";
+  }
+

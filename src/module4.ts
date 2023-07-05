@@ -351,3 +351,10 @@
 
 // house.openDoor(person.getKey());
 // house.comeIn(person);
+
+// const userInput = null;
+
+// const store = userInput ?? "DEFAULT";
+// console.log("userInput:", !!userInput);
+
+// console.log(store);

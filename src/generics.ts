@@ -265,13 +265,45 @@ type User = {
 // };
 
 // ====PICK======
-interface Page {
-  title: string;
-  annotation: string;
-  numberPage: number;
+// interface Page {
+//   title: string;
+//   annotation: string;
+//   numberPage: number;
+// }
+
+// const pageAnnotation: Pick<Page, "annotation" | "numberPage"> = {
+//   annotation: "Smile page",
+//   numberPage: 1,
+// };
+
+// ===== ПРАКТИКА =======
+//=====1=====
+function getPromise(): Promise<Array<string | number>> {
+  return new Promise((res) => {
+    res(["Text", 50]);
+  });
 }
 
-const pageAnnotation: Pick<Page, "annotation" | "numberPage"> = {
-  annotation: "Smile page",
-  numberPage: 1,
+getPromise().then((data) => {
+  console.log(data);
+});
+
+//======2======
+type AllType = {
+  name: string;
+  position: number;
+  color: string;
+  weight: number;
 };
+
+function compare(
+  top: Pick<AllType, "name" | "color">,
+  bottom: Pick<AllType, "position" | "weight">
+): AllType {
+  return {
+    name: top.name,
+    color: top.color,
+    position: bottom.position,
+    weight: bottom.weight,
+  };
+}

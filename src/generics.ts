@@ -307,3 +307,24 @@ function compare(
     weight: bottom.weight,
   };
 }
+
+// ====3====
+
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+
+// ====4====
+class Component<T> {
+  constructor(public props: T) {}
+}
+
+interface IProp {
+  title: string;
+}
+
+class Page extends Component<IProp> {
+  pageInfo() {
+    console.log(this.props.title);
+  }
+}

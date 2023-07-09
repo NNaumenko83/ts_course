@@ -169,83 +169,154 @@
 // notifier.showMessage();
 // showMessage();
 
-function AddTax(taxPersent: number) {
-  return function (_: any, _2: string, descriptor: PropertyDescriptor) {
-    const method = descriptor.value as Function;
-    return {
-      configurable: true,
-      enumerable: false,
-      get() {
-        return (...args: any) => {
-          const result = method.apply(this, args);
+// function AddTax(taxPersent: number) {
+//   return function (_: any, _2: string, descriptor: PropertyDescriptor) {
+//     const method = descriptor.value as Function;
+//     return {
+//       configurable: true,
+//       enumerable: false,
+//       get() {
+//         return (...args: any) => {
+//           const result = method.apply(this, args);
 
-          return result + (result / 100) * taxPersent;
-        };
-      },
-    };
+//           return result + (result / 100) * taxPersent;
+//         };
+//       },
+//     };
+//   };
+// }
+
+// class Payment {
+//   @AddTax(20)
+//   pay(money: number) {
+//     return money;
+//   }
+// }
+
+// const payment = new Payment();
+
+// console.log(payment.pay(100));
+
+// // Декоратори параметрів
+
+// function CheckEmail(target: any, nameMethod: string, position: number) {
+//   if (!target[nameMethod].validation) {
+//     target[nameMethod].validation = {};
+//   }
+
+//   Object.assign(target[nameMethod].validation, {
+//     [position]: (value: string) => {
+//       if (value.includes("@")) {
+//         return value;
+//       }
+
+//       throw new Error("Not valid email");
+//     },
+//   });
+// }
+
+// function Validation(_: any, _2: string, descriptor: PropertyDescriptor) {
+//   const method = descriptor.value;
+
+//   return {
+//     configurable: true,
+//     enumerable: false,
+//     get() {
+//       return (...args: any[]) => {
+//         if (method.validation) {
+//           args.forEach((item, index) => {
+//             if (method.validation[index]) {
+//               args[index] = method.validation[index](item);
+//             }
+//           });
+//         }
+//         return method.apply(this, args);
+//       };
+//     },
+//   };
+// }
+
+// class Person {
+//   @Validation
+//   setEmail(
+//     @CheckEmail
+//     email: string
+//   ) {
+//     console.log(email);
+//   }
+// }
+
+// const person = new Person();
+
+// person.setEmail("testtest.com");
+
+// ====Декоратори властичвостей =====
+
+interface ValidationConfig {
+  [prop: string]: {
+    [validationProp: string]: string[];
   };
 }
 
-class Payment {
-  @AddTax(20)
-  pay(money: number) {
-    return money;
-  }
+const registeredValidation: ValidationConfig = {};
+
+function Required(target: any, propName: string) {
+  registeredValidation[target.constructor.name] = {
+    ...registeredValidation[target.constructor.name],
+    [propName]: ["required"],
+  };
+}
+function PositiveNumber(target: any, propName: string) {
+  registeredValidation[target.constructor.name] = {
+    ...registeredValidation[target.constructor.name],
+    [propName]: ["positive"],
+  };
 }
 
-const payment = new Payment();
+function validation(obj: any) {
+  const objectValidation = registeredValidation[obj.constructor.name];
 
-console.log(payment.pay(100));
-
-// Декоратори параметрів
-
-function CheckEmail(target: any, nameMethod: string, position: number) {
-  if (!target[nameMethod].validation) {
-    target[nameMethod].validation = {};
+  if (!objectValidation) {
+    return true;
   }
 
-  Object.assign(target[nameMethod].validation, {
-    [position]: (value: string) => {
-      if (value.includes("@")) {
-        return value;
+  let isValid = true;
+
+  for (const prop in objectValidation) {
+    for (const validProp of objectValidation[prop]) {
+      switch (validProp) {
+        case "required":
+          isValid = isValid && !!obj[prop];
+
+          break;
+
+        case "positive":
+          isValid = isValid && obj[prop] > 0;
+
+          break;
+
+        default:
+          break;
       }
+    }
+  }
 
-      throw new Error("Not valid email");
-    },
-  });
-}
-
-function Validation(_: any, _2: string, descriptor: PropertyDescriptor) {
-  const method = descriptor.value;
-
-  return {
-    configurable: true,
-    enumerable: false,
-    get() {
-      return (...args: any[]) => {
-        if (method.validation) {
-          args.forEach((item, index) => {
-            if (method.validation[index]) {
-              args[index] = method.validation[index](item);
-            }
-          });
-        }
-        return method.apply(this, args);
-      };
-    },
-  };
+  return isValid;
 }
 
 class Person {
-  @Validation
-  setEmail(
-    @CheckEmail
-    email: string
-  ) {
-    console.log(email);
+  @Required
+  public name: string;
+  @PositiveNumber
+  public age: number;
+  constructor(n: string, a: number) {
+    this.name = n;
+    this.age = a;
   }
 }
 
-const person = new Person();
+const person = new Person("Max", 21);
 
-person.setEmail("testtest.com");
+if (!validation(person)) {
+  console.log("Not Valid");
+} else console.log("valid");

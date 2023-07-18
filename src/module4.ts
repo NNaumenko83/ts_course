@@ -364,18 +364,46 @@ are equal to one in the binary representation of that number.
 You can guarantee that input is non-negative.
 Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case */
 
-function countBits(n: number): number {
-  let bitsArray = [];
-  let tmp = n;
+// function countBits(n: number): number {
+//   let bitsArray = [];
+//   let tmp = n;
 
-  do {
-    tmp = Math.floor(n / 2);
+//   do {
+//     tmp = Math.floor(n / 2);
 
-    bitsArray.unshift(n % 2);
-    n = tmp;
-  } while (tmp >= 1);
+//     bitsArray.unshift(n % 2);
+//     n = tmp;
+//   } while (tmp >= 1);
 
-  return bitsArray.filter((item) => item === 1).length;
+//   return bitsArray.filter((item) => item === 1).length;
+// }
+
+// console.log(countBits(1234));
+
+// Vowel Count
+
+/*Return the number (count) of vowels in the given string.
+
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+The input string will only consist of lower case letters and/or spaces.*/
+
+class Kata {
+  static vowels: string[] = ["a", "e", "i", "o", "u"];
+
+  static getCount(str: string): number {
+    const lettersArray: string[] = [...str];
+    let count = 0;
+
+    lettersArray.forEach((item: string) => {
+      if (this.vowels.includes(item)) {
+        count += 1;
+      }
+    });
+
+    return count;
+  }
 }
 
-console.log(countBits(1234));
+const numbersVovels = Kata.getCount("abc");
+console.log("numbersVovels:", numbersVovels);

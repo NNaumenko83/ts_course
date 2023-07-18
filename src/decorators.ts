@@ -252,71 +252,71 @@
 
 // ====Декоратори властичвостей =====
 
-interface ValidationConfig {
-  [prop: string]: {
-    [validationProp: string]: string[];
-  };
-}
+// interface ValidationConfig {
+//   [prop: string]: {
+//     [validationProp: string]: string[];
+//   };
+// }
 
-const registeredValidation: ValidationConfig = {};
+// const registeredValidation: ValidationConfig = {};
 
-function Required(target: any, propName: string) {
-  registeredValidation[target.constructor.name] = {
-    ...registeredValidation[target.constructor.name],
-    [propName]: ["required"],
-  };
-}
-function PositiveNumber(target: any, propName: string) {
-  registeredValidation[target.constructor.name] = {
-    ...registeredValidation[target.constructor.name],
-    [propName]: ["positive"],
-  };
-}
+// function Required(target: any, propName: string) {
+//   registeredValidation[target.constructor.name] = {
+//     ...registeredValidation[target.constructor.name],
+//     [propName]: ["required"],
+//   };
+// }
+// function PositiveNumber(target: any, propName: string) {
+//   registeredValidation[target.constructor.name] = {
+//     ...registeredValidation[target.constructor.name],
+//     [propName]: ["positive"],
+//   };
+// }
 
-function validation(obj: any) {
-  const objectValidation = registeredValidation[obj.constructor.name];
+// function validation(obj: any) {
+//   const objectValidation = registeredValidation[obj.constructor.name];
 
-  if (!objectValidation) {
-    return true;
-  }
+//   if (!objectValidation) {
+//     return true;
+//   }
 
-  let isValid = true;
+//   let isValid = true;
 
-  for (const prop in objectValidation) {
-    for (const validProp of objectValidation[prop]) {
-      switch (validProp) {
-        case "required":
-          isValid = isValid && !!obj[prop];
+//   for (const prop in objectValidation) {
+//     for (const validProp of objectValidation[prop]) {
+//       switch (validProp) {
+//         case "required":
+//           isValid = isValid && !!obj[prop];
 
-          break;
+//           break;
 
-        case "positive":
-          isValid = isValid && obj[prop] > 0;
+//         case "positive":
+//           isValid = isValid && obj[prop] > 0;
 
-          break;
+//           break;
 
-        default:
-          break;
-      }
-    }
-  }
+//         default:
+//           break;
+//       }
+//     }
+//   }
 
-  return isValid;
-}
+//   return isValid;
+// }
 
-class Person {
-  @Required
-  public name: string;
-  @PositiveNumber
-  public age: number;
-  constructor(n: string, a: number) {
-    this.name = n;
-    this.age = a;
-  }
-}
+// class Person {
+//   @Required
+//   public name: string;
+//   @PositiveNumber
+//   public age: number;
+//   constructor(n: string, a: number) {
+//     this.name = n;
+//     this.age = a;
+//   }
+// }
 
-const person = new Person("Max", 21);
+// const person = new Person("Max", 21);
 
-if (!validation(person)) {
-  console.log("Not Valid");
-} else console.log("valid");
+// if (!validation(person)) {
+//   console.log("Not Valid");
+// } else console.log("valid");

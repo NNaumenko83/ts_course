@@ -358,3 +358,24 @@
 // console.log("userInput:", !!userInput);
 
 // console.log(store);
+
+/*Write a function that takes an integer as input, and returns the number of bits that 
+are equal to one in the binary representation of that number. 
+You can guarantee that input is non-negative.
+Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case */
+
+function countBits(n: number): number {
+  let bitsArray = [];
+  let tmp = n;
+
+  do {
+    tmp = Math.floor(n / 2);
+
+    bitsArray.unshift(n % 2);
+    n = tmp;
+  } while (tmp >= 1);
+
+  return bitsArray.filter((item) => item === 1).length;
+}
+
+console.log(countBits(1234));

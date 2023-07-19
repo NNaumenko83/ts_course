@@ -388,22 +388,48 @@ We will consider a, e, i, o, u as vowels for this Kata (but not y).
 
 The input string will only consist of lower case letters and/or spaces.*/
 
-class Kata {
-  static vowels: string[] = ["a", "e", "i", "o", "u"];
+// class Kata {
+//   static vowels: string[] = ["a", "e", "i", "o", "u"];
 
-  static getCount(str: string): number {
-    const lettersArray: string[] = [...str];
-    let count = 0;
+//   static getCount(str: string): number {
+//     const lettersArray: string[] = [...str];
+//     let count = 0;
 
-    lettersArray.forEach((item: string) => {
-      if (this.vowels.includes(item)) {
-        count += 1;
-      }
-    });
+//     lettersArray.forEach((item: string) => {
+//       if (this.vowels.includes(item)) {
+//         count += 1;
+//       }
+//     });
 
-    return count;
+//     return count;
+//   }
+// }
+
+// const numbersVovels = Kata.getCount("abc");
+// console.log("numbersVovels:", numbersVovels);
+
+// Tribonacci Sequence
+function tribonacci([a, b, c]: [number, number, number], n: number): number[] {
+  let array = [a, b, c];
+
+  if (n === 0) {
+    return [];
   }
+  if (n <= 3) {
+    return array.splice(0, n);
+  }
+
+  do {
+    let tmp = 0;
+
+    for (let i = array.length - 1; i >= array.length - 3; i -= 1) {
+      tmp += array[i];
+    }
+
+    array.push(tmp);
+  } while (array.length < n);
+
+  return array;
 }
 
-const numbersVovels = Kata.getCount("abc");
-console.log("numbersVovels:", numbersVovels);
+console.log(tribonacci([3, 2, 1], 10));

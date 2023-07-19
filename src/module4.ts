@@ -409,27 +409,48 @@ The input string will only consist of lower case letters and/or spaces.*/
 // console.log("numbersVovels:", numbersVovels);
 
 // Tribonacci Sequence
-function tribonacci([a, b, c]: [number, number, number], n: number): number[] {
-  let array = [a, b, c];
+// function tribonacci([a, b, c]: [number, number, number], n: number): number[] {
+//   let array = [a, b, c];
 
-  if (n === 0) {
-    return [];
+//   if (n === 0) {
+//     return [];
+//   }
+//   if (n <= 3) {
+//     return array.splice(0, n);
+//   }
+
+//   do {
+//     let tmp = 0;
+
+//     for (let i = array.length - 1; i >= array.length - 3; i -= 1) {
+//       tmp += array[i];
+//     }
+
+//     array.push(tmp);
+//   } while (array.length < n);
+
+//   return array;
+// }
+
+// console.log(tribonacci([3, 2, 1], 10));
+
+// Beginner Series #3 Sum of Numbers
+function getSum(a: number, b: number): number {
+  if (a === b) {
+    return a;
   }
-  if (n <= 3) {
-    return array.splice(0, n);
+
+  if (a > b) {
+    [a, b] = [b, a];
   }
 
-  do {
-    let tmp = 0;
+  let sum = 0;
 
-    for (let i = array.length - 1; i >= array.length - 3; i -= 1) {
-      tmp += array[i];
-    }
+  for (let i = a; i <= b; i += 1) {
+    sum += i;
+  }
 
-    array.push(tmp);
-  } while (array.length < n);
-
-  return array;
+  return sum;
 }
 
-console.log(tribonacci([3, 2, 1], 10));
+console.log(getSum(1, 2));

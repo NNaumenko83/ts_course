@@ -435,22 +435,74 @@ The input string will only consist of lower case letters and/or spaces.*/
 // console.log(tribonacci([3, 2, 1], 10));
 
 // Beginner Series #3 Sum of Numbers
-function getSum(a: number, b: number): number {
-  if (a === b) {
-    return a;
+// function getSum(a: number, b: number): number {
+//   if (a === b) {
+//     return a;
+//   }
+
+//   if (a > b) {
+//     [a, b] = [b, a];
+//   }
+
+//   let sum = 0;
+
+//   for (let i = a; i <= b; i += 1) {
+//     sum += i;
+//   }
+
+//   return sum;
+// }
+
+// console.log(getSum(1, 2));
+
+// Roman Numerals Decoder
+// https://www.codewars.com/kata/51b6249c4612257ac0000005/train/typescript
+// 'I'          1
+// V          5
+// X          10
+// L          50
+// C          100
+// D          500
+// M          1,000
+
+function solution(roman: string): number {
+  interface RomanNumber {
+    [key: string]: number;
   }
 
-  if (a > b) {
-    [a, b] = [b, a];
-  }
+  const romanObj: RomanNumber = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000,
+  };
+
+  const arr = [...roman];
+  console.log("arr:", arr);
 
   let sum = 0;
 
-  for (let i = a; i <= b; i += 1) {
-    sum += i;
-  }
+  for (let i = 0; i < arr.length; i += 1) {
+    if (romanObj[arr[i]] === 1 && i === arr.length - 1) {
+      sum += romanObj[arr[i]];
+      continue;
+    }
 
+    if (
+      romanObj[arr[i]] === 1 &&
+      i === arr.length - 2 &&
+      romanObj[arr[arr.length - 1]] !== 1
+    ) {
+      sum += romanObj[arr[i + 1]] - romanObj[arr[i]];
+      return sum;
+    }
+
+    sum += romanObj[arr[i]];
+  }
   return sum;
 }
 
-console.log(getSum(1, 2));
+console.log(solution("MMVIII"));

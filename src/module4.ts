@@ -508,27 +508,53 @@ The input string will only consist of lower case letters and/or spaces.*/
 // console.log(solution("MMVIII"));
 
 // Are they the "same"?
-function comp(a1: number[] | null, a2: number[] | null): boolean {
-  if (!a1 || !a2) {
-    return false;
-  }
+// function comp(a1: number[] | null, a2: number[] | null): boolean {
+//   if (!a1 || !a2) {
+//     return false;
+//   }
 
-  const arr = a1.map((item) => Math.pow(item, 2));
+//   const arr = a1.map((item) => Math.pow(item, 2));
 
-  for (const item of arr) {
-    if (
-      !a2.includes(item) ||
-      arr.filter((numb) => numb === item).length !==
-        a2.filter((numb) => numb === item).length
-    ) {
-      return false;
-    }
-  }
+//   for (const item of arr) {
+//     if (
+//       !a2.includes(item) ||
+//       arr.filter((numb) => numb === item).length !==
+//         a2.filter((numb) => numb === item).length
+//     ) {
+//       return false;
+//     }
+//   }
 
-  return true;
-}
+//   return true;
+// }
 
-const a = [121, 144, 19, 161, 19, 144, 19, 11];
+// const a = [121, 144, 19, 161, 19, 144, 19, 11];
 
-const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
-console.log(comp(a, b));
+// const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+// console.log(comp(a, b));
+
+// Bouncing Balls
+//https://www.codewars.com/kata/5544c7a5cb454edb3c000047/train/typescript
+
+// function bouncingBall(h: number, bounce: number, window: number): number {
+//   if (bounce <= 0 || bounce >= 1 || window >= h) {
+//     return -1;
+//   }
+
+//   let counter = 1;
+//   let aftBounceHeigth = h * bounce;
+
+//   do {
+//     if (counter > 1) {
+//       aftBounceHeigth = aftBounceHeigth * bounce;
+//     }
+
+//     if (aftBounceHeigth > window) {
+//       counter += 2;
+//     }
+//   } while (aftBounceHeigth > window);
+
+//   return counter;
+// }
+
+// console.log(bouncingBall(30, 0.75, 1.5));

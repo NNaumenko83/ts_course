@@ -465,44 +465,70 @@ The input string will only consist of lower case letters and/or spaces.*/
 // D          500
 // M          1,000
 
-function solution(roman: string): number {
-  interface RomanNumber {
-    [key: string]: number;
+// function solution(roman: string): number {
+//   interface RomanNumber {
+//     [key: string]: number;
+//   }
+
+//   const romanObj: RomanNumber = {
+//     I: 1,
+//     V: 5,
+//     X: 10,
+//     L: 50,
+//     C: 100,
+//     D: 500,
+//     M: 1000,
+//   };
+
+//   const arr = [...roman];
+//   console.log("arr:", arr);
+
+//   let sum = 0;
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (romanObj[arr[i]] === 1 && i === arr.length - 1) {
+//       sum += romanObj[arr[i]];
+//       continue;
+//     }
+
+//     if (
+//       romanObj[arr[i]] === 1 &&
+//       i === arr.length - 2 &&
+//       romanObj[arr[arr.length - 1]] !== 1
+//     ) {
+//       sum += romanObj[arr[i + 1]] - romanObj[arr[i]];
+//       return sum;
+//     }
+
+//     sum += romanObj[arr[i]];
+//   }
+//   return sum;
+// }
+
+// console.log(solution("MMVIII"));
+
+// Are they the "same"?
+function comp(a1: number[] | null, a2: number[] | null): boolean {
+  if (!a1 || !a2) {
+    return false;
   }
 
-  const romanObj: RomanNumber = {
-    I: 1,
-    V: 5,
-    X: 10,
-    L: 50,
-    C: 100,
-    D: 500,
-    M: 1000,
-  };
+  const arr = a1.map((item) => Math.pow(item, 2));
 
-  const arr = [...roman];
-  console.log("arr:", arr);
-
-  let sum = 0;
-
-  for (let i = 0; i < arr.length; i += 1) {
-    if (romanObj[arr[i]] === 1 && i === arr.length - 1) {
-      sum += romanObj[arr[i]];
-      continue;
-    }
-
+  for (const item of arr) {
     if (
-      romanObj[arr[i]] === 1 &&
-      i === arr.length - 2 &&
-      romanObj[arr[arr.length - 1]] !== 1
+      !a2.includes(item) ||
+      arr.filter((numb) => numb === item).length !==
+        a2.filter((numb) => numb === item).length
     ) {
-      sum += romanObj[arr[i + 1]] - romanObj[arr[i]];
-      return sum;
+      return false;
     }
-
-    sum += romanObj[arr[i]];
   }
-  return sum;
+
+  return true;
 }
 
-console.log(solution("MMVIII"));
+const a = [121, 144, 19, 161, 19, 144, 19, 11];
+
+const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
+console.log(comp(a, b));

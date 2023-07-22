@@ -558,3 +558,37 @@ The input string will only consist of lower case letters and/or spaces.*/
 // }
 
 // console.log(bouncingBall(30, 0.75, 1.5));
+
+// Count the smiley faces!
+/*Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+Every smiling face must have a smiling mouth that should be marked with either ) or D*/
+
+function countSmileys(arr: string[]) {
+  if (arr.length === 0) {
+    return 0;
+  }
+
+  const count = arr.reduce((acc, item) => {
+    if ([...item].includes(":") || [...item].includes(";")) {
+      if ([...item].length === 3) {
+        if ([...item].includes("-") || [...item].includes("~")) {
+          if ([...item].includes("D") || [...item].includes(")")) {
+            return (acc += 1);
+          }
+        }
+      }
+      if ([...item].length === 2) {
+        if ([...item].includes("D") || [...item].includes(")")) {
+          return (acc += 1);
+        }
+      }
+    }
+
+    return acc;
+  }, 0);
+
+  return count;
+}
+
+console.log(countSmileys([":D", ":~)", ";~D", ":)"]));

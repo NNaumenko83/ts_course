@@ -564,31 +564,62 @@ The input string will only consist of lower case letters and/or spaces.*/
 A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
 Every smiling face must have a smiling mouth that should be marked with either ) or D*/
 
-function countSmileys(arr: string[]) {
-  if (arr.length === 0) {
-    return 0;
-  }
+// function countSmileys(arr: string[]) {
+//   if (arr.length === 0) {
+//     return 0;
+//   }
 
-  const count = arr.reduce((acc, item) => {
-    if ([...item].includes(":") || [...item].includes(";")) {
-      if ([...item].length === 3) {
-        if ([...item].includes("-") || [...item].includes("~")) {
-          if ([...item].includes("D") || [...item].includes(")")) {
-            return (acc += 1);
-          }
-        }
-      }
-      if ([...item].length === 2) {
-        if ([...item].includes("D") || [...item].includes(")")) {
-          return (acc += 1);
-        }
+//   const count = arr.reduce((acc, item) => {
+//     if ([...item].includes(":") || [...item].includes(";")) {
+//       if ([...item].length === 3) {
+//         if ([...item].includes("-") || [...item].includes("~")) {
+//           if ([...item].includes("D") || [...item].includes(")")) {
+//             return (acc += 1);
+//           }
+//         }
+//       }
+//       if ([...item].length === 2) {
+//         if ([...item].includes("D") || [...item].includes(")")) {
+//           return (acc += 1);
+//         }
+//       }
+//     }
+
+//     return acc;
+//   }, 0);
+
+//   return count;
+// }
+
+// console.log(countSmileys([":D", ":~)", ";~D", ":)"]));
+
+// Multiplication table
+// https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/train/typescript
+
+function multiplicationTable(size: number): number[][] {
+  let array: number[][] = Array.from({ length: size }, () => []);
+  for (let i = 0; i < array.length; i += 1) {
+    if (i === 0) {
+      for (let k = 1; k <= size; k += 1) {
+        array[i].push(k);
       }
     }
 
-    return acc;
-  }, 0);
+    if (i > 0) {
+      for (let k = 0; k < size; k += 1) {
+        if (k === 0) {
+          array[i].push(i + 1);
+          continue;
+        }
 
-  return count;
+        const num = array[i][0] * k;
+
+        array[i].push(array[i][0] + num);
+      }
+    }
+  }
+
+  return array;
 }
 
-console.log(countSmileys([":D", ":~)", ";~D", ":)"]));
+console.log(multiplicationTable(4));

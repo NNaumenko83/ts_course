@@ -629,28 +629,50 @@
 // // https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/typescript
 // // Duplicate Encoder
 
-function duplicateEncode(word: string) {
-  const arrLettersWord = [...word.toLocaleLowerCase()];
-  const arr: string[] = Array(arrLettersWord.length);
+// function duplicateEncode(word: string) {
+//   const arrLettersWord = [...word.toLocaleLowerCase()];
+//   const arr: string[] = Array(arrLettersWord.length);
 
-  for (let i = 0; i < arrLettersWord.length; i += 1) {
-    const indexArray = arrLettersWord.reduce((acc: number[], item, index) => {
-      if (item === arrLettersWord[i]) {
-        acc.push(index);
-      }
+//   for (let i = 0; i < arrLettersWord.length; i += 1) {
+//     const indexArray = arrLettersWord.reduce((acc: number[], item, index) => {
+//       if (item === arrLettersWord[i]) {
+//         acc.push(index);
+//       }
+//       return acc;
+//     }, []);
+//     if (indexArray.length === 1) {
+//       arr[indexArray[0]] = "(";
+//     } else {
+//       for (let i = 0; i < indexArray.length; i += 1) {
+//         arr[indexArray[i]] = ")";
+//       }
+//     }
+//   }
+
+//   return arr.join("");
+// }
+
+// // // console.log(duplicateEncode("din"));
+// console.log(duplicateEncode("Success"));
+
+// Printer Errors
+// https://www.codewars.com/kata/56541980fa08ab47a0000040/train/typescript
+
+function printerError(s: string): string {
+  const stringLength = s.length;
+
+  const numberErrors = [...s].reduce((acc, item) => {
+    if (item > "m") {
+      acc += 1;
       return acc;
-    }, []);
-    if (indexArray.length === 1) {
-      arr[indexArray[0]] = "(";
     } else {
-      for (let i = 0; i < indexArray.length; i += 1) {
-        arr[indexArray[i]] = ")";
-      }
+      return acc;
     }
-  }
+  }, 0);
 
-  return arr.join("");
+  return numberErrors.toString() + "/" + stringLength.toString();
 }
 
-// // console.log(duplicateEncode("din"));
-console.log(duplicateEncode("Success"));
+let s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+
+console.log(printerError(s));

@@ -629,28 +629,73 @@
 // // https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/typescript
 // // Duplicate Encoder
 
-function duplicateEncode(word: string) {
-  const arrLettersWord = [...word.toLocaleLowerCase()];
-  const arr: string[] = Array(arrLettersWord.length);
+// function duplicateEncode(word: string) {
+//   const arrLettersWord = [...word.toLocaleLowerCase()];
+//   const arr: string[] = Array(arrLettersWord.length);
 
-  for (let i = 0; i < arrLettersWord.length; i += 1) {
-    const indexArray = arrLettersWord.reduce((acc: number[], item, index) => {
-      if (item === arrLettersWord[i]) {
-        acc.push(index);
-      }
-      return acc;
-    }, []);
-    if (indexArray.length === 1) {
-      arr[indexArray[0]] = "(";
-    } else {
-      for (let i = 0; i < indexArray.length; i += 1) {
-        arr[indexArray[i]] = ")";
-      }
-    }
-  }
+//   for (let i = 0; i < arrLettersWord.length; i += 1) {
+//     const indexArray = arrLettersWord.reduce((acc: number[], item, index) => {
+//       if (item === arrLettersWord[i]) {
+//         acc.push(index);
+//       }
+//       return acc;
+//     }, []);
+//     if (indexArray.length === 1) {
+//       arr[indexArray[0]] = "(";
+//     } else {
+//       for (let i = 0; i < indexArray.length; i += 1) {
+//         arr[indexArray[i]] = ")";
+//       }
+//     }
+//   }
 
-  return arr.join("");
-}
+//   return arr.join("");
+// }
 
-// // console.log(duplicateEncode("din"));
-console.log(duplicateEncode("Success"));
+// // // console.log(duplicateEncode("din"));
+// console.log(duplicateEncode("Success"));
+
+// async function fetchMovies() {
+//   const data = await new Promise<string>((resolve) => {
+//     setTimeout(() => {
+//       resolve("SpiderMan");
+//     }, 5000);
+//   });
+//   return data;
+// }
+
+// async function fetchMovies() {
+//   const data = await new Promise<string>((resolve) => {
+//     setTimeout(() => {
+//       resolve("Mavka");
+//     }, 3000);
+//   });
+//   return data;
+// }
+
+// const getMovies = async () => {
+//   const data = await fetchMovies();
+//   console.log("data:", data);
+// };
+
+// getMovies();
+
+// let count = 0;
+// function makeCounter() {
+//   return () => {
+//     console.log("count before:", count);
+//     console.log("this", this);
+//     count += 1;
+//     console.log("count after:", count);
+//   };
+// }
+
+// const counter = makeCounter();
+
+// counter();
+// counter();
+// counter();
+
+// const newCounter = makeCounter();
+
+// newCounter();

@@ -655,8 +655,30 @@
 // // // console.log(duplicateEncode("din"));
 // console.log(duplicateEncode("Success"));
 
-// Printer Errors
-// https://www.codewars.com/kata/56541980fa08ab47a0000040/train/typescript
+// async function fetchMovies() {
+//   const data = await new Promise<string>((resolve) => {
+//     setTimeout(() => {
+//       resolve("SpiderMan");
+//     }, 5000);
+//   });
+//   return data;
+// }
+
+// async function fetchMovies() {
+//   const data = await new Promise<string>((resolve) => {
+//     setTimeout(() => {
+//       resolve("Mavka");
+//     }, 3000);
+//   });
+//   return data;
+// }
+
+// const getMovies = async () => {
+//   const data = await fetchMovies();
+//   console.log("data:", data);
+// };
+
+// getMovies();
 
 // function printerError(s: string): string {
 //   const stringLength = s.length;

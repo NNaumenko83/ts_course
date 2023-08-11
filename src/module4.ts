@@ -658,21 +658,67 @@
 // Printer Errors
 // https://www.codewars.com/kata/56541980fa08ab47a0000040/train/typescript
 
-function printerError(s: string): string {
-  const stringLength = s.length;
+// function printerError(s: string): string {
+//   const stringLength = s.length;
 
-  const numberErrors = [...s].reduce((acc, item) => {
-    if (item > "m") {
-      acc += 1;
-      return acc;
-    } else {
-      return acc;
+//   const numberErrors = [...s].reduce((acc, item) => {
+//     if (item > "m") {
+//       acc += 1;
+//       return acc;
+//     } else {
+//       return acc;
+//     }
+//   }, 0);
+
+//   return numberErrors.toString() + "/" + stringLength.toString();
+// }
+
+// let s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+
+// console.log(printerError(s));
+
+function dirReduc(arr: string[]): string[] {
+  console.log("arr:", arr);
+  const opositeObj: { [key: string]: string } = {
+    NORTH: "SOUTH",
+    SOUTH: "NORTH",
+    EAST: "WEST",
+    WEST: "EAST",
+  };
+
+  const newArr: string[] = [];
+
+  for (let i = 0; i < arr.length; i += 1) {
+    console.log("newArr:", newArr);
+    if (newArr.length === 0) {
+      newArr.push(arr[i]);
+      continue;
     }
-  }, 0);
+    if (opositeObj[newArr[newArr.length - 1]] === arr[i]) {
+      newArr.pop();
+      continue;
+    }
+    newArr.push(arr[i]);
+  }
 
-  return numberErrors.toString() + "/" + stringLength.toString();
+  return newArr;
 }
 
-let s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+const array = [
+  "SOUTH",
+  "EAST",
+  "WEST",
+  "EAST",
+  "WEST",
+  "WEST",
+  "WEST",
+  "EAST",
+  "SOUTH",
+  "SOUTH",
+  "SOUTH",
+  "NORTH",
+  "NORTH",
+];
+// [ 'SOUTH', 'WEST', 'SOUTH' ]
 
-console.log(printerError(s));
+console.log(dirReduc(array));

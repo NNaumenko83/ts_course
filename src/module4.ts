@@ -699,48 +699,94 @@
 
 // console.log(printerError(s));
 
-function dirReduc(arr: string[]): string[] {
-  console.log("arr:", arr);
-  const opositeObj: { [key: string]: string } = {
-    NORTH: "SOUTH",
-    SOUTH: "NORTH",
-    EAST: "WEST",
-    WEST: "EAST",
-  };
+// function dirReduc(arr: string[]): string[] {
+//   console.log("arr:", arr);
+//   const opositeObj: { [key: string]: string } = {
+//     NORTH: "SOUTH",
+//     SOUTH: "NORTH",
+//     EAST: "WEST",
+//     WEST: "EAST",
+//   };
 
-  const newArr: string[] = [];
+//   const newArr: string[] = [];
 
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log("newArr:", newArr);
-    if (newArr.length === 0) {
-      newArr.push(arr[i]);
-      continue;
-    }
-    if (opositeObj[newArr[newArr.length - 1]] === arr[i]) {
-      newArr.pop();
-      continue;
-    }
-    newArr.push(arr[i]);
+//   for (let i = 0; i < arr.length; i += 1) {
+//     console.log("newArr:", newArr);
+//     if (newArr.length === 0) {
+//       newArr.push(arr[i]);
+//       continue;
+//     }
+//     if (opositeObj[newArr[newArr.length - 1]] === arr[i]) {
+//       newArr.pop();
+//       continue;
+//     }
+//     newArr.push(arr[i]);
+//   }
+
+//   return newArr;
+// }
+
+// const array = [
+//   "SOUTH",
+//   "EAST",
+//   "WEST",
+//   "EAST",
+//   "WEST",
+//   "WEST",
+//   "WEST",
+//   "EAST",
+//   "SOUTH",
+//   "SOUTH",
+//   "SOUTH",
+//   "NORTH",
+//   "NORTH",
+// ];
+// // [ 'SOUTH', 'WEST', 'SOUTH' ]
+
+// console.log(dirReduc(array));
+
+// Reverse or rotate?
+// https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/train/typescript
+
+function revRot(s: string, sz: number): string {
+  if (sz <= 0 || !s) {
+    return "";
   }
 
-  return newArr;
+  if (sz > s.length) {
+    return "";
+  }
+  const strArray = [...s];
+
+  const numberOfChunks = Math.floor(s.length / sz);
+
+  const arrOfChunks = [];
+
+  for (let i = 0; i < numberOfChunks; i += 1) {
+    arrOfChunks.push(strArray.splice(0, sz));
+  }
+
+  arrOfChunks.forEach((item, index) => {
+    const sumOfCubes = item.reduce((acc, it) => {
+      return (acc += Math.pow(+it, 3));
+    }, 0);
+
+    if (sumOfCubes % 2 === 0) {
+      arrOfChunks[index] = item.reverse();
+    } else {
+      const partOne = item.slice(1, item.length);
+
+      const partTwo = item[0];
+
+      const newItem = [...partOne, partTwo];
+
+      arrOfChunks[index] = [...partOne, partTwo];
+    }
+  });
+
+  const combinedString = arrOfChunks
+    .map((innerArr) => innerArr.join(""))
+    .join("");
+
+  return combinedString;
 }
-
-const array = [
-  "SOUTH",
-  "EAST",
-  "WEST",
-  "EAST",
-  "WEST",
-  "WEST",
-  "WEST",
-  "EAST",
-  "SOUTH",
-  "SOUTH",
-  "SOUTH",
-  "NORTH",
-  "NORTH",
-];
-// [ 'SOUTH', 'WEST', 'SOUTH' ]
-
-console.log(dirReduc(array));

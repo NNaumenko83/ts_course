@@ -748,45 +748,115 @@
 // Reverse or rotate?
 // https://www.codewars.com/kata/56b5afb4ed1f6d5fb0000991/train/typescript
 
-function revRot(s: string, sz: number): string {
-  if (sz <= 0 || !s) {
-    return "";
+// function revRot(s: string, sz: number): string {
+//   if (sz <= 0 || !s) {
+//     return "";
+//   }
+
+//   if (sz > s.length) {
+//     return "";
+//   }
+//   const strArray = [...s];
+
+//   const numberOfChunks = Math.floor(s.length / sz);
+
+//   const arrOfChunks = [];
+
+//   for (let i = 0; i < numberOfChunks; i += 1) {
+//     arrOfChunks.push(strArray.splice(0, sz));
+//   }
+
+//   arrOfChunks.forEach((item, index) => {
+//     const sumOfCubes = item.reduce((acc, it) => {
+//       return (acc += Math.pow(+it, 3));
+//     }, 0);
+
+//     if (sumOfCubes % 2 === 0) {
+//       arrOfChunks[index] = item.reverse();
+//     } else {
+//       const partOne = item.slice(1, item.length);
+
+//       const partTwo = item[0];
+
+//       const newItem = [...partOne, partTwo];
+
+//       arrOfChunks[index] = [...partOne, partTwo];
+//     }
+//   });
+
+//   const combinedString = arrOfChunks
+//     .map((innerArr) => innerArr.join(""))
+//     .join("");
+
+//   return combinedString;
+// }
+
+class Vector {
+  public vector: number[];
+
+  constructor(components: number[]) {
+    this.vector = components;
   }
 
-  if (sz > s.length) {
-    return "";
-  }
-  const strArray = [...s];
-
-  const numberOfChunks = Math.floor(s.length / sz);
-
-  const arrOfChunks = [];
-
-  for (let i = 0; i < numberOfChunks; i += 1) {
-    arrOfChunks.push(strArray.splice(0, sz));
-  }
-
-  arrOfChunks.forEach((item, index) => {
-    const sumOfCubes = item.reduce((acc, it) => {
-      return (acc += Math.pow(+it, 3));
-    }, 0);
-
-    if (sumOfCubes % 2 === 0) {
-      arrOfChunks[index] = item.reverse();
-    } else {
-      const partOne = item.slice(1, item.length);
-
-      const partTwo = item[0];
-
-      const newItem = [...partOne, partTwo];
-
-      arrOfChunks[index] = [...partOne, partTwo];
+  add(components: { vector: number[] }) {
+    if (this.vector.length !== components.vector.length) {
+      throw new Error("Vectors must have the same length");
     }
-  });
+    const resultComponents = this.vector.map(
+      (item, index) => (item += components.vector[index])
+    );
+    return new Vector(resultComponents);
+  }
 
-  const combinedString = arrOfChunks
-    .map((innerArr) => innerArr.join(""))
-    .join("");
+  subtract(components: { vector: number[] }) {
+    if (this.vector.length !== components.vector.length) {
+      throw new Error("Vectors must have the same length");
+    }
+    const resultComponents = this.vector.map(
+      (item, index) => (item -= components.vector[index])
+    );
+    return new Vector(resultComponents);
+  }
 
-  return combinedString;
+  dot(components: { vector: number[] }) {
+    if (this.vector.length !== components.vector.length) {
+      throw new Error("Vectors must have the same length");
+    }
+    const resultComponents = this.vector.map(
+      (item, index) => item * components.vector[index]
+    );
+    return resultComponents.reduce((acc, item) => (acc += item), 0);
+  }
+
+  // norm() {
+  //   console.log(this.vector);
+  //   console.log(this.vector.reduce((acc, item) => (acc += item ** 2), 0));
+  //   return this.vector.reduce((acc, item) => (acc += item ** 2), 0);
+  // }
+
+  norm() {
+    const result = Math.sqrt(
+      this.vector.reduce((acc, value) => acc + value * value, 0)
+    );
+    return result;
+  }
+
+  toString() {
+    return `(${this.vector.join(",")})`;
+  }
+
+  equals(components: { vector: number[] }) {
+    return this.toString() === `(${components.vector.join(",")})`;
+  }
 }
+
+const a = new Vector([1, 2, 3]);
+const b = new Vector([1, 2, 3]);
+const c = new Vector([5, 6, 7, 8]);
+
+console.log(a.add(b));
+console.log(a.subtract(b));
+console.log(a.dot(b));
+console.log(a.norm());
+console.log(a.toString());
+console.log(a.equals(b));

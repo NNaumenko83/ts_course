@@ -888,38 +888,50 @@
 // https://www.codewars.com/kata/554f76dca89983cc400000bb/train/typescript
 // Diophantine Equation
 
-function solequa(n: number): number[][] {
-  const solutions: number[][] = [];
+// function solequa(n: number): number[][] {
+//   const solutions: number[][] = [];
 
-  for (let x_minus_2y = 1; x_minus_2y <= Math.sqrt(n); x_minus_2y++) {
-    if (n % x_minus_2y === 0) {
-      const x_plus_2y = n / x_minus_2y;
-      const x = (x_plus_2y + x_minus_2y) / 2;
-      const y = (x_plus_2y - x_minus_2y) / 4;
+//   for (let x_minus_2y = 1; x_minus_2y <= Math.sqrt(n); x_minus_2y++) {
+//     if (n % x_minus_2y === 0) {
+//       const x_plus_2y = n / x_minus_2y;
+//       const x = (x_plus_2y + x_minus_2y) / 2;
+//       const y = (x_plus_2y - x_minus_2y) / 4;
 
-      if (
-        x === Math.floor(x) &&
-        y === Math.floor(y) &&
-        x_minus_2y * x_plus_2y === n
-      ) {
-        solutions.push([x, y]);
-      }
-    }
-  }
+//       if (
+//         x === Math.floor(x) &&
+//         y === Math.floor(y) &&
+//         x_minus_2y * x_plus_2y === n
+//       ) {
+//         solutions.push([x, y]);
+//       }
+//     }
+//   }
 
-  console.log(solutions);
+//   console.log(solutions);
 
-  return solutions;
-}
+//   return solutions;
+// }
 
-solequa(12);
+// solequa(12);
 
 // https://www.codewars.com/kata/576757b1df89ecf5bd00073b/train/typescript
 
 const towerBuilder = (nFloors: number): string[] => {
-  const arr = Array.from({ length: nFloors });
+  const arr = Array.from({ length: nFloors }, (_, index) =>
+    Array.from({ length: 3 }, (_, ind) => {
+      if (ind === 0 || ind === 2) {
+        console.log(nFloors - 1 - index);
 
-  return ["*"];
+        return Array(nFloors - 1 - index)
+          .fill(" ")
+          .join("");
+      }
+      return Array.from({ length: 2 * index + 1 }, () => "*").join("");
+    }).join("")
+  );
+
+  console.log(arr);
+  return arr;
 };
 
-towerBuilder(1);
+towerBuilder(4);

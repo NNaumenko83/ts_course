@@ -791,72 +791,135 @@
 //   return combinedString;
 // }
 
-class Vector {
-  public vector: number[];
+// class Vector {
+//   public vector: number[];
 
-  constructor(components: number[]) {
-    this.vector = components;
-  }
+//   constructor(components: number[]) {
+//     this.vector = components;
+//   }
 
-  add(components: { vector: number[] }) {
-    if (this.vector.length !== components.vector.length) {
-      throw new Error("Vectors must have the same length");
+//   add(components: { vector: number[] }) {
+//     if (this.vector.length !== components.vector.length) {
+//       throw new Error("Vectors must have the same length");
+//     }
+//     const resultComponents = this.vector.map(
+//       (item, index) => (item += components.vector[index])
+//     );
+//     return new Vector(resultComponents);
+//   }
+
+//   subtract(components: { vector: number[] }) {
+//     if (this.vector.length !== components.vector.length) {
+//       throw new Error("Vectors must have the same length");
+//     }
+//     const resultComponents = this.vector.map(
+//       (item, index) => (item -= components.vector[index])
+//     );
+//     return new Vector(resultComponents);
+//   }
+
+//   dot(components: { vector: number[] }) {
+//     if (this.vector.length !== components.vector.length) {
+//       throw new Error("Vectors must have the same length");
+//     }
+//     const resultComponents = this.vector.map(
+//       (item, index) => item * components.vector[index]
+//     );
+//     return resultComponents.reduce((acc, item) => (acc += item), 0);
+//   }
+
+//   // norm() {
+//   //   console.log(this.vector);
+//   //   console.log(this.vector.reduce((acc, item) => (acc += item ** 2), 0));
+//   //   return this.vector.reduce((acc, item) => (acc += item ** 2), 0);
+//   // }
+
+//   norm() {
+//     const result = Math.sqrt(
+//       this.vector.reduce((acc, value) => acc + value * value, 0)
+//     );
+//     return result;
+//   }
+
+//   toString() {
+//     return `(${this.vector.join(",")})`;
+//   }
+
+//   equals(components: { vector: number[] }) {
+//     return this.toString() === `(${components.vector.join(",")})`;
+//   }
+// }
+
+// const a = new Vector([1, 2, 3]);
+// const b = new Vector([1, 2, 3]);
+// const c = new Vector([5, 6, 7, 8]);
+
+// console.log(a.add(b));
+// console.log(a.subtract(b));
+// console.log(a.dot(b));
+// console.log(a.norm());
+// console.log(a.toString());
+// console.log(a.equals(b));
+
+// function solequa(n: number): [number, number][] {
+//   const arr: [number, number][] = [];
+
+//   for (let i = 0; i <= Math.ceil(n / 1.8); i += 1) {
+//     if (i === 0 && n !== 0) {
+//       continue;
+//     }
+
+//     for (let k = 0; k <= Math.sqrt((i * i - n) / 4); k += 1) {
+//       if ((i - 2 * k) * (i + 2 * k) > n) {
+//         continue;
+//       }
+
+//       if ((i - 2 * k) * (i + 2 * k) === n) {
+//         arr.unshift([i, k]);
+//         continue;
+//       }
+//       continue;
+//     }
+//   }
+
+//   return arr;
+// }
+
+// https://www.codewars.com/kata/554f76dca89983cc400000bb/train/typescript
+// Diophantine Equation
+
+function solequa(n: number): number[][] {
+  const solutions: number[][] = [];
+
+  for (let x_minus_2y = 1; x_minus_2y <= Math.sqrt(n); x_minus_2y++) {
+    if (n % x_minus_2y === 0) {
+      const x_plus_2y = n / x_minus_2y;
+      const x = (x_plus_2y + x_minus_2y) / 2;
+      const y = (x_plus_2y - x_minus_2y) / 4;
+
+      if (
+        x === Math.floor(x) &&
+        y === Math.floor(y) &&
+        x_minus_2y * x_plus_2y === n
+      ) {
+        solutions.push([x, y]);
+      }
     }
-    const resultComponents = this.vector.map(
-      (item, index) => (item += components.vector[index])
-    );
-    return new Vector(resultComponents);
   }
 
-  subtract(components: { vector: number[] }) {
-    if (this.vector.length !== components.vector.length) {
-      throw new Error("Vectors must have the same length");
-    }
-    const resultComponents = this.vector.map(
-      (item, index) => (item -= components.vector[index])
-    );
-    return new Vector(resultComponents);
-  }
+  console.log(solutions);
 
-  dot(components: { vector: number[] }) {
-    if (this.vector.length !== components.vector.length) {
-      throw new Error("Vectors must have the same length");
-    }
-    const resultComponents = this.vector.map(
-      (item, index) => item * components.vector[index]
-    );
-    return resultComponents.reduce((acc, item) => (acc += item), 0);
-  }
-
-  // norm() {
-  //   console.log(this.vector);
-  //   console.log(this.vector.reduce((acc, item) => (acc += item ** 2), 0));
-  //   return this.vector.reduce((acc, item) => (acc += item ** 2), 0);
-  // }
-
-  norm() {
-    const result = Math.sqrt(
-      this.vector.reduce((acc, value) => acc + value * value, 0)
-    );
-    return result;
-  }
-
-  toString() {
-    return `(${this.vector.join(",")})`;
-  }
-
-  equals(components: { vector: number[] }) {
-    return this.toString() === `(${components.vector.join(",")})`;
-  }
+  return solutions;
 }
 
-const a = new Vector([1, 2, 3]);
-const b = new Vector([1, 2, 3]);
-const c = new Vector([5, 6, 7, 8]);
+solequa(12);
 
-console.log(a.add(b));
-console.log(a.subtract(b));
-console.log(a.dot(b));
-console.log(a.norm());
-console.log(a.toString());
-console.log(a.equals(b));
+// https://www.codewars.com/kata/576757b1df89ecf5bd00073b/train/typescript
+
+const towerBuilder = (nFloors: number): string[] => {
+  const arr = Array.from({ length: nFloors });
+
+  return ["*"];
+};
+
+towerBuilder(1);

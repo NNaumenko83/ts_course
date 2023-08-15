@@ -916,22 +916,106 @@
 
 // https://www.codewars.com/kata/576757b1df89ecf5bd00073b/train/typescript
 
-const towerBuilder = (nFloors: number): string[] => {
-  const arr = Array.from({ length: nFloors }, (_, index) =>
-    Array.from({ length: 3 }, (_, ind) => {
-      if (ind === 0 || ind === 2) {
-        console.log(nFloors - 1 - index);
+// const towerBuilder = (nFloors: number): string[] => {
+//   const arr = Array.from({ length: nFloors }, (_, index) =>
+//     Array.from({ length: 3 }, (_, ind) => {
+//       if (ind === 0 || ind === 2) {
+//         console.log(nFloors - 1 - index);
 
-        return Array(nFloors - 1 - index)
-          .fill(" ")
-          .join("");
-      }
-      return Array.from({ length: 2 * index + 1 }, () => "*").join("");
-    }).join("")
+//         return Array(nFloors - 1 - index)
+//           .fill(" ")
+//           .join("");
+//       }
+//       return Array.from({ length: 2 * index + 1 }, () => "*").join("");
+//     }).join("")
+//   );
+
+//   console.log(arr);
+//   return arr;
+// };
+
+// towerBuilder(4);
+
+// https://www.codewars.com/kata/573992c724fc289553000e95/train/typescript
+// Find the smallest
+
+// ======НЕ ЗРОБИВ!!!!!!!!!!!!!!!!!==========
+
+// function smallest(n: number): number[] {
+//   let resultArray: number[] = [];
+//   const arrNumbers = n
+//     .toString()
+//     .split("")
+//     .map((item) => Number(item));
+
+//   console.log("arrNumbers:", arrNumbers);
+//   const minDigit = Math.min(...arrNumbers);
+//   console.log("minDigit:", minDigit);
+//   const maxDigit = Math.max(...arrNumbers);
+//   console.log("maxDigit:", maxDigit);
+//   const indexOfMinDigit = arrNumbers.findIndex((item) => item === minDigit);
+//   console.log("indexOfMinDigit:", indexOfMinDigit);
+//   const lastIndexOfMinDigit = arrNumbers.lastIndexOf(minDigit);
+//   console.log("lastIndexOfMinDigit:", lastIndexOfMinDigit);
+
+//   return resultArray;
+// }
+
+// smallest(1992929); //1299929
+// smallest(122292);
+
+// if (indexOfMinDigit === lastIndexOfMinDigit) {
+//   if (indexOfMinDigit === 0) {
+//     const subArray = arrNumbers.slice(1);
+//     const minDigitInSubArray = Math.min(...subArray);
+//     const maxDigitInSubArray = Math.max(...subArray);
+//     const indexOfMinDigitInSubArray = subArray.findIndex(
+//       (item) => item === minDigitInSubArray
+//     );
+//     const indexOfMaxDigitInSubArray = subArray.findIndex(
+//       (item) => item === maxDigitInSubArray
+//     );
+//     const lastIndexOfMinDigitInSubArray =
+//       arrNumbers.lastIndexOf(minDigitInSubArray);
+//     const temp = subArray[indexOfMaxDigitInSubArray];
+//     console.log("temp:", temp);
+//     subArray[indexOfMaxDigitInSubArray] = subArray[indexOfMinDigitInSubArray];
+//     subArray[indexOfMinDigitInSubArray] = temp;
+//     console.log("subArray:", subArray);
+//   }
+// }
+// console.log("arrNumbers:", arrNumbers);
+
+// console.log("resultArray:", resultArray);
+
+// https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3/train/typescript
+// Find the unique string
+
+function findUniq(arr: string[]): string {
+  const arrSortLowerSpace = arr.map((item) =>
+    item
+      .toLowerCase()
+      .replace(/\s/g, "")
+      .split("")
+      .sort((a: string, b: string) => a.localeCompare(b))
+      .reduce((acc: string[], item, index, array) => {
+        if (index === array.lastIndexOf(item)) {
+          acc.push(item);
+        }
+        return acc;
+      }, [])
+      .join("")
   );
 
-  console.log(arr);
-  return arr;
-};
+  const indexOfUniqueString = arrSortLowerSpace.findIndex(
+    (item, _, array) => array.indexOf(item) === array.lastIndexOf(item)
+  );
+  console.log("indexOfUniqueString:", indexOfUniqueString);
 
-towerBuilder(4);
+  console.log("arrSortLowerSpace:", arrSortLowerSpace);
+
+  return arr[indexOfUniqueString];
+}
+
+// findUniq(["aa", "aaa", "aaaaa", "BbBb", "A  aaa", "AaAaAa", "a"]);
+console.log(findUniq(["aa", "aaa", "aaaaa", "BbBb", "A  aaa", "AaAaAa", "a"]));

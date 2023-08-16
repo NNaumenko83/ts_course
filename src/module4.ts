@@ -991,31 +991,41 @@
 // https://www.codewars.com/kata/585d8c8a28bc7403ea0000c3/train/typescript
 // Find the unique string
 
-function findUniq(arr: string[]): string {
-  const arrSortLowerSpace = arr.map((item) =>
-    item
-      .toLowerCase()
-      .replace(/\s/g, "")
-      .split("")
-      .sort((a: string, b: string) => a.localeCompare(b))
-      .reduce((acc: string[], item, index, array) => {
-        if (index === array.lastIndexOf(item)) {
-          acc.push(item);
-        }
-        return acc;
-      }, [])
-      .join("")
-  );
+// function findUniq(arr: string[]): string {
+//   const arrSortLowerSpace = arr.map((item) =>
+//     item
+//       .toLowerCase()
+//       .replace(/\s/g, "")
+//       .split("")
+//       .sort((a: string, b: string) => a.localeCompare(b))
+//       .reduce((acc: string[], item, index, array) => {
+//         if (index === array.lastIndexOf(item)) {
+//           acc.push(item);
+//         }
+//         return acc;
+//       }, [])
+//       .join("")
+//   );
 
-  const indexOfUniqueString = arrSortLowerSpace.findIndex(
-    (item, _, array) => array.indexOf(item) === array.lastIndexOf(item)
-  );
-  console.log("indexOfUniqueString:", indexOfUniqueString);
+//   const indexOfUniqueString = arrSortLowerSpace.findIndex(
+//     (item, _, array) => array.indexOf(item) === array.lastIndexOf(item)
+//   );
+//   console.log("indexOfUniqueString:", indexOfUniqueString);
 
-  console.log("arrSortLowerSpace:", arrSortLowerSpace);
+//   console.log("arrSortLowerSpace:", arrSortLowerSpace);
 
-  return arr[indexOfUniqueString];
-}
+//   return arr[indexOfUniqueString];
+// }
 
-// findUniq(["aa", "aaa", "aaaaa", "BbBb", "A  aaa", "AaAaAa", "a"]);
-console.log(findUniq(["aa", "aaa", "aaaaa", "BbBb", "A  aaa", "AaAaAa", "a"]));
+// // findUniq(["aa", "aaa", "aaaaa", "BbBb", "A  aaa", "AaAaAa", "a"]);
+// console.log(findUniq(["aa", "aaa", "aaaaa", "BbBb", "A  aaa", "AaAaAa", "a"]));
+
+// Two numbers are positive
+
+// https://www.codewars.com/kata/602db3215c22df000e8544f0/train/typescript
+
+// function twoArePositive(a: number, b: number, c: number): boolean {
+//   return [a, b, c].filter((item) => item >= 0).length >= 2 ? true : false;
+// }
+
+// console.log(twoArePositive(2, 4, -3));

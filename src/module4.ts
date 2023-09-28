@@ -916,27 +916,10 @@
 
 // https://www.codewars.com/kata/576757b1df89ecf5bd00073b/train/typescript
 
-// const towerBuilder = (nFloors: number): string[] => {
-//   const arr = Array.from({ length: nFloors });
+const towerBuilder = (nFloors: number): string[] => {
+  const arr = Array.from({ length: nFloors });
 
-//   return ["*"];
-// };
+  return ["*"];
+};
 
-// towerBuilder(1);
-
-// https://www.codewars.com/kata/5949481f86420f59480000e7/train/typescript
-
-function oddOrEven(array: number[]) {
-  if (
-    array.length === 0 ||
-    (array.length === 1 && array[array.length - 1] === 0)
-  ) {
-    return "even";
-  }
-
-  const value = array.reduce((acc, item) => acc + item, 0);
-  return "";
-}
-
-// oddOrEven([0]);
-console.log("oddOrEven([0]);:", oddOrEven([0]));
+towerBuilder(1);

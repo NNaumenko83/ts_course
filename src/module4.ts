@@ -926,21 +926,29 @@
 
 // https://www.codewars.com/kata/5949481f86420f59480000e7/train/typescript
 
-function oddOrEven(array: number[]) {
-  if (
-    array.length === 0 ||
-    (array.length === 1 && array[array.length - 1] === 0)
-  ) {
-    return "even";
-  }
+// function oddOrEven(array: number[]) {
+//   if (
+//     array.length === 0 ||
+//     (array.length === 1 && array[array.length - 1] === 0)
+//   ) {
+//     return "even";
+//   }
 
-  const value = array.reduce((acc, item) => acc + item, 0);
+//   const value = array.reduce((acc, item) => acc + item, 0);
 
-  if (value % 2 === 0) {
-    return "even";
-  }
-  return "odd";
+//   if (value % 2 === 0) {
+//     return "even";
+//   }
+//   return "odd";
+// }
+
+// // oddOrEven([0]);
+// console.log("oddOrEven([0]);:", oddOrEven([1, 2, 5, 7]));
+
+// https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/train/typescript
+
+function solve(s: string): number {
+  return -1;
 }
 
-// oddOrEven([0]);
-console.log("oddOrEven([0]);:", oddOrEven([1, 2, 5, 7]));
+solve("gh12cdy695m1");

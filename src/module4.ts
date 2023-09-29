@@ -948,7 +948,28 @@
 // https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/train/typescript
 
 function solve(s: string): number {
-  return -1;
+  const numbersArray = [];
+  let numbers: number[] = [];
+
+  for (let i = 0; i < s.length; i += 1) {
+    if (!isNaN(Number(s[i]))) {
+      numbers.push(Number(s[i]));
+
+      if (i === s.length - 1 && numbers.length >= 1) {
+        numbersArray.push(numbers);
+        numbers = [];
+      }
+      continue;
+    }
+    if (isNaN(Number(s[i])) && numbers.length >= 1) {
+      numbersArray.push(numbers);
+      numbers = [];
+      continue;
+    }
+  }
+  console.log("numbersArray:", numbersArray);
+
+  return Math.max(...numbersArray.map((item) => Number(item.join(""))));
 }
 
 solve("gh12cdy695m1");

@@ -976,12 +976,20 @@
 
 // https://www.codewars.com/kata/56cd44e1aa4ac7879200010b/train/typescript
 
-function isUpperCase(str: string) {
-  if (str.toUpperCase() === str) {
-    return true;
-  }
-  return false;
+// function isUpperCase(str: string) {
+//   if (str.toUpperCase() === str) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// isUpperCase("hello I AM DONALD");
+
+// https://www.codewars.com/kata/5715eaedb436cf5606000381/train/typescript
+
+function positiveSum(arr: number[]): number {
+  return arr.reduce((acc, item) => (item > 0 ? acc + item : acc), 0);
 }
 
-isUpperCase("hello I AM DONALD");
-console.log('isUpperCase("hello I AM DONALD");:', isUpperCase("C"));
+console.log("positiveSum([1, 2, 3, 4, 5]):", positiveSum([1, 2, 3, 4, 5]));
+positiveSum([1, 2, 3, 4, 5]);

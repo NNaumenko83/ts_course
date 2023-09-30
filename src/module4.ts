@@ -947,29 +947,41 @@
 
 // https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/train/typescript
 
-function solve(s: string): number {
-  const numbersArray = [];
-  let numbers: number[] = [];
+// function solve(s: string): number {
+//   const numbersArray = [];
+//   let numbers: number[] = [];
 
-  for (let i = 0; i < s.length; i += 1) {
-    if (!isNaN(Number(s[i]))) {
-      numbers.push(Number(s[i]));
+//   for (let i = 0; i < s.length; i += 1) {
+//     if (!isNaN(Number(s[i]))) {
+//       numbers.push(Number(s[i]));
 
-      if (i === s.length - 1 && numbers.length >= 1) {
-        numbersArray.push(numbers);
-        numbers = [];
-      }
-      continue;
-    }
-    if (isNaN(Number(s[i])) && numbers.length >= 1) {
-      numbersArray.push(numbers);
-      numbers = [];
-      continue;
-    }
+//       if (i === s.length - 1 && numbers.length >= 1) {
+//         numbersArray.push(numbers);
+//         numbers = [];
+//       }
+//       continue;
+//     }
+//     if (isNaN(Number(s[i])) && numbers.length >= 1) {
+//       numbersArray.push(numbers);
+//       numbers = [];
+//       continue;
+//     }
+//   }
+//   console.log("numbersArray:", numbersArray);
+
+//   return Math.max(...numbersArray.map((item) => Number(item.join(""))));
+// }
+
+// solve("gh12cdy695m1");
+
+// https://www.codewars.com/kata/56cd44e1aa4ac7879200010b/train/typescript
+
+function isUpperCase(str: string) {
+  if (str.toUpperCase() === str) {
+    return true;
   }
-  console.log("numbersArray:", numbersArray);
-
-  return Math.max(...numbersArray.map((item) => Number(item.join(""))));
+  return false;
 }
 
-solve("gh12cdy695m1");
+isUpperCase("hello I AM DONALD");
+console.log('isUpperCase("hello I AM DONALD");:', isUpperCase("C"));

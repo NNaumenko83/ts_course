@@ -987,9 +987,19 @@
 
 // https://www.codewars.com/kata/5715eaedb436cf5606000381/train/typescript
 
-function positiveSum(arr: number[]): number {
-  return arr.reduce((acc, item) => (item > 0 ? acc + item : acc), 0);
+// function positiveSum(arr: number[]): number {
+//   return arr.reduce((acc, item) => (item > 0 ? acc + item : acc), 0);
+// }
+
+// console.log("positiveSum([1, 2, 3, 4, 5]):", positiveSum([1, 2, 3, 4, 5]));
+// positiveSum([1, 2, 3, 4, 5]);
+
+// https://www.codewars.com/kata/57ea5b0b75ae11d1e800006c/train/javascript
+
+function sortByLength(array: string[]) {
+  // Return an array containing the same strings, ordered from shortest to longest
+  const arr = array.sort((a: string, b: string) => a.length - b.length);
+  console.log("arr:", arr);
 }
 
-console.log("positiveSum([1, 2, 3, 4, 5]):", positiveSum([1, 2, 3, 4, 5]));
-positiveSum([1, 2, 3, 4, 5]);
+sortByLength(["Beg", "Life", "I", "To"]);

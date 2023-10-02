@@ -996,10 +996,42 @@
 
 // https://www.codewars.com/kata/57ea5b0b75ae11d1e800006c/train/javascript
 
-function sortByLength(array: string[]) {
-  // Return an array containing the same strings, ordered from shortest to longest
-  const arr = array.sort((a: string, b: string) => a.length - b.length);
-  console.log("arr:", arr);
+// function sortByLength(array: string[]) {
+//   // Return an array containing the same strings, ordered from shortest to longest
+//   const arr = array.sort((a: string, b: string) => a.length - b.length);
+//   console.log("arr:", arr);
+// }
+
+// sortByLength(["Beg", "Life", "I", "To"]);
+
+// https://www.codewars.com/kata/5a651865fd56cb55760000e0/train/javascript
+
+function arrayLeaders(numbers: number[]): number[] {
+  const leadersArray = [];
+
+  for (let i = 0; i < numbers.length; i += 1) {
+    // if (numbers[i] <= numbers[i + 1] && i !== numbers.length - 1) {
+    //   continue;
+    // }
+    if (i === numbers.length - 1 && numbers[i] > 0) {
+      leadersArray.push(numbers[i]);
+      continue;
+    }
+
+    console.log("aaaaaaaaaaaaaa");
+    console.log(numbers[i]);
+    console.log("numbers.slice(i + 1):", numbers.slice(i + 1));
+    const sum = numbers.slice(i + 1).reduce((acc, item) => acc + item, 0);
+    console.log("sum:", sum);
+    if (numbers[i] > sum) {
+      leadersArray.push(numbers[i]);
+    }
+  }
+
+  return leadersArray;
 }
 
-sortByLength(["Beg", "Life", "I", "To"]);
+// arrayLeaders([1, 2, 3, 4, 0]);
+console.log("arrayLeaders([ -36, -12, -27 ]", arrayLeaders([-36, -12, -27]));
+
+// [-1, -29, -26, -2][(-36, -12, -27)];

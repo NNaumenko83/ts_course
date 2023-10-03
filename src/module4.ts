@@ -1006,32 +1006,48 @@
 
 // https://www.codewars.com/kata/5a651865fd56cb55760000e0/train/javascript
 
-function arrayLeaders(numbers: number[]): number[] {
-  const leadersArray = [];
+// function arrayLeaders(numbers: number[]): number[] {
+//   const leadersArray = [];
 
-  for (let i = 0; i < numbers.length; i += 1) {
-    // if (numbers[i] <= numbers[i + 1] && i !== numbers.length - 1) {
-    //   continue;
-    // }
-    if (i === numbers.length - 1 && numbers[i] > 0) {
-      leadersArray.push(numbers[i]);
-      continue;
-    }
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     // if (numbers[i] <= numbers[i + 1] && i !== numbers.length - 1) {
+//     //   continue;
+//     // }
+//     if (i === numbers.length - 1 && numbers[i] > 0) {
+//       leadersArray.push(numbers[i]);
+//       continue;
+//     }
 
-    console.log("aaaaaaaaaaaaaa");
-    console.log(numbers[i]);
-    console.log("numbers.slice(i + 1):", numbers.slice(i + 1));
-    const sum = numbers.slice(i + 1).reduce((acc, item) => acc + item, 0);
-    console.log("sum:", sum);
-    if (numbers[i] > sum) {
-      leadersArray.push(numbers[i]);
-    }
-  }
+//     console.log("aaaaaaaaaaaaaa");
+//     console.log(numbers[i]);
+//     console.log("numbers.slice(i + 1):", numbers.slice(i + 1));
+//     const sum = numbers.slice(i + 1).reduce((acc, item) => acc + item, 0);
+//     console.log("sum:", sum);
+//     if (numbers[i] > sum) {
+//       leadersArray.push(numbers[i]);
+//     }
+//   }
 
-  return leadersArray;
+//   return leadersArray;
+// }
+
+// // arrayLeaders([1, 2, 3, 4, 0]);
+// console.log("arrayLeaders([ -36, -12, -27 ]", arrayLeaders([-36, -12, -27]));
+
+// // [-1, -29, -26, -2][(-36, -12, -27)];
+
+// https://www.codewars.com/kata/5a53a17bfd56cb9c14000003/train/typescript
+
+function disariumNumber(n: number) {
+  return n ===
+    n
+      .toString()
+      .split("")
+      .map(Number)
+      .reduce((acc, item, index) => acc + Math.pow(item, index + 1), 0)
+    ? "Disarium !!"
+    : "Not !!";
 }
 
-// arrayLeaders([1, 2, 3, 4, 0]);
-console.log("arrayLeaders([ -36, -12, -27 ]", arrayLeaders([-36, -12, -27]));
-
-// [-1, -29, -26, -2][(-36, -12, -27)];
+disariumNumber(564);
+console.log("disariumNumber(564):", disariumNumber(564));

@@ -1038,16 +1038,25 @@
 
 // https://www.codewars.com/kata/5a53a17bfd56cb9c14000003/train/typescript
 
-function disariumNumber(n: number) {
-  return n ===
-    n
-      .toString()
-      .split("")
-      .map(Number)
-      .reduce((acc, item, index) => acc + Math.pow(item, index + 1), 0)
-    ? "Disarium !!"
-    : "Not !!";
+// function disariumNumber(n: number) {
+//   return n ===
+//     n
+//       .toString()
+//       .split("")
+//       .map(Number)
+//       .reduce((acc, item, index) => acc + Math.pow(item, index + 1), 0)
+//     ? "Disarium !!"
+//     : "Not !!";
+// }
+
+// disariumNumber(564);
+// console.log("disariumNumber(564):", disariumNumber(564));
+
+// https://www.codewars.com/kata/58712dfa5c538b6fc7000569/train/typescript
+
+function countRedBeads(n: number): number {
+  return n === 0 || n === 1 ? 0 : (n - 1) * 2;
 }
 
-disariumNumber(564);
-console.log("disariumNumber(564):", disariumNumber(564));
+countRedBeads(5);
+console.log("countRedBeads(5):", countRedBeads(5));

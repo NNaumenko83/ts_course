@@ -1074,3 +1074,12 @@
 // }
 
 // findOutlier([0, 1, 2]);
+
+// https://www.codewars.com/kata/55aa075506463dac6600010d/train/typescript
+
+const listSquared = (m: number, n: number): number[][] => {
+  // your code
+  return [];
+};
+
+listSquared(1, 250);

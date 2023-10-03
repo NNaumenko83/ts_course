@@ -1063,14 +1063,14 @@
 
 // https://www.codewars.com/kata/5526fc09a1bbd946250002dc
 
-function findOutlier(integers: number[]): number {
-  const evenArray = [];
-  const oddArray = [];
-  for (const item of integers) {
-    item % 2 === 0 ? evenArray.push(item) : oddArray.push(item);
-  }
+// function findOutlier(integers: number[]): number {
+//   const evenArray = [];
+//   const oddArray = [];
+//   for (const item of integers) {
+//     item % 2 === 0 ? evenArray.push(item) : oddArray.push(item);
+//   }
 
-  return evenArray.length === 1 ? evenArray[0] : oddArray[0];
-}
+//   return evenArray.length === 1 ? evenArray[0] : oddArray[0];
+// }
 
-findOutlier([0, 1, 2]);
+// findOutlier([0, 1, 2]);

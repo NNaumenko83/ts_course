@@ -1054,9 +1054,23 @@
 
 // https://www.codewars.com/kata/58712dfa5c538b6fc7000569/train/typescript
 
-function countRedBeads(n: number): number {
-  return n === 0 || n === 1 ? 0 : (n - 1) * 2;
+// function countRedBeads(n: number): number {
+//   return n === 0 || n === 1 ? 0 : (n - 1) * 2;
+// }
+
+// countRedBeads(5);
+// console.log("countRedBeads(5):", countRedBeads(5));
+
+// https://www.codewars.com/kata/5526fc09a1bbd946250002dc
+
+function findOutlier(integers: number[]): number {
+  const evenArray = [];
+  const oddArray = [];
+  for (const item of integers) {
+    item % 2 === 0 ? evenArray.push(item) : oddArray.push(item);
+  }
+
+  return evenArray.length === 1 ? evenArray[0] : oddArray[0];
 }
 
-countRedBeads(5);
-console.log("countRedBeads(5):", countRedBeads(5));
+findOutlier([0, 1, 2]);

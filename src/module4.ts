@@ -1078,8 +1078,59 @@
 // https://www.codewars.com/kata/55aa075506463dac6600010d/train/typescript
 
 const listSquared = (m: number, n: number): number[][] => {
-  // your code
-  return [];
+  // 1. Знаходимо всі дільники між m та n (m and n integers with 1 <= m <= n
+  const divisors: number[] = Array.from(
+    { length: n - m + 1 },
+    (_, index) => m + index
+  );
+  // 2. Знаходимо дільники чисел з масиву divisors
+  const result: number[][] = divisors.reduce((acc: number[][], item) => {
+    const arrayOfdivisorsSquare = [];
+    for (let i = 1; i <= item; i += 1) {
+      if (item % i !== 0) {
+        continue;
+      }
+      arrayOfdivisorsSquare.push(Math.pow(i, 2));
+    }
+
+    const sumArrayOfdivisorsSquare: number = arrayOfdivisorsSquare.reduce(
+      (acc, item) => acc + item,
+      0
+    );
+
+    const sqrt: number = Math.sqrt(sumArrayOfdivisorsSquare);
+    if (sumArrayOfdivisorsSquare % sqrt === 0) {
+      acc.push([item, sumArrayOfdivisorsSquare]);
+      return acc;
+    }
+
+    return acc;
+  }, []);
+
+  return result;
 };
 
-listSquared(1, 250);
+// const listSquared = (m: number, n: number): number[][] => {
+//   const result: number[][] = [];
+
+//   for (let number = m; number <= n; number++) {
+//     let sumOfDivisorSquares = 0;
+//     for (let i = 1; i <= Math.sqrt(number); i++) {
+//       if (number % i === 0) {
+//         const otherDivisor = number / i;
+//         sumOfDivisorSquares += i * i;
+//         if (i !== otherDivisor) {
+//           sumOfDivisorSquares += otherDivisor * otherDivisor;
+//         }
+//       }
+//     }
+
+//     const sqrt = Math.sqrt(sumOfDivisorSquares);
+//     if (Number.isInteger(sqrt)) {
+//       result.push([number, sumOfDivisorSquares]);
+//     }
+//   }
+
+//   return result;
+// };
+console.log("listSquared(795, 4795);:", listSquared(795, 4795));

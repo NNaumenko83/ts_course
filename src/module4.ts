@@ -1077,38 +1077,38 @@
 
 // https://www.codewars.com/kata/55aa075506463dac6600010d/train/typescript
 
-const listSquared = (m: number, n: number): number[][] => {
-  // 1. Знаходимо всі дільники між m та n (m and n integers with 1 <= m <= n
-  const divisors: number[] = Array.from(
-    { length: n - m + 1 },
-    (_, index) => m + index
-  );
-  // 2. Знаходимо дільники чисел з масиву divisors
-  const result: number[][] = divisors.reduce((acc: number[][], item) => {
-    const arrayOfdivisorsSquare = [];
-    for (let i = 1; i <= item; i += 1) {
-      if (item % i !== 0) {
-        continue;
-      }
-      arrayOfdivisorsSquare.push(Math.pow(i, 2));
-    }
+// const listSquared = (m: number, n: number): number[][] => {
+//   // 1. Знаходимо всі дільники між m та n (m and n integers with 1 <= m <= n
+//   const divisors: number[] = Array.from(
+//     { length: n - m + 1 },
+//     (_, index) => m + index
+//   );
+//   // 2. Знаходимо дільники чисел з масиву divisors
+//   const result: number[][] = divisors.reduce((acc: number[][], item) => {
+//     const arrayOfdivisorsSquare = [];
+//     for (let i = 1; i <= item; i += 1) {
+//       if (item % i !== 0) {
+//         continue;
+//       }
+//       arrayOfdivisorsSquare.push(Math.pow(i, 2));
+//     }
 
-    const sumArrayOfdivisorsSquare: number = arrayOfdivisorsSquare.reduce(
-      (acc, item) => acc + item,
-      0
-    );
+//     const sumArrayOfdivisorsSquare: number = arrayOfdivisorsSquare.reduce(
+//       (acc, item) => acc + item,
+//       0
+//     );
 
-    const sqrt: number = Math.sqrt(sumArrayOfdivisorsSquare);
-    if (sumArrayOfdivisorsSquare % sqrt === 0) {
-      acc.push([item, sumArrayOfdivisorsSquare]);
-      return acc;
-    }
+//     const sqrt: number = Math.sqrt(sumArrayOfdivisorsSquare);
+//     if (sumArrayOfdivisorsSquare % sqrt === 0) {
+//       acc.push([item, sumArrayOfdivisorsSquare]);
+//       return acc;
+//     }
 
-    return acc;
-  }, []);
+//     return acc;
+//   }, []);
 
-  return result;
-};
+//   return result;
+// };
 
 // const listSquared = (m: number, n: number): number[][] => {
 //   const result: number[][] = [];
@@ -1133,4 +1133,24 @@ const listSquared = (m: number, n: number): number[][] => {
 
 //   return result;
 // };
-console.log("listSquared(795, 4795);:", listSquared(795, 4795));
+// console.log("listSquared(795, 4795);:", listSquared(795, 4795));
+
+const promise = new Promise((res, rej) => {
+  const randomValue = Math.random() > 0.5;
+
+  setTimeout(() => {
+    if (randomValue) {
+      res("IIIIIIIIIIIIIIIIIIIIIII");
+    }
+    rej(new Error("AAAAAAAAAAAAAAAA"));
+  }, 3000);
+});
+console.log("promise:", promise);
+
+promise.then((res) => console.log(res)).catch(console.log);
+
+
+// https://www.codewars.com/kata/53da3dbb4a5168369a0000fe
+export function evenOrOdd(n:number):string {
+  return n%2===0?"Even":"Odd";
+}

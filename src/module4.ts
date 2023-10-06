@@ -1135,22 +1135,33 @@
 // };
 // console.log("listSquared(795, 4795);:", listSquared(795, 4795));
 
-const promise = new Promise((res, rej) => {
-  const randomValue = Math.random() > 0.5;
+// const promise = new Promise((res, rej) => {
+//   const randomValue = Math.random() > 0.5;
 
-  setTimeout(() => {
-    if (randomValue) {
-      res("IIIIIIIIIIIIIIIIIIIIIII");
-    }
-    rej(new Error("AAAAAAAAAAAAAAAA"));
-  }, 3000);
-});
-console.log("promise:", promise);
+//   setTimeout(() => {
+//     if (randomValue) {
+//       res("IIIIIIIIIIIIIIIIIIIIIII");
+//     }
+//     rej(new Error("AAAAAAAAAAAAAAAA"));
+//   }, 3000);
+// });
+// console.log("promise:", promise);
 
-promise.then((res) => console.log(res)).catch(console.log);
+// promise.then((res) => console.log(res)).catch(console.log);
 
+// // https://www.codewars.com/kata/53da3dbb4a5168369a0000fe
+// export function evenOrOdd(n:number):string {
+//   return n%2===0?"Even":"Odd";
+// }
 
-// https://www.codewars.com/kata/53da3dbb4a5168369a0000fe
-export function evenOrOdd(n:number):string {
-  return n%2===0?"Even":"Odd";
-}
+//www.codewars.com/kata/5a2be17aee1aaefe2a000151/train/typescript
+
+const arrayPlusArray = (arr1: number[], arr2: number[]): number => {
+  return arr1.concat(arr2).reduce((acc, item) => acc + item, 0); // something went wrong ?
+};
+
+arrayPlusArray([1, 2, 3], [4, 5, 6]);
+console.log(
+  "arrayPlusArray([1, 2, 3], [4, 5, 6]):",
+  arrayPlusArray([1, 2, 3], [4, 5, 6])
+);

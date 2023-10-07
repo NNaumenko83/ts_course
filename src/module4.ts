@@ -1156,12 +1156,23 @@
 
 //www.codewars.com/kata/5a2be17aee1aaefe2a000151/train/typescript
 
-const arrayPlusArray = (arr1: number[], arr2: number[]): number => {
-  return arr1.concat(arr2).reduce((acc, item) => acc + item, 0); // something went wrong ?
+// const arrayPlusArray = (arr1: number[], arr2: number[]): number => {
+//   return arr1.concat(arr2).reduce((acc, item) => acc + item, 0); // something went wrong ?
+// };
+
+// arrayPlusArray([1, 2, 3], [4, 5, 6]);
+// console.log(
+//   "arrayPlusArray([1, 2, 3], [4, 5, 6]):",
+//   arrayPlusArray([1, 2, 3], [4, 5, 6])
+// );
+
+// https://www.codewars.com/kata/55685cd7ad70877c23000102/train/typescript
+
+const makeNegative = (num: number): number => {
+  if (num < 0) {
+    return num;
+  }
+  return num * -1;
 };
 
-arrayPlusArray([1, 2, 3], [4, 5, 6]);
-console.log(
-  "arrayPlusArray([1, 2, 3], [4, 5, 6]):",
-  arrayPlusArray([1, 2, 3], [4, 5, 6])
-);
+makeNegative(42);

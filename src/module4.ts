@@ -1168,11 +1168,25 @@
 
 // https://www.codewars.com/kata/55685cd7ad70877c23000102/train/typescript
 
-const makeNegative = (num: number): number => {
-  if (num < 0) {
-    return num;
-  }
-  return num * -1;
-};
+// const makeNegative = (num: number): number => {
+//   if (num < 0) {
+//     return num;
+//   }
+//   return num * -1;
+// };
 
-makeNegative(42);
+// makeNegative(42);
+
+// https://www.codewars.com/kata/567d609f1c16d7369c000008/train/typescript
+
+function generate(length: number): string {
+  let array = [];
+  for (let i = 0; i < length; i += 1) {
+    array.push(Math.round(Math.random()));
+  }
+
+  return array.join("");
+}
+
+generate(16);
+console.log("generate(16);:", generate(16));

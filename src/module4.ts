@@ -1179,14 +1179,46 @@
 
 // https://www.codewars.com/kata/567d609f1c16d7369c000008/train/typescript
 
-function generate(length: number): string {
-  let array = [];
-  for (let i = 0; i < length; i += 1) {
-    array.push(Math.round(Math.random()));
+// function generate(length: number): string {
+//   let array = [];
+//   for (let i = 0; i < length; i += 1) {
+//     array.push(Math.round(Math.random()));
+//   }
+
+//   return array.join("");
+// }
+
+// generate(16);
+// console.log("generate(16);:", generate(16));
+
+// https://www.codewars.com/kata/569218bc919ccba77000000b/train/typescript
+// an amount of money a0 > 0
+// p percent divided by 360
+// You want to have an amount a >= a0.
+
+function dateNbDays(a0: number, a: number, p: number): string {
+  const diff = a - a0;
+  let qty = a0;
+  let count = 0;
+
+  while (qty < a) {
+    count += 1;
+    const amountPerDay = qty * (p / (360 * 100));
+    qty += amountPerDay;
   }
 
-  return array.join("");
+  const startDate = new Date("01/01/2016").getTime();
+
+  const endDate = new Date(startDate + count * 24 * 60 * 60 * 1000);
+  const month =
+    endDate.getMonth() + 1 < 10
+      ? "0" + (endDate.getMonth() + 1)
+      : endDate.getMonth() + 1;
+  const day =
+    endDate.getDate() < 10 ? "0" + endDate.getDate() : endDate.getDate();
+
+  return endDate.getFullYear().toString() + "-" + month + "-" + day;
 }
 
-generate(16);
-console.log("generate(16);:", generate(16));
+dateNbDays(100, 150, 2);
+console.log("dateNbDays(100, 150, 2);:", dateNbDays(100, 150, 2));

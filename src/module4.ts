@@ -1196,29 +1196,47 @@
 // p percent divided by 360
 // You want to have an amount a >= a0.
 
-function dateNbDays(a0: number, a: number, p: number): string {
-  const diff = a - a0;
-  let qty = a0;
-  let count = 0;
+// function dateNbDays(a0: number, a: number, p: number): string {
+//   const diff = a - a0;
+//   let qty = a0;
+//   let count = 0;
 
-  while (qty < a) {
-    count += 1;
-    const amountPerDay = qty * (p / (360 * 100));
-    qty += amountPerDay;
+//   while (qty < a) {
+//     count += 1;
+//     const amountPerDay = qty * (p / (360 * 100));
+//     qty += amountPerDay;
+//   }
+
+//   const startDate = new Date("01/01/2016").getTime();
+
+//   const endDate = new Date(startDate + count * 24 * 60 * 60 * 1000);
+//   const month =
+//     endDate.getMonth() + 1 < 10
+//       ? "0" + (endDate.getMonth() + 1)
+//       : endDate.getMonth() + 1;
+//   const day =
+//     endDate.getDate() < 10 ? "0" + endDate.getDate() : endDate.getDate();
+
+//   return endDate.getFullYear().toString() + "-" + month + "-" + day;
+// }
+
+// dateNbDays(100, 150, 2);
+// console.log("dateNbDays(100, 150, 2);:", dateNbDays(100, 150, 2));
+
+// https://www.codewars.com/kata/5731861d05d14d6f50000626/train/typescript
+function bigToSmall(arr: number[][]): string {
+  let concatArray: number[] = [];
+
+  for (let i = 0; i < arr.length; i += 1) {
+    concatArray = concatArray.concat(arr[i]);
   }
 
-  const startDate = new Date("01/01/2016").getTime();
-
-  const endDate = new Date(startDate + count * 24 * 60 * 60 * 1000);
-  const month =
-    endDate.getMonth() + 1 < 10
-      ? "0" + (endDate.getMonth() + 1)
-      : endDate.getMonth() + 1;
-  const day =
-    endDate.getDate() < 10 ? "0" + endDate.getDate() : endDate.getDate();
-
-  return endDate.getFullYear().toString() + "-" + month + "-" + day;
+  return concatArray.sort((a, b) => b - a).join(">");
 }
 
-dateNbDays(100, 150, 2);
-console.log("dateNbDays(100, 150, 2);:", dateNbDays(100, 150, 2));
+console.log(
+  bigToSmall([
+    [1, 3, 5],
+    [2, 4, 6],
+  ])
+);

@@ -1224,19 +1224,57 @@
 // console.log("dateNbDays(100, 150, 2);:", dateNbDays(100, 150, 2));
 
 // https://www.codewars.com/kata/5731861d05d14d6f50000626/train/typescript
-function bigToSmall(arr: number[][]): string {
-  let concatArray: number[] = [];
+// function bigToSmall(arr: number[][]): string {
+//   let concatArray: number[] = [];
 
-  for (let i = 0; i < arr.length; i += 1) {
-    concatArray = concatArray.concat(arr[i]);
+//   for (let i = 0; i < arr.length; i += 1) {
+//     concatArray = concatArray.concat(arr[i]);
+//   }
+
+//   return concatArray.sort((a, b) => b - a).join(">");
+// }
+
+// console.log(
+//   bigToSmall([
+//     [1, 3, 5],
+//     [2, 4, 6],
+//   ])
+// );
+
+// https://www.codewars.com/kata/55a2d7ebe362935a210000b2/train/typescript
+
+// function findSmallestInt(args: number[]): number {
+//   return Math.min(...args);
+// }
+
+// findSmallestInt([78, 56, 232, 12, 8]);
+// console.log(
+//   "findSmallestInt([78, 56, 232, 12, 8]):",
+//   findSmallestInt([78, 56, 232, 12, 8])
+// );
+
+// https://www.codewars.com/kata/54fb963d3fe32351f2000102/train/typescript
+
+function collatz(n: number): number {
+  const resultArray: number[] = [];
+
+  let numb = n;
+  while (numb !== 1) {
+    console.log("numb:", numb);
+    if (numb % 2 === 0) {
+      resultArray.push(numb);
+      numb = numb / 2;
+      continue;
+    }
+
+    resultArray.push(numb);
+    numb = numb * 3 + 1;
   }
 
-  return concatArray.sort((a, b) => b - a).join(">");
+  resultArray.push(1);
+
+  return resultArray.length;
 }
 
-console.log(
-  bigToSmall([
-    [1, 3, 5],
-    [2, 4, 6],
-  ])
-);
+collatz(20);
+console.log("collatz(20):", collatz(20));

@@ -1279,22 +1279,22 @@
 // collatz(20);
 
 // https://www.codewars.com/kata/576bb71bbbcf0951d5000044/train/typescript
-// function countPositivesSumNegatives(input: any) {
-//   if (input === null || input.length === 0) {
-//     return [];
-//   }
-//   return input.reduce(
-//     (acc: number[], item: number) => {
-//       item > 0 ? (acc[0] += 1) : (acc[1] += item);
-//       return acc;
-//     },
-//     [0, 0]
-//   );
-// }
+// // function countPositivesSumNegatives(input: any) {
+// //   if (input === null || input.length === 0) {
+// //     return [];
+// //   }
+// //   return input.reduce(
+// //     (acc: number[], item: number) => {
+// //       item > 0 ? (acc[0] += 1) : (acc[1] += item);
+// //       return acc;
+// //     },
+// //     [0, 0]
+// //   );
+// // }
 
-// const testData = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
-// const actual = countPositivesSumNegatives(testData);
-// console.log("actual:", actual);
+// // const testData = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
+// // const actual = countPositivesSumNegatives(testData);
+// // console.log("actual:", actual);
 
 // До за по typeScript
 // У цьому завдання вам належить реалізувати сценарій життя, де людина, ключ і будинок взаємодіють один з одним.
@@ -1379,3 +1379,12 @@ house.comeIn(person);
 console.log("house:", house);
 
 // export {};
+
+// https://www.codewars.com/kata/52b5247074ea613a09000164/train/typescript
+
+function cookingTime(eggs: number): number {
+  return 5 * Math.ceil(eggs / 8);
+}
+
+cookingTime(10);
+console.log("cookingTime(5):", cookingTime(5));

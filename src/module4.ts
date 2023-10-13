@@ -1279,19 +1279,103 @@
 // collatz(20);
 
 // https://www.codewars.com/kata/576bb71bbbcf0951d5000044/train/typescript
-function countPositivesSumNegatives(input: any) {
-  if (input === null || input.length === 0) {
-    return [];
+// function countPositivesSumNegatives(input: any) {
+//   if (input === null || input.length === 0) {
+//     return [];
+//   }
+//   return input.reduce(
+//     (acc: number[], item: number) => {
+//       item > 0 ? (acc[0] += 1) : (acc[1] += item);
+//       return acc;
+//     },
+//     [0, 0]
+//   );
+// }
+
+// const testData = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
+// const actual = countPositivesSumNegatives(testData);
+// console.log("actual:", actual);
+
+// До за по typeScript
+// У цьому завдання вам належить реалізувати сценарій життя, де людина, ключ і будинок взаємодіють один з одним.
+
+// Ключ (Key): Створіть клас Key. У нього має бути одна приватна властивість signature, яка генерується випадково при створенні об'єкта цього класу (наприклад Math.random()). Також цей клас повинен мати метод getSignature, який повертає значення властивості signature.
+
+// Людина (Person): Створіть клас Person. Конструктор цього класу приймає об'єкт класу Key і зберігає їх у приватному властивості key. Клас Person повинен мати метод getKey, який повертає збережений ключ.
+
+// Дім (House): Створіть абстрактний клас House. Цей клас має дві властивості: door, яка може бути відкрита (true), або закрита (false), і key, яка зберігає об'єкт класу Key.
+// У цьому класі також повинен бути метод comeIn, який додає об'єкт класу Person у масив tenants, якщо door відкрита. Ваш абстрактний клас House також повинен мати абстрактний метод OpenDoor, який приймає об'єкт класу Key.
+
+// Мій будинок (MyHouse): Створіть клас MyHouse, який успадковується від абстрактного класу House. Реалізуйте метод openDoor у цьому класі. Якщо ключ, переданий цьому методу, збігається з ключем, збереженим як key, то двері відчиняються.
+
+// Після реалізації всіх класів створіть об'єкти для кожного класу та спробуйте відтворити сценарій, в якому людина приходить додому.
+
+// Наприклад, ось так:
+
+// Створюємо клас Key
+class Key {
+  private signature: number;
+  constructor() {
+    this.signature = Math.random();
   }
-  return input.reduce(
-    (acc: number[], item: number) => {
-      item > 0 ? (acc[0] += 1) : (acc[1] += item);
-      return acc;
-    },
-    [0, 0]
-  );
+
+  getSignature(): number {
+    return this.signature;
+  }
 }
 
-const testData = [0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14];
-const actual = countPositivesSumNegatives(testData);
-console.log("actual:", actual);
+// Створюємо клас Person
+
+class Person {
+  constructor(private key: Key) {}
+
+  getKey(): Key {
+    return this.key;
+  }
+}
+
+// Створюємо клас House
+abstract class House {
+  protected door = false;
+  private tenants: Person[] = [];
+  constructor(protected key: Key) {}
+
+  comeIn(person: Person): void {
+    if (!this.door) {
+      throw new Error("Door is closed");
+    }
+    this.tenants.push(person);
+  }
+
+  abstract openDoor(key: Key): boolean;
+}
+
+// Створюємо клас MyHouse
+
+class MyHouse extends House {
+  openDoor(key: Key) {
+    if (key.getSignature() !== this.key.getSignature()) {
+      throw new Error("It different key!");
+    }
+    return (this.door = true);
+  }
+}
+
+// Виклик методів
+const key = new Key();
+
+console.log("key:", key);
+
+const house = new MyHouse(key);
+console.log("house:", house);
+
+const person = new Person(key);
+console.log("person:", person);
+
+house.openDoor(person.getKey());
+
+house.comeIn(person);
+
+console.log("house:", house);
+
+// export {};

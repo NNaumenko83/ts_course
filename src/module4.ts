@@ -1404,14 +1404,27 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/typescript
 
-function binaryArrayToNumber(arr: number[]): number {
-  return arr
-    .reverse()
-    .reduce((acc, item, index) => (acc += item * Math.pow(2, index)), 0);
+// function binaryArrayToNumber(arr: number[]): number {
+//   return arr
+//     .reverse()
+//     .reduce((acc, item, index) => (acc += item * Math.pow(2, index)), 0);
+// }
+
+// binaryArrayToNumber([0, 0, 0, 1]);
+// console.log(
+//   "binaryArrayToNumber([1,1,1,1]):",
+//   binaryArrayToNumber([1, 1, 1, 1])
+// );
+
+// https://www.codewars.com/kata/58cb43f4256836ed95000f97
+
+function findDifference(
+  a: [number, number, number],
+  b: [number, number, number]
+): number {
+  return Math.abs(
+    a.reduce((acc, item) => acc * item) - b.reduce((acc, item) => acc * item)
+  );
 }
 
-binaryArrayToNumber([0, 0, 0, 1]);
-console.log(
-  "binaryArrayToNumber([1,1,1,1]):",
-  binaryArrayToNumber([1, 1, 1, 1])
-);
+findDifference([3, 2, 5], [1, 4, 4]);

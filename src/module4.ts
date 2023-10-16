@@ -1313,78 +1313,91 @@
 // Наприклад, ось так:
 
 // Створюємо клас Key
-class Key {
-  private signature: number;
-  constructor() {
-    this.signature = Math.random();
-  }
+// class Key {
+//   private signature: number;
+//   constructor() {
+//     this.signature = Math.random();
+//   }
 
-  getSignature(): number {
-    return this.signature;
-  }
-}
+//   getSignature(): number {
+//     return this.signature;
+//   }
+// }
 
 // Створюємо клас Person
 
-class Person {
-  constructor(private key: Key) {}
+// class Person {
+//   constructor(private key: Key) {}
 
-  getKey(): Key {
-    return this.key;
-  }
-}
+//   getKey(): Key {
+//     return this.key;
+//   }
+// }
 
 // Створюємо клас House
-abstract class House {
-  protected door = false;
-  private tenants: Person[] = [];
-  constructor(protected key: Key) {}
+// abstract class House {
+//   protected door = false;
+//   private tenants: Person[] = [];
+//   constructor(protected key: Key) {}
 
-  comeIn(person: Person): void {
-    if (!this.door) {
-      throw new Error("Door is closed");
-    }
-    this.tenants.push(person);
-  }
+//   comeIn(person: Person): void {
+//     if (!this.door) {
+//       throw new Error("Door is closed");
+//     }
+//     this.tenants.push(person);
+//   }
 
-  abstract openDoor(key: Key): boolean;
-}
+//   abstract openDoor(key: Key): boolean;
+// }
 
 // Створюємо клас MyHouse
 
-class MyHouse extends House {
-  openDoor(key: Key) {
-    if (key.getSignature() !== this.key.getSignature()) {
-      throw new Error("It different key!");
-    }
-    return (this.door = true);
-  }
-}
+// class MyHouse extends House {
+//   openDoor(key: Key) {
+//     if (key.getSignature() !== this.key.getSignature()) {
+//       throw new Error("It different key!");
+//     }
+//     return (this.door = true);
+//   }
+// }
 
 // Виклик методів
-const key = new Key();
+// const key = new Key();
 
-console.log("key:", key);
+// console.log("key:", key);
 
-const house = new MyHouse(key);
-console.log("house:", house);
+// const house = new MyHouse(key);
+// console.log("house:", house);
 
-const person = new Person(key);
-console.log("person:", person);
+// const person = new Person(key);
+// console.log("person:", person);
 
-house.openDoor(person.getKey());
+// house.openDoor(person.getKey());
 
-house.comeIn(person);
+// house.comeIn(person);
 
-console.log("house:", house);
+// console.log("house:", house);
 
 // export {};
 
 // https://www.codewars.com/kata/52b5247074ea613a09000164/train/typescript
 
-function cookingTime(eggs: number): number {
-  return 5 * Math.ceil(eggs / 8);
+// function cookingTime(eggs: number): number {
+//   return 5 * Math.ceil(eggs / 8);
+// }
+
+// cookingTime(10);
+// console.log("cookingTime(5):", cookingTime(5));
+
+// https://www.codewars.com/kata/56747fd5cb988479af000028/train/typescript
+
+function getMiddle(s: string) {
+  return s.length === 1
+    ? s
+    : s.length % 2 === 0
+    ? s[s.length / 2 - 1] + s[s.length / 2]
+    : s[Math.floor(s.length / 2)];
 }
 
-cookingTime(10);
-console.log("cookingTime(5):", cookingTime(5));
+getMiddle("test");
+console.log('getMiddle("a"):', getMiddle("a"));

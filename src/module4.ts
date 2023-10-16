@@ -1391,13 +1391,21 @@
 
 // https://www.codewars.com/kata/56747fd5cb988479af000028/train/typescript
 
-function getMiddle(s: string) {
-  return s.length === 1
-    ? s
-    : s.length % 2 === 0
-    ? s[s.length / 2 - 1] + s[s.length / 2]
-    : s[Math.floor(s.length / 2)];
+// function getMiddle(s: string) {
+//   return s.length === 1
+//     ? s
+//     : s.length % 2 === 0
+//     ? s[s.length / 2 - 1] + s[s.length / 2]
+//     : s[Math.floor(s.length / 2)];
+// }
+
+// getMiddle("test");
+// console.log('getMiddle("a"):', getMiddle("a"));
+
+// https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/typescript
+
+function binaryArrayToNumber(arr: number[]): number {
+  return 0;
 }
 
-getMiddle("test");
-console.log('getMiddle("a"):', getMiddle("a"));
+binaryArrayToNumber([0, 0, 0, 1]);

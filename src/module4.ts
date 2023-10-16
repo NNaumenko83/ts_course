@@ -1418,13 +1418,22 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/58cb43f4256836ed95000f97
 
-function findDifference(
-  a: [number, number, number],
-  b: [number, number, number]
-): number {
-  return Math.abs(
-    a.reduce((acc, item) => acc * item) - b.reduce((acc, item) => acc * item)
-  );
-}
+// function findDifference(
+//   a: [number, number, number],
+//   b: [number, number, number]
+// ): number {
+//   return Math.abs(
+//     a.reduce((acc, item) => acc * item) - b.reduce((acc, item) => acc * item)
+//   );
+// }
 
-findDifference([3, 2, 5], [1, 4, 4]);
+// findDifference([3, 2, 5], [1, 4, 4]);
+
+// https://www.codewars.com/kata/55ecd718f46fba02e5000029/train/typescript
+
+// function between(a: number, b: number): number[] {
+//   return Array.from({ length: b - a + 1 }, (item, index) => a + index);
+// }
+
+// between(1, 4);
+// console.log("between(1, 4):", between(1, 4));

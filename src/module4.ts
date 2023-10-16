@@ -1382,12 +1382,12 @@
 
 // https://www.codewars.com/kata/52b5247074ea613a09000164/train/typescript
 
-// function cookingTime(eggs: number): number {
-//   return 5 * Math.ceil(eggs / 8);
-// }
+function cookingTime(eggs: number): number {
+  return 5 * Math.ceil(eggs / 8);
+}
 
-// cookingTime(10);
-// console.log("cookingTime(5):", cookingTime(5));
+// // cookingTime(10);
+// // console.log("cookingTime(5):", cookingTime(5));
 
 // https://www.codewars.com/kata/56747fd5cb988479af000028/train/typescript
 

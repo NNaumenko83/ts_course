@@ -1440,9 +1440,16 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57eae65a4321032ce000002d/train/typescript
 
-const fakeBin = (x: string): string => {
-  return Array.from(x, (item) => (Number(item) < 5 ? 0 : 1)).join("");
-};
+// const fakeBin = (x: string): string => {
+//   return Array.from(x, (item) => (Number(item) < 5 ? 0 : 1)).join("");
+// };
 
-fakeBin("45385593107843568");
-console.log('fakeBin("45385593107843568":', fakeBin("45385593107843568"));
+// fakeBin("45385593107843568");
+// console.log('fakeBin("45385593107843568":', fakeBin("45385593107843568"));
+
+function squareSum(numbers: number[]): number {
+  return numbers.reduce((acc, item) => acc + item ** 2, 0);
+}
+
+squareSum([1, 2]);
+console.log("squareSum([1, 2]):", squareSum([1, 2]));

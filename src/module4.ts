@@ -1437,3 +1437,12 @@ function cookingTime(eggs: number): number {
 
 // between(1, 4);
 // console.log("between(1, 4):", between(1, 4));
+
+// https://www.codewars.com/kata/57eae65a4321032ce000002d/train/typescript
+
+const fakeBin = (x: string): string => {
+  return Array.from(x, (item) => (Number(item) < 5 ? 0 : 1)).join("");
+};
+
+fakeBin("45385593107843568");
+console.log('fakeBin("45385593107843568":', fakeBin("45385593107843568"));

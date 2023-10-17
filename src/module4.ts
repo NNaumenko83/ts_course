@@ -1447,9 +1447,25 @@ function cookingTime(eggs: number): number {
 // fakeBin("45385593107843568");
 // console.log('fakeBin("45385593107843568":', fakeBin("45385593107843568"));
 
-function squareSum(numbers: number[]): number {
-  return numbers.reduce((acc, item) => acc + item ** 2, 0);
+// function squareSum(numbers: number[]): number {
+//   return numbers.reduce((acc, item) => acc + item ** 2, 0);
+// }
+
+// squareSum([1, 2]);
+// console.log("squareSum([1, 2]):", squareSum([1, 2]));
+
+// https://www.codewars.com/kata/576bb3c4b1abc497ec000065/train/typescript
+
+function compare(s1: string | null, s2: string | null): boolean {
+  let sumS1 = s1 ? (/[^a-zA-z]/.test(s1) ? 0 : sumString(s1.toUpperCase())) : 0;
+  let sumS2 = s2 ? (/[^a-zA-z]/.test(s2) ? 0 : sumString(s2.toUpperCase())) : 0;
+
+  return sumS1 === sumS2;
 }
 
-squareSum([1, 2]);
-console.log("squareSum([1, 2]):", squareSum([1, 2]));
+function sumString(str: string) {
+  return [...str].reduce((acc, item) => acc + item.charCodeAt(0), 0);
+}
+
+compare("AD", "BC");
+console.log('compare("AD", "DD")', compare("AD", "DD"));

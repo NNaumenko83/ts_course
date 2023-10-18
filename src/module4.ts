@@ -1456,16 +1456,27 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/576bb3c4b1abc497ec000065/train/typescript
 
-function compare(s1: string | null, s2: string | null): boolean {
-  let sumS1 = s1 ? (/[^a-zA-z]/.test(s1) ? 0 : sumString(s1.toUpperCase())) : 0;
-  let sumS2 = s2 ? (/[^a-zA-z]/.test(s2) ? 0 : sumString(s2.toUpperCase())) : 0;
+// function compare(s1: string | null, s2: string | null): boolean {
+//   let sumS1 = s1 ? (/[^a-zA-z]/.test(s1) ? 0 : sumString(s1.toUpperCase())) : 0;
+//   let sumS2 = s2 ? (/[^a-zA-z]/.test(s2) ? 0 : sumString(s2.toUpperCase())) : 0;
 
-  return sumS1 === sumS2;
+//   return sumS1 === sumS2;
+// }
+
+// function sumString(str: string) {
+//   return [...str].reduce((acc, item) => acc + item.charCodeAt(0), 0);
+// }
+
+// compare("AD", "BC");
+// console.log('compare("AD", "DD")', compare("AD", "DD"));
+
+// https://www.codewars.com/kata/57a77726bb9944d000000b06/train/typescript
+
+function mango(quantity: number, price: number): number {
+  return quantity < 3
+    ? quantity * price
+    : (Math.floor(quantity / 3) * 2 + (quantity % 3)) * price;
 }
 
-function sumString(str: string) {
-  return [...str].reduce((acc, item) => acc + item.charCodeAt(0), 0);
-}
-
-compare("AD", "BC");
-console.log('compare("AD", "DD")', compare("AD", "DD"));
+mango(3, 3);
+console.log("mango(9, 5):", mango(9, 5));

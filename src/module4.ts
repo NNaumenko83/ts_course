@@ -1472,11 +1472,22 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57a77726bb9944d000000b06/train/typescript
 
-function mango(quantity: number, price: number): number {
-  return quantity < 3
-    ? quantity * price
-    : (Math.floor(quantity / 3) * 2 + (quantity % 3)) * price;
+// function mango(quantity: number, price: number): number {
+//   return quantity < 3
+//     ? quantity * price
+//     : (Math.floor(quantity / 3) * 2 + (quantity % 3)) * price;
+// }
+
+// mango(3, 3);
+// console.log("mango(9, 5):", mango(9, 5));
+
+//www.codewars.com/kata/5a431c0de1ce0ec33a00000c/train/typescript
+function evenNumbers(array: number[], n: number): number[] {
+  const evenAray = array.filter((item) => item % 2 === 0);
+  return evenAray.slice(evenAray.length - n);
 }
 
-mango(3, 3);
-console.log("mango(9, 5):", mango(9, 5));
+console.log(
+  "evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)",
+  evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)
+);

@@ -1482,12 +1482,29 @@ function cookingTime(eggs: number): number {
 // console.log("mango(9, 5):", mango(9, 5));
 
 //www.codewars.com/kata/5a431c0de1ce0ec33a00000c/train/typescript
-function evenNumbers(array: number[], n: number): number[] {
-  const evenAray = array.filter((item) => item % 2 === 0);
-  return evenAray.slice(evenAray.length - n);
+// function evenNumbers(array: number[], n: number): number[] {
+//   const evenAray = array.filter((item) => item % 2 === 0);
+//   return evenAray.slice(evenAray.length - n);
+// }
+
+// console.log(
+//   "evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)",
+//   evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)
+// );
+
+// https://www.codewars.com/kata/5913152be0b295cf99000001/train/typescript
+
+function divisions(n: number, divisor: number): number {
+  let counter = 0;
+  let numb = n;
+
+  while (numb / divisor >= 1) {
+    counter += 1;
+    numb = Math.floor(numb / divisor);
+  }
+
+  return counter;
 }
 
-console.log(
-  "evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)",
-  evenNumbers([-22, 5, 3, 11, 26, -6, -7, -8, -9, -8, 26], 2)
-);
+divisions(6, 2);
+console.log("divisions(2450, 5)", divisions(2450, 5));

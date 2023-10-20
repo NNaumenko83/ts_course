@@ -1494,17 +1494,43 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/5913152be0b295cf99000001/train/typescript
 
-function divisions(n: number, divisor: number): number {
-  let counter = 0;
-  let numb = n;
+// function divisions(n: number, divisor: number): number {
+//   let counter = 0;
+//   let numb = n;
 
-  while (numb / divisor >= 1) {
-    counter += 1;
-    numb = Math.floor(numb / divisor);
-  }
+//   while (numb / divisor >= 1) {
+//     counter += 1;
+//     numb = Math.floor(numb / divisor);
+//   }
 
-  return counter;
+//   return counter;
+// }
+
+// divisions(6, 2);
+// console.log("divisions(2450, 5)", divisions(2450, 5));
+
+// https://www.codewars.com/kata/5d376cdc9bcee7001fcb84c0/train/typescript
+
+function oddOnesOut(nums: number[]) {
+  const resArr = nums.reduce((acc: number[], item, index, array) => {
+    if (acc.includes(item)) {
+      acc.push(item);
+      return acc;
+    }
+
+    const numArr = array.filter((num) => item === num).length;
+
+    if (numArr % 2 === 0) {
+      acc.push(item);
+      return acc;
+    }
+    return acc;
+  }, []);
+
+  return resArr;
 }
 
-divisions(6, 2);
-console.log("divisions(2450, 5)", divisions(2450, 5));
+console.log(
+  "oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100]):",
+  oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100])
+);

@@ -1447,12 +1447,12 @@ function cookingTime(eggs: number): number {
 // fakeBin("45385593107843568");
 // console.log('fakeBin("45385593107843568":', fakeBin("45385593107843568"));
 
-// function squareSum(numbers: number[]): number {
-//   return numbers.reduce((acc, item) => acc + item ** 2, 0);
-// }
+// // function squareSum(numbers: number[]): number {
+// //   return numbers.reduce((acc, item) => acc + item ** 2, 0);
+// // }
 
-// squareSum([1, 2]);
-// console.log("squareSum([1, 2]):", squareSum([1, 2]));
+// // squareSum([1, 2]);
+// // console.log("squareSum([1, 2]):", squareSum([1, 2]));
 
 // https://www.codewars.com/kata/576bb3c4b1abc497ec000065/train/typescript
 

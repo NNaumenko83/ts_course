@@ -1511,26 +1511,62 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/5d376cdc9bcee7001fcb84c0/train/typescript
 
-function oddOnesOut(nums: number[]) {
-  const resArr = nums.reduce((acc: number[], item, index, array) => {
-    if (acc.includes(item)) {
-      acc.push(item);
-      return acc;
+// function oddOnesOut(nums: number[]) {
+//   const resArr = nums.reduce((acc: number[], item, index, array) => {
+//     if (acc.includes(item)) {
+//       acc.push(item);
+//       return acc;
+//     }
+
+//     const numArr = array.filter((num) => item === num).length;
+
+//     if (numArr % 2 === 0) {
+//       acc.push(item);
+//       return acc;
+//     }
+//     return acc;
+//   }, []);
+
+//   return resArr;
+// }
+
+// console.log(
+//   "oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100]):",
+//   oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100])
+// );
+
+// https://www.codewars.com/kata/57741d8f10a0a66915000001/train/typescript
+
+const intDiff = (arr: number[], n: number): number => {
+  console.log("arr:", arr);
+  console.log("n:", n);
+  let counter = 0;
+
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let k = i + 1; k < arr.length; k += 1) {
+      if (
+        n !== 0 &&
+        ((arr[k] - arr[i]) / n === 1 || (arr[k] - arr[i]) / n === -1) &&
+        arr[k] - arr[i] !== 0
+      ) {
+        counter += 1;
+        continue;
+      }
+      if (n === 0 && arr[k] - arr[i] === n) {
+        counter += 1;
+        continue;
+      }
     }
+  }
+  return counter;
+};
 
-    const numArr = array.filter((num) => item === num).length;
+intDiff([1, 1, 5, 6, 9, 16, 27], 4);
+console.log("intDiff:", intDiff([4, 8, 12, 12, 3, 6, 2], 6));
 
-    if (numArr % 2 === 0) {
-      acc.push(item);
-      return acc;
-    }
-    return acc;
-  }, []);
-
-  return resArr;
-}
-
-console.log(
-  "oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100]):",
-  oddOnesOut([100, 100, 5, 5, 100, 50, 68, 50, 68, 50, 68, 5, 100])
-);
+// arr: [1, 1, 5, 6, 9, 16, 27];
+// n: 4;
+// arr: [1, 1, 3, 3];
+// n: 2;
+// arr: [4, 8, 12, 12, 3, 6, 2];
+// n: 6;

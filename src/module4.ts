@@ -1537,32 +1537,32 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57741d8f10a0a66915000001/train/typescript
 
-const intDiff = (arr: number[], n: number): number => {
-  console.log("arr:", arr);
-  console.log("n:", n);
-  let counter = 0;
+// const intDiff = (arr: number[], n: number): number => {
+//   console.log("arr:", arr);
+//   console.log("n:", n);
+//   let counter = 0;
 
-  for (let i = 0; i < arr.length; i += 1) {
-    for (let k = i + 1; k < arr.length; k += 1) {
-      if (
-        n !== 0 &&
-        ((arr[k] - arr[i]) / n === 1 || (arr[k] - arr[i]) / n === -1) &&
-        arr[k] - arr[i] !== 0
-      ) {
-        counter += 1;
-        continue;
-      }
-      if (n === 0 && arr[k] - arr[i] === n) {
-        counter += 1;
-        continue;
-      }
-    }
-  }
-  return counter;
-};
+//   for (let i = 0; i < arr.length; i += 1) {
+//     for (let k = i + 1; k < arr.length; k += 1) {
+//       if (
+//         n !== 0 &&
+//         ((arr[k] - arr[i]) / n === 1 || (arr[k] - arr[i]) / n === -1) &&
+//         arr[k] - arr[i] !== 0
+//       ) {
+//         counter += 1;
+//         continue;
+//       }
+//       if (n === 0 && arr[k] - arr[i] === n) {
+//         counter += 1;
+//         continue;
+//       }
+//     }
+//   }
+//   return counter;
+// };
 
-intDiff([1, 1, 5, 6, 9, 16, 27], 4);
-console.log("intDiff:", intDiff([4, 8, 12, 12, 3, 6, 2], 6));
+// intDiff([1, 1, 5, 6, 9, 16, 27], 4);
+// console.log("intDiff:", intDiff([4, 8, 12, 12, 3, 6, 2], 6));
 
 // arr: [1, 1, 5, 6, 9, 16, 27];
 // n: 4;
@@ -1570,3 +1570,20 @@ console.log("intDiff:", intDiff([4, 8, 12, 12, 3, 6, 2], 6));
 // n: 2;
 // arr: [4, 8, 12, 12, 3, 6, 2];
 // n: 6;
+
+// https://www.codewars.com/kata/57f6ad55cca6e045d2000627/train/typescript
+
+function squareOrSquareRoot(array: number[]): number[] {
+  return array.map((item) => {
+    if (Math.sqrt(item) === Math.round(Math.sqrt(item))) {
+      return Math.sqrt(item);
+    }
+    return item ** 2;
+  });
+}
+
+console.log(
+  "squareOrSquareRoot([4, 3, 9, 7, 2, 1]):",
+  squareOrSquareRoot([4, 3, 9, 7, 2, 1])
+);
+squareOrSquareRoot([4, 3, 9, 7, 2, 1]);

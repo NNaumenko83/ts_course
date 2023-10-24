@@ -1573,25 +1573,31 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57f6ad55cca6e045d2000627/train/typescript
 
-function squareOrSquareRoot(array: number[]): number[] {
-  return array.map((item) => {
-    if (Math.sqrt(item) === Math.round(Math.sqrt(item))) {
-      return Math.sqrt(item);
-    }
-    return item ** 2;
-  });
+// function squareOrSquareRoot(array: number[]): number[] {
+//   return array.map((item) => {
+//     if (Math.sqrt(item) === Math.round(Math.sqrt(item))) {
+//       return Math.sqrt(item);
+//     }
+//     return item ** 2;
+//   });
+// }
+
+// console.log(
+//   "squareOrSquareRoot([4, 3, 9, 7, 2, 1]):",
+//   squareOrSquareRoot([4, 3, 9, 7, 2, 1])
+// );
+// squareOrSquareRoot([4, 3, 9, 7, 2, 1]);
+// // https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/train/typescript
+
+// function solution(str: string, ending: string): boolean {
+//   return str.slice(str.length - ending.length) === ending;
+// }
+
+// solution("abcde", "cde");
+// console.log('solution("abcde", "cde"):', solution("abcde", "cde"));
+
+function greet(name: string): string {
+  return `"Hello, ${name} how are you doing today?"`;
 }
 
-console.log(
-  "squareOrSquareRoot([4, 3, 9, 7, 2, 1]):",
-  squareOrSquareRoot([4, 3, 9, 7, 2, 1])
-);
-squareOrSquareRoot([4, 3, 9, 7, 2, 1]);
-// https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/train/typescript
-
-function solution(str: string, ending: string): boolean {
-  return str.slice(str.length - ending.length) === ending;
-}
-
-solution("abcde", "cde");
-console.log('solution("abcde", "cde"):', solution("abcde", "cde"));
+greet("Ryan");

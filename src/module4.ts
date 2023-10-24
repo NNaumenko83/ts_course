@@ -1587,3 +1587,11 @@ console.log(
   squareOrSquareRoot([4, 3, 9, 7, 2, 1])
 );
 squareOrSquareRoot([4, 3, 9, 7, 2, 1]);
+// https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/train/typescript
+
+function solution(str: string, ending: string): boolean {
+  return str.slice(str.length - ending.length) === ending;
+}
+
+solution("abcde", "cde");
+console.log('solution("abcde", "cde"):', solution("abcde", "cde"));

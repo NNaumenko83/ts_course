@@ -1596,8 +1596,51 @@ function cookingTime(eggs: number): number {
 // solution("abcde", "cde");
 // console.log('solution("abcde", "cde"):', solution("abcde", "cde"));
 
-function greet(name: string): string {
-  return `"Hello, ${name} how are you doing today?"`;
-}
+// function greet(name: string): string {
+//   return `"Hello, ${name} how are you doing today?"`;
+// }
 
-greet("Ryan");
+// greet("Ryan");
+
+// https://www.codewars.com/kata/56ed20a2c4e5d69155000301/train/typescript
+
+const scale = (s: string, k: number, n: number): string => {
+  const modifiedString = !s
+    ? ""
+    : s
+        .split("\n")
+        .map((item) =>
+          [...item]
+            .map((letter) => {
+              let str = "";
+              for (let i = 0; i < k; i += 1) {
+                str = str + letter;
+              }
+              return str;
+            })
+            .join("")
+        )
+        .map((item, index) => {
+          let str = "";
+
+          for (let i = 0; i < n; i += 1) {
+            if (index === 0 && i === 0) {
+              str = item;
+              continue;
+            }
+            if (i === 0) {
+              str = "\n" + item;
+              continue;
+            }
+            str = str + "\n" + item;
+          }
+
+          return str;
+        })
+        .join("");
+
+  return modifiedString;
+};
+
+// scale(strng, k, v);
+scale("abcd\nefgh\nijkl\nmnop", 2, 1);

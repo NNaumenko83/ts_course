@@ -1604,43 +1604,51 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/56ed20a2c4e5d69155000301/train/typescript
 
-const scale = (s: string, k: number, n: number): string => {
-  const modifiedString = !s
-    ? ""
-    : s
-        .split("\n")
-        .map((item) =>
-          [...item]
-            .map((letter) => {
-              let str = "";
-              for (let i = 0; i < k; i += 1) {
-                str = str + letter;
-              }
-              return str;
-            })
-            .join("")
-        )
-        .map((item, index) => {
-          let str = "";
+// const scale = (s: string, k: number, n: number): string => {
+//   const modifiedString = !s
+//     ? ""
+//     : s
+//         .split("\n")
+//         .map((item) =>
+//           [...item]
+//             .map((letter) => {
+//               let str = "";
+//               for (let i = 0; i < k; i += 1) {
+//                 str = str + letter;
+//               }
+//               return str;
+//             })
+//             .join("")
+//         )
+//         .map((item, index) => {
+//           let str = "";
 
-          for (let i = 0; i < n; i += 1) {
-            if (index === 0 && i === 0) {
-              str = item;
-              continue;
-            }
-            if (i === 0) {
-              str = "\n" + item;
-              continue;
-            }
-            str = str + "\n" + item;
-          }
+//           for (let i = 0; i < n; i += 1) {
+//             if (index === 0 && i === 0) {
+//               str = item;
+//               continue;
+//             }
+//             if (i === 0) {
+//               str = "\n" + item;
+//               continue;
+//             }
+//             str = str + "\n" + item;
+//           }
 
-          return str;
-        })
-        .join("");
+//           return str;
+//         })
+//         .join("");
 
-  return modifiedString;
-};
+//   return modifiedString;
+// };
 
-// scale(strng, k, v);
-scale("abcd\nefgh\nijkl\nmnop", 2, 1);
+// // scale(strng, k, v);
+// scale("abcd\nefgh\nijkl\nmnop", 2, 1);
+
+//www.codewars.com/kata/59ca8246d751df55cc00014c/train/typescript
+
+function hero(bullets: number, dragons: number): boolean {
+  return dragons * 2 <= bullets;
+}
+
+hero(10, 5);

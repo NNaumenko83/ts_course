@@ -1647,8 +1647,45 @@ function cookingTime(eggs: number): number {
 
 //www.codewars.com/kata/59ca8246d751df55cc00014c/train/typescript
 
-function hero(bullets: number, dragons: number): boolean {
-  return dragons * 2 <= bullets;
+// function hero(bullets: number, dragons: number): boolean {
+//   return dragons * 2 <= bullets;
+// }
+
+// hero(10, 5);
+
+// https://www.codewars.com/kata/5545f109004975ea66000086/train/typescript
+
+// function isDivisible(n: number, x: number, y: number): boolean {
+//   return n % x === 0 && n % y === 0;
+// }
+
+// isDivisible(3, 3, 4);
+
+// https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/typescript
+
+function twoSort(s: string[]): string {
+  const sortArr = [...s].sort();
+
+  return [...sortArr[0]]
+    .map((item, index) => {
+      if (index == 0) {
+        return item;
+      }
+      return "***" + item;
+    })
+    .join("");
 }
 
-hero(10, 5);
+console.log(
+  twoSort([
+    "bitcoin",
+    "take",
+    "over",
+    "the",
+    "world",
+    "maybe",
+    "who",
+    "knows",
+    "perhaps",
+  ])
+);

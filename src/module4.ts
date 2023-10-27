@@ -1663,29 +1663,47 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/typescript
 
-function twoSort(s: string[]): string {
-  const sortArr = [...s].sort();
+// function twoSort(s: string[]): string {
+//   const sortArr = [...s].sort();
 
-  return [...sortArr[0]]
-    .map((item, index) => {
-      if (index == 0) {
-        return item;
-      }
-      return "***" + item;
-    })
-    .join("");
+//   return [...sortArr[0]]
+//     .map((item, index) => {
+//       if (index == 0) {
+//         return item;
+//       }
+//       return "***" + item;
+//     })
+//     .join("");
+// }
+
+// console.log(
+//   twoSort([
+//     "bitcoin",
+//     "take",
+//     "over",
+//     "the",
+//     "world",
+//     "maybe",
+//     "who",
+//     "knows",
+//     "perhaps",
+//   ])
+// );
+
+// https://www.codewars.com/kata/5641275f07335295f10000d0/train/typescript
+
+function splitTheBill(x: { [k: string]: number }): { [k: string]: number } {
+  const arr = Object.values(x);
+  const average = arr.reduce((acc, item) => acc + item, 0) / arr.length;
+
+  const resObj = Object.fromEntries(
+    Object.entries(x).map((item) => [
+      item[0],
+      Number((item[1] - average).toFixed(2)),
+    ])
+  );
+
+  return resObj;
 }
 
-console.log(
-  twoSort([
-    "bitcoin",
-    "take",
-    "over",
-    "the",
-    "world",
-    "maybe",
-    "who",
-    "knows",
-    "perhaps",
-  ])
-);
+splitTheBill({ A: 40, B: 25, C: 10, D: 153, E: 58 });

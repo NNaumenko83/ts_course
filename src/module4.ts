@@ -1692,18 +1692,34 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/5641275f07335295f10000d0/train/typescript
 
-function splitTheBill(x: { [k: string]: number }): { [k: string]: number } {
-  const arr = Object.values(x);
-  const average = arr.reduce((acc, item) => acc + item, 0) / arr.length;
+// function splitTheBill(x: { [k: string]: number }): { [k: string]: number } {
+//   const arr = Object.values(x);
+//   const average = arr.reduce((acc, item) => acc + item, 0) / arr.length;
 
-  const resObj = Object.fromEntries(
-    Object.entries(x).map((item) => [
-      item[0],
-      Number((item[1] - average).toFixed(2)),
-    ])
-  );
+//   const resObj = Object.fromEntries(
+//     Object.entries(x).map((item) => [
+//       item[0],
+//       Number((item[1] - average).toFixed(2)),
+//     ])
+//   );
 
-  return resObj;
+//   return resObj;
+// }
+
+// splitTheBill({ A: 40, B: 25, C: 10, D: 153, E: 58 });
+
+// https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/train/typescript
+
+function firstNonConsecutive(arr: number[]): null | number {
+  for (let i = 0; i < arr.length - 1; i += 1) {
+    if (arr[i + 1] - arr[i] === 1) {
+      continue;
+    }
+
+    return arr[i + 1];
+  }
+
+  return null;
 }
 
-splitTheBill({ A: 40, B: 25, C: 10, D: 153, E: 58 });
+firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]);

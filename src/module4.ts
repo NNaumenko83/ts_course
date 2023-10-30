@@ -1731,3 +1731,9 @@ function cookingTime(eggs: number): number {
 // }
 
 // stringToArray("Robin Singh");
+
+// https://www.codewars.com/kata/555a67db74814aa4ee0001b5/train/typescript
+
+const testEven = (n: number): boolean => n % 2 === 0;
+
+testEven(0);

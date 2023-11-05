@@ -1734,6 +1734,21 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/555a67db74814aa4ee0001b5/train/typescript
 
-const testEven = (n: number): boolean => n % 2 === 0;
+// const testEven = (n: number): boolean => n % 2 === 0;
 
-testEven(0);
+// testEven(0);
+
+function findMultiples(integer: number, limit: number): number[] {
+  const resArr: number[] = [];
+  do {
+    if (resArr.length === 0) {
+      resArr.push(integer);
+    } else {
+      resArr.push(resArr[resArr.length - 1] + integer);
+    }
+  } while (resArr[resArr.length - 1] + integer <= limit);
+
+  return resArr;
+}
+
+findMultiples(11, 54);

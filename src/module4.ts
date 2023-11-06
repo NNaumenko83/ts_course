@@ -1805,12 +1805,59 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/typescript
 
-function noSpace(x: string): string {
-  return x.split(" ").join("");
-}
+// function noSpace(x: string): string {
+//   return x.split(" ").join("");
+// }
 
-console.log(
-  'noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"):',
-  noSpace("8 j 8   mBliB8g  imjB8B8  jl  B")
-);
-noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
+// console.log(
+//   'noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"):',
+//   noSpace("8 j 8   mBliB8g  imjB8B8  jl  B")
+// );
+// noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
+
+const golos = "aeyuio";
+const progolos = "qwrtpsdfghjklzxcvbnm";
+
+const modify = (str: string): {}[] => {
+  return [...str].reduce((acc, letter, index) => {
+    return [
+      ...acc,
+      {
+        pos: index,
+        char: letter,
+        type: golos.includes(letter.toLowerCase())
+          ? 1
+          : progolos.includes(letter.toLocaleLowerCase())
+          ? 2
+          : 3,
+      },
+    ];
+  }, []);
+};
+
+console.log("modify('I like js')", modify("I like js"));
+modify("I like js");
+
+// Дана текстова строка англійською.
+// Перетворити в масив об'єктів, де формат об'єкта такий:
+// {
+//   pos: <позиція>
+//   char: <символ в верхньому регістрі>
+//   type: <1 - голосна (aeyuio), 2 - приголосна (qwrtpsdfghjklzxcvbnm), 3-інші>
+// }
+
+// Наприклад
+// 'I like js'
+
+// Результат:
+// [
+//     { "pos": 0, "char": "I", "type": 1 },
+//     { "pos": 1, "char": " ", "type": 3 },
+//     { "pos": 2, "char": "L", "type": 2 },
+//     { "pos": 3, "char": "I", "type": 1 },
+//     { "pos": 4, "char": "K", "type": 2 },
+//     { "pos": 5, "char": "E", "type": 1 },
+//     { "pos": 6, "char": " ", "type": 3 },
+//     { "pos": 7, "char": "J", "type": 2 },
+//     { "pos": 8, "char": "S", "type": 2 }
+// ]

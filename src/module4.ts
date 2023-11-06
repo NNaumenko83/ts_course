@@ -1738,17 +1738,79 @@ function cookingTime(eggs: number): number {
 
 // testEven(0);
 
-function findMultiples(integer: number, limit: number): number[] {
-  const resArr: number[] = [];
-  do {
-    if (resArr.length === 0) {
-      resArr.push(integer);
-    } else {
-      resArr.push(resArr[resArr.length - 1] + integer);
-    }
-  } while (resArr[resArr.length - 1] + integer <= limit);
+// function findMultiples(integer: number, limit: number): number[] {
+//   const resArr: number[] = [];
+//   do {
+//     if (resArr.length === 0) {
+//       resArr.push(integer);
+//     } else {
+//       resArr.push(resArr[resArr.length - 1] + integer);
+//     }
+//   } while (resArr[resArr.length - 1] + integer <= limit);
 
-  return resArr;
+//   return resArr;
+// }
+
+// findMultiples(11, 54);
+
+// https://www.codewars.com/kata/56b1f01c247c01db92000076/train/typescript
+
+// function doubleChar(str: string): string {
+//   return [...str].map((letter) => letter + letter).join("");
+// }
+
+// console.log('doubleChar("abcd"):', doubleChar("abcd"));
+// doubleChar("abcd");
+
+// https://www.codewars.com/kata/53da6d8d112bd1a0dc00008b/train/typescript
+
+// function reverseList(list: number[]): number[] {
+//   return list.reverse();
+// }
+
+// reverseList([1, 2, 3, 4]);
+
+// https://www.codewars.com/kata/57a5b0dfcf1fa526bb000118/train/typescript
+
+// const distinct = (a: number[]): number[] => {
+//   console.log("new Set(a):", new Set(a));
+//   return Array.from(new Set(a));
+// };
+
+// console.log("distinct([1, 1, 2]):", distinct([1, 1, 2]));
+// distinct([1, 1, 2]);
+
+// https://www.codewars.com/kata/57e3f79c9cb119374600046b/train/typescript
+
+// function hello(name = ""): string {
+//   if (!name) {
+//     return "Hello, World!";
+//   }
+//   return `Hello, ${
+//     name.toLowerCase().charAt(0).toUpperCase() + name.toLowerCase().slice(1)
+//   }`;
+// }
+
+// console.log('hello("johN"):', hello("johN"));
+// hello("johN");
+
+// https://www.codewars.com/kata/5168bb5dfe9a00b126000018/train/typescript
+
+// function solution(str: string): string {
+//   return [...str].reverse().join(""); // reverse this!
+// }
+
+// console.log('solution("world"):', solution("world"));
+// solution("world");
+
+// https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/typescript
+
+function noSpace(x: string): string {
+  return x.split(" ").join("");
 }
 
-findMultiples(11, 54);
+console.log(
+  'noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"):',
+  noSpace("8 j 8   mBliB8g  imjB8B8  jl  B")
+);
+noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");

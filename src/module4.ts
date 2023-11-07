@@ -1815,28 +1815,28 @@ function cookingTime(eggs: number): number {
 // );
 // noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
 
-const golos = "aeyuio";
-const progolos = "qwrtpsdfghjklzxcvbnm";
+// const golos = "aeyuio";
+// const progolos = "qwrtpsdfghjklzxcvbnm";
 
-const modify = (str: string): {}[] => {
-  return [...str].reduce((acc, letter, index) => {
-    return [
-      ...acc,
-      {
-        pos: index,
-        char: letter,
-        type: golos.includes(letter.toLowerCase())
-          ? 1
-          : progolos.includes(letter.toLocaleLowerCase())
-          ? 2
-          : 3,
-      },
-    ];
-  }, []);
-};
+// const modify = (str: string): {}[] => {
+//   return [...str].reduce((acc, letter, index) => {
+//     return [
+//       ...acc,
+//       {
+//         pos: index,
+//         char: letter,
+//         type: golos.includes(letter.toLowerCase())
+//           ? 1
+//           : progolos.includes(letter.toLocaleLowerCase())
+//           ? 2
+//           : 3,
+//       },
+//     ];
+//   }, []);
+// };
 
-console.log("modify('I like js')", modify("I like js"));
-modify("I like js");
+// console.log("modify('I like js')", modify("I like js"));
+// modify("I like js");
 
 // Дана текстова строка англійською.
 // Перетворити в масив об'єктів, де формат об'єкта такий:
@@ -1861,3 +1861,15 @@ modify("I like js");
 //     { "pos": 7, "char": "J", "type": 2 },
 //     { "pos": 8, "char": "S", "type": 2 }
 // ]
+
+// https://www.codewars.com/kata/5e4217e476126b000170489b/train/typescript
+
+function polydivisible(x: number): boolean {
+  return ![...x.toString()].find((item, index, array) => {
+    const numb = Number(array.slice(0, index + 1).join(""));
+    return numb % (index + 1) !== 0;
+  });
+}
+
+console.log("polydivisible(123220):", polydivisible(123220));
+polydivisible(123220);

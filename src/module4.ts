@@ -1738,17 +1738,38 @@ function cookingTime(eggs: number): number {
 
 // testEven(0);
 
-function findMultiples(integer: number, limit: number): number[] {
-  const resArr: number[] = [];
-  do {
-    if (resArr.length === 0) {
-      resArr.push(integer);
-    } else {
-      resArr.push(resArr[resArr.length - 1] + integer);
-    }
-  } while (resArr[resArr.length - 1] + integer <= limit);
+// function findMultiples(integer: number, limit: number): number[] {
+//   const resArr: number[] = [];
+//   do {
+//     if (resArr.length === 0) {
+//       resArr.push(integer);
+//     } else {
+//       resArr.push(resArr[resArr.length - 1] + integer);
+//     }
+//   } while (resArr[resArr.length - 1] + integer <= limit);
 
-  return resArr;
+//   return resArr;
+// }
+
+// findMultiples(11, 54);
+
+// Quarter of the year
+// https://www.codewars.com/kata/5ce9c1000bab0b001134f5af/train/typescript
+
+export function quarterOf(month: number): number {
+  switch (true) {
+    case month >= 1 && month <= 3:
+      return 1;
+    case month > 3 && month <= 6:
+      return 2;
+    case month > 6 && month <= 9:
+      return 3;
+    case month > 9 && month <= 12:
+      return 4;
+
+    default:
+      return 0;
+  }
 }
 
-findMultiples(11, 54);
+console.log(quarterOf(3));

@@ -1747,10 +1747,143 @@ function cookingTime(eggs: number): number {
 //       resArr.push(resArr[resArr.length - 1] + integer);
 //     }
 //   } while (resArr[resArr.length - 1] + integer <= limit);
+// function findMultiples(integer: number, limit: number): number[] {
+//   const resArr: number[] = [];
+//   do {
+//     if (resArr.length === 0) {
+//       resArr.push(integer);
+//     } else {
+//       resArr.push(resArr[resArr.length - 1] + integer);
+//     }
+//   } while (resArr[resArr.length - 1] + integer <= limit);
 
 //   return resArr;
 // }
+//   return resArr;
+// }
 
+// findMultiples(11, 54);
+
+// https://www.codewars.com/kata/56b1f01c247c01db92000076/train/typescript
+
+// function doubleChar(str: string): string {
+//   return [...str].map((letter) => letter + letter).join("");
+// }
+
+// console.log('doubleChar("abcd"):', doubleChar("abcd"));
+// doubleChar("abcd");
+
+// https://www.codewars.com/kata/53da6d8d112bd1a0dc00008b/train/typescript
+
+// function reverseList(list: number[]): number[] {
+//   return list.reverse();
+// }
+
+// reverseList([1, 2, 3, 4]);
+
+// https://www.codewars.com/kata/57a5b0dfcf1fa526bb000118/train/typescript
+
+// const distinct = (a: number[]): number[] => {
+//   console.log("new Set(a):", new Set(a));
+//   return Array.from(new Set(a));
+// };
+
+// console.log("distinct([1, 1, 2]):", distinct([1, 1, 2]));
+// distinct([1, 1, 2]);
+
+// https://www.codewars.com/kata/57e3f79c9cb119374600046b/train/typescript
+
+// function hello(name = ""): string {
+//   if (!name) {
+//     return "Hello, World!";
+//   }
+//   return `Hello, ${
+//     name.toLowerCase().charAt(0).toUpperCase() + name.toLowerCase().slice(1)
+//   }`;
+// }
+
+// console.log('hello("johN"):', hello("johN"));
+// hello("johN");
+
+// https://www.codewars.com/kata/5168bb5dfe9a00b126000018/train/typescript
+
+// function solution(str: string): string {
+//   return [...str].reverse().join(""); // reverse this!
+// }
+
+// console.log('solution("world"):', solution("world"));
+// solution("world");
+
+// https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/typescript
+
+// function noSpace(x: string): string {
+//   return x.split(" ").join("");
+// }
+
+// console.log(
+//   'noSpace("8 j 8   mBliB8g  imjB8B8  jl  B"):',
+//   noSpace("8 j 8   mBliB8g  imjB8B8  jl  B")
+// );
+// noSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
+
+// const golos = "aeyuio";
+// const progolos = "qwrtpsdfghjklzxcvbnm";
+
+// const modify = (str: string): {}[] => {
+//   return [...str].reduce((acc, letter, index) => {
+//     return [
+//       ...acc,
+//       {
+//         pos: index,
+//         char: letter,
+//         type: golos.includes(letter.toLowerCase())
+//           ? 1
+//           : progolos.includes(letter.toLocaleLowerCase())
+//           ? 2
+//           : 3,
+//       },
+//     ];
+//   }, []);
+// };
+
+// console.log("modify('I like js')", modify("I like js"));
+// modify("I like js");
+
+// Дана текстова строка англійською.
+// Перетворити в масив об'єктів, де формат об'єкта такий:
+// {
+//   pos: <позиція>
+//   char: <символ в верхньому регістрі>
+//   type: <1 - голосна (aeyuio), 2 - приголосна (qwrtpsdfghjklzxcvbnm), 3-інші>
+// }
+
+// Наприклад
+// 'I like js'
+
+// Результат:
+// [
+//     { "pos": 0, "char": "I", "type": 1 },
+//     { "pos": 1, "char": " ", "type": 3 },
+//     { "pos": 2, "char": "L", "type": 2 },
+//     { "pos": 3, "char": "I", "type": 1 },
+//     { "pos": 4, "char": "K", "type": 2 },
+//     { "pos": 5, "char": "E", "type": 1 },
+//     { "pos": 6, "char": " ", "type": 3 },
+//     { "pos": 7, "char": "J", "type": 2 },
+//     { "pos": 8, "char": "S", "type": 2 }
+// ]
+
+// https://www.codewars.com/kata/5e4217e476126b000170489b/train/typescript
+
+function polydivisible(x: number): boolean {
+  return ![...x.toString()].find((item, index, array) => {
+    const numb = Number(array.slice(0, index + 1).join(""));
+    return numb % (index + 1) !== 0;
+  });
+}
+
+console.log("polydivisible(123220):", polydivisible(123220));
+polydivisible(123220);
 // findMultiples(11, 54);
 
 // Quarter of the year

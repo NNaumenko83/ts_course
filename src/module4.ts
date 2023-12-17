@@ -1875,15 +1875,15 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/5e4217e476126b000170489b/train/typescript
 
-function polydivisible(x: number): boolean {
-  return ![...x.toString()].find((item, index, array) => {
-    const numb = Number(array.slice(0, index + 1).join(""));
-    return numb % (index + 1) !== 0;
-  });
-}
+// function polydivisible(x: number): boolean {
+//   return ![...x.toString()].find((item, index, array) => {
+//     const numb = Number(array.slice(0, index + 1).join(""));
+//     return numb % (index + 1) !== 0;
+//   });
+// }
 
-console.log("polydivisible(123220):", polydivisible(123220));
-polydivisible(123220);
+// console.log("polydivisible(123220):", polydivisible(123220));
+// polydivisible(123220);
 // findMultiples(11, 54);
 
 // Quarter of the year
@@ -1906,3 +1906,21 @@ polydivisible(123220);
 // }
 
 // console.log(quarterOf(3));
+
+// https://www.codewars.com/kata/5dd462a573ee6d0014ce715b/train/typescript
+
+function sameCase(a: string, b: string): number {
+  if (!isLetter(a) || !isLetter(b)) {
+    return -1;
+  }
+
+  return (a.toLowerCase() === a && b.toLowerCase() === b) ||
+    (a.toUpperCase() === a && b.toUpperCase() === b)
+    ? 1
+    : 0;
+}
+
+function isLetter(char: string): boolean {
+  return /^[a-zA-Z]$/.test(char);
+}
+console.log(sameCase("a", "b"));

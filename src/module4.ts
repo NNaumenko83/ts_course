@@ -1909,18 +1909,30 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/5dd462a573ee6d0014ce715b/train/typescript
 
-function sameCase(a: string, b: string): number {
-  if (!isLetter(a) || !isLetter(b)) {
-    return -1;
-  }
+// function sameCase(a: string, b: string): number {
+//   if (!isLetter(a) || !isLetter(b)) {
+//     return -1;
+//   }
 
-  return (a.toLowerCase() === a && b.toLowerCase() === b) ||
-    (a.toUpperCase() === a && b.toUpperCase() === b)
-    ? 1
-    : 0;
+//   return (a.toLowerCase() === a && b.toLowerCase() === b) ||
+//     (a.toUpperCase() === a && b.toUpperCase() === b)
+//     ? 1
+//     : 0;
+// }
+
+// function isLetter(char: string): boolean {
+//   return /^[a-zA-Z]$/.test(char);
+// }
+// console.log(sameCase("a", "b"));
+
+// https://www.codewars.com/kata/5708f682c69b48047b000e07/train/javascript
+
+function multiply(number: number): number {
+  const numdDigits = isNaN(Number(number.toString()[0]))
+    ? number.toString().length - 1
+    : number.toString().length;
+
+  return number * Math.pow(5, numdDigits);
 }
 
-function isLetter(char: string): boolean {
-  return /^[a-zA-Z]$/.test(char);
-}
-console.log(sameCase("a", "b"));
+console.log(multiply(-2));

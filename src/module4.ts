@@ -1927,12 +1927,62 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/5708f682c69b48047b000e07/train/javascript
 
-function multiply(number: number): number {
-  const numdDigits = isNaN(Number(number.toString()[0]))
-    ? number.toString().length - 1
-    : number.toString().length;
+// function multiply(number: number): number {
+//   const numdDigits = isNaN(Number(number.toString()[0]))
+//     ? number.toString().length - 1
+//     : number.toString().length;
 
-  return number * Math.pow(5, numdDigits);
+//   return number * Math.pow(5, numdDigits);
+// }
+
+// console.log(multiply(-2));
+
+// https://www.codewars.com/kata/56f7493f5d7c12d1690000b6/train/typescript
+
+function mean(lst: string[]): [number, string] {
+  const arr: [number, string] = [...lst].reduce(
+    (acc, item, index) => {
+      console.log("isNaN(Number(item):", isNaN(Number(item)));
+      if (isNaN(Number(item))) {
+        acc[1] = acc[1] + item;
+        console.log("acc:", acc);
+        return acc;
+      }
+
+      acc[0] = acc[0] + Number(item);
+
+      console.log("acc:", acc);
+      return acc;
+    },
+    [0, ""]
+  );
+
+  arr[0] = arr[0] / 10;
+
+  return arr;
 }
 
-console.log(multiply(-2));
+const lst = [
+  "u",
+  "6",
+  "d",
+  "1",
+  "i",
+  "w",
+  "6",
+  "s",
+  "t",
+  "4",
+  "a",
+  "6",
+  "g",
+  "1",
+  "2",
+  "w",
+  "8",
+  "o",
+  "2",
+  "0",
+];
+
+console.log(mean(lst));

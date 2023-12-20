@@ -1939,50 +1939,63 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/56f7493f5d7c12d1690000b6/train/typescript
 
-function mean(lst: string[]): [number, string] {
-  const arr: [number, string] = [...lst].reduce(
-    (acc, item, index) => {
-      console.log("isNaN(Number(item):", isNaN(Number(item)));
-      if (isNaN(Number(item))) {
-        acc[1] = acc[1] + item;
-        console.log("acc:", acc);
-        return acc;
-      }
+// function mean(lst: string[]): [number, string] {
+//   const arr: [number, string] = [...lst].reduce(
+//     (acc, item, index) => {
+//       console.log("isNaN(Number(item):", isNaN(Number(item)));
+//       if (isNaN(Number(item))) {
+//         acc[1] = acc[1] + item;
+//         console.log("acc:", acc);
+//         return acc;
+//       }
 
-      acc[0] = acc[0] + Number(item);
+//       acc[0] = acc[0] + Number(item);
 
-      console.log("acc:", acc);
-      return acc;
-    },
-    [0, ""]
-  );
+//       console.log("acc:", acc);
+//       return acc;
+//     },
+//     [0, ""]
+//   );
 
-  arr[0] = arr[0] / 10;
+//   arr[0] = arr[0] / 10;
 
-  return arr;
+//   return arr;
+// }
+
+// const lst = [
+//   "u",
+//   "6",
+//   "d",
+//   "1",
+//   "i",
+//   "w",
+//   "6",
+//   "s",
+//   "t",
+//   "4",
+//   "a",
+//   "6",
+//   "g",
+//   "1",
+//   "2",
+//   "w",
+//   "8",
+//   "o",
+//   "2",
+//   "0",
+// ];
+
+// console.log(mean(lst));
+
+// https://www.codewars.com/kata/57b68bc7b69bfc8209000307/train/typescript
+
+function average(scores: number[]): number {
+  const sum = scores.reduce((acc, item) => (acc += item), 0);
+
+  return Math.round(sum / scores.length);
 }
 
-const lst = [
-  "u",
-  "6",
-  "d",
-  "1",
-  "i",
-  "w",
-  "6",
-  "s",
-  "t",
-  "4",
-  "a",
-  "6",
-  "g",
-  "1",
-  "2",
-  "w",
-  "8",
-  "o",
-  "2",
-  "0",
-];
+const scores = [49, 3, 5, 300, 7];
 
-console.log(mean(lst));
+// average(scores);
+console.log("average(scores):", average(scores));

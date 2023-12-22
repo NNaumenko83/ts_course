@@ -2009,25 +2009,42 @@ function cookingTime(eggs: number): number {
 
 // Small enough?
 
-function smallEnough(a: number[], limit: number): boolean {
-  for (let k = 0; k <= a.length - 1; k += 1) {
-    if (a[k] > limit) {
-      return false;
-    }
-  }
-  return true;
-}
+// function smallEnough(a: number[], limit: number): boolean {
+//   for (let k = 0; k <= a.length - 1; k += 1) {
+//     if (a[k] > limit) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
-console.log(smallEnough([66, 101], 200));
+// console.log(smallEnough([66, 101], 200));
 // // average(scores);
 // console.log("average(scores):", average(scores));
 
 
 // https://www.codewars.com/kata/57faf12b21c84b5ba30001b0/train/typescript
 function remove(s: string): string {
-  if (s[s.length - 1] !== "!") { 
-    return s+"!"
+  let str="";
+  
+  for (let i = 0; i < s.length; i += 1) {
+    
+    if (s[i] === "!" && i !== s.length - 1) {
+      continue
+    } else  { str=str+s[i]
+    }
   }
+  
+  console.log('str:', str)
+  if (str[str.length - 1] !== "!") { 
+    str=str+"!"
+  }
+  
+
+
+  return str;
+ 
+
 
 }
 

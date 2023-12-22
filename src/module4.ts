@@ -1991,12 +1991,34 @@ function cookingTime(eggs: number): number {
 
 // function average(scores: number[]): number {
 //   const sum = scores.reduce((acc, item) => (acc += item), 0);
+// function average(scores: number[]): number {
+//   const sum = scores.reduce((acc, item) => (acc += item), 0);
 
+//   return Math.round(sum / scores.length);
+// }
 //   return Math.round(sum / scores.length);
 // }
 
 // const scores = [49, 3, 5, 300, 7];
+// const scores = [49, 3, 5, 300, 7];
 
+// // average(scores);
+// console.log("average(scores):", average(scores));
+
+// https://www.codewars.com/kata/57cc981a58da9e302a000214/train/typescript
+
+// Small enough?
+
+function smallEnough(a: number[], limit: number): boolean {
+  for (let k = 0; k <= a.length - 1; k += 1) {
+    if (a[k] > limit) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(smallEnough([66, 101], 200));
 // // average(scores);
 // console.log("average(scores):", average(scores));
 

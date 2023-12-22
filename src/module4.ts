@@ -1989,13 +1989,24 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57b68bc7b69bfc8209000307/train/typescript
 
-function average(scores: number[]): number {
-  const sum = scores.reduce((acc, item) => (acc += item), 0);
+// function average(scores: number[]): number {
+//   const sum = scores.reduce((acc, item) => (acc += item), 0);
 
-  return Math.round(sum / scores.length);
+//   return Math.round(sum / scores.length);
+// }
+
+// const scores = [49, 3, 5, 300, 7];
+
+// // average(scores);
+// console.log("average(scores):", average(scores));
+
+
+// https://www.codewars.com/kata/57faf12b21c84b5ba30001b0/train/typescript
+function remove(s: string): string {
+  if (s[s.length - 1] !== "!") { 
+    return s+"!"
+  }
+
 }
 
-const scores = [49, 3, 5, 300, 7];
-
-// average(scores);
-console.log("average(scores):", average(scores));
+console.log(remove("Hi!"))

@@ -2024,28 +2024,47 @@ function cookingTime(eggs: number): number {
 
 
 // https://www.codewars.com/kata/57faf12b21c84b5ba30001b0/train/typescript
-function remove(s: string): string {
-  let str="";
+// function remove(s: string): string {
+//   let str="";
   
-  for (let i = 0; i < s.length; i += 1) {
+//   for (let i = 0; i < s.length; i += 1) {
     
-    if (s[i] === "!" && i !== s.length - 1) {
-      continue
-    } else  { str=str+s[i]
-    }
-  }
+//     if (s[i] === "!" && i !== s.length - 1) {
+//       continue
+//     } else  { str=str+s[i]
+//     }
+//   }
   
-  console.log('str:', str)
-  if (str[str.length - 1] !== "!") { 
-    str=str+"!"
-  }
+//   console.log('str:', str)
+//   if (str[str.length - 1] !== "!") { 
+//     str=str+"!"
+//   }
   
 
 
-  return str;
+//   return str;
  
 
 
+// }
+
+// console.log(remove("Hi!"))
+
+
+
+// https://www.codewars.com/kata/554b4ac871d6813a03000035/train/typescript
+
+class Kata {
+  static highAndLow(numbers: string): string {
+
+    const max:string=Math.max(...numbers.split(" ").map((item)=>Number(item))).toString()
+    const min:string=Math.min(...numbers.split(" ").map((item)=>Number(item))).toString()
+   
+ 
+
+    return `${max} ${min}`
+  }
 }
 
-console.log(remove("Hi!"))
+
+console.log(Kata.highAndLow("1 20 3"))

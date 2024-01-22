@@ -2072,10 +2072,38 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/54557d61126a00423b000a45/train/typescript
 
-function shorterReverseLonger(a: string, b: string): string {
-  return a.length >= b.length
-    ? b + [...a].reverse().join("") + b
-    : a + [...b].reverse().join("") + a;
+// function shorterReverseLonger(a: string, b: string): string {
+//   return a.length >= b.length
+//     ? b + [...a].reverse().join("") + b
+//     : a + [...b].reverse().join("") + a;
+// }
+
+// console.log(shorterReverseLonger("first", "abcde"));
+
+// https://www.codewars.com/kata/581e014b55f2c52bb00000f8/train/typescript
+
+function decipherThis(str: string): string {
+  return str
+    .split(" ")
+    .map((item) => {
+      const int = parseInt(item);
+      const letter = String.fromCharCode(int);
+      const newItem = item.replace(int.toString(), letter);
+      const arrFromNewItem = [...newItem];
+      [arrFromNewItem[1], arrFromNewItem[arrFromNewItem.length - 1]] = [
+        arrFromNewItem[arrFromNewItem.length - 1],
+        arrFromNewItem[1],
+      ];
+
+      return arrFromNewItem.join("");
+    })
+    .join(" ");
 }
 
-console.log(shorterReverseLonger("first", "abcde"));
+// 72olle 103doo 100ya
+
+decipherThis("72olle 103doo 100ya");
+console.log(
+  'decipherThis("72olle 103doo 100ya"):',
+  decipherThis("72olle 103doo 100ya")
+);

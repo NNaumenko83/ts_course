@@ -2022,49 +2022,60 @@ function cookingTime(eggs: number): number {
 // // average(scores);
 // console.log("average(scores):", average(scores));
 
-
 // https://www.codewars.com/kata/57faf12b21c84b5ba30001b0/train/typescript
 // function remove(s: string): string {
 //   let str="";
-  
+
 //   for (let i = 0; i < s.length; i += 1) {
-    
+
 //     if (s[i] === "!" && i !== s.length - 1) {
 //       continue
 //     } else  { str=str+s[i]
 //     }
 //   }
-  
+
 //   console.log('str:', str)
-//   if (str[str.length - 1] !== "!") { 
+//   if (str[str.length - 1] !== "!") {
 //     str=str+"!"
 //   }
-  
-
 
 //   return str;
- 
-
 
 // }
 
 // console.log(remove("Hi!"))
 
-
-
 // https://www.codewars.com/kata/554b4ac871d6813a03000035/train/typescript
 
-class Kata {
-  static highAndLow(numbers: string): string {
+// class Kata {
+//   static highAndLow(numbers: string): string {
 
-    const max:string=Math.max(...numbers.split(" ").map((item)=>Number(item))).toString()
-    const min:string=Math.min(...numbers.split(" ").map((item)=>Number(item))).toString()
-   
- 
+//     const max:string=Math.max(...numbers.split(" ").map((item)=>Number(item))).toString()
+//     const min:string=Math.min(...numbers.split(" ").map((item)=>Number(item))).toString()
 
-    return `${max} ${min}`
-  }
+//     return `${max} ${min}`
+//   }
+// }
+
+// console.log(Kata.highAndLow("1 20 3"))
+
+// function sum(arr) {
+//   return arr.reduce((acc, item) => {
+//     if (item % 2 === 0) {
+//       return acc + item;
+//     }
+//     return acc;
+//   }, 0);
+// }
+
+// console.log(sum([4]));
+
+// https://www.codewars.com/kata/54557d61126a00423b000a45/train/typescript
+
+function shorterReverseLonger(a: string, b: string): string {
+  return a.length >= b.length
+    ? b + [...a].reverse().join("") + b
+    : a + [...b].reverse().join("") + a;
 }
 
-
-console.log(Kata.highAndLow("1 20 3"))
+console.log(shorterReverseLonger("first", "abcde"));

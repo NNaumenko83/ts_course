@@ -2082,28 +2082,60 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/581e014b55f2c52bb00000f8/train/typescript
 
-function decipherThis(str: string): string {
-  return str
-    .split(" ")
-    .map((item) => {
-      const int = parseInt(item);
-      const letter = String.fromCharCode(int);
-      const newItem = item.replace(int.toString(), letter);
-      const arrFromNewItem = [...newItem];
-      [arrFromNewItem[1], arrFromNewItem[arrFromNewItem.length - 1]] = [
-        arrFromNewItem[arrFromNewItem.length - 1],
-        arrFromNewItem[1],
-      ];
+// function decipherThis(str: string): string {
+//   return str
+//     .split(" ")
+//     .map((item) => {
+//       const int = parseInt(item);
+//       const letter = String.fromCharCode(int);
+//       const newItem = item.replace(int.toString(), letter);
+//       const arrFromNewItem = [...newItem];
+//       [arrFromNewItem[1], arrFromNewItem[arrFromNewItem.length - 1]] = [
+//         arrFromNewItem[arrFromNewItem.length - 1],
+//         arrFromNewItem[1],
+//       ];
 
-      return arrFromNewItem.join("");
-    })
-    .join(" ");
-}
+//       return arrFromNewItem.join("");
+//     })
+//     .join(" ");
+// }
 
 // 72olle 103doo 100ya
 
-decipherThis("72olle 103doo 100ya");
+// decipherThis("72olle 103doo 100ya");
+// console.log(
+//   'decipherThis("72olle 103doo 100ya"):',
+//   decipherThis("72olle 103doo 100ya")
+// );
+
+// https://www.codewars.com/kata/57b6f5aadb5b3d0ae3000611/train/typescript
+
+function getLengthOfMissingArray(arrayOfArrays: any[]): number {
+  if (
+    arrayOfArrays.length === 0 ||
+    arrayOfArrays.includes(null) ||
+    arrayOfArrays.find((item) => item.length === 0)
+  ) {
+    return 0;
+  }
+
+  const arrayOfLength = arrayOfArrays
+    .map((item) => item.length)
+    .sort((a, b) => a - b);
+
+  for (let i = 0; i < arrayOfLength.length; i += 1) {
+    if (
+      i !== arrayOfLength.length - 1 &&
+      arrayOfLength[i + 1] - arrayOfLength[i] !== 1
+    ) {
+      return arrayOfLength[i] + 1;
+    }
+    continue;
+  }
+
+  return 0;
+}
+
 console.log(
-  'decipherThis("72olle 103doo 100ya"):',
-  decipherThis("72olle 103doo 100ya")
+  getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])
 );

@@ -2110,32 +2110,63 @@ function cookingTime(eggs: number): number {
 
 // https://www.codewars.com/kata/57b6f5aadb5b3d0ae3000611/train/typescript
 
-function getLengthOfMissingArray(arrayOfArrays: any[]): number {
-  if (
-    arrayOfArrays.length === 0 ||
-    arrayOfArrays.includes(null) ||
-    arrayOfArrays.find((item) => item.length === 0)
-  ) {
-    return 0;
-  }
+// function getLengthOfMissingArray(arrayOfArrays: any[]): number {
+//   if (
+//     arrayOfArrays.length === 0 ||
+//     arrayOfArrays.includes(null) ||
+//     arrayOfArrays.find((item) => item.length === 0)
+//   ) {
+//     return 0;
+//   }
 
-  const arrayOfLength = arrayOfArrays
-    .map((item) => item.length)
-    .sort((a, b) => a - b);
+//   const arrayOfLength = arrayOfArrays
+//     .map((item) => item.length)
+//     .sort((a, b) => a - b);
 
-  for (let i = 0; i < arrayOfLength.length; i += 1) {
-    if (
-      i !== arrayOfLength.length - 1 &&
-      arrayOfLength[i + 1] - arrayOfLength[i] !== 1
-    ) {
-      return arrayOfLength[i] + 1;
-    }
-    continue;
-  }
+//   for (let i = 0; i < arrayOfLength.length; i += 1) {
+//     if (
+//       i !== arrayOfLength.length - 1 &&
+//       arrayOfLength[i + 1] - arrayOfLength[i] !== 1
+//     ) {
+//       return arrayOfLength[i] + 1;
+//     }
+//     continue;
+//   }
 
-  return 0;
+//   return 0;
+// }
+
+// console.log(
+//   getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])
+// );
+
+// https://www.codewars.com/kata/5ce399e0047a45001c853c2b/train/typescript
+
+// function partsSums(ls: number[]): number[] {
+//   const modifiedArr = ls.map((item, index, array) =>
+//     array.slice(index).reduce((acc, item) => acc + item, 0)
+//   );
+
+//   return [...modifiedArr, 0];
+// }
+
+// function partsSums(ls: number[]): number[] {
+//   const result: number[] = new Array(ls.length + 1);
+//   result[ls.length] = 0;
+
+//   let sum = 0;
+//   for (let i = ls.length - 1; i >= 0; i--) {
+//     sum += ls[i];
+//     result[i] = sum;
+//   }
+
+//   return result;
+// }
+
+function partsSums(ls: number[]): number[] {
+  let total = ls.reduce((acc, cur) => acc + cur, 0);
+  return [total, ...ls.map((num) => (total -= num))];
 }
 
-console.log(
-  getLengthOfMissingArray([[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]])
-);
+const arr = [0, 1, 3, 6, 10];
+console.log(partsSums(arr));

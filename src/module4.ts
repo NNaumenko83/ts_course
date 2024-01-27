@@ -1382,9 +1382,9 @@
 
 // https://www.codewars.com/kata/52b5247074ea613a09000164/train/typescript
 
-function cookingTime(eggs: number): number {
-  return 5 * Math.ceil(eggs / 8);
-}
+// function cookingTime(eggs: number): number {
+//   return 5 * Math.ceil(eggs / 8);
+// }
 
 // // cookingTime(10);
 // // console.log("cookingTime(5):", cookingTime(5));
@@ -2163,10 +2163,31 @@ function cookingTime(eggs: number): number {
 //   return result;
 // }
 
-function partsSums(ls: number[]): number[] {
-  let total = ls.reduce((acc, cur) => acc + cur, 0);
-  return [total, ...ls.map((num) => (total -= num))];
+// function partsSums(ls: number[]): number[] {
+//   let total = ls.reduce((acc, cur) => acc + cur, 0);
+//   return [total, ...ls.map((num) => (total -= num))];
+// }
+
+// const arr = [0, 1, 3, 6, 10];
+// console.log(partsSums(arr));
+
+
+// https://www.codewars.com/kata/542c0f198e077084c0000c2e/train/typescript
+
+function divisors(n: number) {
+  let numberDivis = 0
+
+  for (let i = 1; i <= n; i += 1) { 
+    if (n % i === 0) { 
+      numberDivis+=1
+    }
+    continue
+  }
+
+  return numberDivis
+
+
 }
 
-const arr = [0, 1, 3, 6, 10];
-console.log(partsSums(arr));
+
+console.log(divisors(64))

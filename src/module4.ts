@@ -2194,55 +2194,55 @@
 
 // https://www.codewars.com/kata/56bdd0aec5dc03d7780010a5/train/typescript
 
-function nextHigher(n: number): number {
-  const arr: number[] = []
-  let numb= n
+// function nextHigher(n: number): number {
+//   const arr: number[] = []
+//   let numb= n
 
   
-  do {
-    arr.unshift(numb % 2)
-    numb=Math.floor(numb/2)
-    console.log('numb:', numb)
+//   do {
+//     arr.unshift(numb % 2)
+//     numb=Math.floor(numb/2)
+//     console.log('numb:', numb)
     
-  } while (numb >= 1);
+//   } while (numb >= 1);
   
-  console.log("arr", arr)
+//   console.log("arr", arr)
  
-  const sum = arr.reduce((acc, item) => acc + item, 0)
-  console.log('sum:', sum)
-  // ======
-  let nextSum=0
-  let nextArr: number[] = []
-  let nextNumb=n+1
+//   const sum = arr.reduce((acc, item) => acc + item, 0)
+//   console.log('sum:', sum)
+//   // ======
+//   let nextSum=0
+//   let nextArr: number[] = []
+//   let nextNumb=n+1
   
-  do {
-    nextSum = 0
-    nextArr = []
-    let testNumb=nextNumb
+//   do {
+//     nextSum = 0
+//     nextArr = []
+//     let testNumb=nextNumb
     
     
-    do {
+//     do {
       
-      nextArr.unshift(testNumb % 2);
-      testNumb = Math.floor(testNumb / 2)
+//       nextArr.unshift(testNumb % 2);
+//       testNumb = Math.floor(testNumb / 2)
       
-    } while (testNumb >= 1);
+//     } while (testNumb >= 1);
 
 
 
-    console.log('nextArr:', nextArr)
-    console.log('arr:', arr)
-    nextSum = arr.reduce((acc, item) => acc + item, 0)
-    const testSum = nextArr.reduce((acc, item) => acc + item, 0)
-    console.log('testSum:', testSum)
+//     console.log('nextArr:', nextArr)
+//     console.log('arr:', arr)
+//     nextSum = arr.reduce((acc, item) => acc + item, 0)
+//     const testSum = nextArr.reduce((acc, item) => acc + item, 0)
+//     console.log('testSum:', testSum)
     
-    console.log('nextSum:', nextSum)
-       testNumb+=1
+//     console.log('nextSum:', nextSum)
+//        testNumb+=1
   
-} while (nextSum!==sum);
+// } while (nextSum!==sum);
  
-  return nextNumb;
- }
+//   return nextNumb;
+//  }
 
 
-console.log(nextHigher(323423))   
+// console.log(nextHigher(323423))   

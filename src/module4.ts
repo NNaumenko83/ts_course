@@ -2163,22 +2163,21 @@
 //   return result;
 // }
 
-// function partsSums(ls: number[]): number[] {
-//   let total = ls.reduce((acc, cur) => acc + cur, 0);
-//   return [total, ...ls.map((num) => (total -= num))];
-// }
+// // function partsSums(ls: number[]): number[] {
+// //   let total = ls.reduce((acc, cur) => acc + cur, 0);
+// //   return [total, ...ls.map((num) => (total -= num))];
+// // }
 
-// const arr = [0, 1, 3, 6, 10];
-// console.log(partsSums(arr));
-
+const arr = [0, 1, 3, 6, 10];
+console.log(partsSums(arr));
 
 // https://www.codewars.com/kata/542c0f198e077084c0000c2e/train/typescript
 
 // function divisors(n: number) {
 //   let numberDivis = 0
 
-//   for (let i = 1; i <= n; i += 1) { 
-//     if (n % i === 0) { 
+//   for (let i = 1; i <= n; i += 1) {
+//     if (n % i === 0) {
 //       numberDivis+=1
 //     }
 //     continue
@@ -2186,9 +2185,7 @@
 
 //   return numberDivis
 
-
 // }
-
 
 // console.log(divisors(64))
 
@@ -2198,51 +2195,46 @@
 //   const arr: number[] = []
 //   let numb= n
 
-  
 //   do {
 //     arr.unshift(numb % 2)
 //     numb=Math.floor(numb/2)
 //     console.log('numb:', numb)
-    
+
 //   } while (numb >= 1);
-  
+
 //   console.log("arr", arr)
- 
+
 //   const sum = arr.reduce((acc, item) => acc + item, 0)
 //   console.log('sum:', sum)
 //   // ======
 //   let nextSum=0
 //   let nextArr: number[] = []
 //   let nextNumb=n+1
-  
+
 //   do {
 //     nextSum = 0
 //     nextArr = []
 //     let testNumb=nextNumb
-    
-    
+
 //     do {
-      
+
 //       nextArr.unshift(testNumb % 2);
 //       testNumb = Math.floor(testNumb / 2)
-      
+
 //     } while (testNumb >= 1);
-
-
 
 //     console.log('nextArr:', nextArr)
 //     console.log('arr:', arr)
 //     nextSum = arr.reduce((acc, item) => acc + item, 0)
 //     const testSum = nextArr.reduce((acc, item) => acc + item, 0)
 //     console.log('testSum:', testSum)
-    
+
 //     console.log('nextSum:', nextSum)
 //        testNumb+=1
-  
+
 // } while (nextSum!==sum);
- 
+
 //   return nextNumb;
 //  }
 
-
-// console.log(nextHigher(323423))   
+// console.log(nextHigher(323423))

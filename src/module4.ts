@@ -2241,114 +2241,137 @@
 
 // https://www.codewars.com/kata/58663693b359c4a6560001d6/train/typescript
 
-function mazeRunner(maze: number[][], directions: string[]): string {
-  // Find start point
-  const startPointVert = maze.findIndex((item) => item.includes(2));
-  const startPointHor = maze[startPointVert].findIndex((item) => item === 2);
+// function mazeRunner(maze: number[][], directions: string[]): string {
+//   // Find start point
+//   const startPointVert = maze.findIndex((item) => item.includes(2));
+//   const startPointHor = maze[startPointVert].findIndex((item) => item === 2);
 
-  let startCoordinates = [startPointVert, startPointHor];
-  let res = "";
+//   let startCoordinates = [startPointVert, startPointHor];
+//   let res = "";
 
-  for (let i = 0; i < directions.length; i += 1) {
-    switch (directions[i]) {
-      case "N":
-        startCoordinates[0] -= 1;
-        res = checkPoint(startCoordinates[0], startCoordinates[1]);
+//   for (let i = 0; i < directions.length; i += 1) {
+//     switch (directions[i]) {
+//       case "N":
+//         startCoordinates[0] -= 1;
+//         res = checkPoint(startCoordinates[0], startCoordinates[1]);
 
-        break;
-      case "E":
-        startCoordinates[1] += 1;
-        res = checkPoint(startCoordinates[0], startCoordinates[1]);
+//         break;
+//       case "E":
+//         startCoordinates[1] += 1;
+//         res = checkPoint(startCoordinates[0], startCoordinates[1]);
 
-        break;
-      case "S":
-        startCoordinates[0] += 1;
-        res = checkPoint(startCoordinates[0], startCoordinates[1]);
+//         break;
+//       case "S":
+//         startCoordinates[0] += 1;
+//         res = checkPoint(startCoordinates[0], startCoordinates[1]);
 
-        break;
-      case "W":
-        startCoordinates[1] -= 1;
+//         break;
+//       case "W":
+//         startCoordinates[1] -= 1;
 
-        res = checkPoint(startCoordinates[0], startCoordinates[1]);
+//         res = checkPoint(startCoordinates[0], startCoordinates[1]);
 
-        break;
-      default:
-        break;
-    }
+//         break;
+//       default:
+//         break;
+//     }
 
-    switch (res) {
-      case "Safe place to walk":
-        break;
-      case "Wall":
-        return "Dead";
-      case "Dead":
-        return "Dead";
-      case "Lost":
-        return "Lost";
+//     switch (res) {
+//       case "Safe place to walk":
+//         break;
+//       case "Wall":
+//         return "Dead";
+//       case "Dead":
+//         return "Dead";
+//       case "Lost":
+//         return "Lost";
 
-      default:
-        return "Finish";
+//       default:
+//         return "Finish";
+//     }
+//   }
+
+//   function checkPoint(coordinateOne: number, coordinateTwo: number): string {
+//     if (
+//       coordinateOne > maze.length - 1 ||
+//       coordinateOne < 0 ||
+//       coordinateTwo < 0 ||
+//       coordinateTwo > maze.length - 1
+//     ) {
+//       return "Dead";
+//     }
+
+//     switch (maze[coordinateOne][coordinateTwo]) {
+//       case 0:
+//         return "Safe place to walk";
+//       case 2:
+//         return "Safe place to walk";
+//       case 1:
+//         return "Wall";
+//       case 3:
+//         return "Finish Point";
+//       default:
+//         return "Lost";
+//     }
+//   }
+
+//   return "Lost";
+// }
+
+// let maze = [
+//   [0, 2, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 1, 0, 0, 0, 0, 0],
+//   [0, 0, 1, 0, 0, 0, 0, 0],
+//   [0, 0, 0, 0, 0, 0, 1, 0],
+//   [0, 0, 0, 0, 0, 0, 0, 3],
+//   [0, 1, 0, 0, 0, 0, 0, 0],
+//   [0, 0, 1, 1, 0, 0, 1, 0],
+//   [0, 1, 0, 0, 0, 0, 0, 0],
+// ];
+
+// console.log(
+//   mazeRunner(maze, [
+//     "S",
+//     "N",
+//     "W",
+//     "W",
+//     "N",
+//     "S",
+//     "E",
+//     "S",
+//     "E",
+//     "N",
+//     "W",
+//     "W",
+//     "E",
+//     "E",
+//     "N",
+//     "S",
+//     "E",
+//     "S",
+//     "W",
+//   ])
+// );
+
+//https://www.codewars.com/kata/54eb33e5bc1a25440d000891/train/typescript
+
+const decompose = (n: number): null | number[] => {
+  const sqNumb = n ** 2;
+  const resArr: number[] = [];
+  console.log("sqNumb:", sqNumb);
+
+  for (let i = n - 1; i >= 1; i -= 1) {
+    console.log("i:", i);
+    let resArrSqSumm = resArr.reduce((acc, item) => acc + item ** 2, 0);
+
+    if (resArrSqSumm + i ** 2 <= sqNumb) {
+      console.log("AAAAAAAAAAAA");
+      resArr.unshift(i);
     }
   }
 
-  function checkPoint(coordinateOne: number, coordinateTwo: number): string {
-    if (
-      coordinateOne > maze.length - 1 ||
-      coordinateOne < 0 ||
-      coordinateTwo < 0 ||
-      coordinateTwo > maze.length - 1
-    ) {
-      return "Dead";
-    }
+  // your code
+  return resArr.length > 0 ? resArr : null;
+};
 
-    switch (maze[coordinateOne][coordinateTwo]) {
-      case 0:
-        return "Safe place to walk";
-      case 2:
-        return "Safe place to walk";
-      case 1:
-        return "Wall";
-      case 3:
-        return "Finish Point";
-      default:
-        return "Lost";
-    }
-  }
-
-  return "Lost";
-}
-
-let maze = [
-  [0, 2, 0, 0, 0, 0, 0, 0],
-  [0, 0, 1, 0, 0, 0, 0, 0],
-  [0, 0, 1, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 1, 0],
-  [0, 0, 0, 0, 0, 0, 0, 3],
-  [0, 1, 0, 0, 0, 0, 0, 0],
-  [0, 0, 1, 1, 0, 0, 1, 0],
-  [0, 1, 0, 0, 0, 0, 0, 0],
-];
-
-console.log(
-  mazeRunner(maze, [
-    "S",
-    "N",
-    "W",
-    "W",
-    "N",
-    "S",
-    "E",
-    "S",
-    "E",
-    "N",
-    "W",
-    "W",
-    "E",
-    "E",
-    "N",
-    "S",
-    "E",
-    "S",
-    "W",
-  ])
-);
+console.log(decompose(50));

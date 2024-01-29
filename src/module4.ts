@@ -2355,31 +2355,72 @@
 
 //https://www.codewars.com/kata/54eb33e5bc1a25440d000891/train/typescript
 
-const decompose = (n: number): null | number[] => {
-  const sqNumb = n ** 2;
-  let resArr: number[] = [];
-  console.log("sqNumb:", sqNumb);
+// Подумати над цим прикладом!!!!
 
-  for (let i = n - 1; i >= 1; i -= 1) {
-    console.log("i:", i);
-    let resArrSqSumm = resArr.reduce((acc, item) => acc + item ** 2, 0);
-    console.log("resArrSqSumm:", resArrSqSumm);
+// const decompose = (n: number): null | number[] => {
+//   const sqNumb = n ** 2;
+//   let resArr: number[] = [];
+//   console.log("sqNumb:", sqNumb);
 
-    if (resArrSqSumm + i ** 2 <= sqNumb && i !== 1) {
-      console.log("AAAAAAAAAAAA");
-      resArr.unshift(i);
-      continue;
-    }
-    if (resArrSqSumm + i ** 2 !== sqNumb && i === 1) {
-      resArr = [];
-      continue;
-    }
-  }
+//   for (let i = n - 1; i >= 1; i -= 1) {
+//     console.log("i:", i);
+//     let resArrSqSumm = resArr.reduce((acc, item) => acc + item ** 2, 0);
+//     console.log("resArrSqSumm:", resArrSqSumm);
 
-  console.log(resArr);
+//     if (resArrSqSumm + i ** 2 <= sqNumb && i !== 1) {
+//       console.log("AAAAAAAAAAAA");
+//       resArr.unshift(i);
+//       console.log('resArr:', resArr)
+//       continue;
+//     }
 
-  // your code
-  return resArr.length > 0 ? resArr : null;
-};
+//     if (resArrSqSumm + i ** 2 !== sqNumb && i === 1) {
+//       resArr = [];
+//       continue;
+//     }
+//   }
 
-console.log(decompose(4));
+//   console.log(resArr);
+
+//   // your code
+//   return resArr.length > 0 ? resArr : null;
+// };
+
+// console.log(decompose(11));
+
+// https://www.codewars.com/kata/57d5e850bfcdc545870000b7/train/typescript
+
+//  Подумати!!!!
+
+// function deadAntCount(ants: string | null): number {
+//   if (!ants) { return 0 }
+  
+//   console.log(ants?.split(" "))
+
+//   const allAnts=ants?.split(" ").length
+//   console.log('allAnts:', allAnts)
+//   const liveAnts= ants?.split(" ").filter((item)=>item==="ant").length
+//   console.log('liveAnts:', liveAnts)
+
+
+//   return allAnts- liveAnts
+// }
+
+// console.log(deadAntCount("ant ant .... a nt")) 
+
+
+// https://www.codewars.com/kata/59a8570b570190d313000037/train/typescript
+
+function sumCubes(n: number): number {
+  let sum = 0
+
+for (let i = 1; i <= n; i++) {
+sum+=Math.pow(i,3)
+}
+  
+
+  return sum
+}
+
+
+console.log(sumCubes(3) )

@@ -2357,21 +2357,29 @@
 
 const decompose = (n: number): null | number[] => {
   const sqNumb = n ** 2;
-  const resArr: number[] = [];
+  let resArr: number[] = [];
   console.log("sqNumb:", sqNumb);
 
   for (let i = n - 1; i >= 1; i -= 1) {
     console.log("i:", i);
     let resArrSqSumm = resArr.reduce((acc, item) => acc + item ** 2, 0);
+    console.log("resArrSqSumm:", resArrSqSumm);
 
-    if (resArrSqSumm + i ** 2 <= sqNumb) {
+    if (resArrSqSumm + i ** 2 <= sqNumb && i !== 1) {
       console.log("AAAAAAAAAAAA");
       resArr.unshift(i);
+      continue;
+    }
+    if (resArrSqSumm + i ** 2 !== sqNumb && i === 1) {
+      resArr = [];
+      continue;
     }
   }
+
+  console.log(resArr);
 
   // your code
   return resArr.length > 0 ? resArr : null;
 };
 
-console.log(decompose(50));
+console.log(decompose(4));

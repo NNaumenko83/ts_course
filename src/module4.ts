@@ -2394,7 +2394,7 @@
 
 // function deadAntCount(ants: string | null): number {
 //   if (!ants) { return 0 }
-  
+
 //   console.log(ants?.split(" "))
 
 //   const allAnts=ants?.split(" ").length
@@ -2402,25 +2402,38 @@
 //   const liveAnts= ants?.split(" ").filter((item)=>item==="ant").length
 //   console.log('liveAnts:', liveAnts)
 
-
 //   return allAnts- liveAnts
 // }
 
-// console.log(deadAntCount("ant ant .... a nt")) 
-
+// console.log(deadAntCount("ant ant .... a nt"))
 
 // https://www.codewars.com/kata/59a8570b570190d313000037/train/typescript
 
-function sumCubes(n: number): number {
-  let sum = 0
+// function sumCubes(n: number): number {
+//   let sum = 0
 
-for (let i = 1; i <= n; i++) {
-sum+=Math.pow(i,3)
+// for (let i = 1; i <= n; i++) {
+// sum+=Math.pow(i,3)
+// }
+
+//   return sum
+// }
+
+// console.log(sumCubes(3) )
+
+function howMuchILoveYou(petals: number): string {
+  const arr = [
+    "I love you",
+    "a little",
+    "a lot",
+    "passionately",
+    "madly",
+    "not at all",
+  ];
+
+  const petal = petals <= 6 ? petals : petals % 6 === 0 ? 6 : petals % 6;
+
+  return arr[petal - 1];
 }
-  
 
-  return sum
-}
-
-
-console.log(sumCubes(3) )
+console.log(howMuchILoveYou(12));

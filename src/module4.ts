@@ -2421,19 +2421,25 @@
 
 // console.log(sumCubes(3) )
 
-function howMuchILoveYou(petals: number): string {
-  const arr = [
-    "I love you",
-    "a little",
-    "a lot",
-    "passionately",
-    "madly",
-    "not at all",
-  ];
+// function howMuchILoveYou(petals: number): string {
+//   const arr = [
+//     "I love you",
+//     "a little",
+//     "a lot",
+//     "passionately",
+//     "madly",
+//     "not at all",
+//   ];
 
-  const petal = petals <= 6 ? petals : petals % 6 === 0 ? 6 : petals % 6;
+//   const petal = petals <= 6 ? petals : petals % 6 === 0 ? 6 : petals % 6;
 
-  return arr[petal - 1];
+//   return arr[petal - 1];
+// }
+
+// console.log(howMuchILoveYou(12));
+
+function monkeyCount(n: number) {
+  return Array.from({ length: n }, (item, index) => index + 1);
 }
 
-console.log(howMuchILoveYou(12));
+console.log(monkeyCount(20));

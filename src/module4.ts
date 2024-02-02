@@ -2438,8 +2438,38 @@
 
 // console.log(howMuchILoveYou(12));
 
-function monkeyCount(n: number) {
-  return Array.from({ length: n }, (item, index) => index + 1);
+// function monkeyCount(n: number) {
+//   return Array.from({ length: n }, (item, index) => index + 1);
+// }
+
+// console.log(monkeyCount(20));
+
+// https://www.codewars.com/kata/56e3cd1d93c3d940e50006a4/train/typescript
+
+
+function makeValley(arr: number[]): number[] {
+
+  const sortedArray=arr.sort((a,b)=>b-a)
+
+
+  let decreasingArray:number[] = []
+  let increasingArray:number[]=[]
+  
+  for (let i = 0; i < sortedArray.length; i += 1) { 
+    if (i === 0 || i % 2 === 0) { 
+      decreasingArray.push(sortedArray[i])
+      continue
+    }
+    
+    increasingArray.unshift(sortedArray[i])
+    
+    
+  }
+
+
+  return [...decreasingArray, ...increasingArray]
 }
 
-console.log(monkeyCount(20));
+
+makeValley([14, 10, 8])
+console.log(makeValley( [79, 35, 54, 19, 35, 25]))

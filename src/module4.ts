@@ -2446,30 +2446,43 @@
 
 // https://www.codewars.com/kata/56e3cd1d93c3d940e50006a4/train/typescript
 
+// function makeValley(arr: number[]): number[] {
 
-function makeValley(arr: number[]): number[] {
+//   const sortedArray=arr.sort((a,b)=>b-a)
 
-  const sortedArray=arr.sort((a,b)=>b-a)
+//   let decreasingArray:number[] = []
+//   let increasingArray:number[]=[]
 
+//   for (let i = 0; i < sortedArray.length; i += 1) {
+//     if (i === 0 || i % 2 === 0) {
+//       decreasingArray.push(sortedArray[i])
+//       continue
+//     }
 
-  let decreasingArray:number[] = []
-  let increasingArray:number[]=[]
-  
-  for (let i = 0; i < sortedArray.length; i += 1) { 
-    if (i === 0 || i % 2 === 0) { 
-      decreasingArray.push(sortedArray[i])
-      continue
-    }
-    
-    increasingArray.unshift(sortedArray[i])
-    
-    
-  }
+//     increasingArray.unshift(sortedArray[i])
 
+//   }
 
-  return [...decreasingArray, ...increasingArray]
+//   return [...decreasingArray, ...increasingArray]
+// }
+
+// makeValley([14, 10, 8])
+// console.log(makeValley( [79, 35, 54, 19, 35, 25]))
+
+// https://www.codewars.com/kata/556cebcf7c58da564a000045/train/typescript
+
+// function numberOfRectangles(m: number, n: number): number {
+//   const res = m * n + m + n + m - 2 + n - 2;
+
+//   return res;
+// }
+
+// console.log(numberOfRectangles(4, 4));
+
+// https://www.codewars.com/kata/5aa736a455f906981800360d/train/typescript
+
+function feast(beast: string, dish: string): boolean {
+  return beast[0] + beast[beast.length - 1] === dish[0] + dish[dish.length - 1];
 }
 
-
-makeValley([14, 10, 8])
-console.log(makeValley( [79, 35, 54, 19, 35, 25]))
+console.log(feast("great blue heron", "garlic naan"));

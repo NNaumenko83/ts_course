@@ -2492,13 +2492,17 @@
 
 function maxRot(n:number):number {
    const arrStr= [...n.toString()]
-    console.log('arrStr:', arrStr)
+   console.log('arrStr:', arrStr)
+
     const arr = []
+    
     for (let i = 0; i < arrStr.length-1; i++) {
         // let a = arrStr[i];
+        console.log('arr:', arr)
 
     
         if (i === 0) { 
+           
             arr.push([...arrStr.slice(i+1, arrStr.length),arrStr[i] ])
             continue;
 
@@ -2507,7 +2511,9 @@ function maxRot(n:number):number {
 
     }
 
-const numberArray=arr.map((item)=>Number(item.join("")))
+  
+
+const numberArray=[arrStr,...arr].map((item)=>Number(item.join("")))
 const maxNumber=Math.max(...numberArray)
 
   return maxNumber
@@ -2516,4 +2522,4 @@ const maxNumber=Math.max(...numberArray)
 }
 
 
-console.log(maxRot(195881031))
+console.log(maxRot(507992495))

@@ -2481,8 +2481,39 @@
 
 // https://www.codewars.com/kata/5aa736a455f906981800360d/train/typescript
 
-function feast(beast: string, dish: string): boolean {
-  return beast[0] + beast[beast.length - 1] === dish[0] + dish[dish.length - 1];
+// function feast(beast: string, dish: string): boolean {
+//   return beast[0] + beast[beast.length - 1] === dish[0] + dish[dish.length - 1];
+// }
+
+// console.log(feast("great blue heron", "garlic naan"));
+
+
+/* https://www.codewars.com/kata/56a4872cbb65f3a610000026 */
+
+function maxRot(n:number):number {
+   const arrStr= [...n.toString()]
+    console.log('arrStr:', arrStr)
+    const arr = []
+    for (let i = 0; i < arrStr.length-1; i++) {
+        // let a = arrStr[i];
+
+    
+        if (i === 0) { 
+            arr.push([...arrStr.slice(i+1, arrStr.length),arrStr[i] ])
+            continue;
+
+        }
+        arr.push([...arr[i-1].slice(0,i),...arr[i-1].slice(i+1, arr[i-1].length),arr[i-1][i]])
+
+    }
+
+const numberArray=arr.map((item)=>Number(item.join("")))
+const maxNumber=Math.max(...numberArray)
+
+  return maxNumber
+
+
 }
 
-console.log(feast("great blue heron", "garlic naan"));
+
+console.log(maxRot(195881031))

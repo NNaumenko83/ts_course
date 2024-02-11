@@ -2490,36 +2490,48 @@
 
 /* https://www.codewars.com/kata/56a4872cbb65f3a610000026 */
 
-function maxRot(n:number):number {
-   const arrStr= [...n.toString()]
-   console.log('arrStr:', arrStr)
+// function maxRot(n:number):number {
+//    const arrStr= [...n.toString()]
+//    console.log('arrStr:', arrStr)
 
-    const arr = []
+//     const arr = []
     
-    for (let i = 0; i < arrStr.length-1; i++) {
-        // let a = arrStr[i];
-        console.log('arr:', arr)
+//     for (let i = 0; i < arrStr.length-1; i++) {
+//         // let a = arrStr[i];
+//         console.log('arr:', arr)
 
     
-        if (i === 0) { 
+//         if (i === 0) { 
            
-            arr.push([...arrStr.slice(i+1, arrStr.length),arrStr[i] ])
-            continue;
+//             arr.push([...arrStr.slice(i+1, arrStr.length),arrStr[i] ])
+//             continue;
 
-        }
-        arr.push([...arr[i-1].slice(0,i),...arr[i-1].slice(i+1, arr[i-1].length),arr[i-1][i]])
+//         }
+//         arr.push([...arr[i-1].slice(0,i),...arr[i-1].slice(i+1, arr[i-1].length),arr[i-1][i]])
 
-    }
+//     }
 
   
 
-const numberArray=[arrStr,...arr].map((item)=>Number(item.join("")))
-const maxNumber=Math.max(...numberArray)
+// const numberArray=[arrStr,...arr].map((item)=>Number(item.join("")))
+// const maxNumber=Math.max(...numberArray)
 
-  return maxNumber
+//   return maxNumber
 
 
+// }
+
+
+// console.log(maxRot(507992495))
+
+
+
+// https://www.codewars.com/kata/58d248c7012397a81800005c/train/typescript
+
+function cubeChecker(volume: number, side: number): boolean{
+
+
+    return volume > 0 && side > 0 && volume / side / side === side ? true : false;
 }
 
-
-console.log(maxRot(507992495))
+console.log(cubeChecker(512000, 80))

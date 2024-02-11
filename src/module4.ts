@@ -2531,7 +2531,7 @@
 function cubeChecker(volume: number, side: number): boolean{
 
 
-    return volume > 0 && side > 0 && volume / side / side === side ? true : false;
+    return volume > 0 && side > 0 &&  Math.cbrt(volume) === side ? true : false;
 }
 
 console.log(cubeChecker(512000, 80))

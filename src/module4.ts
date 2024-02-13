@@ -2524,8 +2524,21 @@
 
 // https://www.codewars.com/kata/58d248c7012397a81800005c/train/typescript
 
-function cubeChecker(volume: number, side: number): boolean {
-  return volume > 0 && side > 0 && Math.cbrt(volume) === side ? true : false;
+// function cubeChecker(volume: number, side: number): boolean {
+//   return volume > 0 && side > 0 && Math.cbrt(volume) === side ? true : false;
+// }
+
+// console.log(cubeChecker(512000, 80));
+
+// https://www.codewars.com/kata/5865918c6b569962950002a1/train/typescript
+
+function strCount(str: string, letter: string): number {
+  return [...str].reduce((acc, item) => {
+    if (item === letter) {
+      return acc + 1;
+    }
+    return acc;
+  }, 0);
 }
 
-console.log(cubeChecker(512000, 80));
+console.log(strCount("Hello", "l"));

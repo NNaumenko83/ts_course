@@ -2484,9 +2484,12 @@
 // function feast(beast: string, dish: string): boolean {
 //   return beast[0] + beast[beast.length - 1] === dish[0] + dish[dish.length - 1];
 // }
+// function feast(beast: string, dish: string): boolean {
+//   return beast[0] + beast[beast.length - 1] === dish[0] + dish[dish.length - 1];
+// }
 
 // console.log(feast("great blue heron", "garlic naan"));
-
+// console.log(feast("great blue heron", "garlic naan"));
 
 /* https://www.codewars.com/kata/56a4872cbb65f3a610000026 */
 
@@ -2495,14 +2498,13 @@
 //    console.log('arrStr:', arrStr)
 
 //     const arr = []
-    
+
 //     for (let i = 0; i < arrStr.length-1; i++) {
 //         // let a = arrStr[i];
 //         console.log('arr:', arr)
 
-    
-//         if (i === 0) { 
-           
+//         if (i === 0) {
+
 //             arr.push([...arrStr.slice(i+1, arrStr.length),arrStr[i] ])
 //             continue;
 
@@ -2511,27 +2513,19 @@
 
 //     }
 
-  
-
 // const numberArray=[arrStr,...arr].map((item)=>Number(item.join("")))
 // const maxNumber=Math.max(...numberArray)
 
 //   return maxNumber
 
-
 // }
-
 
 // console.log(maxRot(507992495))
 
-
-
 // https://www.codewars.com/kata/58d248c7012397a81800005c/train/typescript
 
-function cubeChecker(volume: number, side: number): boolean{
-
-
-    return volume > 0 && side > 0 &&  Math.cbrt(volume) === side ? true : false;
+function cubeChecker(volume: number, side: number): boolean {
+  return volume > 0 && side > 0 && Math.cbrt(volume) === side ? true : false;
 }
 
-console.log(cubeChecker(512000, 80))
+console.log(cubeChecker(512000, 80));

@@ -2549,12 +2549,11 @@ class God {
   /**
    * @returns Human[]
    */
-  static create() {
+  static create(): Array<Man | Woman> {
     return [new Man(), new Woman()];
   }
 }
-class Human {}
 
-class Man extends Human {}
-
-class Woman extends Human {}
+export class Human {}
+export class Man extends Human {}
+export class Woman extends Human {}

@@ -2532,13 +2532,29 @@
 
 // https://www.codewars.com/kata/5865918c6b569962950002a1/train/typescript
 
-function strCount(str: string, letter: string): number {
-  return [...str].reduce((acc, item) => {
-    if (item === letter) {
-      return acc + 1;
-    }
-    return acc;
-  }, 0);
-}
+// function strCount(str: string, letter: string): number {
+//   return [...str].reduce((acc, item) => {
+//     if (item === letter) {
+//       return acc + 1;
+//     }
+//     return acc;
+//   }, 0);
+// }
 
-console.log(strCount("Hello", "l"));
+// console.log(strCount("Hello", "l"));
+
+// https://www.codewars.com/kata/547274e24481cfc469000416/train/typescript
+
+class God {
+  /**
+   * @returns Human[]
+   */
+  static create() {
+    return [new Man(), new Woman()];
+  }
+}
+class Human {}
+
+class Man extends Human {}
+
+class Woman extends Human {}

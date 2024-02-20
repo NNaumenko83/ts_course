@@ -221,3 +221,11 @@
 //   accounts: ["Alex"],
 //   status: "close",
 // };
+
+// https://www.codewars.com/kata/57f780909f7e8e3183000078/train/typescript
+
+function grow(arr: number[]): number {
+    return arr.reduce((acc, item) => { console.log(acc);  return acc*item});
+}
+
+console.log(grow([4, 1, 1, 1, 4]));

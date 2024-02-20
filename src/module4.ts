@@ -2545,15 +2545,34 @@
 
 // https://www.codewars.com/kata/547274e24481cfc469000416/train/typescript
 
-class God {
-  /**
-   * @returns Human[]
-   */
-  static create(): Array<Man | Woman> {
-    return [new Man(), new Woman()];
-  }
+// class God {
+//   /**
+//    * @returns Human[]
+//    */
+//   static create(): Array<Man | Woman> {
+//     return [new Man(), new Woman()];
+//   }
+// }
+
+// export class Human {}
+// export class Man extends Human {}
+// export class Woman extends Human {}
+
+// https://www.codewars.com/kata/5a34af40e1ce0eb1f5000036/train/typescript
+
+function toCsvText(array: number[][]): string {
+  return array.reduce((str, item, index, array) => {
+    return index < array.length - 1
+      ? str + item.join(",") + "\n"
+      : str + item.join(",");
+  }, "");
 }
 
-export class Human {}
-export class Man extends Human {}
-export class Woman extends Human {}
+console.log(
+  toCsvText([
+    [0, 1, 2, 3, 45],
+    [10, 11, 12, 13, 14],
+    [20, 21, 22, 23, 24],
+    [30, 31, 32, 33, 34],
+  ])
+);

@@ -2584,3 +2584,23 @@
 // }
 
 // console.log(stringToNumber("1234567890"));
+
+
+// https://www.codewars.com/kata/59b710ed70a3b7dd8f000027/train/typescript
+
+function isAllPossibilities(x: number[]): boolean {
+    console.log('x:', x)
+    
+    const sortedArray = x.sort((a, b) => a - b)
+    console.log('sortedArray:', sortedArray)
+
+    console.log(sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1?false:true   )
+   
+    return sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1 ||sortedArray[sortedArray.length-1] !==sortedArray.length-1?false:true  
+}
+
+
+console.log(isAllPossibilities([
+  6, 2, 4, 2, 2,
+  2, 1, 5, 0, 0
+]))

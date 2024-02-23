@@ -2589,35 +2589,63 @@
 // https://www.codewars.com/kata/55d24f55d7dd296eb9000030/train/typescript
 
 
-const summation = (num: number) => { 
-    let res=0;
-    for (let i = 0; i <= num; i++) {
+// const summation = (num: number) => {
+//     let res=0;
+//     for (let i = 0; i <= num; i++) {
 
-       res+=i   
+//        res+=i
      
       
-    }
+//     }
 
-    return res
-}
+//     return res
+// }
 
-console.log(summation(8))
+// console.log(summation(8))
 
-// https://www.codewars.com/kata/59b710ed70a3b7dd8f000027/train/typescript
+// // https://www.codewars.com/kata/59b710ed70a3b7dd8f000027/train/typescript
 
-function isAllPossibilities(x: number[]): boolean {
-    console.log('x:', x)
+// function isAllPossibilities(x: number[]): boolean {
+//     console.log('x:', x)
     
-    const sortedArray = x.sort((a, b) => a - b)
-    console.log('sortedArray:', sortedArray)
+//     const sortedArray = x.sort((a, b) => a - b)
+//     console.log('sortedArray:', sortedArray)
 
-    console.log(sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1?false:true   )
+//     console.log(sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1?false:true   )
    
-    return sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1 ||sortedArray[sortedArray.length-1] !==sortedArray.length-1?false:true  
+//     return sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1 ||sortedArray[sortedArray.length-1] !==sortedArray.length-1?false:true
+// }
+
+
+// console.log(isAllPossibilities([
+//   6, 2, 4, 2, 2,
+//   2, 1, 5, 0, 0
+// ]))
+
+
+// https://www.codewars.com/kata/5a0aae48ba2a14cfa600016d/train/typescript
+
+function startSmoking(bars: number, boxes: number): number {
+
+
+    const cigarettesInBox = 18;
+    const boxesInBar = 10;
+    let totalCigarettes = boxes * cigarettesInBox + bars * boxesInBar * cigarettesInBox;
+
+    let stubs = 0;
+    let smokedCigarettes = 0; 
+
+    do {
+        smokedCigarettes += totalCigarettes;      
+        stubs = stubs+totalCigarettes;       
+        totalCigarettes=Math.floor(stubs/5)       
+        stubs = stubs - Math.floor(stubs / 5) * 5;   
+        if (stubs + totalCigarettes  < 5) { smokedCigarettes += totalCigarettes;}
+    } while ((stubs+totalCigarettes)>5);
+    
+
+return smokedCigarettes;
 }
 
 
-console.log(isAllPossibilities([
-  6, 2, 4, 2, 2,
-  2, 1, 5, 0, 0
-]))
+console.log(startSmoking(1,0))

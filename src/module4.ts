@@ -2625,27 +2625,41 @@
 
 // https://www.codewars.com/kata/5a0aae48ba2a14cfa600016d/train/typescript
 
-function startSmoking(bars: number, boxes: number): number {
+// function startSmoking(bars: number, boxes: number): number {
 
 
-    const cigarettesInBox = 18;
-    const boxesInBar = 10;
-    let totalCigarettes = boxes * cigarettesInBox + bars * boxesInBar * cigarettesInBox;
+//     const cigarettesInBox = 18;
+//     const boxesInBar = 10;
+//     let totalCigarettes = boxes * cigarettesInBox + bars * boxesInBar * cigarettesInBox;
 
-    let stubs = 0;
-    let smokedCigarettes = 0; 
+//     let stubs = 0;
+//     let smokedCigarettes = 0;
 
-    do {
-        smokedCigarettes += totalCigarettes;      
-        stubs = stubs+totalCigarettes;       
-        totalCigarettes=Math.floor(stubs/5)       
-        stubs = stubs - Math.floor(stubs / 5) * 5;   
-        if (stubs + totalCigarettes  < 5) { smokedCigarettes += totalCigarettes;}
-    } while ((stubs+totalCigarettes)>5);
+//     do {
+//         smokedCigarettes += totalCigarettes;
+//         stubs = stubs+totalCigarettes;
+//         totalCigarettes=Math.floor(stubs/5)
+//         stubs = stubs - Math.floor(stubs / 5) * 5;
+//         if (stubs + totalCigarettes  < 5) { smokedCigarettes += totalCigarettes;}
+//     } while ((stubs+totalCigarettes)>5);
     
 
-return smokedCigarettes;
+// return smokedCigarettes;
+// }
+
+
+// console.log(startSmoking(1,0))
+
+
+// https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
+function well(x: string[]): string{
+    if (!x.includes("good")) { 
+        return 'Fail!'
+    }
+
+    return x.filter(item => item === "good").length <= 2 ? 'Publish!' : 'I smell a series!'
 }
 
-
-console.log(startSmoking(1,0))
+console.log(well(['bad', 'bad', 'bad']))
+console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
+console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))

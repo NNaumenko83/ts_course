@@ -2625,30 +2625,47 @@
 
 // https://www.codewars.com/kata/5a0aae48ba2a14cfa600016d/train/typescript
 
-// function startSmoking(bars: number, boxes: number): number {
+// // function startSmoking(bars: number, boxes: number): number {
 
 
-//     const cigarettesInBox = 18;
-//     const boxesInBar = 10;
-//     let totalCigarettes = boxes * cigarettesInBox + bars * boxesInBar * cigarettesInBox;
+// //     const cigarettesInBox = 18;
+// //     const boxesInBar = 10;
+// //     let totalCigarettes = boxes * cigarettesInBox + bars * boxesInBar * cigarettesInBox;
 
-//     let stubs = 0;
-//     let smokedCigarettes = 0;
+// //     let stubs = 0;
+// //     let smokedCigarettes = 0;
 
-//     do {
-//         smokedCigarettes += totalCigarettes;
-//         stubs = stubs+totalCigarettes;
-//         totalCigarettes=Math.floor(stubs/5)
-//         stubs = stubs - Math.floor(stubs / 5) * 5;
-//         if (stubs + totalCigarettes  < 5) { smokedCigarettes += totalCigarettes;}
-//     } while ((stubs+totalCigarettes)>5);
+// //     do {
+// //         smokedCigarettes += totalCigarettes;
+// //         stubs = stubs+totalCigarettes;
+// //         totalCigarettes=Math.floor(stubs/5)
+// //         stubs = stubs - Math.floor(stubs / 5) * 5;
+// //         if (stubs + totalCigarettes  < 5) { smokedCigarettes += totalCigarettes;}
+// //     } while ((stubs+totalCigarettes)>5);
     
 
-// return smokedCigarettes;
-// }
+// // return smokedCigarettes;
+// // }
 
 
-// console.log(startSmoking(1,0))
+// // console.log(startSmoking(1,0))
+
+// https://www.codewars.com/kata/55edaba99da3a9c84000003b/train/typescript
+
+function divisibleBy(numbers: number[], divisor: number): number[]{
+  const res: number[] = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % divisor === 0) {
+      res.push(numbers[i]);
+    }
+  }
+
+
+  return res
+}
+
+
+console.log(divisibleBy([1,2,3,4,5,6], 2))
 
 
 // https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript

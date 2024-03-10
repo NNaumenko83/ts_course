@@ -2668,12 +2668,3 @@
 // console.log(divisibleBy([1,2,3,4,5,6], 2))
 
 
-// https://www.codewars.com/kata/563e320cee5dddcf77000158/train/typescript
-
- function getAverage(marks:number[]):number{
-
-  return Math.floor(marks.reduce((acc,item)=>acc+item,0)/marks.length);
- }
-
- getAverage([1,1,1,1,1,1,1,2])
- console.log(' getAverage([1,1,1,1,1,1,1,2]):',  getAverage([1,1,1,1,1,1,1,2]))

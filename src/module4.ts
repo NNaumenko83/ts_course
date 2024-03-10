@@ -2652,17 +2652,28 @@
 
 // https://www.codewars.com/kata/55edaba99da3a9c84000003b/train/typescript
 
-function divisibleBy(numbers: number[], divisor: number): number[]{
-  const res: number[] = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % divisor === 0) {
-      res.push(numbers[i]);
-    }
-  }
+// function divisibleBy(numbers: number[], divisor: number): number[]{
+//   const res: number[] = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] % divisor === 0) {
+//       res.push(numbers[i]);
+//     }
+//   }
 
 
-  return res
-}
+//   return res
+// }
 
 
-console.log(divisibleBy([1,2,3,4,5,6], 2))
+// console.log(divisibleBy([1,2,3,4,5,6], 2))
+
+
+// https://www.codewars.com/kata/563e320cee5dddcf77000158/train/typescript
+
+ function getAverage(marks:number[]):number{
+
+  return Math.floor(marks.reduce((acc,item)=>acc+item,0)/marks.length);
+ }
+
+ getAverage([1,1,1,1,1,1,1,2])
+ console.log(' getAverage([1,1,1,1,1,1,1,2]):',  getAverage([1,1,1,1,1,1,1,2]))

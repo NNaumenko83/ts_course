@@ -2652,31 +2652,49 @@
 
 // https://www.codewars.com/kata/55edaba99da3a9c84000003b/train/typescript
 
-function divisibleBy(numbers: number[], divisor: number): number[]{
-  const res: number[] = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % divisor === 0) {
-      res.push(numbers[i]);
+// function divisibleBy(numbers: number[], divisor: number): number[]{
+//   const res: number[] = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] % divisor === 0) {
+//       res.push(numbers[i]);
+//     }
+//   }
+
+
+//   return res
+// }
+
+
+// console.log(divisibleBy([1,2,3,4,5,6], 2))
+
+
+// // https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
+// function well(x: string[]): string{
+//     if (!x.includes("good")) {
+//         return 'Fail!'
+//     }
+
+//     return x.filter(item => item === "good").length <= 2 ? 'Publish!' : 'I smell a series!'
+// }
+
+// console.log(well(['bad', 'bad', 'bad']))
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+
+
+// https://www.codewars.com/kata/5bb904724c47249b10000131
+
+function points(games : string[]): number {
+  return games.reduce((acc, item) => {
+    const arrScore:string[] = item.split(":")
+    if (+arrScore[0] - +arrScore[1] > 0) { 
+      return acc + 3
     }
-  }
-
-
-  return res
+     if (+arrScore[0] - +arrScore[1] === 0) { 
+      return acc + 1
+    }
+    return acc
+},0)
 }
 
-
-console.log(divisibleBy([1,2,3,4,5,6], 2))
-
-
-// https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
-function well(x: string[]): string{
-    if (!x.includes("good")) { 
-        return 'Fail!'
-    }
-
-    return x.filter(item => item === "good").length <= 2 ? 'Publish!' : 'I smell a series!'
-}
-
-console.log(well(['bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+console.log(points(["1:0","2:0","3:0","4:0","2:1","1:3","1:4","2:3","2:4","3:4"]));

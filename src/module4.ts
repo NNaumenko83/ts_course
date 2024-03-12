@@ -2680,6 +2680,20 @@
 //     return x.filter(item => item === "good").length <= 2 ? 'Publish!' : 'I smell a series!'
 // }
 
-console.log(well(['bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+// console.log(well(['bad', 'bad', 'bad']))
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+
+
+
+// https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/typescript
+
+function repeatStr(n: number, s: string): string {
+
+return Array.from({length:n}, x=>s).join("");
+}
+
+
+
+repeatStr(3, "*")
+console.log('repeatStr(3, "*"):', repeatStr(3, "*"))

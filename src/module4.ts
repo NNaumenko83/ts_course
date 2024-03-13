@@ -2688,12 +2688,40 @@
 
 // https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/typescript
 
-function repeatStr(n: number, s: string): string {
+// function repeatStr(n: number, s: string): string {
 
-return Array.from({length:n}, x=>s).join("");
+// return Array.from({length:n}, x=>s).join("");
+// }
+
+
+
+// repeatStr(3, "*")
+// console.log('repeatStr(3, "*"):', repeatStr(3, "*"))
+
+
+// https://www.codewars.com/kata/57356c55867b9b7a60000bd7/train/typescript
+
+function basicOp(operation: string, value1: number, value2: number): number {
+  let res;
+  switch (operation) {
+    case '+':
+      res = value1 + value2;
+      break;
+    case '-':
+      res = value1 - value2;
+      break;
+    case '*':
+      res = value1 * value2;
+      break;
+    case '/':
+      res = value1 / value2;
+      break;
+    default:
+      throw new Error('Невідома операція: ' + operation);
+  }
+  return res;
 }
 
 
-
-repeatStr(3, "*")
-console.log('repeatStr(3, "*"):', repeatStr(3, "*"))
+basicOp('+', 4, 7)
+console.log('basicOp('+', 4, 7):', basicOp('+', 4, 7))

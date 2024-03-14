@@ -2652,17 +2652,17 @@
 
 // https://www.codewars.com/kata/55edaba99da3a9c84000003b/train/typescript
 
-// function divisibleBy(numbers: number[], divisor: number): number[]{
-//   const res: number[] = [];
-//   for (let i = 0; i < numbers.length; i++) {
-//     if (numbers[i] % divisor === 0) {
-//       res.push(numbers[i]);
-//     }
-//   }
+// // function divisibleBy(numbers: number[], divisor: number): number[]{
+// //   const res: number[] = [];
+// //   for (let i = 0; i < numbers.length; i++) {
+// //     if (numbers[i] % divisor === 0) {
+// //       res.push(numbers[i]);
+// //     }
+// //   }
 
 
-//   return res
-// }
+// //   return res
+// // }
 
 
 // console.log(divisibleBy([1,2,3,4,5,6], 2))
@@ -2673,7 +2673,7 @@
 
 // // https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
 // function well(x: string[]): string{
-//     if (!x.includes("good")) { 
+//     if (!x.includes("good")) {
 //         return 'Fail!'
 //     }
 
@@ -2685,12 +2685,43 @@
 // console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
 
 
-// https://www.codewars.com/kata/563e320cee5dddcf77000158/train/typescript
 
- function getAverage(marks:number[]):number{
+// https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/typescript
 
-  return Math.floor(marks.reduce((acc,item)=>acc+item,0)/marks.length);
- }
+// function repeatStr(n: number, s: string): string {
 
- getAverage([1,1,1,1,1,1,1,2])
- console.log(' getAverage([1,1,1,1,1,1,1,2]):',  getAverage([1,1,1,1,1,1,1,2]))
+// return Array.from({length:n}, x=>s).join("");
+// }
+
+
+
+// repeatStr(3, "*")
+// console.log('repeatStr(3, "*"):', repeatStr(3, "*"))
+
+
+// https://www.codewars.com/kata/57356c55867b9b7a60000bd7/train/typescript
+
+function basicOp(operation: string, value1: number, value2: number): number {
+  let res;
+  switch (operation) {
+    case '+':
+      res = value1 + value2;
+      break;
+    case '-':
+      res = value1 - value2;
+      break;
+    case '*':
+      res = value1 * value2;
+      break;
+    case '/':
+      res = value1 / value2;
+      break;
+    default:
+      throw new Error('Невідома операція: ' + operation);
+  }
+  return res;
+}
+
+
+basicOp('+', 4, 7)
+console.log('basicOp('+', 4, 7):', basicOp('+', 4, 7))

@@ -2668,18 +2668,29 @@
 // console.log(divisibleBy([1,2,3,4,5,6], 2))
 
 
-console.log(divisibleBy([1,2,3,4,5,6], 2))
+// console.log(divisibleBy([1,2,3,4,5,6], 2))
 
 
-// https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
-function well(x: string[]): string{
-    if (!x.includes("good")) { 
-        return 'Fail!'
-    }
+// // https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
+// function well(x: string[]): string{
+//     if (!x.includes("good")) { 
+//         return 'Fail!'
+//     }
 
-    return x.filter(item => item === "good").length <= 2 ? 'Publish!' : 'I smell a series!'
-}
+//     return x.filter(item => item === "good").length <= 2 ? 'Publish!' : 'I smell a series!'
+// }
 
-console.log(well(['bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+// console.log(well(['bad', 'bad', 'bad']))
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
+// console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+
+
+// https://www.codewars.com/kata/563e320cee5dddcf77000158/train/typescript
+
+ function getAverage(marks:number[]):number{
+
+  return Math.floor(marks.reduce((acc,item)=>acc+item,0)/marks.length);
+ }
+
+ getAverage([1,1,1,1,1,1,1,2])
+ console.log(' getAverage([1,1,1,1,1,1,1,2]):',  getAverage([1,1,1,1,1,1,1,2]))

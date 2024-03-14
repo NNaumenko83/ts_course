@@ -2701,27 +2701,41 @@
 
 // https://www.codewars.com/kata/57356c55867b9b7a60000bd7/train/typescript
 
-function basicOp(operation: string, value1: number, value2: number): number {
-  let res;
-  switch (operation) {
-    case '+':
-      res = value1 + value2;
-      break;
-    case '-':
-      res = value1 - value2;
-      break;
-    case '*':
-      res = value1 * value2;
-      break;
-    case '/':
-      res = value1 / value2;
-      break;
-    default:
-      throw new Error('Невідома операція: ' + operation);
-  }
-  return res;
-}
+// function basicOp(operation: string, value1: number, value2: number): number {
+//   let res;
+//   switch (operation) {
+//     case '+':
+//       res = value1 + value2;
+//       break;
+//     case '-':
+//       res = value1 - value2;
+//       break;
+//     case '*':
+//       res = value1 * value2;
+//       break;
+//     case '/':
+//       res = value1 / value2;
+//       break;
+//     default:
+//       throw new Error('Невідома операція: ' + operation);
+//   }
+//   return res;
+// }
 
 
-basicOp('+', 4, 7)
-console.log('basicOp('+', 4, 7):', basicOp('+', 4, 7))
+// basicOp('+', 4, 7)
+// console.log('basicOp('+', 4, 7):', basicOp('+', 4, 7))
+
+
+// https://www.codewars.com/kata/56c24c58e0c0f741d4001aef/train/typescript
+
+function isReallyNaN(val: any): boolean {
+
+  return isNaN(Number(val));
+};
+
+isReallyNaN('37')
+console.log('isReallyNaN("37")', isReallyNaN('37'))
+
+
+console.log(isNaN(undefined))

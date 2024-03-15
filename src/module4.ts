@@ -2729,13 +2729,34 @@
 
 // https://www.codewars.com/kata/56c24c58e0c0f741d4001aef/train/typescript
 
-function isReallyNaN(val: any): boolean {
+// function isReallyNaN(val: any): boolean {
 
-  return isNaN(Number(val));
-};
+//   return isNaN(Number(val));
+// };
 
-isReallyNaN('37')
-console.log('isReallyNaN("37")', isReallyNaN('37'))
+// isReallyNaN('37')
+// console.log('isReallyNaN("37")', isReallyNaN('37'))
 
 
-console.log(isNaN(undefined))
+// console.log(isNaN(undefined))
+
+
+// https://www.codewars.com/kata/56f3a1e899b386da78000732/train/typescript
+
+
+// https://www.codewars.com/kata/56f3a1e899b386da78000732/train/typescript
+function partlist(arr: string[]): string[][] {
+  const result: string[][] = [];
+  for (let i = 0; i < arr.length-1; i++) {
+    if (i === 0) { result.push([arr[i], arr.slice(i + 1).join(',').replaceAll(",", " ")]); continue }
+    result.push([arr.slice(0,i+1).join(',').replaceAll(",", " "), arr.slice(i + 1).join(',').replaceAll(",", " ")]); 
+
+  }
+
+
+  return result
+}
+
+const arr = ["I", "wish", "I", "hadn't", "come"]
+
+partlist(arr)

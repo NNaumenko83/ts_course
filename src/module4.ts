@@ -2775,25 +2775,40 @@
 
 // =====flatten aray =================
 
-function flatten(arr: any[]): number[] { 
-console.log('arr:', arr)
+// function flatten(arr: any[]): number[] { 
+// console.log('arr:', arr)
 
-  const res:number[] = []
+//   const res:number[] = []
   
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       res.push(...flatten(arr[i]))
+//     } else {
+//       res.push(arr[i])
+//     }
+    
+//   }
+
+
+
+//   console.log('res:', res)
+//   return res
+// } 
+
+
+function flatten(arr: any[]): number[] {
+  const res: number[] = []
+
   for (let i = 0; i < arr.length; i++) {
     if (Array.isArray(arr[i])) {
       res.push(...flatten(arr[i]))
-    } else {
-      res.push(arr[i])
     }
+    else { res.push(arr[i]) }
+    
     
   }
-
-
-
-  console.log('res:', res)
   return res
-} 
+}
 
 
 console.log(flatten([[1],[[2]], [[[3]]], [[[[4]]]]]))

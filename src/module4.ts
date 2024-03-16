@@ -2745,18 +2745,31 @@
 
 
 // https://www.codewars.com/kata/56f3a1e899b386da78000732/train/typescript
-function partlist(arr: string[]): string[][] {
-  const result: string[][] = [];
-  for (let i = 0; i < arr.length-1; i++) {
-    if (i === 0) { result.push([arr[i], arr.slice(i + 1).join(',').replaceAll(",", " ")]); continue }
-    result.push([arr.slice(0,i+1).join(',').replaceAll(",", " "), arr.slice(i + 1).join(',').replaceAll(",", " ")]); 
+// function partlist(arr: string[]): string[][] {
+//   const result: string[][] = [];
+//   for (let i = 0; i < arr.length-1; i++) {
+//     if (i === 0) { result.push([arr[i], arr.slice(i + 1).join(',').replaceAll(",", " ")]); continue }
+//     result.push([arr.slice(0,i+1).join(',').replaceAll(",", " "), arr.slice(i + 1).join(',').replaceAll(",", " ")]); 
 
-  }
+//   }
 
 
-  return result
+//   return result
+// }
+
+// const arr = ["I", "wish", "I", "hadn't", "come"]
+
+// partlist(arr)
+
+
+// ===== Remove dupes =================
+
+function removeDupes(str: string): string { 
+return Array.from(new Set (str)).join('');
 }
 
-const arr = ["I", "wish", "I", "hadn't", "come"]
 
-partlist(arr)
+
+console.log(removeDupes('aabbccdddddd'))
+
+

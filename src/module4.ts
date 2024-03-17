@@ -2818,7 +2818,9 @@
 
 function findShort(s: string): number {
 
-return s.split(" ").map((item)=>item.length).sort((a,b)=>a-b)[0]; 
+  // return s.split(" ").map((item) => item.length).sort((a, b) => a - b)[0]; 
+  return Math.min(...s.split(" ").map((item)=>item.length)); 
+  
 }
 
 findShort("bitcoin take over the world maybe who knows perhaps")

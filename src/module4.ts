@@ -2796,19 +2796,32 @@
 // } 
 
 
-function flatten(arr: any[]): number[] {
-  const res: number[] = []
+// function flatten(arr: any[]): number[] {
+//   const res: number[] = []
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      res.push(...flatten(arr[i]))
-    }
-    else { res.push(arr[i]) }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       res.push(...flatten(arr[i]))
+//     }
+//     else { res.push(arr[i]) }
     
     
-  }
-  return res
+//   }
+//   return res
+// }
+
+
+// console.log(flatten([[1],[[2]], [[[3]]], [[[[4]]]]]))
+
+
+// https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/train/typescript
+
+function findShort(s: string): number {
+  console.log("aaaa")
+  console.log(s.split(" ").map((item)=>item.length).sort((a,b)=>a-b))
+
+  return 1; 
 }
 
-
-console.log(flatten([[1],[[2]], [[[3]]], [[[[4]]]]]))
+findShort("bitcoin take over the world maybe who knows perhaps")
+console.log('findShort("bitcoin take over the world maybe who knows perhaps"):', findShort("bitcoin take over the world maybe who knows perhaps"))

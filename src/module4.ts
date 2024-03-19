@@ -2816,12 +2816,57 @@
 
 // https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/train/typescript
 
-function findShort(s: string): number {
+// function findShort(s: string): number {
 
-  // return s.split(" ").map((item) => item.length).sort((a, b) => a - b)[0]; 
-  return Math.min(...s.split(" ").map((item)=>item.length)); 
+//   // return s.split(" ").map((item) => item.length).sort((a, b) => a - b)[0]; 
+//   return Math.min(...s.split(" ").map((item)=>item.length)); 
   
+// }
+
+// findShort("bitcoin take over the world maybe who knows perhaps")
+// console.log('findShort("bitcoin take over the world maybe who knows perhaps"):', findShort("bitcoin take over the world maybe who knows perhaps"))
+
+
+
+// test task
+
+function findPath(mountain: number[][]): number { 
+  let summ = 0;
+  let maxSum = 0;
+  
+  for (let i = 0; i < mountain.length-1; i++) { 
+    summ=mountain[0][0]
+    
+    
+    for (let k = 0; k < mountain[i].length; k++) { 
+      console.log("summ", summ)
+      console.log('mountain[i+1][k]:', mountain[i+1][k])
+      console.log('mountain[i][k]:', mountain[i][k])
+      summ+=mountain[i+1][k]
+      console.log('summ:', summ)
+
+
+      
+
+        // for (let j = k; j <= k + 1; j++) { 
+        // console.log('j:', j)
+        // console.log('mountain[i + 1][j]:', mountain[i + 1][j])
+        // summ+=mountain[i + 1][j]
+        //   console.log('summ:', summ)
+      
+        // }
+    
+    }
+  }
+
+  console.log("summ", summ)
+  console.log('maxSum:', maxSum)
+  
+  return 0;
 }
 
-findShort("bitcoin take over the world maybe who knows perhaps")
-console.log('findShort("bitcoin take over the world maybe who knows perhaps"):', findShort("bitcoin take over the world maybe who knows perhaps"))
+// const arr:number[][]=[[6],[7,10],[12,11,9],[90,25,13,14]]
+const arr:number[][]=[[1],[2,3],[4,5,6]]
+
+findPath(arr)
+// console.log('findPath(arr):', findPath(arr))

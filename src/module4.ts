@@ -2835,14 +2835,17 @@ function findPath(mountain: number[][]): number {
   let maxSum = 0;
   
   for (let i = 0; i < mountain.length-1; i++) { 
-    summ=mountain[0][0]
-    
+    console.log('LOOP:', i)
+    if (i === 0) {
+      summ = mountain[i][0]
+      console.log('summ:', summ)
+    continue}
     
     for (let k = 0; k < mountain[i].length; k++) { 
       console.log("summ", summ)
-      console.log('mountain[i+1][k]:', mountain[i+1][k])
       console.log('mountain[i][k]:', mountain[i][k])
-      summ+=mountain[i+1][k]
+      console.log('mountain[i+1][k]:', mountain[i+1][k])
+      summ+=mountain[i][k]+mountain[i+1][k]
       console.log('summ:', summ)
 
 

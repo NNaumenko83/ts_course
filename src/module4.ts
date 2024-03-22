@@ -2849,26 +2849,27 @@
 // }
 
 
-function findPath(mountain) {
-  const arr = Array.from(mountain, item => Array.from({ length: item.length }, item => item = 0));
+// function findPath(mountain) {
+//   const arr = Array.from(mountain, item => Array.from({ length: item.length }, item => item = 0));
 
-    for (let i = 0; i < mountain.length; i++) {
-        if (i === 0) { arr[i][0] = mountain[i][0]; continue; }
-        for (let j = 0; j < mountain[i].length; j++) {
-            if (j === 0) { arr[i][j] = arr[i - 1][j] + mountain[i][j]; continue; }
-            if (j === mountain[i].length - 1) { arr[i][j] = arr[i - 1][j - 1] + mountain[i][j]; continue; }
-            arr[i][j] = Math.max(arr[i - 1][j], arr[i - 1][j - 1]) + mountain[i][j];
-        }
-    }
+//     for (let i = 0; i < mountain.length; i++) {
+//         if (i === 0) { arr[i][0] = mountain[i][0]; continue; }
+//         for (let j = 0; j < mountain[i].length; j++) {
+//             if (j === 0) { arr[i][j] = arr[i - 1][j] + mountain[i][j]; continue; }
+//             if (j === mountain[i].length - 1) { arr[i][j] = arr[i - 1][j - 1] + mountain[i][j]; continue; }
+//             arr[i][j] = Math.max(arr[i - 1][j], arr[i - 1][j - 1]) + mountain[i][j];
+//         }
+//     }
 
-    return Math.max(...arr[arr.length - 1]);
-}
-
-
-
-
-const arr:number[][]=[[6],[7,10],[12,11,9],[90,25,13,14]]
+//     return Math.max(...arr[arr.length - 1]);
+// }
 
 
 
-console.log('findPath(arr):', findPath(arr))
+
+// const arr:number[][]=[[6],[7,10],[12,11,9],[90,25,13,14]]
+
+
+
+// console.log('findPath(arr):', findPath(arr))
+

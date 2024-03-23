@@ -2873,3 +2873,11 @@
 
 // console.log('findPath(arr):', findPath(arr))
 
+// https://www.codewars.com/kata/515f51d438015969f7000013/train/typescript
+
+function pyramid(n: number) : Array<Array<Number>> {
+    return n === 0 ? []: Array.from({ length: n }, (item, index) => Array.from({length:index+1},item=>1))};
+
+
+    pyramid(0)
+    console.log(' pyramid(0):',  pyramid(4))

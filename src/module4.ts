@@ -2883,4 +2883,31 @@
 //     console.log(' pyramid(0):',  pyramid(4))
 
 
-console.log(Array(10).fill(1))
+// console.log(Array(10).fill(1))
+
+
+const productFib = (prod: number): [number, number, boolean] => {
+    let arr: number[] = []
+    let res:[number, number, boolean]=[0,0,false]
+
+    for (let i = 0; i < prod; i++) {
+        if (i === 0) { arr.push(i); continue }
+        if (i === 1) { arr.push(i); continue }
+        if (arr[i - 2] * arr[i - 1] === prod) { 
+            res = [arr[i - 2], arr[i - 1], true]
+            break
+        }
+        if (arr[i - 2] * arr[i - 1] > prod) { 
+            res = [arr[i - 2], arr[i - 1], false]
+            break
+        }
+        arr.push(arr[i - 1] + arr[i - 2])
+        
+    };
+
+    return res
+    
+}
+
+
+console.log('productFib(5895):', productFib(5895))

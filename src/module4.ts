@@ -2886,28 +2886,50 @@
 // console.log(Array(10).fill(1))
 
 
-const productFib = (prod: number): [number, number, boolean] => {
-    let arr: number[] = []
-    let res:[number, number, boolean]=[0,0,false]
+// const productFib = (prod: number): [number, number, boolean] => {
+//     let arr: number[] = []
+//     let res:[number, number, boolean]=[0,0,false]
 
-    for (let i = 0; i < prod; i++) {
-        if (i === 0) { arr.push(i); continue }
-        if (i === 1) { arr.push(i); continue }
-        if (arr[i - 2] * arr[i - 1] === prod) { 
-            res = [arr[i - 2], arr[i - 1], true]
-            break
-        }
-        if (arr[i - 2] * arr[i - 1] > prod) { 
-            res = [arr[i - 2], arr[i - 1], false]
-            break
-        }
-        arr.push(arr[i - 1] + arr[i - 2])
+//     for (let i = 0; i < prod; i++) {
+//         if (i === 0) { arr.push(i); continue }
+//         if (i === 1) { arr.push(i); continue }
+//         if (arr[i - 2] * arr[i - 1] === prod) {
+//             res = [arr[i - 2], arr[i - 1], true]
+//             break
+//         }
+//         if (arr[i - 2] * arr[i - 1] > prod) {
+//             res = [arr[i - 2], arr[i - 1], false]
+//             break
+//         }
+//         arr.push(arr[i - 1] + arr[i - 2])
         
-    };
+//     };
 
-    return res
+//     return res
     
+// }
+
+
+// console.log('productFib(5895):', productFib(5895))
+
+
+// https://www.codewars.com/kata/55e7280b40e1c4a06d0000aa/train/typescript
+
+function chooseBestSum(t: number, k: number, ls: number[]): number | null {
+    const arr = []
+
+    for (let i = 0; i <= ls.length-k; i += 1) { 
+        console.log(ls[i])
+        for (let j = i + 1; j < ls.length; j += 1) {
+            const partArr=ls.slice(j,j+k-1)
+            console.log('partArr:', partArr)
+            arr.push([ls[i],...partArr])
+            if (partArr.length < k) { break}
+         }
+    }
+
+    console.log(arr)
+
 }
 
-
-console.log('productFib(5895):', productFib(5895))
+ chooseBestSum(163, 3, [50, 55, 56, 57, 58])

@@ -2923,8 +2923,8 @@ function chooseBestSum(t: number, k: number, ls: number[]): number | null {
         for (let j = i + 1; j < ls.length; j += 1) {
             const partArr=ls.slice(j,j+k-1)
             console.log('partArr:', partArr)
+            if (partArr.length < 2) { break}
             arr.push([ls[i],...partArr])
-            if (partArr.length < k) { break}
          }
     }
 

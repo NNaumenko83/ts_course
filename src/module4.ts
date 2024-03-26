@@ -2925,8 +2925,14 @@ function chooseBestSum(t: number, k: number, ls: number[]): number | null {
             console.log('partArr:', partArr)
             if (partArr.length < 2) { break}
             arr.push([ls[i],...partArr])
-         }
+        }
+        if (i > 0) { 
+            console.log('i:', i)
+
+        }
     }
+
+    
 
     console.log(arr)
 

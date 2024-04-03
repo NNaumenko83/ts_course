@@ -2915,27 +2915,58 @@
 
 // https://www.codewars.com/kata/55e7280b40e1c4a06d0000aa/train/typescript
 
-function chooseBestSum(t: number, k: number, ls: number[]): number | null {
-    const arr = []
+// function chooseBestSum(t: number, k: number, ls: number[]): number | null {
+//     const arr = []
 
-    for (let i = 0; i <= ls.length-k; i += 1) { 
-        console.log(ls[i])
-        for (let j = i + 1; j < ls.length; j += 1) {
-            const partArr=ls.slice(j,j+k-1)
-            console.log('partArr:', partArr)
-            if (partArr.length < 2) { break}
-            arr.push([ls[i],...partArr])
-        }
-        if (i > 0) { 
-            console.log('i:', i)
+//     for (let i = 0; i <= ls.length-k; i += 1) {
+//         console.log(ls[i])
+//         for (let j = i + 1; j < ls.length; j += 1) {
+//             const partArr=ls.slice(j,j+k-1)
+//             console.log('partArr:', partArr)
+//             if (partArr.length < 2) { break}
+//             arr.push([ls[i],...partArr])
+//         }
+//         if (i > 0) {
+//             console.log('i:', i)
 
-        }
-    }
+//         }
+//     }
 
     
 
-    console.log(arr)
+//     console.log(arr)
 
+// }
+
+//  chooseBestSum(163, 3, [50, 55, 56, 57, 58])
+
+
+// https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/python
+
+// function sscForperm(arr) {
+//     const resArr = [{ "total perm": null }, { "total ssc": null }, { "max ssc": null }, { "min ssc": null }]
+//     resArr["total perm"]=arr.
+//     console.log('resArr:', resArr)
+ 
+//   return resArr;
+// }
+
+// sscForperm([8, 23, -4, 10])
+
+
+
+
+// https://www.codewars.com/kata/580755730b5a77650500010c/train/typescript
+
+function sortMyString(s: string): string {
+    const res = [...s].reduce((acc:[string[], string[]], item, index) => {
+        if (index % 2 ===0) { acc[0].push(item); return acc }
+        acc[1].push(item); return acc;
+    }, [[], []]);
+
+
+  return `${res[0].join("")} ${res[1].join("")}`;
 }
 
- chooseBestSum(163, 3, [50, 55, 56, 57, 58])
+
+console.log(sortMyString("CodeWars"))

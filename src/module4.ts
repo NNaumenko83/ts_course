@@ -2958,15 +2958,35 @@
 
 // https://www.codewars.com/kata/580755730b5a77650500010c/train/typescript
 
-function sortMyString(s: string): string {
-    const res = [...s].reduce((acc:[string[], string[]], item, index) => {
-        if (index % 2 ===0) { acc[0].push(item); return acc }
-        acc[1].push(item); return acc;
-    }, [[], []]);
+// function sortMyString(s: string): string {
+//     const res = [...s].reduce((acc:[string[], string[]], item, index) => {
+//         if (index % 2 ===0) { acc[0].push(item); return acc }
+//         acc[1].push(item); return acc;
+//     }, [[], []]);
 
 
-  return `${res[0].join("")} ${res[1].join("")}`;
+//   return `${res[0].join("")} ${res[1].join("")}`;
+// }
+
+
+// console.log(sortMyString("CodeWars"))
+
+
+// https://www.codewars.com/kata/526c7363236867513f0005ca/train/typescript
+
+function isLeap(year: number): boolean {
+  if (year % 4 === 0) { 
+    if (year % 100 === 0) {
+      if (year % 400 === 0) {
+        return true;
+      }
+      return false;
+    }
+    return true;
+  }
+
+  return false;
+  
 }
 
-
-console.log(sortMyString("CodeWars"))
+console.log(isLeap(2020))

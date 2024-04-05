@@ -2974,19 +2974,96 @@
 
 // https://www.codewars.com/kata/526c7363236867513f0005ca/train/typescript
 
-function isLeap(year: number): boolean {
-  if (year % 4 === 0) { 
-    if (year % 100 === 0) {
-      if (year % 400 === 0) {
-        return true;
-      }
-      return false;
-    }
-    return true;
-  }
+// function isLeap(year: number): boolean {
+//   if (year % 4 === 0) {
+//     if (year % 100 === 0) {
+//       if (year % 400 === 0) {
+//         return true;
+//       }
+//       return false;
+//     }
+//     return true;
+//   }
 
-  return false;
+//   return false;
   
+// }
+
+// console.log(isLeap(2020))
+
+// https://www.codewars.com/kata/5899a4b1a6648906fe000113/train/typescript
+
+function findRoutes(routes: string[][]): string {
+
+  const copyRoutes=[...routes];
+ 
+
+  const resArr: string[][] = []
+
+function findUniqueDestinationIndex(routes: string[][]) {
+
+  const uniqueFirstRoute = routes.find(([first, second]) => {
+    console.log('first:', first)
+    
+    
+    return !routes.some(([_, dest]) => dest === first)
+  });
+  console.log('uniqueFirstRoute:', uniqueFirstRoute)
+ 
+  if (!uniqueFirstRoute) {
+    return -1; 
+  }
+  return routes.indexOf(uniqueFirstRoute);
 }
 
-console.log(isLeap(2020))
+const indexOfFirstElem =findUniqueDestinationIndex(routes);;
+  
+resArr.push(copyRoutes[indexOfFirstElem])
+  copyRoutes.splice(indexOfFirstElem, 1)
+
+ while (copyRoutes.length > 1) {
+   
+const index = copyRoutes.findIndex((item) => item[0]===resArr[resArr.length-1][1])
+  
+
+    resArr.push(copyRoutes[index])
+    copyRoutes.splice(index,1)
+  
+   }
+
+ 
+
+  const res=[...new Set([...resArr, ...copyRoutes].join(",").split(','))].join(", ").trim()
+ 
+
+
+
+  return res
+}
+
+console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]])) 
+
+
+
+
+
+// describe("Follow That Spy", function() {
+//   it ("Sample", function() {
+//   var routes1 = findRoutes([["MNL", "TAG"], ["CEB", "TAC"], ["TAG", "CEB"], ["TAC", "BOR"]]);
+//   assert.strictEqual(routes1, "MNL, TAG, CEB, TAC, BOR");
+//   var routes2 = findRoutes([["UK", "GER"], ["GER", "BEL"], ["BEL", "CAN"]]);
+//   assert.strictEqual(routes2, "UK, GER, BEL, CAN");
+//   var routes3 = findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]]);
+//   assert.strictEqual(routes3, "Halifax, Montreal, Toronto, Chicago, Winnipeg, Seattle");
+//   var routes4 = findRoutes([["Agra", "Tokyo"], ["Seoul", "Ljubljana"], ["Ljubljana", "Wroclaw"], ["Wroclaw", "Nashville"], ["Nashville", "Amsterdam"], ["Amsterdam", "Hull"], ["Hull", "Vancouver"], ["Vancouver", "Agra"], ["Tokyo", "Manila"]]);
+//   assert.strictEqual(routes4, "Seoul, Ljubljana, Wroclaw, Nashville, Amsterdam, Hull, Vancouver, Agra, Tokyo, Manila");
+//   var routes5 = findRoutes([["Calgary", "Fargo"], ["Spokane", "Toronto"], ["Winnipeg", "Montreal"], ["Toronto", "Calgary"], ["Fargo", "Winnipeg"]]);
+//   assert.strictEqual(routes5, "Spokane, Toronto, Calgary, Fargo, Winnipeg, Montreal");
+//   var routes6 = findRoutes([["BRA", "KSA"], ["USA", "BRA"], ["JPN", "PHL"], ["KSA", "UAE"], ["UAE", "JPN"]]);
+//   assert.strictEqual(routes6, "USA, BRA, KSA, UAE, JPN, PHL");
+//   var routes7 = findRoutes([["HQ", "SH"]]);
+//   assert.strictEqual(routes7, "HQ, SH");
+//   var routes8 = findRoutes([["San Policarpo", "Oras"], ["Balangiga", "Lawaan"], ["Borongan", "Maydolong"], ["Jipapad", "Maslog"], ["Balangkayan", "Llorente"], ["Mercedes", "Guiuan"], ["Taft", "Sulat"], ["Sulat", "San Julian"], ["Arteche", "San Policarpo"], ["Oras", "Dolores"], ["Dolores", "Can-avid"], ["Can-avid", "Taft"], ["San Julian", "Borongan"], ["Maydolong", "Balangkayan"], ["Llorente", "Hernani"], ["Hernani", "General MacArthur"], ["General MacArthur", "Giporlos"], ["Giporlos", "Balangiga"], ["Lawaan", "Salcedo"], ["Salcedo", "Mercedes"], ["Maslog", "Arteche"]]);
+//   assert.strictEqual(routes8, "Jipapad, Maslog, Arteche, San Policarpo, Oras, Dolores, Can-avid, Taft, Sulat, San Julian, Borongan, Maydolong, Balangkayan, Llorente, Hernani, General MacArthur, Giporlos, Balangiga, Lawaan, Salcedo, Mercedes, Guiuan");
+//   });
+// });

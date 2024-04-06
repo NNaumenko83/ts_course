@@ -2991,57 +2991,57 @@
 
 // console.log(isLeap(2020))
 
-// https://www.codewars.com/kata/5899a4b1a6648906fe000113/train/typescript
+// // https://www.codewars.com/kata/5899a4b1a6648906fe000113/train/typescript
 
-function findRoutes(routes: string[][]): string {
+// function findRoutes(routes: string[][]): string {
 
-  const copyRoutes=[...routes];
+//   const copyRoutes=[...routes];
  
 
-  const resArr: string[][] = []
+//   const resArr: string[][] = []
 
-function findUniqueDestinationIndex(routes: string[][]) {
+// function findUniqueDestinationIndex(routes: string[][]) {
 
-  const uniqueFirstRoute = routes.find(([first, second]) => {
-    console.log('first:', first)
+//   const uniqueFirstRoute = routes.find(([first, second]) => {
+//     console.log('first:', first)
     
     
-    return !routes.some(([_, dest]) => dest === first)
-  });
-  console.log('uniqueFirstRoute:', uniqueFirstRoute)
+//     return !routes.some(([_, dest]) => dest === first)
+//   });
+//   console.log('uniqueFirstRoute:', uniqueFirstRoute)
  
-  if (!uniqueFirstRoute) {
-    return -1; 
-  }
-  return routes.indexOf(uniqueFirstRoute);
-}
+//   if (!uniqueFirstRoute) {
+//     return -1; 
+//   }
+//   return routes.indexOf(uniqueFirstRoute);
+// }
 
-const indexOfFirstElem =findUniqueDestinationIndex(routes);;
+// const indexOfFirstElem =findUniqueDestinationIndex(routes);;
   
-resArr.push(copyRoutes[indexOfFirstElem])
-  copyRoutes.splice(indexOfFirstElem, 1)
+// resArr.push(copyRoutes[indexOfFirstElem])
+//   copyRoutes.splice(indexOfFirstElem, 1)
 
- while (copyRoutes.length > 1) {
+//  while (copyRoutes.length > 1) {
    
-const index = copyRoutes.findIndex((item) => item[0]===resArr[resArr.length-1][1])
+// const index = copyRoutes.findIndex((item) => item[0]===resArr[resArr.length-1][1])
   
 
-    resArr.push(copyRoutes[index])
-    copyRoutes.splice(index,1)
+//     resArr.push(copyRoutes[index])
+//     copyRoutes.splice(index,1)
   
-   }
+//    }
 
  
 
-  const res=[...new Set([...resArr, ...copyRoutes].join(",").split(','))].join(", ").trim()
+//   const res=[...new Set([...resArr, ...copyRoutes].join(",").split(','))].join(", ").trim()
  
 
 
 
-  return res
-}
+//   return res
+// }
 
-console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]])) 
+// console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]])) 
 
 
 
@@ -3067,3 +3067,14 @@ console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Mont
 //   assert.strictEqual(routes8, "Jipapad, Maslog, Arteche, San Policarpo, Oras, Dolores, Can-avid, Taft, Sulat, San Julian, Borongan, Maydolong, Balangkayan, Llorente, Hernani, General MacArthur, Giporlos, Balangiga, Lawaan, Salcedo, Mercedes, Guiuan");
 //   });
 // });
+
+
+// https://www.codewars.com/kata/53dc23c68a0c93699800041d/train/typescript
+
+
+function smash (words: string[]): string {
+   return words.join(" ")
+};
+
+
+console.log(smash(["hello", "world"]))

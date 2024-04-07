@@ -3072,9 +3072,19 @@
 // https://www.codewars.com/kata/53dc23c68a0c93699800041d/train/typescript
 
 
-function smash (words: string[]): string {
-   return words.join(" ")
-};
+// function smash (words: string[]): string {
+//    return words.join(" ")
+// };
 
 
-console.log(smash(["hello", "world"]))
+// console.log(smash(["hello", "world"]))
+
+
+// https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6/train/typescript
+
+function cockroachSpeed(s: number): number{
+  return Math.floor(s*100000/3600);
+}
+
+
+console.log(cockroachSpeed(1.08))

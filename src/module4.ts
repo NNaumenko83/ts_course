@@ -3011,7 +3011,7 @@
 //   console.log('uniqueFirstRoute:', uniqueFirstRoute)
  
 //   if (!uniqueFirstRoute) {
-//     return -1; 
+//     return -1;
 //   }
 //   return routes.indexOf(uniqueFirstRoute);
 // }
@@ -3041,7 +3041,7 @@
 //   return res
 // }
 
-// console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]])) 
+// console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]]))
 
 
 
@@ -3082,9 +3082,22 @@
 
 // https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6/train/typescript
 
-function cockroachSpeed(s: number): number{
-  return Math.floor(s*100000/3600);
+// function cockroachSpeed(s: number): number{
+//   return Math.floor(s*100000/3600);
+// }
+
+
+// console.log(cockroachSpeed(1.08))
+
+
+// https://www.codewars.com/kata/57eaeb9578748ff92a000009/train/typescript
+
+function sumMix(x: any[]): number {
+
+  return x.reduce((acc, item) => {
+ 
+return acc+Number(item)  }, 0)
+
 }
 
-
-console.log(cockroachSpeed(1.08))
+console.log(sumMix([9, 3, '7', '3']))

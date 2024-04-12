@@ -3092,12 +3092,24 @@
 
 // https://www.codewars.com/kata/57eaeb9578748ff92a000009/train/typescript
 
-function sumMix(x: any[]): number {
+// function sumMix(x: any[]): number {
 
-  return x.reduce((acc, item) => {
+//   return x.reduce((acc, item) => {
  
-return acc+Number(item)  }, 0)
+// return acc+Number(item)  }, 0)
 
+// }
+
+// console.log(sumMix([9, 3, '7', '3']))
+
+
+// https://www.codewars.com/kata/56dec885c54a926dcd001095
+
+class Kata {
+  static opposite(n: number) {
+    return n * -1;
+  }
 }
 
-console.log(sumMix([9, 3, '7', '3']))
+
+console.log(Kata.opposite(1))

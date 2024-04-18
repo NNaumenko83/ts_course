@@ -3117,13 +3117,13 @@
 
 // https://www.codewars.com/kata/5a805d8cafa10f8b930005ba/train/typescript
 
-function nearestSq(n: number): number {
+// function nearestSq(n: number): number {
 
-  console.log('Math.sqrt(n):', Math.sqrt(n))
-  if (!Math.sqrt(n).toString().includes(".")) {
-    return n
-   }
-  return Math.round(Math.sqrt(n))**2 
-}
+//   console.log('Math.sqrt(n):', Math.sqrt(n))
+//   if (!Math.sqrt(n).toString().includes(".")) {
+//     return n
+//    }
+//   return Math.round(Math.sqrt(n))**2 
+// }
 
-console.log(nearestSq(111));
+// console.log(nearestSq(111));

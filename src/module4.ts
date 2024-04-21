@@ -3130,26 +3130,48 @@
 
 
 
-// https://www.codewars.com/kata/59342039eb450e39970000a6/train/typescript
-function oddCount(n: number){
-    // const arr = Array.from({ length: n-1 }, (item, index) => index + 1)
-    // console.log('arr:', arr)
-    // return arr.reduce((acc, item)=>item%2!==0? acc+1:acc,0)
-    // let count = 0;
+// // https://www.codewars.com/kata/59342039eb450e39970000a6/train/typescript
+// function oddCount(n: number){
+//     // const arr = Array.from({ length: n-1 }, (item, index) => index + 1)
+//     // console.log('arr:', arr)
+//     // return arr.reduce((acc, item)=>item%2!==0? acc+1:acc,0)
+//     // let count = 0;
 
-    // for (let i = 1; i < n; i++) {
-    //     if (i % 2 !== 0) {
-    //         count += 1
-    //         continue
-    //     }
-    //     continue
+//     // for (let i = 1; i < n; i++) {
+//     //     if (i % 2 !== 0) {
+//     //         count += 1
+//     //         continue
+//     //     }
+//     //     continue
         
-    // }
+//     // }
 
-    // return count
+//     // return count
     
-    return Math.ceil((n-1)/2)
+//     return Math.ceil((n-1)/2)
+// }
+
+
+// console.log(oddCount(7))
+
+
+// https://www.codewars.com/kata/5a3dd29055519e23ec000074/train/typescript
+
+function checkExam(array1: string[], array2: string[]): number {
+
+    const res = array2.reduce((acc, item, index) => { 
+        if (!item) { 
+            return acc
+        }
+        if (item === array1[index]) {
+            return acc+4
+        }
+        return acc-1
+    }, 0)
+    
+    return res<0? 0:res
+ // good luck 
 }
 
 
-console.log(oddCount(7))
+console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))

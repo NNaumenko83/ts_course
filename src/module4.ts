@@ -3123,7 +3123,7 @@
 //   if (!Math.sqrt(n).toString().includes(".")) {
 //     return n
 //    }
-//   return Math.round(Math.sqrt(n))**2 
+//   return Math.round(Math.sqrt(n))**2
 // }
 
 // console.log(nearestSq(111));
@@ -3157,21 +3157,36 @@
 
 // https://www.codewars.com/kata/5a3dd29055519e23ec000074/train/typescript
 
-function checkExam(array1: string[], array2: string[]): number {
+// function checkExam(array1: string[], array2: string[]): number {
 
-    const res = array2.reduce((acc, item, index) => { 
-        if (!item) { 
-            return acc
-        }
-        if (item === array1[index]) {
-            return acc+4
-        }
-        return acc-1
-    }, 0)
+//     const res = array2.reduce((acc, item, index) => {
+//         if (!item) {
+//             return acc
+//         }
+//         if (item === array1[index]) {
+//             return acc+4
+//         }
+//         return acc-1
+//     }, 0)
     
-    return res<0? 0:res
- // good luck 
-}
+//     return res<0? 0:res
+//  // good luck
+// }
 
 
-console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
+// console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
+
+// https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/typescript
+
+const vowels=["a", "e", "i", "o","u"]
+
+function sortVowels(str?: number | string | null): string {
+  if (typeof str !== "string") { 
+    return ""
+  }
+
+ return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
+};
+
+
+sortVowels('Codewars')

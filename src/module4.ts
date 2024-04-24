@@ -3178,15 +3178,37 @@
 
 // https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/typescript
 
-const vowels=["a", "e", "i", "o","u"]
+// const vowels=["a", "e", "i", "o","u"]
 
-function sortVowels(str?: number | string | null): string {
-  if (typeof str !== "string") { 
-    return ""
+// function sortVowels(str?: number | string | null): string {
+//   if (typeof str !== "string") {
+//     return ""
+//   }
+
+//  return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
+// };
+
+
+// sortVowels('Codewars')
+
+
+function sortByValueAndIndex(array: number[]): number[] {
+  
+  const resArr: number[] = []
+  const copyArr=[...array]
+  const arrayToIndex=array.map((item, index)=>item*(index+1))
+
+  while (copyArr.length > 0) {     
+    let maxIndex=arrayToIndex.indexOf(Math.max(...arrayToIndex))
+    resArr.push(copyArr[maxIndex])
+    copyArr.splice(maxIndex, 1)
+    arrayToIndex.splice(maxIndex, 1)
   }
+ 
+  return resArr.reverse()
+}
 
- return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
-};
-
-
-sortVowels('Codewars')
+console.log( sortByValueAndIndex([
+  -22, 6, -15, 23,
+  -10, 2,  -9, 10
+]))

@@ -3178,15 +3178,83 @@
 
 // https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/typescript
 
-const vowels=["a", "e", "i", "o","u"]
+// const vowels=["a", "e", "i", "o","u"]
 
-function sortVowels(str?: number | string | null): string {
-  if (typeof str !== "string") { 
-    return ""
-  }
+// function sortVowels(str?: number | string | null): string {
+//   if (typeof str !== "string") { 
+//     return ""
+//   }
 
- return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
-};
+//  return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
+// };
 
 
-sortVowels('Codewars')
+// sortVowels('Codewars')
+
+const salaries={
+   Manager: { salary: 1000, tax: "10%" },
+   Designer: { salary: 600, tax: "30%" },
+   Artist: { salary: 1500, tax: "15%" },}
+
+const team =  [
+   { name: "Misha", specialization: "Manager" },
+   { name: "Max", specialization: "Designer" },
+   { name: "Vova", specialization: "Designer"},
+   { name: "Leo", specialization: "Artist"},]
+
+
+
+function calculateTeamFinanceReport(salaries, team) {
+
+    const res = team.reduce((acc, item) => {
+        if (!Object.keys(salaries).includes(item.specialization)) {
+            return acc
+         }
+    return acc[`totalBudget${item.specialization}`] ? {
+            ...acc, totalBudgetTeam: acc.totalBudgetTeam+salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100),[`totalBudget${item.specialization}`]: acc[`totalBudget${item.specialization}`] +
+                salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100)
+        } : {
+            ...acc, totalBudgetTeam: acc.totalBudgetTeam+salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100),[`totalBudget${item.specialization}`]: 0 +
+                salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100)
+        }
+    }, {totalBudgetTeam:0})
+;
+
+for (const key in res) {
+    if (Object.prototype.hasOwnProperty.call(res, key)) {
+      res[key]=Math.floor(res[key]);
+    }
+    continue
+}
+
+  
+    return res
+}
+
+/* see in console
+{
+   "totalBudgetTeam":4590, // total budget does not match the sum of specializations due to truncation of the fractional part
+   "totalBudgetManager":1111,
+   "totalBudgetDesigner":1714,
+   "totalBudgetArtist":1764,
+}
+*/
+
+
+ console.log(calculateTeamFinanceReport(salaries, team))
+
+
+
+const salaries2 = {
+   TeamLead: { salary: 1000, tax: "99%" },
+   Architect: { salary: 9000, tax: "34%" },}
+const team2 = [
+   { name: "Alexander", specialization: "TeamLead" },
+   { name: "Gaudi", specialization: "Architect" },
+   { name: "Koolhas", specialization: "Architect" },
+   { name: "Foster", specialization: "Architect" },
+    { name: "Napoleon", specialization: "General" },]
+   
+console.log(calculateTeamFinanceReport(salaries2, team2))
+     
+// {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}

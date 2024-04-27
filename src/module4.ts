@@ -3191,45 +3191,45 @@
 
 // sortVowels('Codewars')
 
-const salaries={
-   Manager: { salary: 1000, tax: "10%" },
-   Designer: { salary: 600, tax: "30%" },
-   Artist: { salary: 1500, tax: "15%" },}
+// const salaries={
+//    Manager: { salary: 1000, tax: "10%" },
+//    Designer: { salary: 600, tax: "30%" },
+//    Artist: { salary: 1500, tax: "15%" },}
 
-const team =  [
-   { name: "Misha", specialization: "Manager" },
-   { name: "Max", specialization: "Designer" },
-   { name: "Vova", specialization: "Designer"},
-   { name: "Leo", specialization: "Artist"},]
+// const team =  [
+//    { name: "Misha", specialization: "Manager" },
+//    { name: "Max", specialization: "Designer" },
+//    { name: "Vova", specialization: "Designer"},
+//    { name: "Leo", specialization: "Artist"},]
 
 
 
-function calculateTeamFinanceReport(salaries, team) {
+// function calculateTeamFinanceReport(salaries, team) {
 
-    const res = team.reduce((acc, item) => {
-        if (!Object.keys(salaries).includes(item.specialization)) {
-            return acc
-         }
-    return acc[`totalBudget${item.specialization}`] ? {
-            ...acc, totalBudgetTeam: acc.totalBudgetTeam+salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100),[`totalBudget${item.specialization}`]: acc[`totalBudget${item.specialization}`] +
-                salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100)
-        } : {
-            ...acc, totalBudgetTeam: acc.totalBudgetTeam+salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100),[`totalBudget${item.specialization}`]: 0 +
-                salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100)
-        }
-    }, {totalBudgetTeam:0})
-;
+//     const res = team.reduce((acc, item) => {
+//         if (!Object.keys(salaries).includes(item.specialization)) {
+//             return acc
+//          }
+//     return acc[`totalBudget${item.specialization}`] ? {
+//             ...acc, totalBudgetTeam: acc.totalBudgetTeam+salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100),[`totalBudget${item.specialization}`]: acc[`totalBudget${item.specialization}`] +
+//                 salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100)
+//         } : {
+//             ...acc, totalBudgetTeam: acc.totalBudgetTeam+salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100),[`totalBudget${item.specialization}`]: 0 +
+//                 salaries[item.specialization].salary/((100-parseInt( salaries[item.specialization].tax))/100)
+//         }
+//     }, {totalBudgetTeam:0})
+// ;
 
-for (const key in res) {
-    if (Object.prototype.hasOwnProperty.call(res, key)) {
-      res[key]=Math.floor(res[key]);
-    }
-    continue
-}
+// for (const key in res) {
+//     if (Object.prototype.hasOwnProperty.call(res, key)) {
+//       res[key]=Math.floor(res[key]);
+//     }
+//     continue
+// }
 
   
-    return res
-}
+//     return res
+// }
 
 /* see in console
 {
@@ -3241,20 +3241,69 @@ for (const key in res) {
 */
 
 
- console.log(calculateTeamFinanceReport(salaries, team))
+//  console.log(JSON.stringify( calculateTeamFinanceReport(salaries, team)))
 
 
 
-const salaries2 = {
-   TeamLead: { salary: 1000, tax: "99%" },
-   Architect: { salary: 9000, tax: "34%" },}
-const team2 = [
-   { name: "Alexander", specialization: "TeamLead" },
-   { name: "Gaudi", specialization: "Architect" },
-   { name: "Koolhas", specialization: "Architect" },
-   { name: "Foster", specialization: "Architect" },
-    { name: "Napoleon", specialization: "General" },]
+// const salaries2 = {
+//    TeamLead: { salary: 1000, tax: "99%" },
+//    Architect: { salary: 9000, tax: "34%" },}
+// const team2 = [
+//    { name: "Alexander", specialization: "TeamLead" },
+//    { name: "Gaudi", specialization: "Architect" },
+//    { name: "Koolhas", specialization: "Architect" },
+//    { name: "Foster", specialization: "Architect" },
+//     { name: "Napoleon", specialization: "General" },]
    
-console.log(calculateTeamFinanceReport(salaries2, team2))
+// console.log(calculateTeamFinanceReport(salaries2, team2))
      
 // {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}
+
+
+// function showThis() { 
+//     console.log("This is", this)
+// }
+
+// console.log(showThis())
+
+// const user = {
+//     name: "Petro",
+   
+// }
+
+// user.showContext=showThis
+
+
+// user.showContext()
+
+
+// class User{ 
+//     constructor(name) { 
+//         this.name=name
+//     }
+
+    
+// }
+
+// const mango=new User("Mykola")
+// console.log('mango:', mango)
+
+
+class User { 
+    #email
+    constructor({name, email}) { 
+        this.name=name
+        this.#email=email
+    }
+
+
+    get email() { 
+        return this.#email
+    }
+
+}
+
+const newUser = new User({ name: "Mykola", email: "nnv2006@ukr.net", })
+
+newUser.email
+console.log('newUser.email:', newUser.email)

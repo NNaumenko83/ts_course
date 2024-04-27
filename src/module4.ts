@@ -3178,23 +3178,51 @@
 
 // https://www.codewars.com/kata/59e49b2afc3c494d5d00002a/train/typescript
 
-// const vowels=["a", "e", "i", "o","u"]
+// // const vowels=["a", "e", "i", "o","u"]
 
-// function sortVowels(str?: number | string | null): string {
-//   if (typeof str !== "string") { 
-//     return ""
+// // function sortVowels(str?: number | string | null): string {
+// //   if (typeof str !== "string") {
+// //     return ""
+// //   }
+
+// //  return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
+// // };
+
+
+// // sortVowels('Codewars')
+
+// 
+// function sortByValueAndIndex(array: number[]): number[] {
+  
+//   const resArr: number[] = []
+//   const copyArr=[...array]
+  
+//   const arrayToIndex=array.map((item, index)=>item*(index+1))
+//   console.log('arrayToIndex:', arrayToIndex)
+
+//   while (copyArr.length > 0) {
+
+//     let maxIndex=arrayToIndex.indexOf(Math.max(...arrayToIndex))
+   
+//     resArr.unshift(copyArr[maxIndex])
+//     copyArr.splice(maxIndex, 1)
+//     arrayToIndex.splice(maxIndex, 1)
 //   }
+ 
+//   console.log('resArr:', resArr)
+//   return resArr.reverse()
+// }
 
-//  return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
-// };
+// console.log( sortByValueAndIndex([
+//   -22, 6, -15, 23,
+//   -10, 2,  -9, 10
+// ]))
 
-
-// sortVowels('Codewars')
 
 // const salaries={
-//    Manager: { salary: 1000, tax: "10%" },
-//    Designer: { salary: 600, tax: "30%" },
-//    Artist: { salary: 1500, tax: "15%" },}
+// //    Manager: { salary: 1000, tax: "10%" },
+// //    Designer: { salary: 600, tax: "30%" },
+// //    Artist: { salary: 1500, tax: "15%" },}
 
 // const team =  [
 //    { name: "Misha", specialization: "Manager" },
@@ -3241,21 +3269,21 @@
 */
 
 
-//  console.log(JSON.stringify( calculateTeamFinanceReport(salaries, team)))
+// //  console.log(JSON.stringify( calculateTeamFinanceReport(salaries, team)))
 
 
 
-// const salaries2 = {
-//    TeamLead: { salary: 1000, tax: "99%" },
-//    Architect: { salary: 9000, tax: "34%" },}
-// const team2 = [
-//    { name: "Alexander", specialization: "TeamLead" },
-//    { name: "Gaudi", specialization: "Architect" },
-//    { name: "Koolhas", specialization: "Architect" },
-//    { name: "Foster", specialization: "Architect" },
-//     { name: "Napoleon", specialization: "General" },]
+// // const salaries2 = {
+// //    TeamLead: { salary: 1000, tax: "99%" },
+// //    Architect: { salary: 9000, tax: "34%" },}
+// // const team2 = [
+// //    { name: "Alexander", specialization: "TeamLead" },
+// //    { name: "Gaudi", specialization: "Architect" },
+// //    { name: "Koolhas", specialization: "Architect" },
+// //    { name: "Foster", specialization: "Architect" },
+// //     { name: "Napoleon", specialization: "General" },]
    
-// console.log(calculateTeamFinanceReport(salaries2, team2))
+// // console.log(calculateTeamFinanceReport(salaries2, team2))
      
 // {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}
 
@@ -3307,3 +3335,50 @@ const newUser = new User({ name: "Mykola", email: "nnv2006@ukr.net", })
 
 newUser.email
 console.log('newUser.email:', newUser.email)
+
+
+
+
+// let x = 1
+// console.log(x++ + x)
+
+// const test = 3
+// console.log('test:', test)
+
+
+// const num=Math.random()
+// console.log('num:', num)
+
+
+// new Date()
+
+
+// const getUsers = async () => {
+//   const users = await fetch("https://jsonplaceholder.typicode.com/users")
+//   const usersTest= await users.json()
+//   console.log('usersTest:', usersTest)
+//   return usersTest
+//  }
+
+
+// const users = getUsers()
+// console.log('users:', users)
+
+
+// https://www.codewars.com/kata/64fc03a318692c1333ebc04c/train/typescript
+
+function bestFriend(txt: string, a: string, b: string): boolean {
+
+  for (let i = 0; i < txt.length; i++) {
+    if (txt[i] === a && txt[i + 1] !== b) { 
+      return false
+    }
+    
+  }
+   
+  return true; 
+}
+
+
+
+console.log(bestFriend('he headed to the store', 'h', 'e'))

@@ -3318,18 +3318,43 @@
 
 // https://www.codewars.com/kata/64fc03a318692c1333ebc04c/train/typescript
 
-function bestFriend(txt: string, a: string, b: string): boolean {
+// function bestFriend(txt: string, a: string, b: string): boolean {
 
-  for (let i = 0; i < txt.length; i++) {
-    if (txt[i] === a && txt[i + 1] !== b) { 
-      return false
-    }
-    
-  }
+//   for (let i = 0; i < txt.length; i++) {
+//     if (txt[i] === a && txt[i + 1] !== b) {
+//       return false
+//     }
+//     console.log(arguments)
+//   }
    
-  return true; 
+//   return true;
+// }
+
+// const bestFriend = (...argd): boolean => {
+//   console.log(...argd)
+  
+//   return true
+// }
+
+// console.log(bestFriend('he headed to the store', 'h', 'e'))
+
+
+// class User {
+
+//   constructor(public name: string, public age: number) {
+//     name = this.name;
+//     age=this.age
+//   }
+// }
+
+
+// const user=new User("Mykola",10)
+// console.log('user:', user)
+
+// https://www.codewars.com/kata/5a63948acadebff56f000018/train/typescript
+
+function maxProduct(numbers: number[], size: number): number {
+  return numbers.sort((a, b) => b - a).splice(0, size).reduce((acc, item) => acc*item)
 }
 
-
-
-console.log(bestFriend('he headed to the store', 'h', 'e'))
+console.log(maxProduct([10, 8, 7, 9], 3))

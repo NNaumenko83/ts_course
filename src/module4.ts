@@ -3353,8 +3353,21 @@
 
 // https://www.codewars.com/kata/5a63948acadebff56f000018/train/typescript
 
-function maxProduct(numbers: number[], size: number): number {
-  return numbers.sort((a, b) => b - a).splice(0, size).reduce((acc, item) => acc*item)
+// function maxProduct(numbers: number[], size: number): number {
+//   return numbers.sort((a, b) => b - a).splice(0, size).reduce((acc, item) => acc*item)
+// }
+
+// console.log(maxProduct([10, 8, 7, 9], 3))
+
+
+
+
+// https://www.codewars.com/kata/5ab363ff6a176b29880000dd/train/typescript
+
+function hexHash(code: string): number {
+   
+   return Array.from(code, x => isNaN(parseInt(x.charCodeAt(0).toString(16)))?parseInt(x.charCodeAt(0).toString(16).split("").reverse().join("")):parseInt(x.charCodeAt(0).toString(16))).reduce((acc, item) => isNaN(item)?acc:acc+item,"").split("").reduce((acc, item) => acc+Number(item),0)
+
 }
 
-console.log(maxProduct([10, 8, 7, 9], 3))
+console.log(hexHash('ku£'))

@@ -3367,18 +3367,29 @@ console.log('newUser.email:', newUser.email)
 
 // https://www.codewars.com/kata/64fc03a318692c1333ebc04c/train/typescript
 
-function bestFriend(txt: string, a: string, b: string): boolean {
+// function bestFriend(txt: string, a: string, b: string): boolean {
 
-  for (let i = 0; i < txt.length; i++) {
-    if (txt[i] === a && txt[i + 1] !== b) { 
-      return false
-    }
+//   for (let i = 0; i < txt.length; i++) {
+//     if (txt[i] === a && txt[i + 1] !== b) { 
+//       return false
+//     }
     
-  }
+//   }
    
-  return true; 
+//   return true; 
+// }
+
+
+
+// console.log(bestFriend('he headed to the store', 'h', 'e'))
+
+
+// https://www.codewars.com/kata/5302d846be2a9189af0001e4/train/typescript
+
+// 'Hello, John Smith! Welcome to Phoenix, Arizona!'
+
+const sayHello = (name: string[], city: string, state: string):string => {
+  return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`;
 }
 
-
-
-console.log(bestFriend('he headed to the store', 'h', 'e'))
+console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'))

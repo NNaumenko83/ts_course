@@ -3367,7 +3367,7 @@ console.log('newUser.email:', newUser.email)
 
 // https://www.codewars.com/kata/64fc03a318692c1333ebc04c/train/typescript
 
-// function bestFriend(txt: string, a: string, b: string): boolean {
+// // function bestFriend(txt: string, a: string, b: string): boolean {
 
 //   for (let i = 0; i < txt.length; i++) {
 //     if (txt[i] === a && txt[i + 1] !== b) { 

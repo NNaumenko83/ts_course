@@ -3364,10 +3364,78 @@
 
 // https://www.codewars.com/kata/5ab363ff6a176b29880000dd/train/typescript
 
-function hexHash(code: string): number {
+// function hexHash(code: string): number {
+//    console.log(code)
+//    console.log("1")
    
-   return Array.from(code, x => isNaN(parseInt(x.charCodeAt(0).toString(16)))?parseInt(x.charCodeAt(0).toString(16).split("").reverse().join("")):parseInt(x.charCodeAt(0).toString(16))).reduce((acc, item) => isNaN(item)?acc:acc+item,"").split("").reduce((acc, item) => acc+Number(item),0)
+//    return Array.from(code, x => isNaN(parseInt(x.charCodeAt(0).toString(16)))?parseInt(x.charCodeAt(0).toString(16).split("").reverse().join("")):parseInt(x.charCodeAt(0).toString(16))).reduce((acc, item) => isNaN(item)?acc:acc+item,"").split("").reduce((acc, item) => acc+Number(item),0)
 
+// }
+
+// console.log(hexHash('ku£'))
+
+// https://www.codewars.com/kata/573c91c5eaffa3bd350000b0/train/typescript
+
+// function gematria(str: string): number {
+   
+// const values: Record<string, number> = {
+//   a: 1,
+//   b: 2,
+//   c: 3,
+//   d: 4,
+//   e: 5,
+//   f: 6,
+//   g: 7,
+//   h: 8,
+//   i: 9,
+//   j: 600,
+//   k: 10,
+//   l: 20,
+//   m: 30,
+//   n: 40,
+//   o: 50,
+//   p: 60,
+//   q: 70,
+//   r: 80,
+//   s: 90,
+//   t: 100,
+//   u: 200,
+//   v: 700,
+//   w: 900,
+//   x: 300,
+//   y: 400,
+//   z: 500
+//    };
+   
+// return [...str.replaceAll(" ","")].reduce((acc, item) => acc + values[item.toLocaleLowerCase()], 0);
+// }
+
+// console.log('gematria("love"):', gematria("Coding is fun"))
+
+// https://www.codewars.com/kata/5a7778790136a132a00000c1/train/typescript
+
+function singleDigit(n: number): number {
+   if (n < 10) { 
+      return n
+   }
+   let res=binarySum(n)
+   console.log('res:', res)
+   if (res >= 10) { 
+      return singleDigit(res)
+   }
+   return res
 }
 
-console.log(hexHash('ku£'))
+function binarySum(numb: number): number {
+   const arr:number[] = [];
+   while (numb > 0) {
+      arr.push(numb % 2);
+      numb = Math.floor(numb / 2);
+   }
+   return arr.reduce((acc, item) => acc+item)
+   }
+
+
+
+
+console.log(singleDigit(4868872))

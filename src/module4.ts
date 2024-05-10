@@ -3191,7 +3191,7 @@
 
 // // sortVowels('Codewars')
 
-
+// 
 // function sortByValueAndIndex(array: number[]): number[] {
   
 //   const resArr: number[] = []
@@ -3220,9 +3220,9 @@
 
 
 // const salaries={
-//    Manager: { salary: 1000, tax: "10%" },
-//    Designer: { salary: 600, tax: "30%" },
-//    Artist: { salary: 1500, tax: "15%" },}
+// //    Manager: { salary: 1000, tax: "10%" },
+// //    Designer: { salary: 600, tax: "30%" },
+// //    Artist: { salary: 1500, tax: "15%" },}
 
 // const team =  [
 //    { name: "Misha", specialization: "Manager" },
@@ -3269,23 +3269,72 @@
 */
 
 
-//  console.log(calculateTeamFinanceReport(salaries, team))
+// //  console.log(JSON.stringify( calculateTeamFinanceReport(salaries, team)))
 
 
 
-// const salaries2 = {
-//    TeamLead: { salary: 1000, tax: "99%" },
-//    Architect: { salary: 9000, tax: "34%" },}
-// const team2 = [
-//    { name: "Alexander", specialization: "TeamLead" },
-//    { name: "Gaudi", specialization: "Architect" },
-//    { name: "Koolhas", specialization: "Architect" },
-//    { name: "Foster", specialization: "Architect" },
-//     { name: "Napoleon", specialization: "General" },]
+// // const salaries2 = {
+// //    TeamLead: { salary: 1000, tax: "99%" },
+// //    Architect: { salary: 9000, tax: "34%" },}
+// // const team2 = [
+// //    { name: "Alexander", specialization: "TeamLead" },
+// //    { name: "Gaudi", specialization: "Architect" },
+// //    { name: "Koolhas", specialization: "Architect" },
+// //    { name: "Foster", specialization: "Architect" },
+// //     { name: "Napoleon", specialization: "General" },]
    
-// console.log(calculateTeamFinanceReport(salaries2, team2))
+// // console.log(calculateTeamFinanceReport(salaries2, team2))
      
 // {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}
+
+
+// function showThis() { 
+//     console.log("This is", this)
+// }
+
+// console.log(showThis())
+
+// const user = {
+//     name: "Petro",
+   
+// }
+
+// user.showContext=showThis
+
+
+// user.showContext()
+
+
+// class User{ 
+//     constructor(name) { 
+//         this.name=name
+//     }
+
+    
+// }
+
+// const mango=new User("Mykola")
+// console.log('mango:', mango)
+
+
+class User { 
+    #email
+    constructor({name, email}) { 
+        this.name=name
+        this.#email=email
+    }
+
+
+    get email() { 
+        return this.#email
+    }
+
+}
+
+const newUser = new User({ name: "Mykola", email: "nnv2006@ukr.net", })
+
+newUser.email
+console.log('newUser.email:', newUser.email)
 
 
 
@@ -3318,61 +3367,32 @@
 
 // https://www.codewars.com/kata/64fc03a318692c1333ebc04c/train/typescript
 
-// function bestFriend(txt: string, a: string, b: string): boolean {
+// // function bestFriend(txt: string, a: string, b: string): boolean {
 
 //   for (let i = 0; i < txt.length; i++) {
-//     if (txt[i] === a && txt[i + 1] !== b) {
+//     if (txt[i] === a && txt[i + 1] !== b) { 
 //       return false
 //     }
-//     console.log(arguments)
+    
 //   }
    
-//   return true;
+//   return true; 
 // }
 
-// const bestFriend = (...argd): boolean => {
-//   console.log(...argd)
-  
-//   return true
-// }
+
 
 // console.log(bestFriend('he headed to the store', 'h', 'e'))
 
 
-// class User {
+// https://www.codewars.com/kata/5302d846be2a9189af0001e4/train/typescript
 
-//   constructor(public name: string, public age: number) {
-//     name = this.name;
-//     age=this.age
-//   }
-// }
+// 'Hello, John Smith! Welcome to Phoenix, Arizona!'
 
+const sayHello = (name: string[], city: string, state: string):string => {
+  return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`;
+}
 
-// const user=new User("Mykola",10)
-// console.log('user:', user)
-
-// https://www.codewars.com/kata/5a63948acadebff56f000018/train/typescript
-
-// function maxProduct(numbers: number[], size: number): number {
-//   return numbers.sort((a, b) => b - a).splice(0, size).reduce((acc, item) => acc*item)
-// }
-
-// console.log(maxProduct([10, 8, 7, 9], 3))
-
-
-
-
-// https://www.codewars.com/kata/5ab363ff6a176b29880000dd/train/typescript
-
-// function hexHash(code: string): number {
-//    console.log(code)
-//    console.log("1")
-   
-//    return Array.from(code, x => isNaN(parseInt(x.charCodeAt(0).toString(16)))?parseInt(x.charCodeAt(0).toString(16).split("").reverse().join("")):parseInt(x.charCodeAt(0).toString(16))).reduce((acc, item) => isNaN(item)?acc:acc+item,"").split("").reduce((acc, item) => acc+Number(item),0)
-
-// }
-
-// console.log(hexHash('ku£'))
+// console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'))
 
 // https://www.codewars.com/kata/573c91c5eaffa3bd350000b0/train/typescript
 

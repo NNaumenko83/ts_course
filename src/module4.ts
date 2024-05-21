@@ -3434,28 +3434,60 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // https://www.codewars.com/kata/5a7778790136a132a00000c1/train/typescript
 
-function singleDigit(n: number): number {
-   if (n < 10) { 
-      return n
+// function singleDigit(n: number): number {
+//    if (n < 10) {
+//       return n
+//    }
+//    let res=binarySum(n)
+//    console.log('res:', res)
+//    if (res >= 10) {
+//       return singleDigit(res)
+//    }
+//    return res
+// }
+
+// function binarySum(numb: number): number {
+//    const arr:number[] = [];
+//    while (numb > 0) {
+//       arr.push(numb % 2);
+//       numb = Math.floor(numb / 2);
+//    }
+//    return arr.reduce((acc, item) => acc+item)
+//    }
+
+
+
+
+// console.log(singleDigit(4868872))https://www.codewars.com/kata/5679aa472b8f57fb8c000047/train/typescript
+
+function findEvenIndex(arr: number[]): number
+{   
+
+   for (let i = 0; i < arr.length; i++) { 
+      if (leftSideSumm(arr.slice(0, i)) === rightSideSumm(arr.slice(i + 1))) {
+         return i;
+      }
    }
-   let res=binarySum(n)
-   console.log('res:', res)
-   if (res >= 10) { 
-      return singleDigit(res)
-   }
-   return res
+   return -1
 }
 
-function binarySum(numb: number): number {
-   const arr:number[] = [];
-   while (numb > 0) {
-      arr.push(numb % 2);
-      numb = Math.floor(numb / 2);
+function leftSideSumm(arr: number[]): number{ 
+   console.log(arr)
+   let sum = 0;
+   for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
    }
-   return arr.reduce((acc, item) => acc+item)
+   return sum;
+}
+
+function rightSideSumm(arr: number[]): number {
+   console.log(arr)
+    let sum = 0;
+   for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
    }
+   return sum;
+ }
 
 
-
-
-console.log(singleDigit(4868872))
+console.log(findEvenIndex([20,10,-80,10,10,15,35])) 

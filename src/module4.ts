@@ -3496,27 +3496,45 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // https://www.codewars.com/kata/51fc3beb41ecc97ee20000c3/train/typescript
 
-function makeLooper(str: string): () => string {
-   let numb = 0; 
-   return () => { if (numb > str.length-1) { 
-      numb = 0;
-   } 
-      numb += 1;
-   return str[numb-1]};
-}
+// function makeLooper(str: string): () => string {
+//    let numb = 0;
+//    return () => { if (numb > str.length-1) {
+//       numb = 0;
+//    }
+//       numb += 1;
+//    return str[numb-1]};
+// }
 
 
-const abc = makeLooper("abc");
+// const abc = makeLooper("abc");
  
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
-console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+
+
+// function counter(): ()=>number { 
+//    let count = 0;
+   
+//    return () => {
+//       count += 1;
+//       return count;
+//    }
+// }
+
+// const test=counter()
+
+// console.log(test())
+// console.log(test())
+// console.log(test())
+// console.log(test())
+// console.log(test())

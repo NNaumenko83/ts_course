@@ -3460,34 +3460,63 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // console.log(singleDigit(4868872))https://www.codewars.com/kata/5679aa472b8f57fb8c000047/train/typescript
 
-function findEvenIndex(arr: number[]): number
-{   
+// function findEvenIndex(arr: number[]): number
+// {
 
-   for (let i = 0; i < arr.length; i++) { 
-      if (leftSideSumm(arr.slice(0, i)) === rightSideSumm(arr.slice(i + 1))) {
-         return i;
-      }
-   }
-   return -1
+//    for (let i = 0; i < arr.length; i++) {
+//       if (leftSideSumm(arr.slice(0, i)) === rightSideSumm(arr.slice(i + 1))) {
+//          return i;
+//       }
+//    }
+//    return -1
+// }
+
+// function leftSideSumm(arr: number[]): number{
+//    console.log(arr)
+//    let sum = 0;
+//    for (let i = 0; i < arr.length; i++) {
+//       sum += arr[i];
+//    }
+//    return sum;
+// }
+
+// function rightSideSumm(arr: number[]): number {
+//    console.log(arr)
+//     let sum = 0;
+//    for (let i = 0; i < arr.length; i++) {
+//       sum += arr[i];
+//    }
+//    return sum;
+//  }
+
+
+// console.log(findEvenIndex([20,10,-80,10,10,15,35]))
+
+
+
+// https://www.codewars.com/kata/51fc3beb41ecc97ee20000c3/train/typescript
+
+function makeLooper(str: string): () => string {
+   let numb = 0; 
+   return () => { if (numb > str.length-1) { 
+      numb = 0;
+   } 
+      numb += 1;
+   return str[numb-1]};
 }
 
-function leftSideSumm(arr: number[]): number{ 
-   console.log(arr)
-   let sum = 0;
-   for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
-   }
-   return sum;
-}
 
-function rightSideSumm(arr: number[]): number {
-   console.log(arr)
-    let sum = 0;
-   for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
-   }
-   return sum;
- }
-
-
-console.log(findEvenIndex([20,10,-80,10,10,15,35])) 
+const abc = makeLooper("abc");
+ 
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())
+console.log(abc())

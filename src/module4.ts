@@ -3522,7 +3522,7 @@ const sayHello = (name: string[], city: string, state: string):string => {
 // console.log(abc())
 
 
-// function counter(): ()=>number { 
+// function counter(): ()=>number {
 //    let count = 0;
    
 //    return () => {
@@ -3538,3 +3538,52 @@ const sayHello = (name: string[], city: string, state: string):string => {
 // console.log(test())
 // console.log(test())
 // console.log(test())
+
+
+
+
+
+const key = "GA-DE-RY-PO-LU-KI"
+
+type Key = {
+   [key: string]: string;
+}
+
+function encode(str: string): string {
+   const keyObj=keyObject(key)
+   
+let encodedStr = ""
+   for (let i = 0; i < str.length; i++) {
+      if (keyObj[str[i]]) {
+         encodedStr += keyObj[str[i]]
+      } else {
+         encodedStr += str[i]
+      }
+   }
+   
+   return encodedStr;
+}
+
+function decode(str: string): string { 
+   const keyObj = keyObject(key)
+   let decodedStr = ""
+    for (let i = 0; i < str.length; i++) {
+      if (keyObj[str[i]]) {
+         decodedStr += keyObj[str[i]]
+      } else {
+         decodedStr += str[i]
+      }
+   }
+
+   return decodedStr;
+}
+
+const keyObject = (key: string): Key => { 
+   return key.split("-").reduce((acc, item) => { return {...acc,[item[0]]:item[1],[item[1]]:item[0],[item[0].toLowerCase()]:item[1].toLowerCase(),[item[1]]:item[0],[item[1].toLowerCase()]:item[0].toLowerCase(),[item[0]]:item[1]} },{})
+  
+}
+
+
+console.log(encode("Ala has a cat"))
+
+console.log( decode("Gug hgs g cgt"))

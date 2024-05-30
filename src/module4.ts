@@ -3543,47 +3543,67 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 
 
-const key = "GA-DE-RY-PO-LU-KI"
+// const key = "GA-DE-RY-PO-LU-KI"
 
-type Key = {
-   [key: string]: string;
-}
+// type Key = {
+//    [key: string]: string;
+// }
 
-function encode(str: string): string {
-   const keyObj=keyObject(key)
+// function encode(str: string): string {
+//    const keyObj=keyObject(key)
    
-let encodedStr = ""
-   for (let i = 0; i < str.length; i++) {
-      if (keyObj[str[i]]) {
-         encodedStr += keyObj[str[i]]
-      } else {
-         encodedStr += str[i]
-      }
-   }
+// let encodedStr = ""
+//    for (let i = 0; i < str.length; i++) {
+//       if (keyObj[str[i]]) {
+//          encodedStr += keyObj[str[i]]
+//       } else {
+//          encodedStr += str[i]
+//       }
+//    }
    
-   return encodedStr;
-}
+//    return encodedStr;
+// }
 
-function decode(str: string): string { 
-   const keyObj = keyObject(key)
-   let decodedStr = ""
-    for (let i = 0; i < str.length; i++) {
-      if (keyObj[str[i]]) {
-         decodedStr += keyObj[str[i]]
-      } else {
-         decodedStr += str[i]
-      }
-   }
+// function decode(str: string): string {
+//    const keyObj = keyObject(key)
+//    let decodedStr = ""
+//     for (let i = 0; i < str.length; i++) {
+//       if (keyObj[str[i]]) {
+//          decodedStr += keyObj[str[i]]
+//       } else {
+//          decodedStr += str[i]
+//       }
+//    }
 
-   return decodedStr;
-}
+//    return decodedStr;
+// }
 
-const keyObject = (key: string): Key => { 
-   return key.split("-").reduce((acc, item) => { return {...acc,[item[0]]:item[1],[item[1]]:item[0],[item[0].toLowerCase()]:item[1].toLowerCase(),[item[1]]:item[0],[item[1].toLowerCase()]:item[0].toLowerCase(),[item[0]]:item[1]} },{})
+// const keyObject = (key: string): Key => {
+//    return key.split("-").reduce((acc, item) => { return {...acc,[item[0]]:item[1],[item[1]]:item[0],[item[0].toLowerCase()]:item[1].toLowerCase(),[item[1]]:item[0],[item[1].toLowerCase()]:item[0].toLowerCase(),[item[0]]:item[1]} },{})
   
+// }
+
+
+// console.log(encode("Ala has a cat"))
+
+// console.log( decode("Gug hgs g cgt"))
+
+
+
+// https://www.codewars.com/kata/593a061b942a27ac940000a7/train/typescript
+
+function gettingMad(array: number[]): number {
+   const diffArray:number[] = []
+   for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array.length; j++) { 
+         if (i !== j) { 
+            diffArray.push(Math.abs(array[i] - array[j]))
+         }
+      }
+    }
+
+    return Math.min(...diffArray);
 }
 
-
-console.log(encode("Ala has a cat"))
-
-console.log( decode("Gug hgs g cgt"))
+console.log(gettingMad(([-10, 0, -3, 1])))
+console.log(gettingMad((([0,0,0,0,0]))))

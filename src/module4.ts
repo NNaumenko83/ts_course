@@ -3611,40 +3611,51 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/typescript
 
-function findUniq(arr: number[]): number {
-    let res = 0;
-    for (let i = 0; i < arr.length; i++) { 
-        if (arr.lastIndexOf(arr[i])=== arr.indexOf(arr[i]) ) { 
-            res = arr[i]
-            break
-        }
-        continue
-    }
-    return res
-}
+// function findUniq(arr: number[]): number {
+//     let res = 0;
+//     for (let i = 0; i < arr.length; i++) { 
+//         if (arr.lastIndexOf(arr[i])=== arr.indexOf(arr[i]) ) { 
+//             res = arr[i]
+//             break
+//         }
+//         continue
+//     }
+//     return res
+// }
 
-console.log(findUniq([
-  8, 8, 8, 8,
-  8, 8, 8, 7
-]))
+// console.log(findUniq([
+//   8, 8, 8, 8,
+//   8, 8, 8, 7
+// ]))
 
 // https://www.codewars.com/kata/55466989aeecab5aac00003e/train/typescript
 
 
-export const sqInRect = (l: number, w: number): null | number[] => {
-   const resArray:number[]=[]
-   if (l === w) return null;
+// const sqInRect = (l: number, w: number): null | number[] => {
+//    const resArray:number[]=[]
+//    if (l === w) return null;
 
-   if (l < w) { 
-      [l,w]=[w,l]
-   }    
+//    if (l < w) { 
+//       [l,w]=[w,l]
+//     }   
+   
+//     // while (l >= w) {
+//     //    resArray.push(w)
+//     //    l = l - w;
+//     //    [l,w]=[w,l]
+//     // }
+    
+    
 
 
-    return resArray
-}
+    
 
 
-console.log(sqInRect(5, 3))
+//     return resArray
+// }
+
+
+// console.log(sqInRect(20, 14))
 
 
 //   testing(5, 5, null);
@@ -3652,3 +3663,22 @@ console.log(sqInRect(5, 3))
 //         testing(3, 5, [3, 2, 1, 1]);
 //         testing(20, 14, [14, 6, 6, 2, 2, 2]);
 //         testing(14, 20, [14, 6, 6, 2, 2, 2]);
+
+
+// https://www.codewars.com/kata/55c45be3b2079eccff00010f/train/typescript
+
+function order(words: string): string{
+    
+    if (!words) { return "" }
+
+    const wordsArray = words.split(" ").sort((a, b) => { 
+        const aNumber:number = Number([...a].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
+        const bNumber:number = Number([...b].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
+        
+        return aNumber-bNumber
+    });
+
+    return wordsArray.join(" ")
+}
+
+console.log(order("is2 Thi1s T41est 3a")) 

@@ -3592,18 +3592,38 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // https://www.codewars.com/kata/593a061b942a27ac940000a7/train/typescript
 
-function gettingMad(array: number[]): number {
-   const diffArray:number[] = []
-   for (let i = 0; i < array.length; i++) {
-      for (let j = 0; j < array.length; j++) { 
-         if (i !== j) { 
-            diffArray.push(Math.abs(array[i] - array[j]))
-         }
-      }
-    }
+// function gettingMad(array: number[]): number {
+//    const diffArray:number[] = []
+//    for (let i = 0; i < array.length; i++) {
+//       for (let j = 0; j < array.length; j++) { 
+//          if (i !== j) { 
+//             diffArray.push(Math.abs(array[i] - array[j]))
+//          }
+//       }
+//     }
 
-    return Math.min(...diffArray);
+//     return Math.min(...diffArray);
+// }
+
+// console.log(gettingMad(([-10, 0, -3, 1])))
+// console.log(gettingMad((([0,0,0,0,0]))))
+
+
+// https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/typescript
+
+function findUniq(arr: number[]): number {
+    let res = 0;
+    for (let i = 0; i < arr.length; i++) { 
+        if (arr.lastIndexOf(arr[i])=== arr.indexOf(arr[i]) ) { 
+            res = arr[i]
+            break
+        }
+        continue
+    }
+    return res
 }
 
-console.log(gettingMad(([-10, 0, -3, 1])))
-console.log(gettingMad((([0,0,0,0,0]))))
+console.log(findUniq([
+  8, 8, 8, 8,
+  8, 8, 8, 7
+]))

@@ -3592,18 +3592,43 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // https://www.codewars.com/kata/593a061b942a27ac940000a7/train/typescript
 
-function gettingMad(array: number[]): number {
-   const diffArray:number[] = []
-   for (let i = 0; i < array.length; i++) {
-      for (let j = 0; j < array.length; j++) { 
-         if (i !== j) { 
-            diffArray.push(Math.abs(array[i] - array[j]))
-         }
-      }
-    }
+// function gettingMad(array: number[]): number {
+//    const diffArray:number[] = []
+//    for (let i = 0; i < array.length; i++) {
+//       for (let j = 0; j < array.length; j++) {
+//          if (i !== j) {
+//             diffArray.push(Math.abs(array[i] - array[j]))
+//          }
+//       }
+//     }
 
-    return Math.min(...diffArray);
+//     return Math.min(...diffArray);
+// }
+
+// console.log(gettingMad(([-10, 0, -3, 1])))
+// console.log(gettingMad((([0,0,0,0,0]))))
+
+// https://www.codewars.com/kata/55466989aeecab5aac00003e/train/typescript
+
+
+export const sqInRect = (l: number, w: number): null | number[] => {
+   const resArray:number[]=[]
+   if (l === w) return null;
+
+   if (l < w) { 
+      [l,w]=[w,l]
+   }    
+
+
+    return resArray
 }
 
-console.log(gettingMad(([-10, 0, -3, 1])))
-console.log(gettingMad((([0,0,0,0,0]))))
+
+console.log(sqInRect(5, 3))
+
+
+//   testing(5, 5, null);
+//         testing(5, 3, [3, 2, 1, 1]);
+//         testing(3, 5, [3, 2, 1, 1]);
+//         testing(20, 14, [14, 6, 6, 2, 2, 2]);
+//         testing(14, 20, [14, 6, 6, 2, 2, 2]);

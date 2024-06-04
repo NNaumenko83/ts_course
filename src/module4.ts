@@ -3613,8 +3613,8 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // function findUniq(arr: number[]): number {
 //     let res = 0;
-//     for (let i = 0; i < arr.length; i++) { 
-//         if (arr.lastIndexOf(arr[i])=== arr.indexOf(arr[i]) ) { 
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr.lastIndexOf(arr[i])=== arr.indexOf(arr[i]) ) {
 //             res = arr[i]
 //             break
 //         }
@@ -3635,9 +3635,9 @@ const sayHello = (name: string[], city: string, state: string):string => {
 //    const resArray:number[]=[]
 //    if (l === w) return null;
 
-//    if (l < w) { 
+//    if (l < w) {
 //       [l,w]=[w,l]
-//     }   
+//     }
    
 //     // while (l >= w) {
 //     //    resArray.push(w)
@@ -3667,18 +3667,38 @@ const sayHello = (name: string[], city: string, state: string):string => {
 
 // https://www.codewars.com/kata/55c45be3b2079eccff00010f/train/typescript
 
-function order(words: string): string{
+// function order(words: string): string{
     
-    if (!words) { return "" }
+//     if (!words) { return "" }
 
-    const wordsArray = words.split(" ").sort((a, b) => { 
-        const aNumber:number = Number([...a].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
-        const bNumber:number = Number([...b].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
+//     const wordsArray = words.split(" ").sort((a, b) => {
+//         const aNumber:number = Number([...a].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
+//         const bNumber:number = Number([...b].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
         
-        return aNumber-bNumber
-    });
+//         return aNumber-bNumber
+//     });
 
-    return wordsArray.join(" ")
-}
+//     return wordsArray.join(" ")
+// }
 
-console.log(order("is2 Thi1s T41est 3a")) 
+// console.log(order("is2 Thi1s T41est 3a"))
+
+
+
+// https://www.codewars.com/kata/541c8630095125aba6000c00/train/typescript
+
+
+const digitalRoot = (n: number): number => {
+
+   if (n < 10) {
+      return n;
+   }
+
+   const sum = n.toString().split("").reduce((acc, item) => acc + Number(item), 0);
+ 
+   return sum<10?sum :digitalRoot(sum)
+ };
+
+
+
+console.log('digitalRoot(16):', digitalRoot(456))

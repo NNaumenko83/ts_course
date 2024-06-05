@@ -3688,17 +3688,47 @@ const sayHello = (name: string[], city: string, state: string):string => {
 // https://www.codewars.com/kata/541c8630095125aba6000c00/train/typescript
 
 
-const digitalRoot = (n: number): number => {
+// const digitalRoot = (n: number): number => {
 
-   if (n < 10) {
-      return n;
-   }
+//    if (n < 10) {
+//       return n;
+//    }
 
-   const sum = n.toString().split("").reduce((acc, item) => acc + Number(item), 0);
+//    const sum = n.toString().split("").reduce((acc, item) => acc + Number(item), 0);
  
-   return sum<10?sum :digitalRoot(sum)
- };
+//    return sum<10?sum :digitalRoot(sum)
+//  };
 
 
 
-console.log('digitalRoot(16):', digitalRoot(456))
+// console.log('digitalRoot(16):', digitalRoot(456))
+
+
+
+// https://www.codewars.com/kata/586d6cefbcc21eed7a001155/train/typescript
+interface CharCount {
+ [key: string]: number;
+}
+function longestRepetition(text: string): [string, number] {
+   if (!text) { return ["",0]}
+   const res=[]
+   
+
+// Використовуємо цей інтерфейс для типізації об'єкта
+const obj: CharCount = Array.from(text).reduce<CharCount>((acc, item) => {
+  if (acc[item]) {
+    acc[item] = acc[item] + 1;
+  } else {
+    acc[item] = 1;
+  }
+  return acc;
+}, {} as CharCount);
+
+   const max= Math.max(...Object.values(obj))
+   const maxKey:string = Object.keys(obj).find(key => obj[key] === max) ||""
+   
+  return [maxKey,max]
+}
+
+
+console.log(longestRepetition('aaabbbb'))

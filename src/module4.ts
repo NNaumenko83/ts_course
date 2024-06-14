@@ -3191,7 +3191,7 @@
 
 // // sortVowels('Codewars')
 
-// 
+//
 // function sortByValueAndIndex(array: number[]): number[] {
   
 //   const resArr: number[] = []
@@ -3288,7 +3288,7 @@
 // {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}
 
 
-// function showThis() { 
+// function showThis() {
 //     console.log("This is", this)
 // }
 
@@ -3305,8 +3305,8 @@
 // user.showContext()
 
 
-// class User{ 
-//     constructor(name) { 
+// class User{
+//     constructor(name) {
 //         this.name=name
 //     }
 
@@ -3317,24 +3317,24 @@
 // console.log('mango:', mango)
 
 
-class User { 
-    #email
-    constructor({name, email}) { 
-        this.name=name
-        this.#email=email
-    }
+// class User {
+//     #email
+//     constructor({name, email}) {
+//         this.name=name
+//         this.#email=email
+//     }
 
 
-    get email() { 
-        return this.#email
-    }
+//     get email() {
+//         return this.#email
+//     }
 
-}
+// }
 
-const newUser = new User({ name: "Mykola", email: "nnv2006@ukr.net", })
+// const newUser = new User({ name: "Mykola", email: "nnv2006@ukr.net", })
 
-newUser.email
-console.log('newUser.email:', newUser.email)
+// newUser.email
+// console.log('newUser.email:', newUser.email)
 
 
 
@@ -3370,13 +3370,13 @@ console.log('newUser.email:', newUser.email)
 // // function bestFriend(txt: string, a: string, b: string): boolean {
 
 //   for (let i = 0; i < txt.length; i++) {
-//     if (txt[i] === a && txt[i + 1] !== b) { 
+//     if (txt[i] === a && txt[i + 1] !== b) {
 //       return false
 //     }
     
 //   }
    
-//   return true; 
+//   return true;
 // }
 
 
@@ -3388,9 +3388,9 @@ console.log('newUser.email:', newUser.email)
 
 // 'Hello, John Smith! Welcome to Phoenix, Arizona!'
 
-const sayHello = (name: string[], city: string, state: string):string => {
-  return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`;
-}
+// const sayHello = (name: string[], city: string, state: string):string => {
+//   return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`;
+// }
 
 // console.log(sayHello(['John', 'Smith'], 'Phoenix', 'Arizona'))
 
@@ -3734,3 +3734,117 @@ const sayHello = (name: string[], city: string, state: string):string => {
 // console.log(longestRepetition('aaabbbb'))
 
 
+// console.log("Hello world!");
+
+// const a = 1
+
+// const b = 2;
+
+// const c = a + b;
+
+// const d = c;
+
+// Homeworks GoIt
+// Task 1 
+
+let age:number = 50;
+let nameTest:string = 'Max';
+let toggle:boolean = true;
+let empty:null = null;
+let notInitialize:any;
+let callback = (a: number): number => { return 100 + a };
+
+// Task 2
+let anything:any = -20;
+anything = 'Text';
+anything = {};
+
+// Task 3
+
+let some:unknown;
+some = 'Text';
+let str: string;
+if (typeof some === "string") { str = some };
+
+// Task 4 
+
+let person: [string, number] = ['Max', 21];
+
+// Task 5
+// Як ви визначите змінну в TypeScript, яка може приймати рядок або число (union type)?
+let variable: string | number
+// І так само визначте змінну, яка може приймати тільки одне з двох рядкових значень: 'enable' або 'disable'(literal type) ?
+let varTest:'enable' | 'disable'
+
+
+// Task 6
+function showMessage(message):void {
+  console.log(message);
+}
+
+function calc(num1:number, num2:number):number {
+  return num1 + num2;
+}
+
+function customError():never {
+  throw new Error('Error');
+}
+
+// Task 7
+// Створіть функцію (isWeekend), яка приймає день тижня (з вашого enum)
+// і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
+
+enum weekDays {
+  MONDAY,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY,
+  SUNDAY,
+}
+
+
+const isWeekend = (day: weekDays): boolean => day === weekDays.SATURDAY || day === weekDays.SUNDAY 
+
+console.log(isWeekend(weekDays.MONDAY))
+
+// Task 8
+
+/* Створіть тип "Gender", використовуючи union type,
+який може містити значення "male", "female".Створіть змінну myGender цього типу. */
+
+type Gender = 'male' | 'female'
+
+const myGender: Gender = 'male'
+
+// Task 9
+
+type Page = {
+   title: string,
+  likes: number,
+  accounts: string[],
+   status: "open" | "close",
+    details?: {
+    createAt:  Date,
+    updateAt: Date,
+  }
+}
+
+const page1:Page = {
+  title: 'The awesome page',
+  likes: 100,
+  accounts: ['Max', 'Anton', 'Nikita'],
+  status: 'open',
+  details: {
+    createAt: new Date('2021-01-01'),
+    updateAt: new Date('2021-05-01'),
+  }
+}
+
+const page2:Page = {
+  title: 'Python or Js',
+  likes: 5,
+  accounts: ['Alex'],
+  status: 'close',
+}

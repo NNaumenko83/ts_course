@@ -3712,26 +3712,66 @@
 // function longestRepetition(text: string): [string, number] {
 //    if (!text) { return ["",0]}
 //    const res=[]
+// interface CharCount {
+//  [key: string]: number;
+// }
+// function longestRepetition(text: string): [string, number] {
+//    if (!text) { return ["",0]}
+//    const res=[]
    
 
-// // Використовуємо цей інтерфейс для типізації об'єкта
-// const obj: CharCount = Array.from(text).reduce<CharCount>((acc, item) => {
-//   if (acc[item]) {
-//     acc[item] = acc[item] + 1;
-//   } else {
-//     acc[item] = 1;
-//   }
-//   return acc;
-// }, {} as CharCount);
+// // // Використовуємо цей інтерфейс для типізації об'єкта
+// // const obj: CharCount = Array.from(text).reduce<CharCount>((acc, item) => {
+// //   if (acc[item]) {
+// //     acc[item] = acc[item] + 1;
+// //   } else {
+// //     acc[item] = 1;
+// //   }
+// //   return acc;
+// // }, {} as CharCount);
 
-//    const max= Math.max(...Object.values(obj))
-//    const maxKey:string = Object.keys(obj).find(key => obj[key] === max) ||""
+// //    const max= Math.max(...Object.values(obj))
+// //    const maxKey:string = Object.keys(obj).find(key => obj[key] === max) ||""
    
-//   return [maxKey,max]
+// //   return [maxKey,max]
+// // }
+
+
+// // console.log(longestRepetition('aaabbbb'))
+
+// =========
+
+// type Dog = {
+//     bark:()=>void
+// }
+
+// type Cat = {
+//     meow: () => {}
 // }
 
 
-// console.log(longestRepetition('aaabbbb'))
+
+// function isDog(animal: Dog | Cat): animal is Dog{ 
+//     return "bark" in animal   
+// }
+
+
+// function letAnimalTalk(animal: Dog | Cat) { 
+//     if (isDog(animal)) {
+//         animal.bark()
+//     } else { 
+//         animal.meow()
+//     }
+// }
+
+
+
+function identity<T>(arg: T): T{
+    return arg
+}
+ 
+identity<string>("Hello")
+
 
 
 // console.log("Hello world!");

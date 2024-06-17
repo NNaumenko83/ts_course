@@ -3860,34 +3860,34 @@ const myGender: Gender = 'male'
 
 // Task 9
 
-type Page = {
-   title: string,
-  likes: number,
-  accounts: string[],
-   status: "open" | "close",
-    details?: {
-    createAt:  Date,
-    updateAt: Date,
-  }
-}
+// type Page = {
+//    title: string,
+//   likes: number,
+//   accounts: string[],
+//    status: "open" | "close",
+//     details?: {
+//     createAt:  Date,
+//     updateAt: Date,
+//   }
+// }
 
-const page1:Page = {
-  title: 'The awesome page',
-  likes: 100,
-  accounts: ['Max', 'Anton', 'Nikita'],
-  status: 'open',
-  details: {
-    createAt: new Date('2021-01-01'),
-    updateAt: new Date('2021-05-01'),
-  }
-}
+// const page1:Page = {
+//   title: 'The awesome page',
+//   likes: 100,
+//   accounts: ['Max', 'Anton', 'Nikita'],
+//   status: 'open',
+//   details: {
+//     createAt: new Date('2021-01-01'),
+//     updateAt: new Date('2021-05-01'),
+//   }
+// }
 
-const page2:Page = {
-  title: 'Python or Js',
-  likes: 5,
-  accounts: ['Alex'],
-  status: 'close',
-}
+// const page2:Page = {
+//   title: 'Python or Js',
+//   likes: 5,
+//   accounts: ['Alex'],
+//   status: 'close',
+// }
 
 // Generic
 
@@ -3937,3 +3937,126 @@ function compare (top:Pick<AllType,"name"|"color">, bottom:Pick<AllType, "positi
 function merge<T extends object, U extends object> (objA:T, objB:U) {
   return Object.assign(objA, objB);
 }
+
+// Task 4
+
+// Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
+
+
+// interface IProps {
+//   title: string;
+// }
+
+
+// class Component<T extends IProps> {
+//   constructor (public props:T) {
+
+//   }
+// }
+
+// class Page extends Component<IProps> {
+//   pageInfo ():void {
+//     console.log(this.props.title);
+//   }
+// }
+
+
+// interface IPerson {
+//   name: string;
+//   age: number
+// }
+
+// interface IPilot extends IPerson {
+//   greet():void;
+// }
+
+// class Pilot implements IPilot{
+//   public greet;
+//   constructor(public age: number, public name: string) {
+//       if(age<28) {
+//         console.log('Nooooo');
+         
+//     }
+//     this.greet=()=>{ console.log("Hello") };
+//   }
+
+ 
+  
+ 
+// }
+
+// const pilot = new Pilot(27, "Mykola");
+// const pilot2 = new Pilot(29, "Mykola");
+
+// console.log(pilot)
+// console.log(pilot2)
+
+
+// Task 5
+
+// Вам потрібно реалізувати інтерфейс KeyValuePair, який описує пару ключ - значення.
+// Використовуйте generics, щоб цей інтерфейс міг працювати з будь - якими типами ключів та значень.
+
+// interface KeyValuePair<T, U> {
+//   key:T;
+//   value:U;
+// }
+
+
+// Task 6
+
+// type User1 = {
+//   name?: string;
+//   surname?: string;
+//   email: string;
+//   password: string;
+// }
+
+// function createOrUpdateUser(initialValues: User1) {
+//   // Оновлення користувача
+// }
+
+// createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
+
+
+// Task 7
+
+// У вас є перелік UserRole, який використовується для класифікації користувачів у вашому додатку.
+// Ви хочете створити об'єкт RoleDescription, який зіставлятиме кожну роль користувача з її описом.
+
+// export enum UserRole {
+//   admin = 'admin',
+//   editor = 'editor',
+//   guest = 'guest',
+// }
+
+
+// // Замініть наступний код на версію за допомогою Record
+// const RoleDescription:Record<UserRole, string> = {
+//   [UserRole.admin]: 'Admin User',
+//   editor: 'Editor User',
+//   guest: 'Guest User',
+// };
+
+// Task 8
+
+// У вас є тип Form, який містить інформацію про форму, включаючи поле errors.
+// Ви хочете створити новий тип Params, який включає всі поля з Form, крім errors.
+
+type Errors = {
+  email?: string[];
+  firstName?: string[];
+  lastName?: string[];
+  phone?: string[];
+};
+
+type Form = {
+  email: string | null;
+  firstName: string | null;
+  lastName: string | null;
+  phone: string | null;
+  errors: Errors;
+};
+
+// Реалізуйте Params так, щоб унеможливити поле 'errors' з типу Form
+type Params = Omit<Form,"errors">;

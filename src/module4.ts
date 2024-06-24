@@ -4230,14 +4230,14 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // Abstract classes
 
-// abstract class Plane { 
+// abstract class Plane {
 //   protected pilotInCabin = false;
 
 //   public abstract startEngine(): boolean;
 
 // }
 
-// class Maize extends Plane { 
+// class Maize extends Plane {
 //   public startEngine(): boolean {
 //   //  запускаємо гвинти двигуна
 //     return true;
@@ -4245,9 +4245,91 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // }
 
 
-// class Boeing extends Plane { 
+// class Boeing extends Plane {
 //   public startEngine(): boolean {
 //   //  розігріваємо гвинти двигуна
 //     return true;
 //   }
 // }
+
+// Інтерфейси в TypeScript
+
+interface IPerson { 
+  name: string;
+  age: number;
+  greet(phrase: string):void
+}
+
+
+let user: IPerson;
+
+user = {
+  name: 'Max',
+  age: 30,
+  greet(phrase: string) {
+    console.log(phrase +' ' + this.name);
+  }
+}
+
+interface IPilot { 
+  flyMessage(): void;
+}
+
+class Pilot implements IPerson, IPilot { 
+  constructor(public name: string, public age: number) {
+    if (this.age < 28) { 
+      throw new Error('Pilot must be at least 28 years old');
+    }
+
+
+  }
+  greet(phrase: string): void {
+    console.log(phrase + " " + this.name);
+  }
+  
+
+  flyMessage(): void {
+    console.log("I am flying");
+  }
+
+  setAutopilot(): void { 
+    console.log("Aotopilot has been set")
+  }
+
+}
+
+// const pilot = new Pilot("Antony", 32)
+
+// pilot.greet("I am a capitan of the plane")
+// pilot.flyMessage()
+// pilot.setAutopilot()
+
+
+abstract class Plane { 
+  protected pilot: IPilot
+
+  public setInPlane(pilot: IPilot): void {
+    this.pilot = pilot;
+  }
+
+  public abstract startEngine(): boolean;
+}
+
+class Boeing extends Plane { 
+  public startEngine(): boolean {
+    if (!this.pilot) {
+      throw new Error("Pilot is not set");
+    }
+    
+    console.log("Starting engine...");
+    this.pilot.flyMessage()
+    return true;
+  }
+}
+
+const boeing = new Boeing();
+const pilot = new Pilot("Antony", 32)
+
+boeing.setInPlane(pilot);
+
+boeing.startEngine();

@@ -4305,31 +4305,71 @@ class Pilot implements IPerson, IPilot {
 // pilot.setAutopilot()
 
 
-abstract class Plane { 
-  protected pilot: IPilot
+// abstract class Plane {
+//   protected pilot: IPilot
 
-  public setInPlane(pilot: IPilot): void {
-    this.pilot = pilot;
-  }
+//   public setInPlane(pilot: IPilot): void {
+//     this.pilot = pilot;
+//   }
 
-  public abstract startEngine(): boolean;
-}
+//   public abstract startEngine(): boolean;
+// }
 
-class Boeing extends Plane { 
-  public startEngine(): boolean {
-    if (!this.pilot) {
-      throw new Error("Pilot is not set");
-    }
+// class Boeing extends Plane {
+//   public startEngine(): boolean {
+//     if (!this.pilot) {
+//       throw new Error("Pilot is not set");
+//     }
     
-    console.log("Starting engine...");
-    this.pilot.flyMessage()
-    return true;
+//     console.log("Starting engine...");
+//     this.pilot.flyMessage()
+//     return true;
+//   }
+// }
+
+// const boeing = new Boeing();
+// const pilot = new Pilot("Antony", 32)
+
+// boeing.setInPlane(pilot);
+
+// boeing.startEngine();
+
+
+// HW-3
+
+// Task 1
+class Student {
+
+  constructor(public name: string, public age: number, public grade: string) {
+    this.name = name;
+    this.age = age;
+    this.grade = grade;
+  }
+} 
+
+// Task 2
+
+ class Employee {
+   constructor(
+    public name: string,
+     private department: string,
+   /*   Приватні властивості та методи доступні лише всередині класу,
+     в якому вони визначені.Вони не доступні за межами цього класу 
+     та не наслідуються його нащадками. */
+     protected salary: number
+    // Схоже на private, де захищені властивості та методи наслідуються.
+  ) {}
+  
+ }
+
+
+//  Необхідно реалізувати в класі Manager конструктор,
+// який викликатиме конструктор суперкласу та збільшуватиме salary на 10000.
+
+class Manager extends Employee { 
+
+  constructor(name: string, department: string, salary: number) { 
+    super(name,  department, salary)
+   
   }
 }
-
-const boeing = new Boeing();
-const pilot = new Pilot("Antony", 32)
-
-boeing.setInPlane(pilot);
-
-boeing.startEngine();

@@ -4254,122 +4254,163 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // Інтерфейси в TypeScript
 
-interface IPerson { 
-  name: string;
-  age: number;
-  greet(phrase: string):void
-}
-
-
-let user: IPerson;
-
-user = {
-  name: 'Max',
-  age: 30,
-  greet(phrase: string) {
-    console.log(phrase +' ' + this.name);
-  }
-}
-
-interface IPilot { 
-  flyMessage(): void;
-}
-
-class Pilot implements IPerson, IPilot { 
-  constructor(public name: string, public age: number) {
-    if (this.age < 28) { 
-      throw new Error('Pilot must be at least 28 years old');
-    }
-
-
-  }
-  greet(phrase: string): void {
-    console.log(phrase + " " + this.name);
-  }
-  
-
-  flyMessage(): void {
-    console.log("I am flying");
-  }
-
-  setAutopilot(): void { 
-    console.log("Aotopilot has been set")
-  }
-
-}
-
-// const pilot = new Pilot("Antony", 32)
-
-// pilot.greet("I am a capitan of the plane")
-// pilot.flyMessage()
-// pilot.setAutopilot()
-
-
-// abstract class Plane {
-//   protected pilot: IPilot
-
-//   public setInPlane(pilot: IPilot): void {
-//     this.pilot = pilot;
-//   }
-
-//   public abstract startEngine(): boolean;
+// interface IPerson {
+//   name: string;
+//   age: number;
+//   greet(phrase: string):void
 // }
 
-// class Boeing extends Plane {
-//   public startEngine(): boolean {
-//     if (!this.pilot) {
-//       throw new Error("Pilot is not set");
+
+// let user: IPerson;
+
+// user = {
+//   name: 'Max',
+//   age: 30,
+//   greet(phrase: string) {
+//     console.log(phrase +' ' + this.name);
+//   }
+// }
+
+// interface IPilot {
+//   flyMessage(): void;
+// }
+
+// class Pilot implements IPerson, IPilot {
+//   constructor(public name: string, public age: number) {
+//     if (this.age < 28) {
+//       throw new Error('Pilot must be at least 28 years old');
 //     }
+
+
+//   }
+//   greet(phrase: string): void {
+//     console.log(phrase + " " + this.name);
+//   }
+  
+
+//   flyMessage(): void {
+//     console.log("I am flying");
+//   }
+
+//   setAutopilot(): void {
+//     console.log("Aotopilot has been set")
+//   }
+
+// }
+
+// // const pilot = new Pilot("Antony", 32)
+
+// // pilot.greet("I am a capitan of the plane")
+// // pilot.flyMessage()
+// // pilot.setAutopilot()
+
+
+// // abstract class Plane {
+// //   protected pilot: IPilot
+
+// //   public setInPlane(pilot: IPilot): void {
+// //     this.pilot = pilot;
+// //   }
+
+// //   public abstract startEngine(): boolean;
+// // }
+
+// // class Boeing extends Plane {
+// //   public startEngine(): boolean {
+// //     if (!this.pilot) {
+// //       throw new Error("Pilot is not set");
+// //     }
     
-//     console.log("Starting engine...");
-//     this.pilot.flyMessage()
-//     return true;
+// //     console.log("Starting engine...");
+// //     this.pilot.flyMessage()
+// //     return true;
+// //   }
+// // }
+
+// // const boeing = new Boeing();
+// // const pilot = new Pilot("Antony", 32)
+
+// // boeing.setInPlane(pilot);
+
+// // boeing.startEngine();
+
+
+// // HW-3
+
+// // Task 1
+// class Student {
+
+//   constructor(public name: string, public age: number, public grade: string) {
+//     this.name = name;
+//     this.age = age;
+//     this.grade = grade;
 //   }
 // }
 
-// const boeing = new Boeing();
-// const pilot = new Pilot("Antony", 32)
+// // Task 2
 
-// boeing.setInPlane(pilot);
-
-// boeing.startEngine();
-
-
-// HW-3
-
-// Task 1
-class Student {
-
-  constructor(public name: string, public age: number, public grade: string) {
-    this.name = name;
-    this.age = age;
-    this.grade = grade;
-  }
-} 
-
-// Task 2
-
- class Employee {
-   constructor(
-    public name: string,
-     private department: string,
-   /*   Приватні властивості та методи доступні лише всередині класу,
-     в якому вони визначені.Вони не доступні за межами цього класу 
-     та не наслідуються його нащадками. */
-     protected salary: number
-    // Схоже на private, де захищені властивості та методи наслідуються.
-  ) {}
+//  class Employee {
+//    constructor(
+//     public name: string,
+//      private department: string,
+//    /*   Приватні властивості та методи доступні лише всередині класу,
+//      в якому вони визначені.Вони не доступні за межами цього класу
+//      та не наслідуються його нащадками. */
+//      protected salary: number
+//     // Схоже на private, де захищені властивості та методи наслідуються.
+//   ) {}
   
+//  }
+
+
+// //  Необхідно реалізувати в класі Manager конструктор,
+// // який викликатиме конструктор суперкласу та збільшуватиме salary на 10000.
+
+// class Manager extends Employee {
+
+//   constructor(name: string, department: string, salary: number) {
+//     super(name,  department, salary)
+   
+//   }
+// }
+
+// Task 3
+interface ICharacter {
+  name: string;
+  level: number;
+  introduce(phrase: string): void;
+  levelUp(): void
  }
 
+interface ISpellCaster {
+  castSpell():void
+ }
 
-//  Необхідно реалізувати в класі Manager конструктор,
-// який викликатиме конструктор суперкласу та збільшуватиме salary на 10000.
+class Wizard implements ICharacter, ISpellCaster {
 
-class Manager extends Employee { 
+  constructor(public name: string, public level: number) {
+    if (this.level < 1) {
+      throw new Error('Level too low');
+    }
+  }
 
-  constructor(name: string, department: string, salary: number) { 
-    super(name,  department, salary)
-   
+  introduce(phrase: string): void {
+    console.log(phrase + ', ' + this.name);
+  }
+
+  castSpell(): void {
+    console.log('Casting a spell, behold my power!');
+  }
+
+  levelUp(): void {
+    this.level++;
+    console.log(`Level up! New level is ${this.level}`);
   }
 }
+
+// тестування класу
+const wizard = new Wizard('Merlin', 15);
+
+wizard.introduce('I am the mighty wizard');
+wizard.castSpell();
+wizard.levelUp(); 

@@ -3808,13 +3808,13 @@ if (typeof some === "string") { str = some };
 
 // Task 4 
 
-let person: [string, number] = ['Max', 21];
+// let person: [string, number] = ['Max', 21];
 
-// Task 5
-// Як ви визначите змінну в TypeScript, яка може приймати рядок або число (union type)?
-let variable: string | number
-// І так само визначте змінну, яка може приймати тільки одне з двох рядкових значень: 'enable' або 'disable'(literal type) ?
-let varTest:'enable' | 'disable'
+// // Task 5
+// // Як ви визначите змінну в TypeScript, яка може приймати рядок або число (union type)?
+// let variable: string | number
+// // І так само визначте змінну, яка може приймати тільки одне з двох рядкових значень: 'enable' або 'disable'(literal type) ?
+// let varTest:'enable' | 'disable'
 
 
 // Task 6
@@ -4375,42 +4375,114 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // }
 
 // Task 3
-interface ICharacter {
-  name: string;
-  level: number;
-  introduce(phrase: string): void;
-  levelUp(): void
- }
+// interface ICharacter {
+//   name: string;
+//   level: number;
+//   introduce(phrase: string): void;
+//   levelUp(): void
+//  }
 
-interface ISpellCaster {
-  castSpell():void
- }
+// interface ISpellCaster {
+//   castSpell():void
+//  }
 
-class Wizard implements ICharacter, ISpellCaster {
+// class Wizard implements ICharacter, ISpellCaster {
 
-  constructor(public name: string, public level: number) {
-    if (this.level < 1) {
-      throw new Error('Level too low');
-    }
+//   constructor(public name: string, public level: number) {
+//     if (this.level < 1) {
+//       throw new Error('Level too low');
+//     }
+//   }
+
+//   introduce(phrase: string): void {
+//     console.log(phrase + ', ' + this.name);
+//   }
+
+//   castSpell(): void {
+//     console.log('Casting a spell, behold my power!');
+//   }
+
+//   levelUp(): void {
+//     this.level++;
+//     console.log(`Level up! New level is ${this.level}`);
+//   }
+// }
+
+// // тестування класу
+// const wizard = new Wizard('Merlin', 15);
+
+// wizard.introduce('I am the mighty wizard');
+// wizard.castSpell();
+// wizard.levelUp();
+
+// Task 4 
+class Key {
+  private signature: number
+  
+  constructor() { 
+    this.signature = Number((Math.random() * (10 - 1) + 1).toFixed(0))
+    
   }
 
-  introduce(phrase: string): void {
-    console.log(phrase + ', ' + this.name);
-  }
-
-  castSpell(): void {
-    console.log('Casting a spell, behold my power!');
-  }
-
-  levelUp(): void {
-    this.level++;
-    console.log(`Level up! New level is ${this.level}`);
-  }
+  getSignature():number { return this.signature }
 }
 
-// тестування класу
-const wizard = new Wizard('Merlin', 15);
 
-wizard.introduce('I am the mighty wizard');
-wizard.castSpell();
-wizard.levelUp(); 
+class Person {
+  private key;
+
+  constructor(key: Key) { 
+    this.key = key;
+  }
+
+  get getKey():Key { return this.key }
+
+}
+ 
+abstract class House { 
+  protected door: boolean = false;
+  public  key: Key
+  private tenants: Person[]=[]
+  
+
+  comeIn(person:Person): void { 
+    this.tenants.push(person)
+    console.log(this.tenants)
+  }
+
+  public abstract openDoor(key:Key):void
+}
+
+
+class MyHouse extends House { 
+
+  constructor(public key: Key) {
+    super()
+    this.key = key;
+   }
+  public openDoor(key: Key): void { 
+    if (key.getSignature() === this.key.getSignature()) {
+      this.door = true;
+      console.log('The door is open');
+    } else { console.log("The door is not open")}
+
+  }
+
+}
+ 
+const key = new Key()
+console.log('key:', key)
+
+const house= new MyHouse(key)
+console.log('house:', house)
+
+const person = new Person(key) 
+
+house.openDoor(person.getKey)
+
+house.comeIn(person)
+
+
+const key2 = new Key();
+const newPerson = new Person(key2)
+house.openDoor(newPerson.getKey)

@@ -4043,20 +4043,211 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // У вас є тип Form, який містить інформацію про форму, включаючи поле errors.
 // Ви хочете створити новий тип Params, який включає всі поля з Form, крім errors.
 
-type Errors = {
-  email?: string[];
-  firstName?: string[];
-  lastName?: string[];
-  phone?: string[];
-};
+// type Errors = {
+//   email?: string[];
+//   firstName?: string[];
+//   lastName?: string[];
+//   phone?: string[];
+// };
 
-type Form = {
-  email: string | null;
-  firstName: string | null;
-  lastName: string | null;
-  phone: string | null;
-  errors: Errors;
-};
+// type Form = {
+//   email: string | null;
+//   firstName: string | null;
+//   lastName: string | null;
+//   phone: string | null;
+//   errors: Errors;
+// };
 
 // Реалізуйте Params так, щоб унеможливити поле 'errors' з типу Form
-type Params = Omit<Form,"errors">;
+// type Params = Omit<Form,"errors">;
+
+
+// ООП
+// class MyClass {
+//   private protectedMethod() {
+//     return 'Something';
+//   }
+
+//   public myPublicMethod() {
+//     return this.protectedMethod();
+//   }
+// }
+
+// const test = new MyClass();
+
+// console.log(test.myPublicMethod());
+
+// ====Поліморфізм====
+// class Animal {
+ 
+//   public say() {
+//     console.log("Animal")
+    
+//   }
+// }
+
+// class Cat extends Animal {
+//   public say() {
+//     console.log("Cat")
+//   }
+// }
+
+// class Dog extends Animal {
+//   public say() {
+//       console.log("Dog")
+//   }
+// }
+
+// const cat = new Cat();
+// const dog = new Dog();
+
+// dog.say();
+
+// cat.say();
+
+// ===================
+
+// interface Shape {
+//   calculateArea(): number
+// }
+
+// class Rectangle implements Shape {
+//   constructor(public width: number, public height: number) {
+//     this.width = width;
+//     this.height = height;
+//   }
+//   calculateArea(): number {
+//     return this.width * this.height;
+//   }
+// }
+
+// class Circle  implements Shape {
+//   constructor(public radius: number) {
+//     this.radius = radius;
+//   }
+
+//   calculateArea(): number {
+//     return Math.PI * this.radius * this.radius;
+//   }
+// }
+
+
+// class AreaCalculator {
+//   public calculate(shape: Shape): number {
+//     return shape.calculateArea();
+//   }
+// }
+
+// const areaCalculator = new AreaCalculator();
+// const rectangle=new Rectangle(10,10)
+// const area=areaCalculator.calculate(rectangle)
+
+
+// LSP (Liskov substitution principle)
+
+// abstract class Vehicle {
+//   abstract startEngine(): void;
+//   abstract accelerate(): void;
+
+// }
+
+// class Car extends Vehicle {
+//   startEngine(): void {
+//     this.engageIgnition();
+//     console.log("Car engine started")
+//   }
+
+//   accelerate(): void {
+//     console.log("Car is accelerating")
+//   }
+
+//   private engageIgnition(): void {
+//      console.log("Engaging car ignition");
+//    }
+// }
+
+// class ElectricBus extends Vehicle {
+//   startEngine(): void {
+//     console.log("Electric bus engine started");
+//   }
+
+//   accelerate(): void {
+//     this.increaseVoltage();
+//     this.connectIndividualEngines();
+//     console.log("Electric bus is accelerating");
+    
+//   }
+
+//   private increaseVoltage() {
+//     // Electric logic
+//     console.log("Increasing electric bus voltage");
+//   }
+
+//   private connectIndividualEngines() {
+//     // Connection logic
+//     console.log("Connecting individual electric bus engines");
+
+//   }
+// }
+
+
+// class Driver {
+//   go(vehicle: Vehicle) {
+//     vehicle.startEngine();
+//     vehicle.accelerate();
+
+//   }
+// }
+
+// let car = new Car();
+// let bus = new ElectricBus();
+
+
+// interface FoodProvider {
+//   getFood(): void
+// }
+
+// class Feeder implements FoodProvider {
+//   getFood(): void {
+//     console.log("Feeding the animal");
+//   }
+// }
+
+// class Animal {
+//   private foodProvider: FoodProvider;
+  
+//   constructor(foodProvider: FoodProvider) {
+//     this.foodProvider = foodProvider;
+//   }
+  
+//   eat(): void {
+//     this.foodProvider.getFood();
+
+//   }
+
+//  }
+ 
+
+// Abstract classes
+
+// abstract class Plane { 
+//   protected pilotInCabin = false;
+
+//   public abstract startEngine(): boolean;
+
+// }
+
+// class Maize extends Plane { 
+//   public startEngine(): boolean {
+//   //  запускаємо гвинти двигуна
+//     return true;
+//   }
+// }
+
+
+// class Boeing extends Plane { 
+//   public startEngine(): boolean {
+//   //  розігріваємо гвинти двигуна
+//     return true;
+//   }
+// }

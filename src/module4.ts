@@ -4415,74 +4415,99 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // wizard.castSpell();
 // wizard.levelUp();
 
-// Task 4 
-class Key {
-  private signature: number
+// Task 4
+// class Key {
+//   private signature: number
   
-  constructor() { 
-    this.signature = Number((Math.random() * (10 - 1) + 1).toFixed(0))
+//   constructor() {
+//     this.signature = Number((Math.random() * (10 - 1) + 1).toFixed(0))
     
-  }
+//   }
 
-  getSignature():number { return this.signature }
-}
+//   getSignature():number { return this.signature }
+// }
 
 
-class Person {
-  private key;
+// class Person {
+//   private key;
 
-  constructor(key: Key) { 
-    this.key = key;
-  }
+//   constructor(key: Key) {
+//     this.key = key;
+//   }
 
-  get getKey():Key { return this.key }
+//   get getKey():Key { return this.key }
 
-}
+// }
  
-abstract class House { 
-  protected door: boolean = false;
-  public  key: Key
-  private tenants: Person[]=[]
+// abstract class House {
+//   protected door: boolean = false;
+//   public  key: Key
+//   private tenants: Person[]=[]
   
 
-  comeIn(person:Person): void { 
-    this.tenants.push(person)
-    console.log(this.tenants)
-  }
+//   comeIn(person:Person): void {
+//     this.tenants.push(person)
+//     console.log(this.tenants)
+//   }
 
-  public abstract openDoor(key:Key):void
-}
+//   public abstract openDoor(key:Key):void
+// }
 
 
-class MyHouse extends House { 
+// class MyHouse extends House {
 
-  constructor(public key: Key) {
-    super()
-    this.key = key;
-   }
-  public openDoor(key: Key): void { 
-    if (key.getSignature() === this.key.getSignature()) {
-      this.door = true;
-      console.log('The door is open');
-    } else { console.log("The door is not open")}
+//   constructor(public key: Key) {
+//     super()
+//     this.key = key;
+//    }
+//   public openDoor(key: Key): void {
+//     if (key.getSignature() === this.key.getSignature()) {
+//       this.door = true;
+//       console.log('The door is open');
+//     } else { console.log("The door is not open")}
 
-  }
+//   }
 
-}
+// }
  
-const key = new Key()
-console.log('key:', key)
+// const key = new Key()
+// console.log('key:', key)
 
-const house= new MyHouse(key)
-console.log('house:', house)
+// const house= new MyHouse(key)
+// console.log('house:', house)
 
-const person = new Person(key) 
+// const person = new Person(key)
 
-house.openDoor(person.getKey)
+// house.openDoor(person.getKey)
 
-house.comeIn(person)
+// house.comeIn(person)
 
 
-const key2 = new Key();
-const newPerson = new Person(key2)
-house.openDoor(newPerson.getKey)
+// const key2 = new Key();
+// const newPerson = new Person(key2)
+// house.openDoor(newPerson.getKey)
+
+
+// https://www.codewars.com/kata/5868812b15f0057e05000001/train/typescript
+
+function tailSwap(arr: [string,string]): [string,string] {
+ 
+
+  const firstPart=arr[0].slice(arr[0].indexOf(":")+1);
+  const secondPart = arr[1].slice(arr[1].indexOf(":") + 1);
+  
+  const arrOne=arr[0].split(":")
+  
+  const arrTwo=arr[1].split(":")
+  
+
+  arrOne[1] = secondPart;
+  arrTwo[1] = firstPart;
+
+
+  
+  return [arrOne.join(":"),arrTwo.join(":")];
+}
+
+
+console.log(tailSwap(["abc:123","cde:456"]))

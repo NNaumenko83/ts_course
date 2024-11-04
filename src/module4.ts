@@ -4490,24 +4490,101 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // https://www.codewars.com/kata/5868812b15f0057e05000001/train/typescript
 
-function tailSwap(arr: [string,string]): [string,string] {
+// function tailSwap(arr: [string,string]): [string,string] {
  
 
-  const firstPart=arr[0].slice(arr[0].indexOf(":")+1);
-  const secondPart = arr[1].slice(arr[1].indexOf(":") + 1);
+//   const firstPart=arr[0].slice(arr[0].indexOf(":")+1);
+//   const secondPart = arr[1].slice(arr[1].indexOf(":") + 1);
   
-  const arrOne=arr[0].split(":")
+//   const arrOne=arr[0].split(":")
   
-  const arrTwo=arr[1].split(":")
+//   const arrTwo=arr[1].split(":")
   
 
-  arrOne[1] = secondPart;
-  arrTwo[1] = firstPart;
+//   arrOne[1] = secondPart;
+//   arrTwo[1] = firstPart;
 
 
   
-  return [arrOne.join(":"),arrTwo.join(":")];
-}
+//   return [arrOne.join(":"),arrTwo.join(":")];
+// }
 
 
-console.log(tailSwap(["abc:123","cde:456"]))
+// console.log(tailSwap(["abc:123","cde:456"]))
+
+// INTERFACES
+
+// interface UserTest <T>{ 
+//     id: number,
+//     name: string,
+//     extra:T[]
+
+// }
+
+// const user: UserTest<string> = {
+//     id: 123,
+//     name: "Mykola",
+//     extra: ["123", "456"]
+// }
+
+
+// export function wave(str: string): Array<string> {
+  
+//   return str.split("").reduce((acc:string[], item, i, array) => {
+// const arr= array.map((item, index) => { 
+//       if (item && index !== i) { 
+//         return item.toLocaleLowerCase();
+//       }
+//       if (item && index === i) { 
+//         return item.toUpperCase();
+//       }
+//       return item
+//     })
+//     console.log('arr:', arr);
+//     console.log(acc)
+
+
+
+//     if (arr.join("") === array.join("")) return acc;
+
+//     acc.push(arr.join(''))
+//     return acc;
+//   }, [])
+// }
+
+
+
+
+// console.log(wave("two words"))
+
+
+// const factorial = (value) => { 
+
+//   if (value === 0) {
+//     return 1;
+//   }
+
+//   return value * factorial(value - 1);
+
+// }
+
+
+
+// console.log(factorial(1))
+
+// buble sort
+
+const sortBubble = (arr: number[]): number[] => {
+  for (let i = 0; i < arr.length; i += 1) {
+    console.log( i)
+    for (let k = 0; k < arr.length - i - 1; k += 1) {
+      if (arr[k] > arr[k + 1]) {
+        [arr[k], arr[k + 1]] = [arr[k + 1], arr[k]]; 
+      }
+    }
+  }
+  return arr;
+};
+
+const arr = [3, 5, 1, 4, 8, 9];
+console.log(sortBubble(arr));

@@ -2585,17 +2585,14 @@
 
 // console.log(stringToNumber("1234567890"));
 
-
 // https://www.codewars.com/kata/55d24f55d7dd296eb9000030/train/typescript
-
 
 // const summation = (num: number) => {
 //     let res=0;
 //     for (let i = 0; i <= num; i++) {
 
 //        res+=i
-     
-      
+
 //     }
 
 //     return res
@@ -2607,26 +2604,23 @@
 
 // function isAllPossibilities(x: number[]): boolean {
 //     console.log('x:', x)
-    
+
 //     const sortedArray = x.sort((a, b) => a - b)
 //     console.log('sortedArray:', sortedArray)
 
 //     console.log(sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1?false:true   )
-   
+
 //     return sortedArray[sortedArray.length-1]===0&& sortedArray.length>1||sortedArray.length===0||sortedArray[0]<0|| sortedArray[sortedArray.length-1]>sortedArray.length-1 ||sortedArray[sortedArray.length-1] !==sortedArray.length-1?false:true
 // }
-
 
 // console.log(isAllPossibilities([
 //   6, 2, 4, 2, 2,
 //   2, 1, 5, 0, 0
 // ]))
 
-
 // https://www.codewars.com/kata/5a0aae48ba2a14cfa600016d/train/typescript
 
 // // function startSmoking(bars: number, boxes: number): number {
-
 
 // //     const cigarettesInBox = 18;
 // //     const boxesInBar = 10;
@@ -2642,11 +2636,9 @@
 // //         stubs = stubs - Math.floor(stubs / 5) * 5;
 // //         if (stubs + totalCigarettes  < 5) { smokedCigarettes += totalCigarettes;}
 // //     } while ((stubs+totalCigarettes)>5);
-    
 
 // // return smokedCigarettes;
 // // }
-
 
 // // console.log(startSmoking(1,0))
 
@@ -2660,16 +2652,12 @@
 // //     }
 // //   }
 
-
 // //   return res
 // // }
 
-
 // console.log(divisibleBy([1,2,3,4,5,6], 2))
 
-
 // console.log(divisibleBy([1,2,3,4,5,6], 2))
-
 
 // // https://www.codewars.com/kata/57f222ce69e09c3630000212/train/typescript
 // function well(x: string[]): string{
@@ -2684,8 +2672,6 @@
 // console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
 // console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
 
-
-
 // https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/typescript
 
 // function repeatStr(n: number, s: string): string {
@@ -2693,11 +2679,8 @@
 // return Array.from({length:n}, x=>s).join("");
 // }
 
-
-
 // repeatStr(3, "*")
 // console.log('repeatStr(3, "*"):', repeatStr(3, "*"))
-
 
 // https://www.codewars.com/kata/57356c55867b9b7a60000bd7/train/typescript
 
@@ -2722,10 +2705,8 @@
 //   return res;
 // }
 
-
 // basicOp('+', 4, 7)
 // console.log('basicOp('+', 4, 7):', basicOp('+', 4, 7))
-
 
 // https://www.codewars.com/kata/56c24c58e0c0f741d4001aef/train/typescript
 
@@ -2737,12 +2718,9 @@
 // isReallyNaN('37')
 // console.log('isReallyNaN("37")', isReallyNaN('37'))
 
-
 // console.log(isNaN(undefined))
 
-
 // https://www.codewars.com/kata/56f3a1e899b386da78000732/train/typescript
-
 
 // https://www.codewars.com/kata/56f3a1e899b386da78000732/train/typescript
 // function partlist(arr: string[]): string[][] {
@@ -2753,7 +2731,6 @@
 
 //   }
 
-
 //   return result
 // }
 
@@ -2761,17 +2738,13 @@
 
 // partlist(arr)
 
-
 // ===== Remove dupes =================
 
 // function removeDupes(str: string): string {
 // return Array.from(new Set (str)).join('');
 // }
 
-
-
 // console.log(removeDupes('aabbccdddddd'))
-
 
 // =====flatten aray =================
 
@@ -2779,22 +2752,19 @@
 // console.log('arr:', arr)
 
 //   const res:number[] = []
-  
+
 //   for (let i = 0; i < arr.length; i++) {
 //     if (Array.isArray(arr[i])) {
 //       res.push(...flatten(arr[i]))
 //     } else {
 //       res.push(arr[i])
 //     }
-    
+
 //   }
-
-
 
 //   console.log('res:', res)
 //   return res
 // }
-
 
 // function flatten(arr: any[]): number[] {
 //   const res: number[] = []
@@ -2804,15 +2774,12 @@
 //       res.push(...flatten(arr[i]))
 //     }
 //     else { res.push(arr[i]) }
-    
-    
+
 //   }
 //   return res
 // }
 
-
 // console.log(flatten([[1],[[2]], [[[3]]], [[[[4]]]]]))
-
 
 // https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/train/typescript
 
@@ -2820,20 +2787,17 @@
 
 //   // return s.split(" ").map((item) => item.length).sort((a, b) => a - b)[0];
 //   return Math.min(...s.split(" ").map((item)=>item.length));
-  
+
 // }
 
 // findShort("bitcoin take over the world maybe who knows perhaps")
 // console.log('findShort("bitcoin take over the world maybe who knows perhaps"):', findShort("bitcoin take over the world maybe who knows perhaps"))
 
-
-
 // test task
 
 // function findPath(mountain: number[][]): number {
-    
+
 //     const arr:number[][]=Array.from(mountain, item=>Array.from({length:item.length}, item=>item=0))
-   
 
 //     for (let i = 0; i < mountain.length; i++) {
 //         if (i === 0) { arr[i][0] = mountain[i][0]; continue}
@@ -2847,7 +2811,6 @@
 
 // return Math.max(...arr[arr.length - 1]);
 // }
-
 
 // function findPath(mountain) {
 //   const arr = Array.from(mountain, item => Array.from({ length: item.length }, item => item = 0));
@@ -2864,12 +2827,7 @@
 //     return Math.max(...arr[arr.length - 1]);
 // }
 
-
-
-
 // const arr:number[][]=[[6],[7,10],[12,11,9],[90,25,13,14]]
-
-
 
 // console.log('findPath(arr):', findPath(arr))
 
@@ -2878,13 +2836,10 @@
 // function pyramid(n: number) : Array<Array<Number>> {
 //     return n === 0 ? []: Array.from({ length: n }, (item, index) => Array.from({length:index+1},item=>1))};
 
-
 //     pyramid(0)
 //     console.log(' pyramid(0):',  pyramid(4))
 
-
 // console.log(Array(10).fill(1))
-
 
 // const productFib = (prod: number): [number, number, boolean] => {
 //     let arr: number[] = []
@@ -2902,16 +2857,14 @@
 //             break
 //         }
 //         arr.push(arr[i - 1] + arr[i - 2])
-        
+
 //     };
 
 //     return res
-    
+
 // }
 
-
 // console.log('productFib(5895):', productFib(5895))
-
 
 // https://www.codewars.com/kata/55e7280b40e1c4a06d0000aa/train/typescript
 
@@ -2932,14 +2885,11 @@
 //         }
 //     }
 
-    
-
 //     console.log(arr)
 
 // }
 
 //  chooseBestSum(163, 3, [50, 55, 56, 57, 58])
-
 
 // https://www.codewars.com/kata/562c5ea7b5fe27d303000054/train/python
 
@@ -2947,14 +2897,11 @@
 //     const resArr = [{ "total perm": null }, { "total ssc": null }, { "max ssc": null }, { "min ssc": null }]
 //     resArr["total perm"]=arr.
 //     console.log('resArr:', resArr)
- 
+
 //   return resArr;
 // }
 
 // sscForperm([8, 23, -4, 10])
-
-
-
 
 // https://www.codewars.com/kata/580755730b5a77650500010c/train/typescript
 
@@ -2964,13 +2911,10 @@
 //         acc[1].push(item); return acc;
 //     }, [[], []]);
 
-
 //   return `${res[0].join("")} ${res[1].join("")}`;
 // }
 
-
 // console.log(sortMyString("CodeWars"))
-
 
 // https://www.codewars.com/kata/526c7363236867513f0005ca/train/typescript
 
@@ -2986,7 +2930,7 @@
 //   }
 
 //   return false;
-  
+
 // }
 
 // console.log(isLeap(2020))
@@ -2996,7 +2940,6 @@
 // function findRoutes(routes: string[][]): string {
 
 //   const copyRoutes=[...routes];
- 
 
 //   const resArr: string[][] = []
 
@@ -3004,12 +2947,11 @@
 
 //   const uniqueFirstRoute = routes.find(([first, second]) => {
 //     console.log('first:', first)
-    
-    
+
 //     return !routes.some(([_, dest]) => dest === first)
 //   });
 //   console.log('uniqueFirstRoute:', uniqueFirstRoute)
- 
+
 //   if (!uniqueFirstRoute) {
 //     return -1;
 //   }
@@ -3017,35 +2959,25 @@
 // }
 
 // const indexOfFirstElem =findUniqueDestinationIndex(routes);;
-  
+
 // resArr.push(copyRoutes[indexOfFirstElem])
 //   copyRoutes.splice(indexOfFirstElem, 1)
 
 //  while (copyRoutes.length > 1) {
-   
+
 // const index = copyRoutes.findIndex((item) => item[0]===resArr[resArr.length-1][1])
-  
 
 //     resArr.push(copyRoutes[index])
 //     copyRoutes.splice(index,1)
-  
+
 //    }
 
- 
-
 //   const res=[...new Set([...resArr, ...copyRoutes].join(",").split(','))].join(", ").trim()
- 
-
-
 
 //   return res
 // }
 
 // console.log(findRoutes([["Chicago", "Winnipeg"], ["Halifax", "Montreal"], ["Montreal", "Toronto"], ["Toronto", "Chicago"], ["Winnipeg", "Seattle"]]))
-
-
-
-
 
 // describe("Follow That Spy", function() {
 //   it ("Sample", function() {
@@ -3068,17 +3000,13 @@
 //   });
 // });
 
-
 // https://www.codewars.com/kata/53dc23c68a0c93699800041d/train/typescript
-
 
 // function smash (words: string[]): string {
 //    return words.join(" ")
 // };
 
-
 // console.log(smash(["hello", "world"]))
-
 
 // https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6/train/typescript
 
@@ -3086,22 +3014,19 @@
 //   return Math.floor(s*100000/3600);
 // }
 
-
 // console.log(cockroachSpeed(1.08))
-
 
 // https://www.codewars.com/kata/57eaeb9578748ff92a000009/train/typescript
 
 // function sumMix(x: any[]): number {
 
 //   return x.reduce((acc, item) => {
- 
+
 // return acc+Number(item)  }, 0)
 
 // }
 
 // console.log(sumMix([9, 3, '7', '3']))
-
 
 // https://www.codewars.com/kata/56dec885c54a926dcd001095
 
@@ -3111,9 +3036,7 @@
 //   }
 // }
 
-
 // console.log(Kata.opposite(1))
-
 
 // https://www.codewars.com/kata/5a805d8cafa10f8b930005ba/train/typescript
 
@@ -3128,8 +3051,6 @@
 
 // console.log(nearestSq(111));
 
-
-
 // // https://www.codewars.com/kata/59342039eb450e39970000a6/train/typescript
 // function oddCount(n: number){
 //     // const arr = Array.from({ length: n-1 }, (item, index) => index + 1)
@@ -3143,17 +3064,15 @@
 //     //         continue
 //     //     }
 //     //     continue
-        
+
 //     // }
 
 //     // return count
-    
+
 //     return Math.ceil((n-1)/2)
 // }
 
-
 // console.log(oddCount(7))
-
 
 // https://www.codewars.com/kata/5a3dd29055519e23ec000074/train/typescript
 
@@ -3168,11 +3087,10 @@
 //         }
 //         return acc-1
 //     }, 0)
-    
+
 //     return res<0? 0:res
 //  // good luck
 // }
-
 
 // console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
 
@@ -3188,27 +3106,26 @@
 // //  return Array.from(str, item=>vowels.includes(item.toLowerCase())? "|"+item :item +"|").join("\n")
 // // };
 
-
 // // sortVowels('Codewars')
 
 //
 // function sortByValueAndIndex(array: number[]): number[] {
-  
+
 //   const resArr: number[] = []
 //   const copyArr=[...array]
-  
+
 //   const arrayToIndex=array.map((item, index)=>item*(index+1))
 //   console.log('arrayToIndex:', arrayToIndex)
 
 //   while (copyArr.length > 0) {
 
 //     let maxIndex=arrayToIndex.indexOf(Math.max(...arrayToIndex))
-   
+
 //     resArr.unshift(copyArr[maxIndex])
 //     copyArr.splice(maxIndex, 1)
 //     arrayToIndex.splice(maxIndex, 1)
 //   }
- 
+
 //   console.log('resArr:', resArr)
 //   return resArr.reverse()
 // }
@@ -3217,7 +3134,6 @@
 //   -22, 6, -15, 23,
 //   -10, 2,  -9, 10
 // ]))
-
 
 // const salaries={
 // //    Manager: { salary: 1000, tax: "10%" },
@@ -3229,8 +3145,6 @@
 //    { name: "Max", specialization: "Designer" },
 //    { name: "Vova", specialization: "Designer"},
 //    { name: "Leo", specialization: "Artist"},]
-
-
 
 // function calculateTeamFinanceReport(salaries, team) {
 
@@ -3255,7 +3169,6 @@
 //     continue
 // }
 
-  
 //     return res
 // }
 
@@ -3268,10 +3181,7 @@
 }
 */
 
-
 // //  console.log(JSON.stringify( calculateTeamFinanceReport(salaries, team)))
-
-
 
 // // const salaries2 = {
 // //    TeamLead: { salary: 1000, tax: "99%" },
@@ -3282,11 +3192,10 @@
 // //    { name: "Koolhas", specialization: "Architect" },
 // //    { name: "Foster", specialization: "Architect" },
 // //     { name: "Napoleon", specialization: "General" },]
-   
-// // console.log(calculateTeamFinanceReport(salaries2, team2))
-     
-// {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}
 
+// // console.log(calculateTeamFinanceReport(salaries2, team2))
+
+// {"totalBudgetTeam":140909,"totalBudgetTeamLead":100000,"totalBudgetArchitect":40909}
 
 // function showThis() {
 //     console.log("This is", this)
@@ -3296,26 +3205,22 @@
 
 // const user = {
 //     name: "Petro",
-   
+
 // }
 
 // user.showContext=showThis
 
-
 // user.showContext()
-
 
 // class User{
 //     constructor(name) {
 //         this.name=name
 //     }
 
-    
 // }
 
 // const mango=new User("Mykola")
 // console.log('mango:', mango)
-
 
 // class User {
 //     #email
@@ -3323,7 +3228,6 @@
 //         this.name=name
 //         this.#email=email
 //     }
-
 
 //     get email() {
 //         return this.#email
@@ -3336,22 +3240,16 @@
 // newUser.email
 // console.log('newUser.email:', newUser.email)
 
-
-
-
 // let x = 1
 // console.log(x++ + x)
 
 // const test = 3
 // console.log('test:', test)
 
-
 // const num=Math.random()
 // console.log('num:', num)
 
-
 // new Date()
-
 
 // const getUsers = async () => {
 //   const users = await fetch("https://jsonplaceholder.typicode.com/users")
@@ -3360,10 +3258,8 @@
 //   return usersTest
 //  }
 
-
 // const users = getUsers()
 // console.log('users:', users)
-
 
 // https://www.codewars.com/kata/64fc03a318692c1333ebc04c/train/typescript
 
@@ -3373,16 +3269,13 @@
 //     if (txt[i] === a && txt[i + 1] !== b) {
 //       return false
 //     }
-    
+
 //   }
-   
+
 //   return true;
 // }
 
-
-
 // console.log(bestFriend('he headed to the store', 'h', 'e'))
-
 
 // https://www.codewars.com/kata/5302d846be2a9189af0001e4/train/typescript
 
@@ -3397,7 +3290,7 @@
 // https://www.codewars.com/kata/573c91c5eaffa3bd350000b0/train/typescript
 
 // function gematria(str: string): number {
-   
+
 // const values: Record<string, number> = {
 //   a: 1,
 //   b: 2,
@@ -3426,7 +3319,7 @@
 //   y: 400,
 //   z: 500
 //    };
-   
+
 // return [...str.replaceAll(" ","")].reduce((acc, item) => acc + values[item.toLocaleLowerCase()], 0);
 // }
 
@@ -3454,9 +3347,6 @@
 //    }
 //    return arr.reduce((acc, item) => acc+item)
 //    }
-
-
-
 
 // console.log(singleDigit(4868872))https://www.codewars.com/kata/5679aa472b8f57fb8c000047/train/typescript
 
@@ -3489,10 +3379,7 @@
 //    return sum;
 //  }
 
-
 // console.log(findEvenIndex([20,10,-80,10,10,15,35]))
-
-
 
 // https://www.codewars.com/kata/51fc3beb41ecc97ee20000c3/train/typescript
 
@@ -3505,26 +3392,24 @@
 //    return str[numb-1]};
 // }
 
-
 // const abc = makeLooper("abc");
- 
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
-// console.log(abc())
 
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
+// console.log(abc())
 
 // function counter(): ()=>number {
 //    let count = 0;
-   
+
 //    return () => {
 //       count += 1;
 //       return count;
@@ -3539,10 +3424,6 @@
 // console.log(test())
 // console.log(test())
 
-
-
-
-
 // const key = "GA-DE-RY-PO-LU-KI"
 
 // type Key = {
@@ -3551,7 +3432,7 @@
 
 // function encode(str: string): string {
 //    const keyObj=keyObject(key)
-   
+
 // let encodedStr = ""
 //    for (let i = 0; i < str.length; i++) {
 //       if (keyObj[str[i]]) {
@@ -3560,7 +3441,7 @@
 //          encodedStr += str[i]
 //       }
 //    }
-   
+
 //    return encodedStr;
 // }
 
@@ -3580,15 +3461,12 @@
 
 // const keyObject = (key: string): Key => {
 //    return key.split("-").reduce((acc, item) => { return {...acc,[item[0]]:item[1],[item[1]]:item[0],[item[0].toLowerCase()]:item[1].toLowerCase(),[item[1]]:item[0],[item[1].toLowerCase()]:item[0].toLowerCase(),[item[0]]:item[1]} },{})
-  
-// }
 
+// }
 
 // console.log(encode("Ala has a cat"))
 
 // console.log( decode("Gug hgs g cgt"))
-
-
 
 // https://www.codewars.com/kata/593a061b942a27ac940000a7/train/typescript
 
@@ -3607,7 +3485,6 @@
 
 // // console.log(gettingMad(([-10, 0, -3, 1])))
 // // console.log(gettingMad((([0,0,0,0,0]))))
-
 
 // https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/typescript
 
@@ -3630,7 +3507,6 @@
 
 // https://www.codewars.com/kata/55466989aeecab5aac00003e/train/typescript
 
-
 // const sqInRect = (l: number, w: number): null | number[] => {
 //    const resArray:number[]=[]
 //    if (l === w) return null;
@@ -3638,25 +3514,17 @@
 //    if (l < w) {
 //       [l,w]=[w,l]
 //     }
-   
+
 //     // while (l >= w) {
 //     //    resArray.push(w)
 //     //    l = l - w;
 //     //    [l,w]=[w,l]
 //     // }
-    
-    
-
-
-    
-
 
 //     return resArray
 // }
 
-
 // console.log(sqInRect(20, 14))
-
 
 //   testing(5, 5, null);
 //         testing(5, 3, [3, 2, 1, 1]);
@@ -3664,17 +3532,16 @@
 //         testing(20, 14, [14, 6, 6, 2, 2, 2]);
 //         testing(14, 20, [14, 6, 6, 2, 2, 2]);
 
-
 // https://www.codewars.com/kata/55c45be3b2079eccff00010f/train/typescript
 
 // function order(words: string): string{
-    
+
 //     if (!words) { return "" }
 
 //     const wordsArray = words.split(" ").sort((a, b) => {
 //         const aNumber:number = Number([...a].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
 //         const bNumber:number = Number([...b].reduce((acc, item) => parseInt(item)?acc+item:acc,""))
-        
+
 //         return aNumber-bNumber
 //     });
 
@@ -3683,10 +3550,7 @@
 
 // console.log(order("is2 Thi1s T41est 3a"))
 
-
-
 // https://www.codewars.com/kata/541c8630095125aba6000c00/train/typescript
-
 
 // const digitalRoot = (n: number): number => {
 
@@ -3695,15 +3559,11 @@
 //    }
 
 //    const sum = n.toString().split("").reduce((acc, item) => acc + Number(item), 0);
- 
+
 //    return sum<10?sum :digitalRoot(sum)
 //  };
 
-
-
 // console.log('digitalRoot(16):', digitalRoot(456))
-
-
 
 // https://www.codewars.com/kata/586d6cefbcc21eed7a001155/train/typescript
 // interface CharCount {
@@ -3718,7 +3578,6 @@
 // function longestRepetition(text: string): [string, number] {
 //    if (!text) { return ["",0]}
 //    const res=[]
-   
 
 // // // Використовуємо цей інтерфейс для типізації об'єкта
 // // const obj: CharCount = Array.from(text).reduce<CharCount>((acc, item) => {
@@ -3732,10 +3591,9 @@
 
 // //    const max= Math.max(...Object.values(obj))
 // //    const maxKey:string = Object.keys(obj).find(key => obj[key] === max) ||""
-   
+
 // //   return [maxKey,max]
 // // }
-
 
 // // console.log(longestRepetition('aaabbbb'))
 
@@ -3749,30 +3607,23 @@
 //     meow: () => {}
 // }
 
-
-
-// function isDog(animal: Dog | Cat): animal is Dog{ 
-//     return "bark" in animal   
+// function isDog(animal: Dog | Cat): animal is Dog{
+//     return "bark" in animal
 // }
 
-
-// function letAnimalTalk(animal: Dog | Cat) { 
+// function letAnimalTalk(animal: Dog | Cat) {
 //     if (isDog(animal)) {
 //         animal.bark()
-//     } else { 
+//     } else {
 //         animal.meow()
 //     }
 // }
 
+// function identity<T>(arg: T): T {
+// 	return arg;
+// }
 
-
-function identity<T>(arg: T): T{
-    return arg
-}
- 
-identity<string>("Hello")
-
-
+// identity<string>("Hello");
 
 // console.log("Hello world!");
 
@@ -3785,28 +3636,32 @@ identity<string>("Hello")
 // const d = c;
 
 // Homeworks GoIt
-// Task 1 
+// Task 1
 
-let age:number = 50;
-let nameTest:string = 'Max';
-let toggle:boolean = true;
-let empty:null = null;
-let notInitialize:any;
-let callback = (a: number): number => { return 100 + a };
+// const a r = 50;
+// const nameTe g = "Max";
+// const togg n = true;
+// const empty: null = null;
+// let notInitialize: any;
+// const callback = (a: number): number => {
+// 	return 100 + a;
+// };
 
-// Task 2
-let anything:any = -20;
-anything = 'Text';
-anything = {};
+// // Task 2
+// let anything: any = -20;
+// anything = "Text";
+// anything = {};
 
-// Task 3
+// // Task 3
 
-let some:unknown;
-some = 'Text';
-let str: string;
-if (typeof some === "string") { str = some };
+// let some: unknown;
+// some = "Text";
+// let str: string;
+// if (typeof some === "string") {
+// 	str = some;
+// }
 
-// Task 4 
+// Task 4
 
 // let person: [string, number] = ['Max', 21];
 
@@ -3816,47 +3671,46 @@ if (typeof some === "string") { str = some };
 // // І так само визначте змінну, яка може приймати тільки одне з двох рядкових значень: 'enable' або 'disable'(literal type) ?
 // let varTest:'enable' | 'disable'
 
+// // Task 6
+// function showMessage(message): void {
+// 	console.log(message);
+// }
 
-// Task 6
-function showMessage(message):void {
-  console.log(message);
-}
+// function calc(num1: number, num2: number): number {
+// 	return num1 + num2;
+// }
 
-function calc(num1:number, num2:number):number {
-  return num1 + num2;
-}
-
-function customError():never {
-  throw new Error('Error');
-}
+// function customError(): never {
+// 	throw new Error("Error");
+// }
 
 // Task 7
 // Створіть функцію (isWeekend), яка приймає день тижня (з вашого enum)
 // і повертає boolean значення, що вказує, чи це день робочий чи вихідний.
 
-enum weekDays {
-  MONDAY,
-  TUESDAY,
-  WEDNESDAY,
-  THURSDAY,
-  FRIDAY,
-  SATURDAY,
-  SUNDAY,
-}
+// enum weekDays {
+// 	MONDAY = 0,
+// 	TUESDAY = 1,
+// 	WEDNESDAY = 2,
+// 	THURSDAY = 3,
+// 	FRIDAY = 4,
+// 	SATURDAY = 5,
+// 	SUNDAY = 6,
+// }
 
+// const isWeekend = (day: weekDays): boolean =>
+// 	day === weekDays.SATURDAY || day === weekDays.SUNDAY;
 
-const isWeekend = (day: weekDays): boolean => day === weekDays.SATURDAY || day === weekDays.SUNDAY 
+// console.log(isWeekend(weekDays.MONDAY));
 
-console.log(isWeekend(weekDays.MONDAY))
+// // Task 8
 
-// Task 8
+// /* Створіть тип "Gender", використовуючи union type,
+// який може містити значення "male", "female".Створіть змінну myGender цього типу. */
 
-/* Створіть тип "Gender", використовуючи union type,
-який може містити значення "male", "female".Створіть змінну myGender цього типу. */
+// type Gender = "male" | "female";
 
-type Gender = 'male' | 'female'
-
-const myGender: Gender = 'male'
+// const myGender: Gender = "male";
 
 // Task 9
 
@@ -3896,16 +3750,15 @@ const myGender: Gender = 'male'
 // Є функція getPromise(), яка повертає проміс, що дозволяється в масив, що містить рядки та числа.Доповніть цю функцію,
 // використовуючи generics, щоб вона повертала правильний тип.
 
-function getPromise ():Promise<[string,number]> {
-  return new Promise((resolve) => {
-    resolve(['Text', 50]);
-  });
-}
+// function getPromise(): Promise<[string, number]> {
+// 	return new Promise((resolve) => {
+// 		resolve(["Text", 50]);
+// 	});
+// }
 
-getPromise()
-.then((data) => {
-  console.log(data);
-});
+// getPromise().then((data) => {
+// 	console.log(data);
+// });
 
 // Task 2
 /* У вас є тип AllType.Існує функція compare, яка приймає два об'єкти. Ці об'єкти містять поля AllType. 
@@ -3914,39 +3767,40 @@ getPromise()
 
  */
 
-type AllType = {
-  name: string;
-  position: number;
-  color: string;
-  weight: number
-}
+// type AllType = {
+// 	name: string;
+// 	position: number;
+// 	color: string;
+// 	weight: number;
+// };
 
-function compare (top:Pick<AllType,"name"|"color">, bottom:Pick<AllType, "position"|"weight" >): AllType {
-  return {
-    name: top.name,
-    color: top.color,
-    position: bottom.position,
-    weight: bottom.weight,
-  }
-}
+// function compare(
+// 	top: Pick<AllType, "name" | "color">,
+// 	bottom: Pick<AllType, "position" | "weight">,
+// ): AllType {
+// 	return {
+// 		name: top.name,
+// 		color: top.color,
+// 		position: bottom.position,
+// 		weight: bottom.weight,
+// 	};
+// }
 
 // Task 3
 // У вас є функція merge, яка поєднує два об'єкти.
 // Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 
-function merge<T extends object, U extends object> (objA:T, objB:U) {
-  return Object.assign(objA, objB);
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+	return Object.assign(objA, objB);
 }
 
 // Task 4
 
 // Використовуйте generics та інтерфейси, щоб виправити помилку в наступних класах:
 
-
 // interface IProps {
 //   title: string;
 // }
-
 
 // class Component<T extends IProps> {
 //   constructor (public props:T) {
@@ -3959,7 +3813,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //     console.log(this.props.title);
 //   }
 // }
-
 
 // interface IPerson {
 //   name: string;
@@ -3975,14 +3828,11 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   constructor(public age: number, public name: string) {
 //       if(age<28) {
 //         console.log('Nooooo');
-         
+
 //     }
 //     this.greet=()=>{ console.log("Hello") };
 //   }
 
- 
-  
- 
 // }
 
 // const pilot = new Pilot(27, "Mykola");
@@ -3990,7 +3840,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // console.log(pilot)
 // console.log(pilot2)
-
 
 // Task 5
 
@@ -4001,7 +3850,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   key:T;
 //   value:U;
 // }
-
 
 // Task 6
 
@@ -4018,7 +3866,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // createOrUpdateUser({ email: 'user@mail.com', password: 'password123' });
 
-
 // Task 7
 
 // У вас є перелік UserRole, який використовується для класифікації користувачів у вашому додатку.
@@ -4029,7 +3876,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   editor = 'editor',
 //   guest = 'guest',
 // }
-
 
 // // Замініть наступний код на версію за допомогою Record
 // const RoleDescription:Record<UserRole, string> = {
@@ -4061,7 +3907,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // Реалізуйте Params так, щоб унеможливити поле 'errors' з типу Form
 // type Params = Omit<Form,"errors">;
 
-
 // ООП
 // class MyClass {
 //   private protectedMethod() {
@@ -4079,10 +3924,10 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // ====Поліморфізм====
 // class Animal {
- 
+
 //   public say() {
 //     console.log("Animal")
-    
+
 //   }
 // }
 
@@ -4131,7 +3976,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   }
 // }
 
-
 // class AreaCalculator {
 //   public calculate(shape: Shape): number {
 //     return shape.calculateArea();
@@ -4141,7 +3985,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // const areaCalculator = new AreaCalculator();
 // const rectangle=new Rectangle(10,10)
 // const area=areaCalculator.calculate(rectangle)
-
 
 // LSP (Liskov substitution principle)
 
@@ -4175,7 +4018,7 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //     this.increaseVoltage();
 //     this.connectIndividualEngines();
 //     console.log("Electric bus is accelerating");
-    
+
 //   }
 
 //   private increaseVoltage() {
@@ -4190,7 +4033,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   }
 // }
 
-
 // class Driver {
 //   go(vehicle: Vehicle) {
 //     vehicle.startEngine();
@@ -4201,7 +4043,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // let car = new Car();
 // let bus = new ElectricBus();
-
 
 // interface FoodProvider {
 //   getFood(): void
@@ -4215,18 +4056,17 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // class Animal {
 //   private foodProvider: FoodProvider;
-  
+
 //   constructor(foodProvider: FoodProvider) {
 //     this.foodProvider = foodProvider;
 //   }
-  
+
 //   eat(): void {
 //     this.foodProvider.getFood();
 
 //   }
 
 //  }
- 
 
 // Abstract classes
 
@@ -4244,7 +4084,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   }
 // }
 
-
 // class Boeing extends Plane {
 //   public startEngine(): boolean {
 //   //  розігріваємо гвинти двигуна
@@ -4259,7 +4098,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   age: number;
 //   greet(phrase: string):void
 // }
-
 
 // let user: IPerson;
 
@@ -4281,12 +4119,10 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //       throw new Error('Pilot must be at least 28 years old');
 //     }
 
-
 //   }
 //   greet(phrase: string): void {
 //     console.log(phrase + " " + this.name);
 //   }
-  
 
 //   flyMessage(): void {
 //     console.log("I am flying");
@@ -4304,7 +4140,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // // pilot.flyMessage()
 // // pilot.setAutopilot()
 
-
 // // abstract class Plane {
 // //   protected pilot: IPilot
 
@@ -4320,7 +4155,7 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // //     if (!this.pilot) {
 // //       throw new Error("Pilot is not set");
 // //     }
-    
+
 // //     console.log("Starting engine...");
 // //     this.pilot.flyMessage()
 // //     return true;
@@ -4333,7 +4168,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // // boeing.setInPlane(pilot);
 
 // // boeing.startEngine();
-
 
 // // HW-3
 
@@ -4359,9 +4193,8 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //      protected salary: number
 //     // Схоже на private, де захищені властивості та методи наслідуються.
 //   ) {}
-  
-//  }
 
+//  }
 
 // //  Необхідно реалізувати в класі Manager конструктор,
 // // який викликатиме конструктор суперкласу та збільшуватиме salary на 10000.
@@ -4370,7 +4203,7 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 //   constructor(name: string, department: string, salary: number) {
 //     super(name,  department, salary)
-   
+
 //   }
 // }
 
@@ -4418,15 +4251,14 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 // Task 4
 // class Key {
 //   private signature: number
-  
+
 //   constructor() {
 //     this.signature = Number((Math.random() * (10 - 1) + 1).toFixed(0))
-    
+
 //   }
 
 //   getSignature():number { return this.signature }
 // }
-
 
 // class Person {
 //   private key;
@@ -4438,12 +4270,11 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   get getKey():Key { return this.key }
 
 // }
- 
+
 // abstract class House {
 //   protected door: boolean = false;
 //   public  key: Key
 //   private tenants: Person[]=[]
-  
 
 //   comeIn(person:Person): void {
 //     this.tenants.push(person)
@@ -4452,7 +4283,6 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 //   public abstract openDoor(key:Key):void
 // }
-
 
 // class MyHouse extends House {
 
@@ -4469,7 +4299,7 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   }
 
 // }
- 
+
 // const key = new Key()
 // console.log('key:', key)
 
@@ -4482,39 +4312,32 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // house.comeIn(person)
 
-
 // const key2 = new Key();
 // const newPerson = new Person(key2)
 // house.openDoor(newPerson.getKey)
 
-
 // https://www.codewars.com/kata/5868812b15f0057e05000001/train/typescript
 
 // function tailSwap(arr: [string,string]): [string,string] {
- 
 
 //   const firstPart=arr[0].slice(arr[0].indexOf(":")+1);
 //   const secondPart = arr[1].slice(arr[1].indexOf(":") + 1);
-  
+
 //   const arrOne=arr[0].split(":")
-  
+
 //   const arrTwo=arr[1].split(":")
-  
 
 //   arrOne[1] = secondPart;
 //   arrTwo[1] = firstPart;
 
-
-  
 //   return [arrOne.join(":"),arrTwo.join(":")];
 // }
-
 
 // console.log(tailSwap(["abc:123","cde:456"]))
 
 // INTERFACES
 
-// interface UserTest <T>{ 
+// interface UserTest <T>{
 //     id: number,
 //     name: string,
 //     extra:T[]
@@ -4527,23 +4350,20 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //     extra: ["123", "456"]
 // }
 
-
 // export function wave(str: string): Array<string> {
-  
+
 //   return str.split("").reduce((acc:string[], item, i, array) => {
-// const arr= array.map((item, index) => { 
-//       if (item && index !== i) { 
+// const arr= array.map((item, index) => {
+//       if (item && index !== i) {
 //         return item.toLocaleLowerCase();
 //       }
-//       if (item && index === i) { 
+//       if (item && index === i) {
 //         return item.toUpperCase();
 //       }
 //       return item
 //     })
 //     console.log('arr:', arr);
 //     console.log(acc)
-
-
 
 //     if (arr.join("") === array.join("")) return acc;
 
@@ -4552,13 +4372,9 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 //   }, [])
 // }
 
-
-
-
 // console.log(wave("two words"))
 
-
-// const factorial = (value) => { 
+// const factorial = (value) => {
 
 //   if (value === 0) {
 //     return 1;
@@ -4568,23 +4384,205 @@ function merge<T extends object, U extends object> (objA:T, objB:U) {
 
 // }
 
-
-
 // console.log(factorial(1))
 
 // buble sort
 
-const sortBubble = (arr: number[]): number[] => {
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log( i)
-    for (let k = 0; k < arr.length - i - 1; k += 1) {
-      if (arr[k] > arr[k + 1]) {
-        [arr[k], arr[k + 1]] = [arr[k + 1], arr[k]]; 
-      }
-    }
-  }
-  return arr;
-};
+// const sortBubble = (arr: number[]): number[] => {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     console.log( i)
+//     for (let k = 0; k < arr.length - i - 1; k += 1) {
+//       if (arr[k] > arr[k + 1]) {
+//         [arr[k], arr[k + 1]] = [arr[k + 1], arr[k]];
+//       }
+//     }
+//   }
+//   return arr;
+// };
 
-const arr = [3, 5, 1, 4, 8, 9];
-console.log(sortBubble(arr));
+// const arr = [3, 5, 1, 4, 8, 9];
+// console.log(sortBubble(arr));
+
+// const range = {
+// 	from: 1,
+// 	to: 5,
+// };
+
+// range[Symbol.iterator] = function () {
+// 	return {
+// 		current: this.from,
+// 		last: this.to,
+
+// 		next() {
+// 			if (this.current <= this.last) {
+// 				return { done: false, value: this.current++ };
+// 			}
+// 			return { done: true };
+// 		},
+// 	};
+// };
+
+// console.log("rage");
+
+// const BASE_URL = "https://jsonplaceholder.typicode.com/posts";
+
+// const res = fetch(BASE_URL);
+
+// res
+// 	.then((res) => {
+// 		if (!res.ok) {
+// 			throw new Error("Error");
+// 		}
+// 		return res.json();
+// 	})
+// 	.then((data) => {
+// 		console.log("data:", data);
+// 	})
+// 	.catch((err: unknown) => {
+// 		if (err instanceof Error) {
+// 			console.log("err:", err.message);
+// 		} else {
+// 			console.log("err:", err);
+// 		}
+// 	});
+
+// const searchParams = new URLSearchParams({
+// 	userId: 1,
+// 	title: "foo",
+// 	body: "bar",
+// });
+
+// const url = BASE_URL + `${searchParams}`;
+// console.log("url:", url);
+
+// const buffer = new ArrayBuffer(16);
+
+// const view = new Uint32Array(buffer);
+
+// console.log(Uint32Array.BYTES_PER_ELEMENT);
+
+// import React, { useState, useRef } from 'react'
+// import './WheelOfFortune.css'
+// import wheelImage from 'images/wheel.png' // це зображення колеса
+// import pointerImage from 'images/pointer.png'
+// import spinSound from 'assets/sounds/spin.mp3'
+
+// const prizes = ['1m', '3m', '200k', '300k', '10m', '500k', '2m']
+
+// const WheelOfFortune = ({ onResult }) => {
+//     const [spinning, setSpinning] = useState(false)
+//     const wheelRef = useRef()
+//     const audioRef = useRef(new Audio(spinSound))
+
+//     const spin = () => {
+//         if (spinning) return
+
+//         setSpinning(true)
+
+//         const randomIndex = Math.floor(Math.random() * prizes.length)
+//         const anglePerPrize = 360 / prizes.length
+//         const randomRotation = 360 * 5 + randomIndex * anglePerPrize
+
+//         wheelRef.current.style.transition = 'transform 4s ease-out'
+//         wheelRef.current.style.transform = `rotate(${randomRotation}deg)`
+
+//         audioRef.current.play()
+
+//         setTimeout(() => {
+//             setSpinning(false)
+//             onResult(prizes[randomIndex])
+//         }, 4000)
+//     }
+
+//     return (
+//         <div className="wheel-container">
+//             <img src={pointerImage} alt="Pointer" className="wheel-pointer" />
+//             <div className="wheel-wrapper">
+//                 <img src={wheelImage} alt="Wheel" className="wheel" ref={wheelRef} />
+//             </div>
+//             <button className="spin-button" onClick={spin} disabled={spinning}>
+//                 SPIN
+//             </button>
+//         </div>
+//     )
+// }
+
+// export default WheelOfFortune
+
+// ====
+
+// https://www.codewars.com/kata/5266876b8f4bf2da9b000362/train/typescript
+
+// const likes = (a: string[]): string => {
+// 	if (a.length === 1) {
+// 		return `${a[0]} likes this`;
+// 	}
+// 	if (a.length === 2) {
+// 		return `${a[0]} and ${a[1]} like this`;
+// 	}
+// 	if (a.length === 3) {
+// 		return `${a[0]}, ${a[1]} and ${a[2]} like this`;
+// 	}
+// 	if (a.length > 3) {
+// 		return `${a[0]}, ${a[1]} and ${a.length - 2} others like this`;
+// 	}
+
+// 	return "no one likes this";
+// };
+
+// console.log(likes(["Peter"]));
+// console.log(likes(["Alex", "Jacob", "Max"]));
+// console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+
+// https://www.codewars.com/kata/559ee79ab98119dd0100001d/train/typescript
+
+function decoder(encoded: string, marker: string): string {
+	const wordsArray: string[] = encoded.split(marker);
+
+	const arr = wordsArray.reduce<[string[], string[]]>(
+		(acc, item, index, array) => {
+			if (index === 0) {
+				acc[0].push(item);
+			}
+
+			if (index > 0 && index < array.length - 1 && index % 2 !== 0) {
+				acc[1].unshift(item.split("").reverse().join(""));
+			}
+
+			if (index > 0 && index < array.length - 1 && index % 2 === 0) {
+				acc[0].push(item);
+			}
+
+			if (index > 0 && index === array.length - 1 && index % 2 !== 0) {
+				acc[0].push(item.split("").reverse().join(""));
+			}
+
+			if (index > 0 && index === array.length - 1 && index % 2 === 0) {
+				acc[0].push(item);
+			}
+
+			return acc;
+		},
+		[[], []],
+	);
+
+	return arr.flat().join("");
+}
+
+// console.log(
+// 	decoder("Lor-.tile gnicsipida rutetcesnoc ,tema tis rolod muspi me", "-"),
+// );
+
+// Aenean varius bibendum odio. Donec fa…
+
+console.log(
+	decoder(
+		"qqqqAqq.qqliuaqqsutcqqm nulla dolor, varius eget aliuam sed, venenatis eu le",
+		"qq",
+	),
+);
+// Aliuam nulla dolor, varius eget aliua…
+// Aliuactus.
+
+// "Suspendisse potenti. Fusce finibus mo…";
+// Suspendisse potenti. Fusce finibus mollis nisl nec venenatis

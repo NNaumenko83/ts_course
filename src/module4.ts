@@ -4536,38 +4536,38 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 
 // https://www.codewars.com/kata/559ee79ab98119dd0100001d/train/typescript
 
-function decoder(encoded: string, marker: string): string {
-	const wordsArray: string[] = encoded.split(marker);
+// function decoder(encoded: string, marker: string): string {
+// 	const wordsArray: string[] = encoded.split(marker);
 
-	const arr = wordsArray.reduce<[string[], string[]]>(
-		(acc, item, index, array) => {
-			if (index === 0) {
-				acc[0].push(item);
-			}
+// 	const arr = wordsArray.reduce<[string[], string[]]>(
+// 		(acc, item, index, array) => {
+// 			if (index === 0) {
+// 				acc[0].push(item);
+// 			}
 
-			if (index > 0 && index < array.length - 1 && index % 2 !== 0) {
-				acc[1].unshift(item.split("").reverse().join(""));
-			}
+// 			if (index > 0 && index < array.length - 1 && index % 2 !== 0) {
+// 				acc[1].unshift(item.split("").reverse().join(""));
+// 			}
 
-			if (index > 0 && index < array.length - 1 && index % 2 === 0) {
-				acc[0].push(item);
-			}
+// 			if (index > 0 && index < array.length - 1 && index % 2 === 0) {
+// 				acc[0].push(item);
+// 			}
 
-			if (index > 0 && index === array.length - 1 && index % 2 !== 0) {
-				acc[0].push(item.split("").reverse().join(""));
-			}
+// 			if (index > 0 && index === array.length - 1 && index % 2 !== 0) {
+// 				acc[0].push(item.split("").reverse().join(""));
+// 			}
 
-			if (index > 0 && index === array.length - 1 && index % 2 === 0) {
-				acc[0].push(item);
-			}
+// 			if (index > 0 && index === array.length - 1 && index % 2 === 0) {
+// 				acc[0].push(item);
+// 			}
 
-			return acc;
-		},
-		[[], []],
-	);
+// 			return acc;
+// 		},
+// 		[[], []],
+// 	);
 
-	return arr.flat().join("");
-}
+// 	return arr.flat().join("");
+// }
 
 // console.log(
 // 	decoder("Lor-.tile gnicsipida rutetcesnoc ,tema tis rolod muspi me", "-"),
@@ -4575,14 +4575,69 @@ function decoder(encoded: string, marker: string): string {
 
 // Aenean varius bibendum odio. Donec fa…
 
-console.log(
-	decoder(
-		"qqqqAqq.qqliuaqqsutcqqm nulla dolor, varius eget aliuam sed, venenatis eu le",
-		"qq",
-	),
-);
+// console.log(
+// 	decoder(
+// 		"qqqqAqq.qqliuaqqsutcqqm nulla dolor, varius eget aliuam sed, venenatis eu le",
+// 		"qq",
+// 	),
+// );
 // Aliuam nulla dolor, varius eget aliua…
 // Aliuactus.
 
 // "Suspendisse potenti. Fusce finibus mo…";
 // Suspendisse potenti. Fusce finibus mollis nisl nec venenatis
+
+
+// enum Issuer {
+//   VISA = 'VISA',
+//   AMEX = 'AMEX',
+//   Mastercard = 'Mastercard',
+//   Discover = 'Discover',
+//   Unknown = 'Unknown',
+// }
+
+// const issuers: Record<string, Issuer> = {
+// 	'41': Issuer.VISA,
+// 	'42': Issuer.VISA,
+// 	'40': Issuer.VISA,
+// 	'45': Issuer.VISA,
+// 	'47': Issuer.VISA,
+// 	'48': Issuer.VISA,
+// 	'51': Issuer.Mastercard,
+// 	'52': Issuer.Mastercard,
+// 	'53': Issuer.Mastercard,
+// 	'54': Issuer.Mastercard,
+// 	'55': Issuer.Mastercard,
+// 	'37': Issuer.AMEX,
+// 	'34': Issuer.AMEX,
+// 	'6011': Issuer.Discover,
+// 	'60': Issuer.Discover,
+//   };
+
+
+//  const getIssuer = (x: number): Issuer => {
+// 	const firstDigit=x.toString().slice(0,2);
+// 	console.log('firstDigit:', firstDigit)
+
+// return issuers[firstDigit] || Issuer.Unknown;
+
+// };
+
+
+// console.log('getIssuer:', getIssuer(4111111111111111))
+
+// https://www.codewars.com/kata/5583d268479559400d000064/train/typescript
+
+function binaryToString(binary: string) {
+	const array:string[] = []
+	for (let i = 0; i < binary.length; i += 8) {
+		array.push(String.fromCharCode(parseInt(binary.slice(i, i + 8),2)));
+	}
+	
+
+	return array.join("");
+}
+  
+
+
+console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))

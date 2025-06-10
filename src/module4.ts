@@ -4645,8 +4645,18 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 
 // https://www.codewars.com/kata/551f37452ff852b7bd000139
 
-function addBinary(a: number, b: number): string {
-	return (a + b).toString(2);
-	}
+// function addBinary(a: number, b: number): string {
+// 	return (a + b).toString(2);
+// 	}
 
-console.log('addBinary(1,2):', addBinary(1,2))
+// console.log('addBinary(1,2):', addBinary(1,2))
+
+// https://www.codewars.com/kata/5601409514fc93442500010b/train/typescript
+function betterThanAverage(classPoints: number[], yourPoints: number): boolean {
+	return yourPoints > (classPoints.reduce((acc, item) => acc + item) + yourPoints) / (classPoints.length + 1)
+	}
+  
+
+
+
+console.log('betterThanAverage', betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))

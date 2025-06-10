@@ -4628,16 +4628,25 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 
 // https://www.codewars.com/kata/5583d268479559400d000064/train/typescript
 
-function binaryToString(binary: string) {
-	const array:string[] = []
-	for (let i = 0; i < binary.length; i += 8) {
-		array.push(String.fromCharCode(parseInt(binary.slice(i, i + 8),2)));
-	}
+// function binaryToString(binary: string) {
+// 	const array:string[] = []
+// 	for (let i = 0; i < binary.length; i += 8) {
+// 		array.push(String.fromCharCode(parseInt(binary.slice(i, i + 8),2)));
+// 	}
 	
 
-	return array.join("");
-}
+// 	return array.join("");
+// }
   
 
 
-console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))
+// console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))
+
+
+// https://www.codewars.com/kata/551f37452ff852b7bd000139
+
+function addBinary(a: number, b: number): string {
+	return (a + b).toString(2);
+	}
+
+console.log('addBinary(1,2):', addBinary(1,2))

@@ -3791,7 +3791,7 @@
 // Використовуйте generics, щоб вказати, що ці об'єкти можуть бути будь-якого типу.
 
 function merge<T extends object, U extends object>(objA: T, objB: U) {
-	return Object.assign(objA, objB);
+   return Object.assign(objA, objB);
 }
 
 // Task 4
@@ -4633,11 +4633,11 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 // 	for (let i = 0; i < binary.length; i += 8) {
 // 		array.push(String.fromCharCode(parseInt(binary.slice(i, i + 8),2)));
 // 	}
-	
+
 
 // 	return array.join("");
 // }
-  
+
 
 
 // console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))
@@ -4652,11 +4652,645 @@ function merge<T extends object, U extends object>(objA: T, objB: U) {
 // console.log('addBinary(1,2):', addBinary(1,2))
 
 // https://www.codewars.com/kata/5601409514fc93442500010b/train/typescript
-function betterThanAverage(classPoints: number[], yourPoints: number): boolean {
-	return yourPoints > (classPoints.reduce((acc, item) => acc + item) + yourPoints) / (classPoints.length + 1)
-	}
-  
+// function betterThanAverage(classPoints: number[], yourPoints: number): boolean {
+// 	return yourPoints > (classPoints.reduce((acc, item) => acc + item) + yourPoints) / (classPoints.length + 1)
+// 	}
 
 
 
-console.log('betterThanAverage', betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
+
+// console.log('betterThanAverage', betterThanAverage([100, 40, 34, 57, 29, 72, 57, 88], 75))
+
+// ======================
+// class Student {
+// 	// public name: string;
+// 	// public age: number;
+// 	// public grade: string;
+
+// 	constructor(name: string, age: number, grade: string) {
+
+// 	}
+// }
+
+
+// =====================
+// class Employee {
+
+
+// 	constructor(public name: string, private department: string,  protected salary: number, ) {
+
+// 	}
+
+// 	getEmployeeDetails() {
+// 	  return `Name: ${this.name}, Department: ${this.department}, Salary: ${this.salary}`;
+// 	}
+//   }
+
+//   class Manager extends Employee {
+// 	  constructor(name: string, department: string, salary: number) {
+// 		super(name, department, salary + 10000);
+// 	  }
+//   }
+
+
+// https://www.codewars.com/kata/5a905c2157c562994900009d/train/typescript
+
+// function productArray(nums: number[]): number[] {
+
+// 	const arr = nums.reduce((acc: number[], _, index, array) => {
+// 		const product: number = array.reduce((acc, item, i) => {
+// 			if (i !== index) {
+// 				return acc * item;
+// 			}
+// 			return acc;
+// 		}, 1)
+
+// 		acc.push(product);
+// 		return acc;
+// 	}, [])
+// 	return arr;
+// }
+
+
+// console.log('productArray:', productArray([3, 27, 4, 2]))
+
+// function filter_list(l: Array<any>): Array<number> {
+// 	return l.reduce((acc, item) => { if (typeof item === "number") { acc.push(item) } return acc }, [])
+// }
+
+
+// console.log('filter_list:', filter_list([1, 2, 'a', 'b']))
+
+// ======================
+
+// реалізація класу Wizard
+
+// interface ICharacter {
+// 	name: string;
+// 	level: number;
+// 	introduce(phrase: string): void;
+// 	levelUp(): void;
+// }
+
+// interface ISpellCaster {
+// 	castSpell(): void;
+// }
+
+
+
+
+// class Wizard implements ICharacter, ISpellCaster {
+// 	constructor(public name: string, public level: number) {
+// 		if (this.level < 1) {
+// 			throw new Error('Level too low');
+// 		}
+// 	}
+
+// 	introduce(phrase: string): void {
+// 		console.log(phrase + ', ' + this.name);
+// 	}
+
+// 	castSpell(): void {
+// 		console.log('Casting a spell, behold my power!');
+// 	}
+
+// 	levelUp(): void {
+// 		this.level++;
+// 		console.log(`Level up! New level is ${this.level}`);
+// 	}
+// }
+
+// // тестування класу
+// const wizard = new Wizard('Merlin', 15);
+
+// wizard.introduce('I am the mighty wizard');
+// wizard.castSpell();
+// wizard.levelUp();  // Level up! New level is 16
+
+// ======================
+
+// class Key {
+// 	private signature: number;
+
+// 	constructor() {
+// 		this.signature = Number((Math.random() * (10 - 1) + 1).toFixed(0));
+// 	}
+
+// 	getSignature(): number {
+// 		return this.signature;
+// 	}
+// }
+
+
+// class Person {
+
+// 	constructor(private key: Key) {
+// 		this.key = key;
+// 	}
+
+// 	getKey(): Key {
+// 		return this.key;
+// 	}
+
+// }
+
+// abstract class House {
+// 	protected door: boolean = false;
+// 	public key: Key;
+// 	private tenants: Person[] = [];
+
+
+// 	public comeIn(person: Person): void {
+// 		if (this.door) {
+// 			this.tenants.push(person);
+// 		}
+
+// 	}
+
+// 	public abstract openDoor(key: Key): void;
+
+// }
+
+// class MyHouse extends House {
+
+// 	constructor(public key: Key) {
+// 		super();
+// 		this.key = key;
+// 	}
+
+// 	openDoor(key: Key): void {
+// 		if (key.getSignature() === this.key.getSignature()) {
+// 			this.door = true;
+// 			console.log('The door is open');
+// 		}
+// 	}
+
+// }
+
+
+
+// const key = new Key();
+// console.log('key:', key)
+
+// const house = new MyHouse(key);
+// const person = new Person(key);
+
+// house.openDoor(person.getKey());
+
+// house.comeIn(person);
+
+
+// https://www.codewars.com/kata/5aca48db188ab3558e0030fa/train/typescript
+
+// function calcType(a: number, b: number, res: number): string {
+
+// 	switch (res) {
+// 		case a / b:
+// 			return 'division';
+// 		case a + b:
+// 			return 'addition';
+// 		case a - b:
+// 			return 'subtraction';
+// 		case a * b:
+// 			return 'multiplication';
+// 		default:
+// 			return ""
+
+// 	}
+
+
+// }
+
+
+// console.log('calcType(10, 5, 5):', calcType(10, 5, 5))
+
+
+// interface Product {
+// 	id: number;
+// 	name: string;
+// 	price: number;
+
+// }
+
+// type ProductWithDiscount = Product & {
+// 	discount: number;
+// };
+
+// type ResponseStatus = "ok" | "error" | "pending";
+
+
+// type ApiResponse<T> = {
+// 	status: ResponseStatus;
+// 	data: T;
+// }
+
+// type DiscountResponse = ApiResponse<ProductWithDiscount>
+
+
+// const discountResponse: DiscountResponse = {
+// 	status: "ok",
+// 	data: {
+// 		id: 1,
+// 		name: "Laptop",
+// 		price: 1000,
+// 		discount: 100,
+// 	}
+// }
+
+// type UserTest = {
+// 	id: number;
+// 	name: string;
+// 	email: string;
+
+// }
+
+// type Result = "success" | "failure"
+
+// const logResult = (status: Result): void => {
+// 	if (status === "success") {
+// 		console.log("Operation was successful");
+// 	} else {
+// 		console.log("Operation failed");
+// 	}
+// }
+
+// const calculate = (a: number, b: number, op: "+" | "-"): number => {
+
+
+// 	if (op === "+") {
+// 		return a + b;
+// 	} else if (op === "-") {
+// 		return a - b;
+// 	} else {
+// 		throw new Error("Invalid operation");
+// 	}
+// }
+
+
+// type ApiResponse<T> = { status: "ok", data: T } | { status: "error", message: string };
+
+
+// interface Product {
+// 	id: number;
+// 	name: string;
+// 	price: number;
+
+// }
+
+// type ReadonlyProduct = Readonly<Product>;
+
+
+// type UserTest = {
+// 	id: number;
+// 	name: string;
+// 	email: string;
+// }
+
+// type PartialUser = Partial<UserTest>;
+
+// class Person {
+
+//    constructor(private name: string, private age: number) {
+
+//    }
+
+//    getInfo(): string {
+//       return `Name: ${this.name}, Age: ${this.age}`;
+//    }
+
+//    celebrateBirthday(): void {
+//       this.age++;
+//    }
+// }
+
+
+// interface Log {
+//    log(): void;
+// }
+// class Employee extends Person implements Log {
+//    constructor(name: string, age: number, private salary: number) {
+//       super(name, age);
+//    }
+
+//    getSalary(): number {
+//       return this.salary;
+//    }
+
+//    getInfo(): string {
+//       return `${super.getInfo()}, Salary: ${this.salary}`;
+//    }
+
+//    log(): void {
+//       console.log(this.getInfo());
+//    }
+// }
+
+// abstract class Shape {
+//    constructor(public name: string) { }
+
+//    abstract getArea(): number;
+
+//    describe() {
+//       console.log(`This is a ${this.name} `);
+
+//    }
+
+// }
+
+// class Rectangle extends Shape {
+//    constructor(public width: number, public height: number, name: string) {
+//       super(name)
+
+//    }
+
+//    getArea(): number {
+//       return this.width * this.height;
+//    }
+// }
+
+// 1
+
+// const processInput = (input: string | number | boolean) => {
+//    if (typeof input === "string") {
+//       console.log("Length:", input.length);
+//    } else if (typeof input === "number") {
+//       console.log("Squared:", input ** 2);
+//    } else if (typeof input === "boolean") {
+//       console.log("Boolean:", input);
+//    } else {
+//       console.log("Unknown type");
+//    }
+// }
+
+// // 2
+// type AdminNew = {
+//    name: string;
+//    accessLevel: "full" | "limited";
+// }
+
+// type UserNew = {
+//    name: string;
+//    email: string;
+// }
+
+// const printInfo = (user: UserNew | AdminNew) => {
+//    if ("accessLevel" in user) {
+//       console.log(`Admin: ${user.name}, Access Level: ${user.accessLevel}`);
+//    }
+//    else {
+//       console.log(`User: ${user.name}, Email: ${user.email}`);
+//    }
+// }
+
+
+// type Square = { type: "square"; size: number; };
+// type Circle = { type: "circle"; radius: number; };
+
+// type Shape = Square | Circle;
+
+
+
+// const getArea = (shape: Shape): number => {
+//    switch (shape.type) {
+//       case "square":
+//          return shape.size ** 2;
+//       case "circle":
+//          return Math.PI * shape.radius ** 2;
+//       default:
+//          throw new Error("Unknown shape type");
+//    }
+// }
+
+type EmailNotification = { type: "email"; subject: string; sender: string }
+type SMSNotification = { type: "sms"; phoneNumber: string; message: string }
+type PushNotification = { type: "push"; deviceId: string; content: string }
+
+type NotificationNew = EmailNotification | SMSNotification | PushNotification;
+
+// const sendNotification = (notification: NotificationNew) => {
+//    switch (notification.type) {
+//       case "email":
+//          console.log(`Sending email to ${notification.sender} with subject "${notification.subject}"`);
+//          break;
+//       case "sms":
+//          console.log(`Sending SMS to ${notification.phoneNumber}: "${notification.message}"`);
+//          break;
+//       case "push":
+//          console.log(`Sending push notification to device ${notification.deviceId}: "${notification.content}"`);
+//          break;
+//       default:
+//          throw new Error("Unknown notification type");
+//    }
+// }
+
+
+
+// const isEmailNotification = (n: NotificationNew): n is EmailNotification => {
+//    return n.type === "email";
+// }
+
+// const isSMSNotification = (n: NotificationNew): n is SMSNotification => {
+//    return n.type === "sms";
+// }
+
+// const isPushNotification = (n: NotificationNew): n is PushNotification => {
+//    return n.type === "push";
+// }
+
+// const handleNotification = (notification: NotificationNew) => {
+//    if (isEmailNotification(notification)) {
+//       console.log(`Sending email to ${notification.sender} with subject "${notification.subject}"`);
+//    } else if (isSMSNotification(notification)) {
+//       console.log(`Sending SMS to ${notification.phoneNumber}: "${notification.message}"`);
+//    } else if (isPushNotification(notification)) {
+//       console.log(`Sending push notification to device ${notification.deviceId}: "${notification.content}"`);
+//    } else {
+//       throw new Error("Unknown notification type");
+//    }
+// }
+
+type Square = { type: "square"; size: number; };
+type Circle = { type: "circle"; radius: number; };
+type Rectangle = { type: "rectangle"; width: number; height: number; };
+
+type Shape = Square | Circle | Rectangle;
+
+const isSquare = (shape: Shape): shape is Square => {
+   return shape.type === "square";
+}
+
+const isCircle = (shape: Shape): shape is Circle => {
+   return shape.type === "circle";
+}
+
+const isRectangle = (shape: Shape): shape is Rectangle => {
+   return shape.type === "rectangle";
+}
+
+// const printShapeInfo = (shape: Shape) => {
+//    if (isSquare(shape)) {
+//       console.log(`Square with size: ${shape.size}`);
+//       return shape.size ** 2;
+//    } else if (isCircle(shape)) {
+//       console.log(`Circle with radius: ${shape.radius}`);
+//       return Math.PI * shape.radius ** 2;
+//    } else if (isRectangle(shape)) {
+//       console.log(`Rectangle with width: ${shape.width} and height: ${shape.height}`);
+//       return shape.width * shape.height;
+//    } else {
+//       throw new Error("Unknown shape type");
+//    }
+// }
+
+
+// const shapes: Shape[] = [
+//    { type: "square", size: 5 },
+//    { type: "circle", radius: 3 },
+//    { type: "rectangle", width: 4, height: 6 },
+//    { type: "square", size: 10 },
+//    { type: "circle", radius: 2 },
+//    { type: "rectangle", width: 8, height: 3 },
+// ];
+
+// const getCircles = (shapes: Shape[]): Circle[] => {
+//    return shapes.filter((shape): shape is Circle => isCircle(shape));
+// }
+
+// const getSquares = (shapes: Shape[]): Square[] => {
+//    return shapes.filter((shape): shape is Square => isSquare(shape));
+// }
+
+// const getRectangles = (shapes: Shape[]): Rectangle[] => {
+//    return shapes.filter((shape): shape is Rectangle => isRectangle(shape));
+// }
+
+// console.log(getCircles(shapes))
+
+
+// class Kata {
+//    static squareDigits(num: number): number {
+//       return +num.toString().split("").reduce((acc, item) => acc + (Number(item) ** 2), "")
+//    }
+// }
+
+// console.log(Kata.squareDigits(9119))
+
+// bubbleSort
+
+// function bubbleSort(arr) {
+//    const n = arr.length;
+//    for (let i = 0; i < n - 1; i++) {
+//       for (let j = 0; j < n - i - 1; j++) {
+//          if (arr[j] > arr[j + 1]) {
+//             [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//          }
+//       }
+//    }
+//    return arr;
+// }
+
+// const insertionSort = (arr: number[]): number[] => {
+
+//    const n = arr.length;
+//    for (let i = 1; i < n; i++) {
+//       const key = arr[i];
+//       let j = i - 1;
+//       while (j >= 0 && arr[j] > key) {
+//          arr[j + 1] = arr[j];
+//          j--;
+
+//       }
+//       arr[j + 1] = key;
+//    }
+//    return arr;
+// }
+
+// const numbers = [5, 3, 8, 4, 2];
+// bubbleSort(numbers);
+// console.log(numbers);
+
+
+// ===========
+class Week {
+   public Monday: number = 15
+   public Tuesday: number = 95;
+
+   // Tuesday: 95,
+
+   // Wednesday:34,
+
+   // Thursday: 0,
+
+   // Friday: numbers divisible by 2,
+
+   // Saturday:56,
+
+   // Sunday:666 || - 666,
+
+
+
+}
+
+
+// function amIAfraid(day: string, num: number): boolean {
+//    switch (day) {
+//       case "Monday":
+//          return num === 15 || num === 12;
+//       case "Tuesday":
+//          return num > 95;
+//       case "Wednesday":
+//          return num === 34;
+//       case "Thursday":
+//          return num === 0;
+//       case "Friday":
+//          return num % 2 === 0;
+//       case "Saturday":
+//          return num === 56;
+//       case "Sunday":
+//          return num === 666 || num === -666;
+//       default:
+//          return false;
+//    }
+// }
+
+// console.log(amIAfraid("Monday", 12))
+
+
+// ====
+
+// function change(string: string): string {
+
+//    const letters = string.match(/[a-zA-Z]/g) || [];
+//    const numbersArray = letters.map(item => item.toLowerCase().charCodeAt(0) - "a".charCodeAt(0) + 1);
+//    return new Array(26).fill(0).map((item, index) => numbersArray.includes(index + 1) ? 1 : 0).join("");
+// }
+
+
+// console.log(change("a **& bZ"));
+
+
+// const userRoles = new Map()
+
+// userRoles.set("admin", { access: "full" });
+
+// console.log('userRoles:', userRoles)
+
+//
+// function orderedCount(text: string): [string, number][] {
+//    const res = [...text].reduce<[string, number][]>((acc, item, index, arr) => {
+//       const charArr = arr.filter(el => el === item)
+//       console.log('charArr:', charArr)
+//       if (charArr.length === 1) {
+//          acc.push([item, charArr.length])
+//          return acc
+//       }
+//       if (charArr.length > 1) {
+//          return arr.findIndex(el => el === item) === index ? [...acc, [item, charArr.length]] : acc
+//       }
+//       return acc
+
+//    }, []);
+//    return res
+// }
+
+// console.log(orderedCount("ab racada bra"))

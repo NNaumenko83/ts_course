@@ -5294,3 +5294,10 @@ class Week {
 // }
 
 // console.log(orderedCount("ab racada bra"))
+
+
+const booleanToString = (b: boolean): string => {
+   return b.toString();
+};
+
+console.log(booleanToString(false)); // "true"

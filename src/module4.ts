@@ -5109,22 +5109,22 @@ type NotificationNew = EmailNotification | SMSNotification | PushNotification;
 //    }
 // }
 
-type Square = { type: "square"; size: number; };
-type Circle = { type: "circle"; radius: number; };
-type Rectangle = { type: "rectangle"; width: number; height: number; };
+// type Square = { type: "square"; size: number; };
+// type Circle = { type: "circle"; radius: number; };
+// type Rectangle = { type: "rectangle"; width: number; height: number; };
 
-type Shape = Square | Circle | Rectangle;
+// type Shape = Square | Circle | Rectangle;
 
-const isSquare = (shape: Shape): shape is Square => {
-   return shape.type === "square";
-}
+// const isSquare = (shape: Shape): shape is Square => {
+//    return shape.type === "square";
+// }
 
-const isCircle = (shape: Shape): shape is Circle => {
-   return shape.type === "circle";
-}
+// const isCircle = (shape: Shape): shape is Circle => {
+//    return shape.type === "circle";
+// }
 
-const isRectangle = (shape: Shape): shape is Rectangle => {
-   return shape.type === "rectangle";
+// const isRectangle = (shape: Shape): shape is Rectangle => {
+//    return shape.type === "rectangle";
 }
 
 // const printShapeInfo = (shape: Shape) => {
@@ -5211,25 +5211,25 @@ const isRectangle = (shape: Shape): shape is Rectangle => {
 
 
 // ===========
-class Week {
-   public Monday: number = 15
-   public Tuesday: number = 95;
+// class Week {
+//    public Monday: number = 15
+//    public Tuesday: number = 95;
 
-   // Tuesday: 95,
+// Tuesday: 95,
 
-   // Wednesday:34,
+// Wednesday:34,
 
-   // Thursday: 0,
+// Thursday: 0,
 
-   // Friday: numbers divisible by 2,
+// Friday: numbers divisible by 2,
 
-   // Saturday:56,
+// Saturday:56,
 
-   // Sunday:666 || - 666,
+// Sunday:666 || - 666,
 
 
 
-}
+// }
 
 
 // function amIAfraid(day: string, num: number): boolean {
@@ -5296,8 +5296,37 @@ class Week {
 // console.log(orderedCount("ab racada bra"))
 
 
-const booleanToString = (b: boolean): string => {
-   return b.toString();
-};
+// const booleanToString = (b: boolean): string => {
+//    return b.toString();
+// };
 
-console.log(booleanToString(false)); // "true"
+// console.log(booleanToString(false)); // "true"
+
+
+// https://www.codewars.com/kata/628e3ee2e1daf90030239e8a/train/typescript
+
+function interlockable(a: bigint, b: bigint): boolean {
+   let aStr = a.toString(2);
+   console.log('aStr1:', aStr)
+   let bStr = b.toString(2);
+   console.log('bStr1:', bStr)
+   if (aStr.length !== bStr.length) {
+      if (aStr.length > bStr.length) {
+         aStr = aStr.slice(-bStr.length);
+      }
+      if (bStr.length > aStr.length) {
+         bStr = bStr.slice(-aStr.length);
+      }
+   }
+
+   for (let i = 0; i < aStr.length; i++) {
+      if (+aStr[i] === 1 && +bStr[i] === 1) {
+         return false;
+      }
+   }
+
+   return true;
+}
+
+
+console.log(interlockable(3n, 6n)); 

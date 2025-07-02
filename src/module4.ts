@@ -5305,28 +5305,38 @@ type NotificationNew = EmailNotification | SMSNotification | PushNotification;
 
 // https://www.codewars.com/kata/628e3ee2e1daf90030239e8a/train/typescript
 
-function interlockable(a: bigint, b: bigint): boolean {
-   let aStr = a.toString(2);
-   console.log('aStr1:', aStr)
-   let bStr = b.toString(2);
-   console.log('bStr1:', bStr)
-   if (aStr.length !== bStr.length) {
-      if (aStr.length > bStr.length) {
-         aStr = aStr.slice(-bStr.length);
-      }
-      if (bStr.length > aStr.length) {
-         bStr = bStr.slice(-aStr.length);
-      }
-   }
+// function interlockable(a: bigint, b: bigint): boolean {
+//    let aStr = a.toString(2);
+//    console.log('aStr1:', aStr)
+//    let bStr = b.toString(2);
+//    console.log('bStr1:', bStr)
+//    if (aStr.length !== bStr.length) {
+//       if (aStr.length > bStr.length) {
+//          aStr = aStr.slice(-bStr.length);
+//       }
+//       if (bStr.length > aStr.length) {
+//          bStr = bStr.slice(-aStr.length);
+//       }
+//    }
 
-   for (let i = 0; i < aStr.length; i++) {
-      if (+aStr[i] === 1 && +bStr[i] === 1) {
-         return false;
-      }
-   }
+//    for (let i = 0; i < aStr.length; i++) {
+//       if (+aStr[i] === 1 && +bStr[i] === 1) {
+//          return false;
+//       }
+//    }
 
-   return true;
-}
+//    return true;
+// }
 
 
-console.log(interlockable(3n, 6n)); 
+// console.log(interlockable(3n, 6n));
+
+
+// function accum(s: string): string {
+//    return s.toLowerCase().split("").map((item, index) =>
+//       Array.from(Array(index + 1), (letter = item, index) => index === 0 ? letter.toUpperCase() : letter).join("")
+//    ).join("-")
+
+// }
+
+// console.log(accum("ZpglnRxqenU"))
